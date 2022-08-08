@@ -368,15 +368,12 @@ class Actions:
         """Removes space before the last utterance"""
         reformat_last_utterance(lambda s: s[1:] if s.startswith(" ") else s)
 
-    #MADE CHANGES
     def dictation_insert_raw(text: str):
         """Inserts text as-is, without invoking the dictation formatter."""
-        #actions.user.dictation_insert(text, auto_cap=False)
+        actions.user.dictation_insert(text, auto_cap=False)
 
-    #MADE CHANGES
     def dictation_insert(text: str, auto_cap: bool = True) -> str:
-        """
-        #Inserts dictated text, formatted appropriately.
+        """Inserts dictated text, formatted appropriately."""
         add_space_after = False
         if setting_context_sensitive_dictation.get():
             # Peek left if we might need leading space or auto-capitalization.
@@ -400,7 +397,6 @@ class Actions:
         text = text.replace("“", '"').replace("”", '"')
         actions.user.add_phrase_to_history(text)
         actions.user.insert_between(text, " " if add_space_after else "")
-        """
 
     def dictation_peek_left(clobber: bool = False) -> Optional[str]:
         """
