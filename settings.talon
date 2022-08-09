@@ -1,5 +1,9 @@
 -
 settings():
+    #MADE CHANGES
+    # Minimum silence time (in seconds) before speech is cut off, default is 0.3
+    speech.timeout = 1.2
+
     # Adjust the scale of the imgui to my liking
     imgui.scale = 1.3
 
