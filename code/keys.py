@@ -18,7 +18,7 @@ default_f_digits = (
 
 mod = Module()
 mod.list("letter", desc="The spoken phonetic alphabet")
-mod.list("letter_dictate", desc="The spoken phonetic alphabet when dictating")
+#mod.list("letter_dictate", desc="The spoken phonetic alphabet when dictating")
 mod.list("symbol_key", desc="All symbols from the keyboard")
 mod.list("arrow_key", desc="All arrow keys")
 mod.list("number_key", desc="All number keys")
