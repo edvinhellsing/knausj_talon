@@ -1,15 +1,14 @@
 from talon import Context, Module, actions, app
 
 #MADE CHANGES
-"""
 default_alphabet = "air bat cap drum each fine gust harp sit jury crunch look made near odd pit quench red sun trap urge vest whale plex yank zip".split(
     " "
 )
-"""
-default_alphabet = "a b c d e f g h i j k l m n o p q r s t u vest whale x yank zip".split(
-    " "
-)
 letters_string = "abcdefghijklmnopqrstuvwxyz"
+
+#default_alphabet_dictate = "air b c d each f g h i j k l m n o p q r s tee u vest whale x yank zip".split(
+#    " "
+#)
 
 default_digits = "zero one two three four five six seven eight nine".split(" ")
 numbers = [str(i) for i in range(10)]
@@ -19,6 +18,7 @@ default_f_digits = (
 
 mod = Module()
 mod.list("letter", desc="The spoken phonetic alphabet")
+mod.list("letter_dictate", desc="The spoken phonetic alphabet when dictating")
 mod.list("symbol_key", desc="All symbols from the keyboard")
 mod.list("arrow_key", desc="All arrow keys")
 mod.list("number_key", desc="All number keys")
@@ -127,6 +127,9 @@ if app.platform == "mac":
 ctx.lists["self.modifier_key"] = modifier_keys
 alphabet = dict(zip(default_alphabet, letters_string))
 ctx.lists["self.letter"] = alphabet
+
+#alphabet_dictate = dict(zip(default_alphabet_dictate, letters_string))
+#ctx.lists["self.letter_dictate"] = alphabet_dictate
 
 # `punctuation_words` is for words you want available BOTH in dictation and as key names in command mode.
 # `symbol_key_words` is for key names that should be available in command mode, but NOT during dictation.
