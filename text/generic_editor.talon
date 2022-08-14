@@ -220,3 +220,48 @@ cut line:
 (pace | paste) all:
   edit.select_all()
   edit.paste()
+
+#MADE CHANGES, THESE ARE FROM DICTATION_MODE.TALON
+# Navigation
+go up <number_small> (line|lines):
+    edit.up()
+    repeat(number_small - 1)
+go down <number_small> (line|lines):
+    edit.down()
+    repeat(number_small - 1)
+go left <number_small> (word|words):
+    edit.word_left()
+    repeat(number_small - 1)
+go right <number_small> (word|words):
+    edit.word_right()
+    repeat(number_small - 1)
+    
+# Selection
+select left <number_small> (word|words):
+    edit.extend_word_left()
+    repeat(number_small - 1)
+select right <number_small> (word|words):
+    edit.extend_word_right()
+    repeat(number_small - 1)
+select left <number_small> (character|characters):
+    edit.extend_left()
+    repeat(number_small - 1)
+select right <number_small> (character|characters):
+    edit.extend_right()
+    repeat(number_small - 1)
+clear left <number_small> (word|words):
+    edit.extend_word_left()
+    repeat(number_small - 1)
+    edit.delete()
+clear right <number_small> (word|words):
+    edit.extend_word_right()
+    repeat(number_small - 1)
+    edit.delete()
+clear left <number_small> (character|characters):
+    edit.extend_left()
+    repeat(number_small - 1)
+    edit.delete()
+clear right <number_small> (character|characters):
+    edit.extend_right()
+    repeat(number_small - 1)
+    edit.delete()
