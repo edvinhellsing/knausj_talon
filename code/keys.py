@@ -1,10 +1,10 @@
 from talon import Context, Module, actions, app
 
 #MADE CHANGES
-default_alphabet = "air bat cap drum each fine gust harp sit jury crunch look made near odd pit quench red sun trap urge vest whale plex yank zip".split(
+default_alphabet = "air bat cap drum each fine gust harp ice judge crunch look made near odd pink quench red sun trap urge vest whale x yank zip eel elk eagle".split(
     " "
 )
-letters_string = "abcdefghijklmnopqrstuvwxyz"
+letters_string = "abcdefghijklmnopqrstuvwxyzåäö"
 
 #default_alphabet_dictate = "air b c d each f g h i j k l m n o p q r s tee u vest whale x yank zip".split(
 #    " "
