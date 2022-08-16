@@ -97,7 +97,7 @@ class EditActions:
 
     def find_next():
         actions.key("f3")
-        # action(edit.find_previous):
+        #action(edit.find_previous):
 
     def indent_less():
         actions.key("home delete")

@@ -10,3 +10,7 @@ not mode: sleep
     mode.disable("sleep")
     mode.disable("dictation")
     mode.enable("command")
+^come on mode$:
+    mode.disable("sleep")
+    mode.disable("dictation")
+    mode.enable("command")

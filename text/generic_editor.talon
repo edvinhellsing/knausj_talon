@@ -4,6 +4,9 @@ find it:
 next one:
     edit.find_next()
 
+last one:
+    edit.find_previous()
+
 go word left:
     edit.word_left()
 
@@ -29,7 +32,6 @@ go line end:
     edit.line_end()
 
 go way left:
-    edit.line_start()
     edit.line_start()
 
 go way right:
