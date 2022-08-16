@@ -161,7 +161,7 @@ punctuation_words = {
     "pound sign": "£",
 }
 symbol_key_words = {
-    "dot": ".",
+    #"dot": ".",
     "point": ".",
     "quote": "'",
     "question": "?",
