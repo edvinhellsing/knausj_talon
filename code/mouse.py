@@ -136,6 +136,8 @@ class Actions:
     def mouse_toggle_zoom_mouse():
         """Toggles zoom mouse"""
         eye_zoom_mouse.toggle_zoom_mouse(not eye_zoom_mouse.zoom_mouse.enabled)
+        #MADE CHANGES
+        #noise.unregister("pop", eye_zoom_mouse.zoom_mouse.on_pop)
 
     def mouse_cancel_zoom_mouse():
         """Cancel zoom mouse if pending"""
@@ -291,6 +293,7 @@ def on_pop(active):
             ctrl.mouse_click(button=0, hold=16000)
 
 
+#"pop" or "hiss"
 noise.register("pop", on_pop)
 
 

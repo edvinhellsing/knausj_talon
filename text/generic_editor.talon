@@ -1,3 +1,5 @@
+emoji insert: key(super-.)
+
 find it:
     edit.find()
 
