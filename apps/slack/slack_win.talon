@@ -47,7 +47,7 @@ grab right: key(shift-down)
 (slack | lack) invite: key(a)
 # Miscellaneous
 (slack | lack) shortcuts: key(ctrl-/)
-emote <user.text>: "{text}"
+#emote <user.text>: "{text}"
 toggle left sidebar: key(ctrl-shift-d)
 toggle right sidebar: key(ctrl-.)
 
