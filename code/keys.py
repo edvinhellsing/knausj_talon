@@ -1,7 +1,8 @@
 from talon import Context, Module, actions, app
 
 #MADE CHANGES
-default_alphabet = "air bat cap drum each fine gust harp ice judge crunch look made near odd pink quench red sun trap urge vest whale x yank zip eel elk eagle".split(
+#near
+default_alphabet = "air bat cap drum each fine gust harp ice judge crunch look made net odd pink quench red sun trap urge vest whale x yank zip eel elk eagle".split(
     " "
 )
 letters_string = "abcdefghijklmnopqrstuvwxyzåäö"
@@ -134,10 +135,6 @@ ctx.lists["self.letter"] = alphabet
 # `punctuation_words` is for words you want available BOTH in dictation and as key names in command mode.
 # `symbol_key_words` is for key names that should be available in command mode, but NOT during dictation.
 punctuation_words = {
-    # TODO: I'm not sure why we need these, I think it has something to do with
-    # Dragon. Possibly it has been fixed by later improvements to talon? -rntz
-    "`": "`",
-    ",": ",",  # <== these things
     "back tick": "`",
     "grave": "`",
     "comma": ",",
@@ -162,6 +159,9 @@ punctuation_words = {
 }
 symbol_key_words = {
     #"dot": ".",
+    "void": " ",
+    "drip": ",",
+
     "point": ".",
     "quote": "'",
     "question": "?",

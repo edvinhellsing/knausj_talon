@@ -22,3 +22,4 @@ new line: edit.line_insert_down()
 new paragraph: 
   edit.line_insert_down() 
   edit.line_insert_down()
+windows search: key(super-s)
