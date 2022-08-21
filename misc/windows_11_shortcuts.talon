@@ -1,3 +1,3 @@
 windows search: key(super-s)
-windows change language: key(alt-shift)
+windows change (lang | language)b: key(alt-shift)
 emoji insert: key(super-.)

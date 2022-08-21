@@ -20,7 +20,7 @@ hunt previous: user.find_previous()
 replace this [<user.text>]: user.replace(text or "")
 replace all: user.replace_everywhere("")
 replace <user.text> all: user.replace_everywhere(text)
-replace confirm that: user.replace_confirm()
+replace confirm it: user.replace_confirm()
 replace confirm all: user.replace_confirm_all()
 
 #quick replace commands, modeled after jetbrains

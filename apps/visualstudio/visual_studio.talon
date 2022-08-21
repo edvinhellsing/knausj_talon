@@ -41,7 +41,7 @@ hint show: key(ctrl-shift-space)
 definition show: key(f12)
 definition peek: key(alt-f12)
 references find: key(shift-f12)
-format that: key(ctrl-k ctrl-d)
+format it: key(ctrl-k ctrl-d)
 format selection: key(ctrl-k ctrl-f)
 imports fix: key(ctrl-r ctrl-g)
 
@@ -53,7 +53,7 @@ refactor interface: key(ctrl-r ctrl-i)
 refactor method: key(ctrl-r ctrl-m)
 refactor reorder parameters: key(ctrl-r ctrl-o)
 refactor remove parameters: key(ctrl-r ctrl-v)
-refactor that: key(ctrl-r ctrl-r)
+refactor it: key(ctrl-r ctrl-r)
 
 #code navigation
 (go declaration | follow): key(ctrl-f12)

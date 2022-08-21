@@ -10,9 +10,9 @@ mode: dictation
 # Hyphenated variants are for Dragon.
 #(no cap | no-caps): user.dictation_format_no_cap()
 #(no space | no-space): user.dictation_format_no_space()
-^cap that$: user.dictation_reformat_cap()
-#^(no cap | no-caps) that$: user.dictation_reformat_no_cap()
-#^(no space | no-space) that$: user.dictation_reformat_no_space()
+^cap it$: user.dictation_reformat_cap()
+#^(no cap | no-caps) it$: user.dictation_reformat_no_cap()
+#^(no space | no-space) it$: user.dictation_reformat_no_space()
 
 # Navigation
 go up <number_small> (line|lines):
@@ -67,11 +67,11 @@ formatted <user.format_text>:
     user.formatters_reformat_selection(formatters)
 
 # Corrections
-scratch that: user.clear_last_phrase()
+scratch it: user.clear_last_phrase()
 scratch selection: edit.delete()
-select that: user.select_last_phrase()
-spell that <user.letters>: auto_insert(letters)
-spell that <user.formatters> <user.letters>:
+select it: user.select_last_phrase()
+spell it <user.letters>: auto_insert(letters)
+spell it <user.formatters> <user.letters>:
     result = user.formatted_text(letters, formatters)
     user.dictation_insert_raw(result)
 

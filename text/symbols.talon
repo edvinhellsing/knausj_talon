@@ -21,27 +21,27 @@ inside percent: user.insert_between("%", "%")
 inside (quotes | string): user.insert_between("'", "'")
 inside (double quotes | dubquotes): user.insert_between('"', '"')
 inside (graves | back ticks): user.insert_between("`", "`")
-angle that:
+angle it:
     text = edit.selected_text()
     user.paste("<{text}>")
-(square | square bracket) that:
+(square | square bracket) it:
     text = edit.selected_text()
     user.paste("[{text}]")
-(bracket | brace) that:
+(bracket | brace) it:
     text = edit.selected_text()
     user.paste("{{{text}}}")
-(parens | args) that:
+(parens | args) it:
     text = edit.selected_text()
     user.paste("({text})")
-percent that:
+percent it:
     text = edit.selected_text()
     user.paste("%{text}%")
-quote that:
+quote it:
     text = edit.selected_text()
     user.paste("'{text}'")
-(double quote | dubquote) that:
+(double quote | dubquote) it:
     text = edit.selected_text()
     user.paste('"{text}"')
-(grave | back tick) that:
+(grave | back tick) it:
     text = edit.selected_text()
     user.paste('`{text}`')
