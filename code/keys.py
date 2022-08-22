@@ -138,6 +138,10 @@ ctx.lists["self.letter"] = alphabet
 # `punctuation_words` is for words you want available BOTH in dictation and as key names in command mode.
 # `symbol_key_words` is for key names that should be available in command mode, but NOT during dictation.
 punctuation_words = {
+    "drip": ",",
+    "semistack": ";",
+    "stack": ":",
+
     "back tick": "`",
     "grave": "`",
     "comma": ",",
@@ -163,7 +167,6 @@ punctuation_words = {
 symbol_key_words = {
     #"dot": ".",
     "void": " ",
-    "drip": ",",
 
     "point": ".",
     "quote": "'",
