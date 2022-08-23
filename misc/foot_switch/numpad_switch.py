@@ -9,22 +9,6 @@ current_state = [False, False, False, False, False, False, False, False, False, 
 last_state = [False, False, False, False, False, False, False, False, False, False]
 continuous_firing = [False, False, False, False, False, False, False, False, False, False]
 has_fired = [False, False, False, False, False, False, False, False, False, False]
-timestamps = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0] 
-scroll_reversed = False
-hold_timeout = 0.2
-
-
-#the original implementation
-# def on_interval():
-#     for key in range(4):
-#         if current_state[key] != last_state[key]:
-#             last_state[key] = current_state[key]
-#             # Key is pressed down
-#             if current_state[key]:
-#                 call_down(key)
-#             # Key is released after specified hold time out. ie key was held.
-#             elif time.perf_counter() - timestamps[key] > hold_timeout:
-#                 call_up(key)
 
 
 #fires call down and call up only once
@@ -87,18 +71,12 @@ cron.interval("50ms", on_interval)
 class Actions:
     def keypad_down(key: int):
         """Keypad key down event"""
-        timestamps[key] = time.perf_counter()
         current_state[key] = True
 
     def keypad_up(key: int):
         """Keypad key up event"""
         current_state[key] = False
-
-    def keypad_scroll_reverse():
-        """Reverse scroll direction"""
-        global scroll_reversed
-        scroll_reversed = not scroll_reversed
-
+    
     def keypad_0_down():
         """sdf"""
 
@@ -255,37 +233,25 @@ class ZoomActions:
     def keypad_0_down():
         actions.user.zoom_mouse_click("triple")
 
-    def keypad_1_down():
-        actions.user.zoom_mouse_click("middle")
-
-    def keypad_2_down():
-        actions.user.zoom_mouse_click("double")
-
-    def keypad_3_down():
-        actions.user.zoom_mouse_click("right")
-
-    def keypad_4_down():
-        pass
-
-    def keypad_5_down():
-        pass    
-
     def keypad_0_up():
         pass
+
+    def keypad_1_down():
+        actions.user.zoom_mouse_click("middle")
 
     def keypad_1_up():
         pass
 
+    def keypad_2_down():
+        actions.user.zoom_mouse_click("double")
+
     def keypad_2_up():
         pass
 
+    def keypad_3_down():
+        actions.user.zoom_mouse_click("right")
+
     def keypad_3_up():
-        pass
-
-    def keypad_4_up():
-        pass
-
-    def keypad_5_up():
         pass
 
 

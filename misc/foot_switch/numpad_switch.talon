@@ -27,6 +27,3 @@ key(keypad_8:up): user.keypad_up(8)
 
 key(keypad_9:down): user.keypad_down(9)
 key(keypad_9:up): user.keypad_up(9) 
-
-# Misc
-#scroll reverse: user.keypad_scroll_reverse()
