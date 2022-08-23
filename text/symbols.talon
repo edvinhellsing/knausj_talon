@@ -39,7 +39,7 @@ percent it:
 quote it:
     text = edit.selected_text()
     user.paste("'{text}'")
-(double quote | dubquote) it:
+double quote it:
     text = edit.selected_text()
     user.paste('"{text}"')
 (grave | back tick) it:

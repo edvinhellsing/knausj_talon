@@ -139,12 +139,14 @@ ctx.lists["self.letter"] = alphabet
 # `symbol_key_words` is for key names that should be available in command mode, but NOT during dictation.
 punctuation_words = {
     "drip": ",",
+    "dripgap": ", ",
     "semistack": ";",
     "stack": ":",
 
     "back tick": "`",
     "grave": "`",
     "comma": ",",
+    "comgap": ", ",
     "period": ".",
     "full stop": ".",
     "semicolon": ";",

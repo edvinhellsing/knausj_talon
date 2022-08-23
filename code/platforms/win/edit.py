@@ -97,6 +97,7 @@ class EditActions:
 
     def find_next():
         actions.key("f3")
+        # action(edit.find_previous):
 
     #MADE CHANGES
     def find_previous():
