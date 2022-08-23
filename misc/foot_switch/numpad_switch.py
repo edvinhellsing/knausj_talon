@@ -50,6 +50,7 @@ def on_interval():
         elif (current_state[key]) and (continuous_firing[key] == True):
             last_state[key] = True
             call_down(key)
+            actions.sleep("40ms")
         # Key is released
         elif (current_state[key] == False) and (last_state[key] == True):
             last_state[key] = False
@@ -65,7 +66,7 @@ def on_interval():
 #             call_down(key)
 
 
-cron.interval("50ms", on_interval)
+cron.interval("10ms", on_interval)
 
 
 @mod.action_class
@@ -166,7 +167,7 @@ class UserActions:
         actions.user.mouse_scroll_down()
 
     def keypad_2_up():
-        pass
+        actions.user.stop_scroll()
 
     def keypad_3_down():
         actions.core.repeat_command(1)
@@ -175,25 +176,25 @@ class UserActions:
         pass
 
     def keypad_4_down():
-        actions.core.repeat_command(1)
+        pass
 
     def keypad_4_up():
         pass
 
     def keypad_5_down():
-        actions.core.repeat_command(1)
+        pass
 
     def keypad_5_up():
         pass
 
     def keypad_6_down():
-        actions.core.repeat_command(1)
+        pass
 
     def keypad_6_up():
         pass
 
     def keypad_7_down():
-        actions.core.repeat_command(1)
+        pass
 
     def keypad_7_up():
         pass
@@ -202,10 +203,10 @@ class UserActions:
         actions.user.mouse_scroll_up()
 
     def keypad_8_up():
-        pass
+        actions.user.stop_scroll()
 
     def keypad_9_down():
-        actions.core.repeat_command(1)
+        pass
 
     def keypad_9_up():
         pass
