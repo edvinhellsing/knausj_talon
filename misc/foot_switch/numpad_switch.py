@@ -5,9 +5,10 @@ mod = Module()
 mod.tag("av")
 
 #10 numpad keys
+#refactor this later
 current_state = [False, False, False, False, False, False, False, False, False, False]
 last_state = [False, False, False, False, False, False, False, False, False, False]
-continuous_firing = [False, False, False, False, False, False, False, False, False, False]
+continuous_firing = [False, False, True, False, False, False, False, False, True, False]
 has_fired = [False, False, False, False, False, False, False, False, False, False]
 
 
@@ -38,7 +39,7 @@ has_fired = [False, False, False, False, False, False, False, False, False, Fals
 #             call_up(key)
 
 
-#fires continuously if continuous_firing is set to true and then calls call_up only once
+#fires continuously if continuous_firing is set to true and then calls call_up() once when the key is released
 def on_interval():
     for key in range(10):
         # Key is pressed down
@@ -141,23 +142,28 @@ class Actions:
 ctx = Context()
 
 
+#test actions
+#actions.user.play_pause()
+#actions.user.stop_scroll()
+
 @ctx.action_class("user")
 class UserActions:
     def keypad_0_down():
-        actions.user.mouse_scroll_up()
+        actions.user.engine_mimic("dictation mode")
+        actions.key("super-h")
 
     def keypad_0_up():
-        #actions.user.play_pause()
-        actions.user.stop_scroll()
+        actions.key("super-h")
+        actions.user.engine_mimic("command mode")
 
     def keypad_1_down():
-        actions.user.mouse_scroll_down()
+        actions.key("super-h")
 
     def keypad_1_up():
-        actions.user.stop_scroll()
+        pass
 
     def keypad_2_down():
-        actions.user.go_back()
+        actions.user.mouse_scroll_down()
 
     def keypad_2_up():
         pass
@@ -193,7 +199,7 @@ class UserActions:
         pass
 
     def keypad_8_down():
-        actions.core.repeat_command(1)
+        actions.user.mouse_scroll_up()
 
     def keypad_8_up():
         pass
