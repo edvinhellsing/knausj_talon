@@ -285,6 +285,9 @@ def show_cursor_helper(show):
 def on_pop(active):
     if setting_mouse_enable_pop_stops_scroll.get() >= 1 and (gaze_job or scroll_job):
         stop_scroll()
+    if 0 in ctrl.mouse_buttons_down():
+        actions.user.mouse_drag_end()
+        #mouse_drag_end()
     elif (
         not eye_zoom_mouse.zoom_mouse.enabled
         and eye_mouse.mouse.attached_tracker is not None
