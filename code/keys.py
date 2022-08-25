@@ -5,7 +5,9 @@ from talon import Context, Module, actions, app
 #kid
 #eel elk eagle
 #onyx adder oesten
-default_alphabet = "air bat cap drum each fine gust harp ice judge crunch look made net odd pink quench red sun trap urge vest whale x yank zip onyx adder eagle".split(
+#sun urge red
+#risk
+default_alphabet = "air bat cap drum each fine gust harp ice judge crunch look made net odd pink quench ram spun trap urn vest whale x yank zip onyx elk eagle".split(
     " "
 )
 letters_string = "abcdefghijklmnopqrstuvwxyzåäö"
@@ -138,15 +140,14 @@ ctx.lists["self.letter"] = alphabet
 # `punctuation_words` is for words you want available BOTH in dictation and as key names in command mode.
 # `symbol_key_words` is for key names that should be available in command mode, but NOT during dictation.
 punctuation_words = {
-    "drip": ",",
-    "dripgap": ", ",
     "semistack": ";",
     "stack": ":",
 
     "back tick": "`",
     "grave": "`",
     "comma": ",",
-    "comgap": ", ",
+    "coma": ",",
+    "drip": ",",
     "period": ".",
     "full stop": ".",
     "semicolon": ";",
@@ -167,9 +168,9 @@ punctuation_words = {
     "pound sign": "£",
 }
 symbol_key_words = {
-    #"dot": ".",
     "void": " ",
-
+    "dot": ".",
+    
     "point": ".",
     "quote": "'",
     "question": "?",
@@ -252,6 +253,7 @@ alternate_keys = {
     #MADE CHANGES
     "wipe": "backspace",
     "clear": "backspace",
+    "slap": "enter",
     #"delete": "backspace",
     #'junk': 'backspace',
     #"forward delete": "delete",

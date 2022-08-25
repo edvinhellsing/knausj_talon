@@ -167,7 +167,7 @@ class UserActions:
         actions.user.mouse_scroll_down()
 
     def keypad_2_up():
-        actions.user.stop_scroll()
+        pass
 
     def keypad_3_down():
         actions.core.repeat_command(1)
@@ -203,7 +203,7 @@ class UserActions:
         actions.user.mouse_scroll_up()
 
     def keypad_8_up():
-        actions.user.stop_scroll()
+        pass
 
     def keypad_9_down():
         pass

@@ -158,6 +158,7 @@ class Actions:
         actions.user.clipboard_manager_copy(numbers)
         if match_style:
             actions.edit.paste_match_style()
+            #actions.user.paste_plain()
         else:
             actions.edit.paste()
 
