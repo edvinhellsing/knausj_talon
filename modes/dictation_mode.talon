@@ -5,14 +5,14 @@ mode: dictation
 
 # Everything here should call `auto_insert()` (instead of `insert()`), to preserve the state to correctly auto-capitalize/auto-space.
 # (Talonscript string literals implicitly call `auto_insert`, so there's no need to wrap those)
-<user.raw_prose>: #auto_insert(raw_prose)
-#cap: user.dictation_format_cap()
+<user.raw_prose>: auto_insert(raw_prose)
+cap: user.dictation_format_cap()
 # Hyphenated variants are for Dragon.
-#(no cap | no-caps): user.dictation_format_no_cap()
-#(no space | no-space): user.dictation_format_no_space()
+(no cap | no-caps): user.dictation_format_no_cap()
+(no space | no-space): user.dictation_format_no_space()
 ^cap it$: user.dictation_reformat_cap()
-#^(no cap | no-caps) it$: user.dictation_reformat_no_cap()
-#^(no space | no-space) it$: user.dictation_reformat_no_space()
+^(no cap | no-caps) it$: user.dictation_reformat_no_cap()
+^(no space | no-space) it$: user.dictation_reformat_no_space()
 
 # Navigation
 go up <number_small> (line|lines):
@@ -76,5 +76,5 @@ spell it <user.formatters> <user.letters>:
     user.dictation_insert_raw(result)
 
 # Escape, type things that would otherwise be commands
-#^escape <user.text>$:
+^escape <user.text>$:
     auto_insert(user.text)

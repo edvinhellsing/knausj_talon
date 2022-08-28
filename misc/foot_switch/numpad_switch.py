@@ -50,7 +50,7 @@ def on_interval():
         elif (current_state[key]) and (continuous_firing[key] == True):
             last_state[key] = True
             call_down(key)
-            actions.sleep("40ms")
+            actions.sleep("100ms")
         # Key is released
         elif (current_state[key] == False) and (last_state[key] == True):
             last_state[key] = False
@@ -149,13 +149,21 @@ ctx = Context()
 
 @ctx.action_class("user")
 class UserActions:
+    # def keypad_0_down():
+    #     actions.user.engine_mimic("dictation mode")
+    #     actions.key("super-h")
+
+    # def keypad_0_up():
+    #     actions.key("super-h")
+    #     actions.user.engine_mimic("command mode")
+
     def keypad_0_down():
-        actions.user.engine_mimic("dictation mode")
+        actions.speech.disable()
         actions.key("super-h")
 
     def keypad_0_up():
         actions.key("super-h")
-        actions.user.engine_mimic("command mode")
+        actions.user.talon_mode()
 
     def keypad_1_down():
         actions.key("super-h")

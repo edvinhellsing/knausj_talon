@@ -5,4 +5,5 @@ __pycache__
 # Locally generated
 #/settings
 /settings/system_paths.csv
+/settings/additional_words.csv
 .vscode/settings.json

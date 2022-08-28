@@ -1,5 +1,9 @@
 #defines the commands that sleep/wake Talon
-mode: all
+#mode: all
+mode: sleep
+mode: dictation
+mode: command
+not mode: user.no_action_mode
 -
 ^(talon sleep)$:
     user.switcher_hide_running()
@@ -12,4 +16,4 @@ mode: all
 ^(talon wake | wake)$:
     user.mouse_wake()
     user.talon_mode()
-^drowse [<phrase>]$: speech.disable()
+^drowse$: speech.disable()
