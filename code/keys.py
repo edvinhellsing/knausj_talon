@@ -251,9 +251,10 @@ simple_keys = [
 
 alternate_keys = {
     #MADE CHANGES
+    "slap": "enter",
     "wipe": "backspace",
     "clear": "backspace",
-    "slap": "enter",
+    #"chuck": "backspace",
     #"delete": "backspace",
     #'junk': 'backspace',
     #"forward delete": "delete",
