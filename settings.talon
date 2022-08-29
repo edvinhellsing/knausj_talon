@@ -30,7 +30,6 @@ settings():
     # Hide cursor when mouse_wake is called to enable zoom mouse
     user.mouse_wake_hides_cursor = 0
 
-    #MADE CHANGES
     # The amount to scroll up/down (equivalent to mouse wheel on Windows by default)
     user.mouse_wheel_down_amount = 240
 
