@@ -1,6 +1,5 @@
 -
 settings():
-    #MADE CHANGES
     # Minimum silence time (in seconds) before speech is cut off, default is 0.3
     speech.timeout = 0.4
 

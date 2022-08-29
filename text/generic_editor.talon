@@ -223,7 +223,7 @@ cut line:
   edit.select_all()
   edit.paste()
 
-#MADE CHANGES, THESE ARE FROM DICTATION_MODE.TALON
+#THE COMMANDS BELOW ARE FROM DICTATION_MODE.TALON
 # Navigation
 go up <number_small> (line|lines):
     edit.up()

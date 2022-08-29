@@ -1,6 +1,5 @@
 from talon import Context, Module, actions, app
 
-#MADE CHANGES
 #near
 #kid
 #eel elk eagle
@@ -250,7 +249,6 @@ simple_keys = [
 ]
 
 alternate_keys = {
-    #MADE CHANGES
     "slap": "enter",
     "wipe": "backspace",
     "clear": "backspace",

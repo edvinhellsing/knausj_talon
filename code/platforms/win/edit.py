@@ -101,7 +101,6 @@ class EditActions:
         actions.key("f3")
         # action(edit.find_previous):
 
-    #MADE CHANGES
     def find_previous():
         actions.key("shift-f3")
 

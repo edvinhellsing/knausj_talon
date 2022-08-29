@@ -117,7 +117,6 @@ class Actions:
         """Hides the cursor"""
         show_cursor_helper(False)
 
-    #MADE CHANGES
     def mouse_wake():
         """Enable control mouse, zoom mouse, and disables cursor"""
         #eye_zoom_mouse.toggle_zoom_mouse(True)
@@ -144,7 +143,6 @@ class Actions:
     def mouse_toggle_zoom_mouse():
         """Toggles zoom mouse"""
         eye_zoom_mouse.toggle_zoom_mouse(not eye_zoom_mouse.zoom_mouse.enabled)
-        #MADE CHANGES
         #noise.unregister("pop", eye_zoom_mouse.zoom_mouse.on_pop)
 
     def mouse_cancel_zoom_mouse():
