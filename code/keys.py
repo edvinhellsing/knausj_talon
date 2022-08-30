@@ -6,7 +6,8 @@ from talon import Context, Module, actions, app
 #onyx adder oesten
 #spun urge red
 #risk
-default_alphabet = "air bat cap drum each fine gust harp ice judge crunch look made net odd pink quench ram sun trap urn vest whale x yank zip onyx elk eagle".split(
+#pink
+default_alphabet = "air bat cap drum each fine gust harp ice judge crunch look made net odd pit quench ram sun trap urn vest whale x yank zip onyx elk eagle".split(
     " "
 )
 letters_string = "abcdefghijklmnopqrstuvwxyzåäö"
