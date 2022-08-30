@@ -13,11 +13,11 @@ draft line:
 	edit.select_line()
 	user.draft_editor_open()
 
-draft top:
+(draft top | draft home):
   edit.extend_file_start()
   user.draft_editor_open()
 
-draft bottom:
+(draft bottom | draft end):
   edit.extend_file_end()
   user.draft_editor_open()
 
