@@ -4,7 +4,7 @@ title: /YouTube| - YouTube$/
 
 speed down:                 key(shift-,)
 speed up:                   key(shift-.)
-closed captions:            key(c)
+captions:            key(c)
 mini player:                key(i)
 theater mode:               key(t)
 play | pause:               key(k)

@@ -1,5 +1,6 @@
 tag: user.navigation
 -
-
-go back:                    user.go_back()
-go forward:                 user.go_forward()
+go (forward | next): user.go_forward()
+go (backward | last | back | previous):: user.go_back()
+# go (forward | next): key("alt-right")
+# go (backward | last | back | previous): key("alt-left")
