@@ -8,7 +8,7 @@ mod.tag("av")
 #refactor this later
 current_state = [False, False, False, False, False, False, False, False, False, False]
 last_state = [False, False, False, False, False, False, False, False, False, False]
-continuous_firing = [False, False, True, False, False, False, False, False, True, False]
+continuous_firing = [False, False, True, False, False, True, False, False, True, False]
 has_fired = [False, False, False, False, False, False, False, False, False, False]
 
 
@@ -190,7 +190,7 @@ class UserActions:
         pass
 
     def keypad_5_down():
-        pass
+        actions.user.mouse_scroll_up()
 
     def keypad_5_up():
         pass
@@ -208,7 +208,7 @@ class UserActions:
         pass
 
     def keypad_8_down():
-        actions.user.mouse_scroll_up()
+        pass
 
     def keypad_8_up():
         pass
