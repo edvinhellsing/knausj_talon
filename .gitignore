@@ -6,4 +6,5 @@ __pycache__
 #/settings
 /settings/system_paths.csv
 /settings/additional_words.csv
+/settings/websites.csv
 .vscode/settings.json
