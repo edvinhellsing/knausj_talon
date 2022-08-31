@@ -45,7 +45,7 @@ grab right: key(shift-down)
 (slack | lack) (strike | strikethrough): key(ctrl-shift-x)
 (slack | lack) snippet: key(ctrl-shift-enter)
 # Calls
-([toggle] mute | unmute): key(m)
+(slack | lack) ([toggle] mute | unmute): key(m)
 (slack | lack) ([toggle] video): key(v)
 (slack | lack) invite: key(a)
 # Miscellaneous
