@@ -1,5 +1,5 @@
 import time
-from talon import Module, Context, actions, cron
+from talon import Module, Context, actions, cron, scope
 
 mod = Module()
 mod.tag("av")
@@ -146,6 +146,8 @@ ctx = Context()
 #test actions
 #actions.user.play_pause()
 #actions.user.stop_scroll()
+#actions.app.notify("test notification")
+#actions.user.engine_mimic("talon sleep")
 
 @ctx.action_class("user")
 class UserActions:
@@ -157,13 +159,30 @@ class UserActions:
     #     actions.key("super-h")
     #     actions.user.engine_mimic("command mode")
 
+    # def keypad_0_down():
+    #     actions.speech.disable()
+    #     actions.key("super-h")
+
+    # def keypad_0_up():
+    #     actions.key("super-h")
+    #     actions.user.talon_mode()
+
     def keypad_0_down():
-        actions.speech.disable()
-        actions.key("super-h")
+        if "command" in scope.get("mode"):
+            actions.speech.disable()
+            actions.key("super-h")
+        elif "dictation" in scope.get("mode"):
+            actions.speech.disable()
+            actions.key("super-h")
+        elif "user.power_mode" in scope.get("mode"):
+            #actions.speech.disable() #For some reason I can't get this command to work in sequence with actions.user.talon_mode() in power mode. 
+            actions.key("super-h")
+        elif "sleep" in scope.get("mode"):
+            actions.key("super-h")
+            actions.user.talon_mode()
 
     def keypad_0_up():
-        actions.key("super-h")
-        actions.user.talon_mode()
+        pass
 
     def keypad_1_down():
         actions.key("super-h")

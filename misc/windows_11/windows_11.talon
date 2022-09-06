@@ -1,9 +1,11 @@
 windows search: key(super-s)
 
+(start | stop) dictation: key(super-h)
+
 windows (lang | language): key(alt-shift)
 #https://www.digitalcitizen.life/keyboard-language-shortcut/
-windows (lang | language) english: key(alt-shift-1)
-windows (lang | language) swedish: key(alt-shift-2)
+[windows] (lang | language) english: key(alt-shift-1)
+[windows] (lang | language) swedish: key(alt-shift-2)
 
 (emo | emoji) insert: key(super-.)
 
