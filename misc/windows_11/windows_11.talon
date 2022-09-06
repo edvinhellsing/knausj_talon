@@ -1,6 +1,12 @@
 windows search: key(super-s)
-windows change (lang | language): key(alt-shift)
+
+windows (lang | language): key(alt-shift)
+#https://www.digitalcitizen.life/keyboard-language-shortcut/
+windows (lang | language) english: key(alt-shift-1)
+windows (lang | language) swedish: key(alt-shift-2)
+
 emoji insert: key(super-.)
+
 windows keyboard: key(super-ctrl-o)
 #Check if there are better options of virtual keyboards than the Microsoft built in
 #https://www.makeuseof.com/windows-best-virtual-keyboards/

@@ -25,6 +25,7 @@ has_fired = [False]
 
 
 #fires continuously if continuous_firing is set to true and then calls call_up() once when the key is released
+"""
 def on_interval():
     for key in range(1):
         # Key is pressed down
@@ -44,7 +45,7 @@ def on_interval():
 
 
 cron.interval("10ms", on_interval)
-
+"""
 
 @mod.action_class
 class Actions:

@@ -27,6 +27,12 @@ with open(path / "emoji.csv") as f:
         k.strip(): v.strip() for k, v in [line.split(",", 1) for line in f]
     }
 
+mod.list("emoji_colon_wrapped", desc="Colon wrapped emojis, like :sun: :heart-eyes: :+1: and so on")
+with open(path / "emoji_colon_wrapped.csv") as f:
+    ctx.lists["user.emoji_colon_wrapped"] = {
+        k.strip(): v.strip() for k, v in [line.split(",", 1) for line in f]
+    }
+
 mod.list("kaomoji", desc="Eastern kaomoji (unicode)")
 with open(path / "kaomoji.csv") as f:
     ctx.lists["user.kaomoji"] = {

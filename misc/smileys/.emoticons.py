@@ -3,9 +3,9 @@ from talon import Module, Context
 mod = Module()
 ctx = Context()
 
-mod.list("emoticon", desc="List of emoticons")
+mod.list("emoticon2", desc="List of emoticons")
 
-ctx.lists["self.emoticon"] = {
+ctx.lists["self.emoticon2"] = {
     "smile": ":-)",
     "wink": ";-)",
     "sad": ":-(",

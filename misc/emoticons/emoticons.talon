@@ -1,1 +1,0 @@
-emoticon {user.emoticon}:   " {emoticon}"
