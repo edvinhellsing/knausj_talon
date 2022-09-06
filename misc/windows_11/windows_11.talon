@@ -5,7 +5,7 @@ windows (lang | language): key(alt-shift)
 windows (lang | language) english: key(alt-shift-1)
 windows (lang | language) swedish: key(alt-shift-2)
 
-emoji insert: key(super-.)
+(emo | emoji) insert: key(super-.)
 
 windows keyboard: key(super-ctrl-o)
 #Check if there are better options of virtual keyboards than the Microsoft built in
