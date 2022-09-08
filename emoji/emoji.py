@@ -8,9 +8,9 @@ mod.tag("emoji", desc="Emoji, ascii emoticons and kaomoji")
 
 # Context matching
 ctx = Context()
-ctx.matches = """
-tag: user.emoji
-"""
+# ctx.matches = """
+# tag: user.emoji
+# """
 
 # --- Define and implement lists ---
 path = Path(__file__).parents[0]

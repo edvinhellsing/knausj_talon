@@ -20,10 +20,8 @@ File extension,Name
 .js,dot java script
 .ts,dot TS
 .ts,dot type script
-.csv,dot csv
-.csv,totssv
-.csv,tot csv
 .csv,dot cassie
+.csv,dot comma separated list
 .txt,dot text
 .svg,dot svg
 .webp,dot webp

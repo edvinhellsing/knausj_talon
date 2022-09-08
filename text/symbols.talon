@@ -46,3 +46,7 @@ double quote it:
 (grave | back tick) it:
     text = edit.selected_text()
     user.paste('`{text}`')
+
+em phrase: "Mm "
+hem phrase: "Hmm "
+ah phrase: "Aa "

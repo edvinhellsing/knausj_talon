@@ -1,8 +1,8 @@
 tag: browser
 browser.host: mail.google.com
 -
-last [thread]: key(k)
-next [thread]: key(j)
+last (conversation | convo | thread): key(k)
+next (conversation | convo | thread): key(j)
 
 last message: key(p)
 next message: key(n)
