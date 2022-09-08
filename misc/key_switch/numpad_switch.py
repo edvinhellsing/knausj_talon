@@ -149,8 +149,6 @@ ctx = Context()
 #actions.app.notify("test notification")
 #actions.user.engine_mimic("talon sleep")
 
-#stack = []
-
 @ctx.action_class("user")
 class UserActions:
     # def keypad_0_down():
@@ -169,35 +167,7 @@ class UserActions:
     #     actions.key("super-h")
     #     actions.user.talon_mode()
 
-    #Using the stack to keep track of the previous state if using power mode
-    """
-    def keypad_0_down():
-        if "command" in scope.get("mode"):
-            actions.speech.disable()
-            actions.key("super-h")
-        elif "dictation" in scope.get("mode"):
-            actions.speech.disable()
-            actions.key("super-h")
-        elif "user.power_mode" in scope.get("mode"):
-            actions.mode.disable("user.power_mode")
-            actions.mode.enable("sleep") 
-            stack.append("user.power_mode")
-            actions.key("super-h")
-        elif "sleep" in scope.get("mode"):
-            if stack == []:
-                actions.key("super-h")
-                actions.user.talon_mode()
-            elif stack[-1] == "user.power_mode":
-                stack.pop()
-                actions.key("super-h")
-                actions.mode.disable("sleep")
-                actions.mode.enable("user.power_mode")
-            else:
-                actions.key("super-h")
-                actions.user.talon_mode()
-    """
-
-    #letting power mode continue to be enabled since it's notcovered in actions.speech.disable() and actions.user.talon_mode()
+    #letting power mode continue to be enabled since it's not covered in actions.speech.disable() and actions.user.talon_mode()
     """
     def keypad_0_down():
         if "command" in scope.get("mode"):
