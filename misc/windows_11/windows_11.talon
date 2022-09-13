@@ -15,3 +15,10 @@ windows keyboard: key(super-ctrl-o)
 #Maybe it's possible to launch the eye control keyboard with a keyboard shortcut
 #https://support.microsoft.com/en-us/windows/eye-control-basics-in-windows-97d68837-b993-8462-1f9d-3c957117b1cf
 #https://blakewatson.com/journal/writing-and-coding-with-the-macos-accessibility-keyboard/
+
+#The line below doesn't work for some reason. Instead of locking the computer an L is inserted.
+#[windows] computer lock: key(super-l)
+#The line below doesn't work for some reason. Instead of locking the computer it opens Windows search and enter an L.
+#[windows] computer lock: key(super l)
+
+windows computer sleep: user.put_computer_to_sleep()
