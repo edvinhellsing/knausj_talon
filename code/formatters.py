@@ -293,6 +293,8 @@ def unformat_text(text: str) -> str:
 ctx.lists["self.formatters"] = formatters_words.keys()
 ctx.lists["self.prose_formatter"] = {
     "say": "NOOP",
-    #"speak": "NOOP",
+    "speak": "NOOP",
     "sentence": "CAPITALIZE_FIRST_WORD",
 }
+
+#phrase should also work, and unlike word it can take many words; eg phrase "for a period of seven days". The difference between say and phrase is that phrase just emits a sequence of words, while say attempts to handle punctuation & capitalization

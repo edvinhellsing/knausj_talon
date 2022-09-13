@@ -3,14 +3,6 @@ File extension,Name
 .talon,dot talon
 .md,dot mark down
 .sh,dot shell
-.vim,dot vim
-.c,dot see
-.cs,dot see sharp
-.com,dot com
-.net,dot net
-.org,dot org
-.us,dot us
-.us,dot U S
 .exe,dot exe
 .bin,dot bin
 .bin,dot bend
@@ -28,3 +20,7 @@ File extension,Name
 .avif,dot avif
 .png,dot png
 .jpeg,dot jpeg
+.com,dot com
+.net,dot net
+.org,dot org
+.se,dot se

@@ -5,15 +5,15 @@ browser.host: docs.google.com
 
 normal text: key(ctrl-alt-0)
 
-heading one: key(ctrl-alt-1)
-heading two: key(ctrl-alt-2)
-heading three: key(ctrl-alt-3)
-heading four: key(ctrl-alt-4)
-heading five: key(ctrl-alt-5)
+[insert] heading one: key(ctrl-alt-1)
+[insert] heading two: key(ctrl-alt-2)
+[insert] heading three: key(ctrl-alt-3)
+[insert] heading four: key(ctrl-alt-4)
+[insert] heading five: key(ctrl-alt-5)
 
 [insert] (bullet | bulleted) list: key(ctrl-shift-8)
 [insert] (number | numbered) list: key(ctrl-shift-7)
-[insert] (bold | boldify): key(ctrl-b)
+[insert] (insert bold | boldify): key(ctrl-b)
 [insert] (italic | italify): key(ctrl-i)
 [insert] (underline | underlinify): key(ctrl-u)
 [insert] (strike | strikethrough | strikify): key(alt-shift-5)

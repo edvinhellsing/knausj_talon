@@ -3,12 +3,11 @@ tag: browser
 browser.host: www.youtube.com
 #title: /YouTube| - YouTube$/
 -
-speed down: key(shift-,)
-speed up: key(shift-.)
+playback speed (decrease | down): key(shift-,)
+playback speed (increase | up): key(shift-.)
 captions: key(c)
 mini player: key(i)
-theater mode: key(t)
-play | pause: key(k)
+(play | pause): key(k)
 mute: key(m)
 video last: key(shift-p)
 video next: key(shift-n)

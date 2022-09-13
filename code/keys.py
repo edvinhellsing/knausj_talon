@@ -147,6 +147,7 @@ punctuation_words = {
     "forward slash": "/",
     "question mark": "?",
     "exclamation mark": "!",
+    "exclamation": "!",
     #"exclamation point": "!",
     "asterisk": "*",
     "hash sign": "#",
@@ -165,7 +166,6 @@ symbol_key_words = {
     
     #"point": ".",
     "quote": "'",
-    "question": "?",
     "apostrophe": "'",
     "L square": "[",
     "left square": "[",
@@ -179,7 +179,9 @@ symbol_key_words = {
     "equals": "=",
     "plus": "+",
     "tilde": "~",
+    "question": "?",
     "bang": "!",
+    "exclamation": "!",
     "down score": "_",
     "underscore": "_",
     "paren": "(",
@@ -238,7 +240,7 @@ simple_keys = [
     "pagedown",
     "pageup",
     "space",
-    "tab",
+    #"tab",
 ]
 
 alternate_keys = {
@@ -252,6 +254,7 @@ alternate_keys = {
     "delete": "delete",
     "page up": "pageup",
     "page down": "pagedown",
+    "tabber": "tab",
 }
 # mac apparently doesn't have the menu key.
 if app.platform in ("windows", "linux"):
