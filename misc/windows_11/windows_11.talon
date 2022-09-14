@@ -1,13 +1,13 @@
 windows search: key(super-s)
 
-(start | stop) dictation: key(super-h)
+dictation (start | stop): key(super-h)
 
-windows (lang | language): key(alt-shift)
+keyboard (lang | language): key(alt-shift)
 #https://www.digitalcitizen.life/keyboard-language-shortcut/
-[windows] (lang | language) english: key(alt-shift-1)
-[windows] (lang | language) swedish: key(alt-shift-2)
+(lang | language) english: key(alt-shift-1)
+(lang | language) swedish: key(alt-shift-2)
 
-(emo | emoji) insert: key(super-.)
+insert (emo | emoji): key(super-.)
 
 windows keyboard: key(super-ctrl-o)
 #Check if there are better options of virtual keyboards than the Microsoft built in
@@ -22,3 +22,5 @@ windows keyboard: key(super-ctrl-o)
 #[windows] computer lock: key(super l)
 
 windows computer sleep: user.put_computer_to_sleep()
+
+talon relaunch: user.talon_relaunch()
