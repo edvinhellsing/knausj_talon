@@ -294,6 +294,7 @@ ctx.lists["self.formatters"] = formatters_words.keys()
 ctx.lists["self.prose_formatter"] = {
     "say": "NOOP",
     "speak": "NOOP",
+    #"post speak": "NOOP" + " ",
     "sentence": "CAPITALIZE_FIRST_WORD",
 }
 

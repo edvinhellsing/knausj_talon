@@ -5,3 +5,6 @@
 #Bitwarden (launch | activate): key(ctrl-shift-Y)
 [Bitwarden] (pass | password) fill: key(ctrl-shift-L)
 [Bitwarden] generate (pass | password): key(ctrl-shift-9)
+
+#test select start: user.select_continous(1)
+#test select end: user.select_continous(0)

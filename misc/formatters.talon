@@ -15,3 +15,14 @@ select it: user.select_last_phrase()
 before it: user.before_last_phrase()
 nope it | scratch it: user.clear_last_phrase()
 nope it was <user.formatters>: user.formatters_reformat_last(formatters)
+
+#pre (say | speak | sentence)
+pre {user.prose_formatter} <user.prose>$: 
+    key(space)
+    user.insert_formatted(prose, prose_formatter)
+
+#post (say | speak | sentence)
+post {user.prose_formatter} <user.prose>$: 
+    user.insert_formatted(prose, prose_formatter)
+    key(space)
+

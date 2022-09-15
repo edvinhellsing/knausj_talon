@@ -2,7 +2,6 @@ import time
 from talon import Module, Context, actions, cron
 
 mod = Module()
-mod.tag("av")
 
 current_state = [False]
 last_state = [False]
@@ -25,7 +24,7 @@ has_fired = [False]
 
 
 #fires continuously if continuous_firing is set to true and then calls call_up() once when the key is released
-"""
+
 def on_interval():
     for key in range(1):
         # Key is pressed down
@@ -45,7 +44,7 @@ def on_interval():
 
 
 cron.interval("10ms", on_interval)
-"""
+
 
 @mod.action_class
 class Actions:
@@ -74,12 +73,10 @@ ctx = Context()
 @ctx.action_class("user")
 class UserActions:
     def key_selected_down():
-        actions.speech.disable()
-        actions.key("super-h")
+        actions.core.repeat_command(1)
 
     def key_selected_up():
-        actions.key("super-h")
-        actions.user.talon_mode()
+        pass
 
 
 def call_down(key: int):
