@@ -2,8 +2,7 @@ from talon import Module, actions
 
 
 mod = Module()
-mod.tag("navigation")
-
+#mod.tag("navigation")
 
 @mod.action_class
 class Actions:

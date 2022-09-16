@@ -8,3 +8,6 @@
 
 #test select start: user.select_continous(1)
 #test select end: user.select_continous(0)
+
+website {user.website}: auto_insert(website)
+system path <user.system_path>: auto_insert(system_path)

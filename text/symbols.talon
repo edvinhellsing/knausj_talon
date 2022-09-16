@@ -47,6 +47,8 @@ double quote it:
     text = edit.selected_text()
     user.paste('`{text}`')
 
-em phrase: "Mm "
-hem phrase: "Hmm "
-ah phrase: "Aa "
+em phrase: "Mm, "
+hem phrase: "Hmm, "
+ah phrase: "Aa, "
+ha ha phrase: "Haha "
+ha ha ha phrase: "Hahaha "

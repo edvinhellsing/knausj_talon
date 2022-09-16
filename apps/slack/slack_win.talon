@@ -52,6 +52,8 @@ keyboard shortcuts: key(ctrl-/)
 toggle left sidebar: key(ctrl-shift-d)
 toggle right sidebar: key(ctrl-.)
 
+message send: key(enter)
+
 # DEPRECATED
 #(move | next) focus:
 #    app.notify("please use the voice command 'focus next' instead of 'next focus'")

@@ -54,6 +54,8 @@ grab right: key(shift-down)
 toggle left sidebar: key(ctrl-shift-d)
 toggle right sidebar: key(ctrl-.)
 
+message send: key(enter) 
+
 # DEPRECATED
 #(move | next) focus:
 #    app.notify("please use the voice command 'focus next' instead of 'next focus'")
@@ -70,3 +72,4 @@ toggle right sidebar: key(ctrl-.)
 #(previous | last) (element | bit):
 #    app.notify("please use the voice command 'element last' instead of 'last element'")
 #    key(shift-tab)
+#

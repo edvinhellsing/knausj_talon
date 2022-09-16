@@ -26,6 +26,7 @@ report spam: key(!)
 reply: key(r)
 reply all: key(a)
 (email | message) forward: key(f)
+(email | message) send: key(ctrl-enter)
 (undo | undo it | undo send): key(z)
 
 search: key(/)
