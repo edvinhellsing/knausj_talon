@@ -1,9 +1,16 @@
 from talon import Context, Module, actions, app
 
-default_alphabet = "air bat cap drum each fine gust harp sit jury crunch look made near odd pit quench red sun trap urge vest whale plex yank zip".split(
+#near
+#kid
+#eel elk eagle
+#onyx adder oesten
+#spun urge red
+#risk
+#pink
+default_alphabet = "air bat cap drum each fine gust harp ice judge crunch look made net odd perk quench ram sun trap urn vest whale x yank zip onyx elk eagle".split(
     " "
 )
-letters_string = "abcdefghijklmnopqrstuvwxyz"
+letters_string = "abcdefghijklmnopqrstuvwxyzåäö"
 
 default_digits = "zero one two three four five six seven eight nine".split(" ")
 numbers = [str(i) for i in range(10)]
@@ -125,13 +132,14 @@ ctx.lists["self.letter"] = alphabet
 # `punctuation_words` is for words you want available BOTH in dictation and as key names in command mode.
 # `symbol_key_words` is for key names that should be available in command mode, but NOT during dictation.
 punctuation_words = {
-    # TODO: I'm not sure why we need these, I think it has something to do with
-    # Dragon. Possibly it has been fixed by later improvements to talon? -rntz
-    "`": "`",
-    ",": ",",  # <== these things
+    "semistack": ";",
+    "stack": ":",
+
     "back tick": "`",
     "grave": "`",
     "comma": ",",
+    "coma": ",",
+    "drip": ",",
     "period": ".",
     "full stop": ".",
     "semicolon": ";",
@@ -139,7 +147,8 @@ punctuation_words = {
     "forward slash": "/",
     "question mark": "?",
     "exclamation mark": "!",
-    "exclamation point": "!",
+    "exclamation": "!",
+    #"exclamation point": "!",
     "asterisk": "*",
     "hash sign": "#",
     "number sign": "#",
@@ -152,10 +161,11 @@ punctuation_words = {
     "pound sign": "£",
 }
 symbol_key_words = {
+    "void": " ",
     "dot": ".",
-    "point": ".",
+    
+    #"point": ".",
     "quote": "'",
-    "question": "?",
     "apostrophe": "'",
     "L square": "[",
     "left square": "[",
@@ -169,7 +179,9 @@ symbol_key_words = {
     "equals": "=",
     "plus": "+",
     "tilde": "~",
+    "question": "?",
     "bang": "!",
+    "exclamation": "!",
     "down score": "_",
     "underscore": "_",
     "paren": "(",
@@ -177,16 +189,16 @@ symbol_key_words = {
     "left paren": "(",
     "R paren": ")",
     "right paren": ")",
-    "brace": "{",
-    "left brace": "{",
-    "brack": "{",
-    "bracket": "{",
-    "left bracket": "{",
-    "r brace": "}",
-    "right brace": "}",
-    "r brack": "}",
-    "r bracket": "}",
-    "right bracket": "}",
+    "curly": "{",
+    "left curly": "{",
+    #"brack": "{",
+    #"bracket": "{",
+    #"left bracket": "{",
+    "r curly": "}",
+    "right curly": "}",
+    #"r brack": "}",
+    #"r bracket": "}",
+    #"right bracket": "}",
     "angle": "<",
     "left angle": "<",
     "less than": "<",
@@ -194,7 +206,7 @@ symbol_key_words = {
     "R angle": ">",
     "right angle": ">",
     "greater than": ">",
-    "star": "*",
+    #"star": "*",
     "hash": "#",
     "percent": "%",
     "caret": "^",
@@ -228,16 +240,21 @@ simple_keys = [
     "pagedown",
     "pageup",
     "space",
-    "tab",
+    #"tab",
 ]
 
 alternate_keys = {
+    "slap": "enter",
     "wipe": "backspace",
-    "delete": "backspace",
+    "clear": "backspace",
+    #"chuck": "backspace",
+    #"delete": "backspace",
     #'junk': 'backspace',
-    "forward delete": "delete",
+    #"forward delete": "delete",
+    "delete": "delete",
     "page up": "pageup",
     "page down": "pagedown",
+    "tabber": "tab",
 }
 # mac apparently doesn't have the menu key.
 if app.platform in ("windows", "linux"):

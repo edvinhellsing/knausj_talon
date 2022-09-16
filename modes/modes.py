@@ -1,4 +1,4 @@
-from talon import Module, actions, app, speech_system
+from talon import Module, actions, app, speech_system, scope
 
 mod = Module()
 
@@ -20,6 +20,9 @@ class Actions:
     def talon_mode():
         """For windows and Mac with Dragon, enables Talon commands and Dragon's command mode."""
         actions.speech.enable()
+
+        # if "user.power_mode" in scope.get("mode"):
+        #     actions.user.engine_mimic("power mode")
 
         engine = speech_system.engine.name
         # app.notify(engine)

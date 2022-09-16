@@ -199,7 +199,11 @@ def update_running_list():
     # print(str(running_application_dict))
     # todo: should the overrides remove the other spoken forms for an application?
     for override in overrides:
+        #actions.app.notify("1")
+        #print("1")
         if overrides[override] in running_application_dict:
+            #actions.app.notify("2")
+            #print("2")
             running[override] = overrides[override]
 
     lists = {

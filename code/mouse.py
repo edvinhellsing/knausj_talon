@@ -99,6 +99,14 @@ def gui_wheel(gui: imgui.GUI):
         actions.user.mouse_scroll_stop()
 
 
+@imgui.open(x=700, y=0)
+def gui_drag(gui: imgui.GUI):
+    gui.text(f"Drag mode:")
+    gui.line()
+    if gui.button("End Drag [stop dragging]"):
+        actions.user.mouse_drag_end()
+
+
 @mod.action_class
 class Actions:
     def mouse_show_cursor():
@@ -111,8 +119,9 @@ class Actions:
 
     def mouse_wake():
         """Enable control mouse, zoom mouse, and disables cursor"""
-        eye_zoom_mouse.toggle_zoom_mouse(True)
-        # eye_mouse.control_mouse.enable()
+        #eye_zoom_mouse.toggle_zoom_mouse(True)
+        """Enable control mouse"""
+        eye_mouse.control_mouse.enable()
         if setting_mouse_wake_hides_cursor.get() >= 1:
             show_cursor_helper(False)
 
@@ -134,6 +143,7 @@ class Actions:
     def mouse_toggle_zoom_mouse():
         """Toggles zoom mouse"""
         eye_zoom_mouse.toggle_zoom_mouse(not eye_zoom_mouse.zoom_mouse.enabled)
+        #noise.unregister("pop", eye_zoom_mouse.zoom_mouse.on_pop)
 
     def mouse_cancel_zoom_mouse():
         """Cancel zoom mouse if pending"""
@@ -155,12 +165,14 @@ class Actions:
 
         # Start drag
         ctrl.mouse_click(button=button, down=True)
+        gui_drag.show()
 
     def mouse_drag_end():
         """Releases any held mouse buttons"""
         buttons_held_down = list(ctrl.mouse_buttons_down())
         for button in buttons_held_down:
             ctrl.mouse_click(button=button, up=True)
+        gui_drag.hide()
 
     def mouse_sleep():
         """Disables control mouse, zoom mouse, and re-enables cursor"""
@@ -281,6 +293,8 @@ def show_cursor_helper(show):
 def on_pop(active):
     if setting_mouse_enable_pop_stops_scroll.get() >= 1 and (gaze_job or scroll_job):
         stop_scroll()
+    if 0 in ctrl.mouse_buttons_down():
+        actions.user.mouse_drag_end()
     elif (
         not eye_zoom_mouse.zoom_mouse.enabled
         and eye_mouse.mouse.attached_tracker is not None
@@ -289,6 +303,7 @@ def on_pop(active):
             ctrl.mouse_click(button=0, hold=16000)
 
 
+#"pop" or "hiss"
 noise.register("pop", on_pop)
 
 

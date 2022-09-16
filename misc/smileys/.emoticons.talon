@@ -1,0 +1,1 @@
+emoticon two {user.emoticon2}: "{emoticon2}"

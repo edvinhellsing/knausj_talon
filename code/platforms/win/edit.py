@@ -12,9 +12,11 @@ os: windows
 class EditActions:
     def copy():
         actions.key("ctrl-c")
+        actions.user.clipboard_manager_update()
 
     def cut():
         actions.key("ctrl-x")
+        actions.user.clipboard_manager_update()
 
     def delete():
         actions.key("backspace")
@@ -99,6 +101,9 @@ class EditActions:
         actions.key("f3")
         # action(edit.find_previous):
 
+    def find_previous():
+        actions.key("shift-f3")
+
     def indent_less():
         actions.key("home delete")
 
@@ -138,7 +143,9 @@ class EditActions:
 
     def paste():
         actions.key("ctrl-v")
-        # action(paste_match_style):
+
+    def paste_match_style():
+        actions.key("ctrl-shift-v")
 
     def print():
         actions.key("ctrl-p")

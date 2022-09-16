@@ -8,9 +8,9 @@ mod.tag("emoji", desc="Emoji, ascii emoticons and kaomoji")
 
 # Context matching
 ctx = Context()
-ctx.matches = """
-tag: user.emoji
-"""
+# ctx.matches = """
+# tag: user.emoji
+# """
 
 # --- Define and implement lists ---
 path = Path(__file__).parents[0]
@@ -24,6 +24,12 @@ with open(path / "emoticon.csv") as f:
 mod.list("emoji", desc="Emoji (unicode)")
 with open(path / "emoji.csv") as f:
     ctx.lists["user.emoji"] = {
+        k.strip(): v.strip() for k, v in [line.split(",", 1) for line in f]
+    }
+
+mod.list("emoji_colon_wrapped", desc="Colon wrapped emojis, like :sun: :heart-eyes: :+1: and so on")
+with open(path / "emoji_colon_wrapped.csv") as f:
+    ctx.lists["user.emoji_colon_wrapped"] = {
         k.strip(): v.strip() for k, v in [line.split(",", 1) for line in f]
     }
 

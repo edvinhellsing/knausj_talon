@@ -1,5 +1,8 @@
 -
 settings():
+    # Minimum silence time (in seconds) before speech is cut off, default is 0.3
+    speech.timeout = 0.5
+
     # Adjust the scale of the imgui to my liking
     imgui.scale = 1.3
 
@@ -28,7 +31,7 @@ settings():
     user.mouse_wake_hides_cursor = 0
 
     # The amount to scroll up/down (equivalent to mouse wheel on Windows by default)
-    user.mouse_wheel_down_amount = 120
+    user.mouse_wheel_down_amount = 240
 
     # The amount to scroll left/right
     user.mouse_wheel_horizontal_amount = 40
