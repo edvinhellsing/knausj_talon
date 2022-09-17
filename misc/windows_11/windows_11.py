@@ -15,6 +15,9 @@ class Actions:
     def talon_relaunch():
         """Quit and relaunch the Talon app"""
 
+    def start_stop_dictation():
+        """Start dictation on both Windows and macOS"""
+
 
 ctx=Context()
 
@@ -50,3 +53,11 @@ class UserActions:
         elif app.platform == "windows":
             os.startfile(talon_app.exe)
             talon_app.quit()    
+
+    def start_stop_dictation():
+        """Start dictation on both Windows and macOS"""
+        if app.platform == "mac":
+            actions.key("ctrl")
+            actions.key("ctrl")
+        elif app.platform == "windows":
+            actions.key("super-h")

@@ -1,6 +1,7 @@
 windows search: key(super-s)
 
-dictation (start | stop): key(super-h)
+#(start | stop) dictation: key(super-h)
+(start | stop) dictation: user.start_stop_dictation()
 
 keyboard (lang | language): key(alt-shift)
 #https://www.digitalcitizen.life/keyboard-language-shortcut/

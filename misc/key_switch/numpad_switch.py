@@ -188,17 +188,17 @@ class UserActions:
         if "command" in scope.get("mode"):
             actions.speech.toggle()
             actions.user.mouse_sleep()
-            actions.key("super-h")
+            actions.user.start_stop_dictation()
         elif "dictation" in scope.get("mode"):
             actions.speech.toggle()
             actions.user.mouse_sleep()
-            actions.key("super-h")
+            actions.user.start_stop_dictation()
         elif "user.power_mode" in scope.get("mode"):
             actions.speech.toggle()
             actions.user.mouse_sleep()
-            actions.key("super-h")
+            actions.user.start_stop_dictation()
         elif "sleep" in scope.get("mode"):
-            actions.key("super-h")
+            actions.user.start_stop_dictation()
             actions.speech.toggle()
             actions.user.mouse_wake()
 
@@ -206,7 +206,7 @@ class UserActions:
         pass
 
     def keypad_1_down():
-        actions.key("super-h")
+        actions.user.start_stop_dictation()
 
     def keypad_1_up():
         pass
