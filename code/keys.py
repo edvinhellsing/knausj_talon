@@ -134,12 +134,13 @@ ctx.lists["self.letter"] = alphabet
 punctuation_words = {
     #"semistack": ";",
     #"stack": ":",
+    "drip": ",",
 
     "back tick": "`",
     "grave": "`",
     "comma": ",",
+    # Workaround for issue with conformer b-series; see #946
     "coma": ",",
-    "drip": ",",
     "period": ".",
     "full stop": ".",
     "semicolon": ";",

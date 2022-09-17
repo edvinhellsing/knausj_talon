@@ -58,6 +58,7 @@ class UserActions:
         """Start dictation on both Windows and macOS"""
         if app.platform == "mac":
             actions.key("ctrl")
+            actions.sleep("50ms")
             actions.key("ctrl")
         elif app.platform == "windows":
             actions.key("super-h")

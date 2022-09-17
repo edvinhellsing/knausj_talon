@@ -1,7 +1,6 @@
 double dash: "--"
 triple quote: "'''"
-(triple grave | triple back tick | gravy):
-    insert("```")
+(triple grave | triple back tick | gravy): insert("```")
 (dot dot | dotdot): ".."
 ellipses: "..."
 (comma and | spamma): ", "
@@ -12,7 +11,7 @@ dub arrow: "=>"
 carriage return: "\\r"
 line feed: "\\r\\n"
 empty dubstring: user.insert_between('"', '"')
-empty escaped (dubstring|dub quotes): user.insert_between('\\"', '\\"')
+empty escaped (dubstring | dub quotes): user.insert_between('\\"', '\\"')
 empty string: user.insert_between("'", "'")
 empty escaped string: user.insert_between("\\'", "\\'")
 (inside parens | args): user.insert_between("(", ")")
@@ -46,9 +45,3 @@ double quote it:
 (grave | back tick) it:
     text = edit.selected_text()
     user.paste('`{text}`')
-
-em phrase: "Mm, "
-hem phrase: "Hmm, "
-ah phrase: "Aa, "
-ha ha phrase: "Haha "
-ha ha ha phrase: "Hahaha "

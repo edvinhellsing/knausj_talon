@@ -11,3 +11,10 @@
 
 website {user.website}: auto_insert(website)
 system path <user.system_path>: auto_insert(system_path)
+
+em phrase: "Mm, "
+hem phrase: "Hmm, "
+ah phrase: "Aa, "
+aha phrase: "Aha, "
+ha ha phrase: "Haha "
+ha ha ha phrase: "Hahaha "

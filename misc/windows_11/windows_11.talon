@@ -1,6 +1,5 @@
 windows search: key(super-s)
 
-#(start | stop) dictation: key(super-h)
 (start | stop) dictation: user.start_stop_dictation()
 
 keyboard (lang | language): key(alt-shift)
