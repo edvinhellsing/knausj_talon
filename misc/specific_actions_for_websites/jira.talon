@@ -10,7 +10,7 @@ browser.host: zutobiteam.atlassian.net
 (issue | ticket) assign to me: key(i)
 (issue | ticket) watch: key(w)
 (issue | ticket) comment: key(m)
-send: key(ctrl-enter)
+comment send: key(ctrl-enter)
 
 search: key(/)
 
