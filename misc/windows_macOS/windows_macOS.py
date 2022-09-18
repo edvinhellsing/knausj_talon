@@ -1,4 +1,4 @@
-from talon import Module, actions, Context
+from talon import Module, actions, Context, scope
 
 #Below is for the talon_relaunch()
 from talon import ui, app
@@ -25,18 +25,22 @@ ctx=Context()
 class UserActions:
     def put_computer_to_sleep():
         """Puts computer into sleep mode"""
-        actions.key("super-x")
-        actions.sleep("200ms")
-        actions.key("u")
-        actions.sleep("200ms")
-        actions.key("s")
+        if app.platform == "windows":
+            actions.key("super-x")
+            actions.sleep("200ms")
+            actions.key("u")
+            actions.sleep("200ms")
+            actions.key("s")
 
     # From here:
     # https://github.com/nriley/knausj_talon/blob/ed7b1c1e/code/talon_helpers.py#L161
     def talon_relaunch():
         """Quit and relaunch the Talon app"""
         talon_app = ui.apps(pid=os.getpid())[0]
-        if app.platform == "mac":
+        if app.platform == "windows":
+            os.startfile(talon_app.exe)
+            talon_app.quit()  
+        elif app.platform == "mac":
             from shlex import quote
             from subprocess import Popen
 
@@ -49,16 +53,14 @@ class UserActions:
                 ],
                 start_new_session=True,
             )
-            talon_app.quit()
-        elif app.platform == "windows":
-            os.startfile(talon_app.exe)
-            talon_app.quit()    
+            talon_app.quit()  
 
     def start_stop_dictation():
         """Start dictation on both Windows and macOS"""
-        if app.platform == "mac":
+        actions.speech.toggle()
+        if app.platform == "windows":
+            actions.key("super-h")
+        elif app.platform == "mac":
             actions.key("ctrl")
             actions.sleep("50ms")
             actions.key("ctrl")
-        elif app.platform == "windows":
-            actions.key("super-h")

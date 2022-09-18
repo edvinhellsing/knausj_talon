@@ -183,23 +183,18 @@ class UserActions:
             actions.user.talon_mode()
     """
 
-    #Using actions.speech.toggle() rather than actions.speech.disable(). This makes the usage of the stack for power mode unnecessary 
     def keypad_0_down():
         if "command" in scope.get("mode"):
-            actions.speech.toggle()
             actions.user.mouse_sleep()
             actions.user.start_stop_dictation()
         elif "dictation" in scope.get("mode"):
-            actions.speech.toggle()
             actions.user.mouse_sleep()
             actions.user.start_stop_dictation()
         elif "user.power_mode" in scope.get("mode"):
-            actions.speech.toggle()
             actions.user.mouse_sleep()
             actions.user.start_stop_dictation()
         elif "sleep" in scope.get("mode"):
             actions.user.start_stop_dictation()
-            actions.speech.toggle()
             actions.user.mouse_wake()
 
     def keypad_0_up():

@@ -118,10 +118,13 @@ class Actions:
         show_cursor_helper(False)
 
     def mouse_wake():
-        """Enable control mouse, zoom mouse, and disables cursor"""
+        """Enable zoom mouse"""
         #eye_zoom_mouse.toggle_zoom_mouse(True)
+        #actions.tracking.control_zoom_enabled()
         """Enable control mouse"""
         eye_mouse.control_mouse.enable()
+        #actions.tracking.control_enabled()
+        """Disables cursor"""
         if setting_mouse_wake_hides_cursor.get() >= 1:
             show_cursor_helper(False)
 
@@ -296,7 +299,8 @@ def on_pop(active):
     if 0 in ctrl.mouse_buttons_down():
         actions.user.mouse_drag_end()
     elif (
-        not eye_zoom_mouse.zoom_mouse.enabled
+        
+        not actions.tracking.control_zoom_enabled()
         and eye_mouse.mouse.attached_tracker is not None
     ):
         if setting_mouse_enable_pop_click.get() >= 1:
