@@ -35,12 +35,14 @@ woozy face, :woozy_face:
 eyes, :eyes:
 star struck, :star-struck:
 dancing, :dancer:
-man dancing, :man_dancing:
+man dancing, :man-dancing:
 santa, :santa:
 female santa, :mrs_claus:
+man running, :man-running:
 fire, :fire:
 sunny, :sunny:
-champagne glasses, :clicking_glasses:
+gust, :dash:
+champagne glasses, :clinking_glasses:
 champagne, :champagne:
 beer, :beer:
 rocket, :rocket:
@@ -49,6 +51,8 @@ airplane departure, :airplane_departure:
 hammer, :hammer:
 tada, :tada:
 balloon, :balloon:
+gift, :gift:
 checkmark, :white_check_mark:
 chart with upwards trend, :chart_with_upwards_trend:
 chart with downwards trend, :chart_with_downwards_trend:
+one hundred, :100:

@@ -15,6 +15,6 @@ system path <user.system_path>: auto_insert(system_path)
 em phrase: "Mm, "
 hem phrase: "Hmm, "
 ah phrase: "Aa, "
-aha phrase: "Aha, "
+I get it phrase: "Aha, "
 ha ha phrase: "Haha "
 ha ha ha phrase: "Hahaha "

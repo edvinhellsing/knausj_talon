@@ -33,6 +33,7 @@ class UserActions:
             actions.core.repeat_command(1)
             actions.sleep("150ms")
 
+    # Non working prototypes as of now
     def select_continous(run: int):
         """sdf"""
 
