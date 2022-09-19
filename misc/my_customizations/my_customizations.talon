@@ -4,7 +4,7 @@
 #https://bitwarden.com/help/keyboard-shortcuts/
 #Bitwarden (launch | activate): key(ctrl-shift-Y)
 [Bitwarden] (pass | password) fill: key(ctrl-shift-L)
-[Bitwarden] generate (pass | password): key(ctrl-shift-9)
+[Bitwarden] (pass | password) generate: key(ctrl-shift-9)
 
 #test select start: user.select_continous(1)
 #test select end: user.select_continous(0)
@@ -15,6 +15,6 @@ system path <user.system_path>: auto_insert(system_path)
 em phrase: "Mm, "
 hem phrase: "Hmm, "
 ah phrase: "Aa, "
-I get it phrase: "Aha, "
+(I get it | I understand) phrase: "Aha, "
 ha ha phrase: "Haha "
 ha ha ha phrase: "Hahaha "

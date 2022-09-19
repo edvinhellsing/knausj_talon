@@ -85,11 +85,11 @@ clear down:
 
 clear word: edit.delete_word()
 
-clear word left:
+(clear word left | cleft):
     edit.extend_word_left()
     edit.delete()
 
-clear word right:
+(clear word right | cright):
     edit.extend_word_right()
     edit.delete()
 

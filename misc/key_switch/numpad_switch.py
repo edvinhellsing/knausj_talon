@@ -245,7 +245,8 @@ class UserActions:
         pass
 
     def keypad_7_down():
-        pass
+        #The scroll lock key is connected to muting/unmuting the microphone in JWaldenback/talon_hud
+        actions.key("scroll_lock")
 
     def keypad_7_up():
         pass
@@ -357,5 +358,3 @@ def call_up(key: int):
         actions.user.keypad_8_up()
     elif key == 9:
         actions.user.keypad_9_up()
-
-   
