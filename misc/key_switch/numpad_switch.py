@@ -1,6 +1,4 @@
-import time
 from talon import Module, Context, actions, cron, scope
-from talon_plugins import eye_mouse
 
 mod = Module()
 
@@ -213,14 +211,7 @@ class UserActions:
         pass
 
     def keypad_7_down():
-        #The scroll lock key is connected to muting/unmuting the microphone in JWaldenback/talon_hud
-        actions.key("scroll_lock")
-        if eye_mouse.tracker is not None and eye_mouse.config.control_mouse:
-            actions.user.mouse_sleep()
-        elif eye_mouse.tracker is not None and not eye_mouse.config.control_mouse:
-            actions.user.mouse_wake()
-        else:
-            pass
+        actions.user.toggle_microphone()
 
     def keypad_7_up():
         pass

@@ -5,7 +5,6 @@
 
 #Otherwise, you should check out events.tail() in the repl to see what's happening behind the scenes for specific commands
 
-
 #https://bitwarden.com/help/keyboard-shortcuts/
 #Bitwarden (launch | activate): key(ctrl-shift-Y)
 [Bitwarden] (pass | password) fill: key(ctrl-shift-L)
@@ -23,3 +22,5 @@ ah phrase: "Aa, "
 (I get it | I understand) phrase: "Aha, "
 ha ha phrase: "Haha "
 ha ha ha phrase: "Hahaha "
+
+key(scroll_lock): user.toggle_microphone()

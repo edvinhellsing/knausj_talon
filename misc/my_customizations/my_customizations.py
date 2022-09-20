@@ -1,5 +1,7 @@
 from talon import Module, actions, Context, imgui
 
+from talon_plugins import eye_mouse
+
 
 @imgui.open(x=700, y=0)
 def gui_select(gui: imgui.GUI):
@@ -15,6 +17,9 @@ mod = Module()
 class Actions:
     def repeat_slowly(rep: int):
         """Repeats the command rep times with wait times in between each repetition"""
+
+    def toggle_microphone():
+        """Toggle the microphone on/off using talon_HUD actions (please note: talon_HUD must be installed in the talon user folder for this function to work)"""
 
     def select_continous(run: int):
         """sdf"""
@@ -32,6 +37,22 @@ class UserActions:
         for i in range(rep):
             actions.core.repeat_command(1)
             actions.sleep("150ms")
+
+    def toggle_microphone():
+        """Toggle the microphone on/off using talon_HUD actions (please note: talon_HUD must be installed in the talon user folder for this function to work)"""
+        current_microphone = actions.sound.active_microphone()
+        if current_microphone == "None":
+            #https://github.com/chaosparrot/talon_hud/blob/master/CUSTOMIZATION.md#log-messages
+            actions.user.hud_add_log('success', 'Microphone enabled')
+        else:
+            actions.user.hud_add_log('error', 'Microphone disabled')
+        
+        if eye_mouse.tracker is not None and eye_mouse.config.control_mouse:
+            actions.user.mouse_sleep()
+        elif eye_mouse.tracker is not None and not eye_mouse.config.control_mouse:
+            actions.user.mouse_wake()
+
+        actions.user.hud_toggle_microphone()
 
     # Non working prototypes as of now
     def select_continous(run: int):
