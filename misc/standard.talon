@@ -20,7 +20,8 @@ file save: edit.save()
 file save all: edit.save_all()
 (pad | padding): user.insert_between(" ", " ")
 #slap: edit.line_insert_down()
-new line: edit.line_insert_down()
-new paragraph: 
+new (line | row): edit.line_insert_down()
+(line | row) new: edit.line_insert_down()
+(new paragraph | paragraph new): 
   edit.line_insert_down() 
   edit.line_insert_down()

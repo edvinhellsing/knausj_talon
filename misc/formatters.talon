@@ -14,9 +14,10 @@ recent close: user.phrase_history_hide()
 recent repeat <number_small>:
     user.insert_with_history(user.get_recent_phrase(number_small))
 recent copy <number_small>: clip.set_text(user.get_recent_phrase(number_small))
+# Maybe the commands below should use that instead of it after all
 select it: user.select_last_phrase()
 before it: user.before_last_phrase()
-nope it | scratch it: user.clear_last_phrase()
+(nope | scratch) it: user.clear_last_phrase()
 nope it was <user.formatters>: user.formatters_reformat_last(formatters)
 
 #pre (say | speak | sentence)

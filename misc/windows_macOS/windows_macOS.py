@@ -18,6 +18,9 @@ class Actions:
     def start_stop_dictation():
         """Start dictation on both Windows and macOS"""
 
+    def start_stop_dictation_voice_command():
+        """Start dictation on both Windows and macOS using a voice command"""
+
 
 ctx=Context()
 
@@ -32,7 +35,7 @@ class UserActions:
             actions.sleep("200ms")
             actions.key("s")
 
-    # From here:
+    # From this repo:
     # https://github.com/nriley/knausj_talon/blob/ed7b1c1e/code/talon_helpers.py#L161
     def talon_relaunch():
         """Quit and relaunch the Talon app"""
@@ -64,3 +67,20 @@ class UserActions:
             actions.key("ctrl")
             actions.sleep("50ms")
             actions.key("ctrl")
+
+    def start_stop_dictation_voice_command():
+        """Start dictation on both Windows and macOS using a voice command"""
+        if "command" in scope.get("mode") or "user.power_mode" in scope.get("mode"):
+            actions.speech.toggle()
+            actions.user.mouse_sleep()
+            if app.platform == "windows":
+                actions.key("super-h")
+            elif app.platform == "mac":
+                actions.key("ctrl")
+                actions.sleep("50ms")
+                actions.key("ctrl")
+        elif "sleep" in scope.get("mode"):
+            #add some sleep time to make sure talon doesn't pick up any speech
+            actions.sleep("500ms")
+            actions.speech.toggle()
+            actions.user.mouse_wake()

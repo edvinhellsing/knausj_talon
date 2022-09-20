@@ -15,8 +15,18 @@ mode: sleep
     mode.disable('dictation')
     mode.enable('sleep')  
 
-(start | stop) dictation: 
-    user.start_stop_dictation()
+start listening: 
+    #set keyboard to English
+    key(alt-shift-1)
+    user.start_stop_dictation_voice_command()
 
+(burial listener | burial alister): 
+    #set keyboard to Swedish
+    key(alt-shift-2)
+    user.start_stop_dictation_voice_command()
+    
+stop listening: 
+    user.start_stop_dictation_voice_command()
 
-
+(slut Alister | slut alisa | slut dart listener):
+    user.start_stop_dictation_voice_command()

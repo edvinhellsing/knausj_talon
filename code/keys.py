@@ -132,10 +132,6 @@ ctx.lists["self.letter"] = alphabet
 # `punctuation_words` is for words you want available BOTH in dictation and as key names in command mode.
 # `symbol_key_words` is for key names that should be available in command mode, but NOT during dictation.
 punctuation_words = {
-    #"semistack": ";",
-    #"stack": ":",
-    "drip": ",",
-
     "back tick": "`",
     "grave": "`",
     "comma": ",",
@@ -152,11 +148,12 @@ punctuation_words = {
     #"exclamation point": "!",
     "asterisk": "*",
     "hash sign": "#",
-    "number sign": "#",
+    #"number sign": "#",
     "percent sign": "%",
     "at sign": "@",
     "and sign": "&",
     "ampersand": "&",
+    "amper sign": "&",
     # Currencies
     "dollar sign": "$",
     "pound sign": "£",
@@ -164,6 +161,9 @@ punctuation_words = {
 symbol_key_words = {
     "void": " ",
     "dot": ".",
+    #"semistack": ";",
+    #"stack": ":",
+    "drip": ",",
     
     #"point": ".",
     "quote": "'",
@@ -202,22 +202,23 @@ symbol_key_words = {
     #"right bracket": "}",
     "angle": "<",
     "left angle": "<",
-    "less than": "<",
+    #"less than": "<",
     "rangle": ">",
     "R angle": ">",
     "right angle": ">",
-    "greater than": ">",
+    #"greater than": ">",
     #"star": "*",
     "hash": "#",
     "percent": "%",
-    "caret": "^",
-    "amper": "&",
+    #"caret": "^",
+    "caret sign": "^",
+    #"amper": "&",
     "pipe": "|",
     "dubquote": '"',
     "double quote": '"',
     # Currencies
-    "dollar": "$",
-    "pound": "£",
+    #"dollar": "$",
+    #"pound": "£",
 }
 
 # make punctuation words also included in {user.symbol_keys}

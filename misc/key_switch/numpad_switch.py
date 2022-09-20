@@ -1,8 +1,8 @@
 import time
 from talon import Module, Context, actions, cron, scope
+from talon_plugins import eye_mouse
 
 mod = Module()
-mod.tag("av")
 
 #10 numpad keys
 #refactor this later
@@ -151,38 +151,6 @@ ctx = Context()
 
 @ctx.action_class("user")
 class UserActions:
-    # def keypad_0_down():
-    #     actions.user.engine_mimic("dictation mode")
-    #     actions.key("super-h")
-
-    # def keypad_0_up():
-    #     actions.key("super-h")
-    #     actions.user.engine_mimic("command mode")
-
-    # def keypad_0_down():
-    #     actions.speech.disable()
-    #     actions.key("super-h")
-
-    # def keypad_0_up():
-    #     actions.key("super-h")
-    #     actions.user.talon_mode()
-
-    #letting power mode continue to be enabled since it's not covered in actions.speech.disable() and actions.user.talon_mode()
-    """
-    def keypad_0_down():
-        if "command" in scope.get("mode"):
-            actions.speech.disable()
-            actions.key("super-h")
-        elif "dictation" in scope.get("mode"):
-            actions.speech.disable()
-            actions.key("super-h")
-        elif "user.power_mode" in scope.get("mode"):
-            actions.key("super-h")
-        elif "sleep" in scope.get("mode"):
-            actions.key("super-h")
-            actions.user.talon_mode()
-    """
-
     def keypad_0_down():
         if "command" in scope.get("mode"):
             actions.user.mouse_sleep()
@@ -247,6 +215,12 @@ class UserActions:
     def keypad_7_down():
         #The scroll lock key is connected to muting/unmuting the microphone in JWaldenback/talon_hud
         actions.key("scroll_lock")
+        if eye_mouse.tracker is not None and eye_mouse.config.control_mouse:
+            actions.user.mouse_sleep()
+        elif eye_mouse.tracker is not None and not eye_mouse.config.control_mouse:
+            actions.user.mouse_wake()
+        else:
+            pass
 
     def keypad_7_up():
         pass
@@ -285,7 +259,6 @@ ctx_zoom = Context()
 ctx_zoom.matches = r"""
 tag: user.zoom_mouse
 """
-
 
 @ctx_zoom.action_class("user")
 class ZoomActions:
