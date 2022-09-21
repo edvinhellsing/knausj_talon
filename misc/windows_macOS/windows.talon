@@ -7,18 +7,18 @@ windows search: key(super-s)
 
 start listening: 
     #set keyboard to English
-    key(alt-shift-1)
+    key(alt-shift-2)
     user.start_stop_dictation_voice_command()
 
 (burial listener | burial alister): 
     #set keyboard to Swedish
-    key(alt-shift-2)
+    key(alt-shift-1)
     user.start_stop_dictation_voice_command()
     
 (lang | language) change: key(alt-shift)
 #https://www.digitalcitizen.life/keyboard-language-shortcut/
-(lang | language) english: key(alt-shift-1)
-(lang | language) swedish: key(alt-shift-2)
+(lang | language) english: key(alt-shift-2)
+(lang | language) swedish: key(alt-shift-1)
 
 insert (emo | emoji): key(super-.)
 
