@@ -6,7 +6,7 @@ address copy | url copy | copy address | copy url:
     sleep(50ms)
     edit.copy()
 #go home: browser.go_home()
-go (forward | next): browser.go_forward()
+go (forward | next | forth): browser.go_forward()
 go (backward | last | back | previous): browser.go_back()
 
 go to {user.website}: browser.go(website)

@@ -36,7 +36,7 @@ class UserActions:
         """Repeats the command rep times with wait times in between each repetition"""
         for i in range(rep):
             actions.core.repeat_command(1)
-            actions.sleep("150ms")
+            actions.sleep("200ms")
 
     def toggle_microphone():
         """Toggle the microphone on/off using talon_HUD actions (please note: talon_HUD must be installed in the talon user folder for this function to work)"""
