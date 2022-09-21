@@ -7,7 +7,8 @@ from talon import Context, Module, actions, app
 #spun urge red
 #risk
 #pink
-#each
+#e - each
+
 default_alphabet = "air bat cap drum eat fine gust harp ice judge crunch look made net odd perk quench ram sun trap urn vest whale x yank zip onyx elk eagle".split(
     " "
 )
