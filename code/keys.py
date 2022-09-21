@@ -139,6 +139,7 @@ punctuation_words = {
     "comma": ",",
     # Workaround for issue with conformer b-series; see #946
     "coma": ",",
+    "drip": ",",
     "period": ".",
     "full stop": ".",
     "semicolon": ";",
@@ -166,7 +167,6 @@ symbol_key_words = {
     #"semistack": ";",
     #"stack": ":",
     "drip": ",",
-    
     #"point": ".",
     "quote": "'",
     "apostrophe": "'",

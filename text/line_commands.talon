@@ -35,10 +35,15 @@ cut [line] <number> until <number>:
 (paste | replace) <number> until <number>:
     user.select_range(number_1, number_2)
     edit.paste()
+<<<<<<< HEAD
 (select | cell | sell) [line] <number>: 
     user.select_range(number, number)
 (select | cell | sell) <number> until <number>: 
     user.select_range(number_1, number_2)
+=======
+(select | cell | sell) [line] <number>: user.select_range(number, number)
+(select | cell | sell) <number> until <number>: user.select_range(number_1, number_2)
+>>>>>>> 6a585773a64eccc2854b217d887d2e672515dd5c
 tab it: edit.indent_more()
 tab [line] <number>:
     edit.jump_line(number)
