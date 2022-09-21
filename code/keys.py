@@ -8,7 +8,6 @@ from talon import Context, Module, actions, app
 #risk
 #pink
 #each
-
 default_alphabet = "air bat cap drum eat fine gust harp ice judge crunch look made net odd perk quench ram sun trap urn vest whale x yank zip onyx elk eagle".split(
     " "
 )
@@ -139,7 +138,6 @@ punctuation_words = {
     "comma": ",",
     # Workaround for issue with conformer b-series; see #946
     "coma": ",",
-    "drip": ",",
     "period": ".",
     "full stop": ".",
     "semicolon": ";",
@@ -167,6 +165,7 @@ symbol_key_words = {
     #"semistack": ";",
     #"stack": ":",
     "drip": ",",
+    
     #"point": ".",
     "quote": "'",
     "apostrophe": "'",
