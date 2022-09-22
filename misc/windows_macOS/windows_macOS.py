@@ -60,7 +60,6 @@ class UserActions:
 
     def start_stop_dictation():
         """Start dictation on both Windows and macOS"""
-        actions.speech.toggle()
         if app.platform == "windows":
             actions.key("super-h")
         elif app.platform == "mac":
@@ -70,15 +69,15 @@ class UserActions:
 
     def start_stop_dictation_voice_command():
         """Start dictation on both Windows and macOS using a voice command"""
-        if "command" in scope.get("mode") or "user.power_mode" in scope.get("mode"):
+        if "command" in scope.get("mode"):
             actions.speech.toggle()
             actions.user.mouse_sleep()
-            if app.platform == "windows":
-                actions.key("super-h")
-            elif app.platform == "mac":
-                actions.key("ctrl")
-                actions.sleep("50ms")
-                actions.key("ctrl")
+            actions.user.start_stop_dictation()
+        elif "user.power_mode" in scope.get("mode"):
+            actions.speech.toggle()
+            #actions.mouse_sleep() doesn't work for power mode for some reason. The mouse won't wake when running mouse_wake()
+            #actions.user.mouse_sleep() 
+            actions.user.start_stop_dictation()
         elif "sleep" in scope.get("mode"):
             #add some sleep time to make sure talon doesn't pick up any speech
             actions.sleep("500ms")

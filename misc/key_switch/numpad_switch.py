@@ -152,15 +152,20 @@ class UserActions:
     def keypad_0_down():
         if "command" in scope.get("mode"):
             actions.user.mouse_sleep()
+            actions.speech.toggle()
             actions.user.start_stop_dictation()
         elif "dictation" in scope.get("mode"):
             actions.user.mouse_sleep()
+            actions.speech.toggle()
             actions.user.start_stop_dictation()
         elif "user.power_mode" in scope.get("mode"):
-            actions.user.mouse_sleep()
+            #actions.mouse_sleep() doesn't work for power mode for some reason. The mouse won't wake when running mouse_wake()
+            #actions.user.mouse_sleep() 
+            actions.speech.toggle()
             actions.user.start_stop_dictation()
         elif "sleep" in scope.get("mode"):
             actions.user.start_stop_dictation()
+            actions.speech.toggle()
             actions.user.mouse_wake()
 
     def keypad_0_up():

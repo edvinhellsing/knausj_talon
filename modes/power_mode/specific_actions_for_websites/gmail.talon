@@ -2,11 +2,11 @@ mode: user.power_mode
 tag: browser
 browser.host: mail.google.com
 -
-last (conversation | convo | thread): key(k)
-next (conversation | convo | thread): key(j)
+(conversation | convo | thread) last: key(k)
+(conversation | convo | thread) next: key(j)
 
-last message: key(p)
-next message: key(n)
+(email | message) last: key(p)
+(email | message) next: key(n)
 
 go to inbox: 
     key(g)
@@ -21,13 +21,15 @@ go to sent:
     key(g)
     key(t)
 
-flag: key(s)
+(email | message) flag: key(s)
 report spam: key(!)
-delete message: key(#)
+(email | message): key(#)
 reply: key(r)
 reply all: key(a)
-forward: key(f)
-(undo | undo send): key(z)
+(email | message) forward: key(f)
+(email | message) send: key(ctrl-enter)
+(undo | undo it | undo send): key(z)
+
 search: key(/)
 
 #keyboard shortcuts: key()

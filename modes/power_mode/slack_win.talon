@@ -9,52 +9,52 @@ tag(): user.emoji
 # Workspaces
 workspace <number>: key("ctrl-{number}")
 # Channel
-(slack | lack | like) [channel] info: key(ctrl-shift-i)
+#(slack | lack | like) [channel] info: key(ctrl-shift-i)
 # Navigation
 #focus (move | next): key(ctrl-`)
-(section | zone) [next]: key(f6)
+(section | zone) next: key(f6)
 (section | zone) (previous | last): key(shift-f6)
 (slack | lack | like) [direct] messages: key(ctrl-shift-k)
 (slack | lack | like) threads: key(ctrl-shift-t)
-(slack | lack | like) (history [next] | back | backward): key(alt-left)
-(slack | lack | like) forward: key(alt-right)
-element [next]: key(tab)
-element (previous | last): key(shift-tab)
-(slack | lack | like) (my stuff | activity): key(ctrl-shift-m)
+go (forward | next): key("alt-right")
+go (backward | last | back | previous): key("alt-left")
+element next: key(tab)
+element (last | previous): key(shift-tab)
+(slack | lack | like) (mentions | reactions | activity): key(ctrl-shift-m)
 (slack | lack | like) directory: key(ctrl-shift-e)
 (slack | lack | like) (starred [items] | stars): key(ctrl-shift-s)
 (slack | lack | like) unread [messages]: key(ctrl-shift-a)
+(slack | lack | like) channels: key(ctrl-shift-l)
 (slack | lack | like) search: key(ctrl-g)
 # Messaging
 go up: key(up)
 go down: key(down)
-go (forward | next): key("alt-right")
-go (backward | last | back | previous): key("alt-left")
 grab left: key(shift-up)
 grab right: key(shift-down)
 #add line: key(shift-enter)
 #"(slack | lack | like) (slap | slaw | slapper): [key(cmd-right) key(shift-enter")],
 (slack | lack | like) (react | reaction): key(ctrl-shift-\)
-(slack | lack | like) (insert command | commandify): key(ctrl-shift-c)
-(slack | lack | like) insert code: key(ctrl-alt-shift-c)
-(slack | lack | like) (bull | bullet | bulleted) [list]: key(ctrl-shift-8)
-(slack | lack | like) (number | numbered) [list]: key(ctrl-shift-7)
-(slack | lack | like) (quotes | quotation): key(ctrl-shift-9)
-(slack | lack | like) bold: key(ctrl-b)
-(slack | lack | like) (italic | italicize): key(ctrl-i)
-(slack | lack | like) (strike | strikethrough): key(ctrl-shift-x)
-(slack | lack | like) snippet: key(ctrl-shift-enter)
+[insert] (command | commandify): key(ctrl-shift-c)
+[insert] (code | codify): key(ctrl-alt-shift-c)
+[insert] (bullet | bulleted) list: key(ctrl-shift-8)
+[insert] (number | numbered) list: key(ctrl-shift-7)
+[insert] (quotes | quotation | quotify): key(ctrl-shift-9)
+[insert] (insert bold | boldify): key(ctrl-b)
+[insert] (italic | italify): key(ctrl-i)
+[insert] (strike | strikethrough | strikify): key(ctrl-shift-x)
+[insert] snippet: key(ctrl-shift-enter)
 # Calls
+start huddle: key(ctrl-shift-h)
 (slack | lack | like) ([toggle] mute | unmute): key(m)
 (slack | lack | like) ([toggle] video): key(v)
 (slack | lack | like) invite: key(a)
 # Miscellaneous
-(slack | lack | like) shortcuts: key(ctrl-/)
+keyboard shortcuts: key(ctrl-/)
 #emote <user.text>: "{text}"
 toggle left sidebar: key(ctrl-shift-d)
 toggle right sidebar: key(ctrl-.)
 
-message send: key(enter) 
+message send: key(enter)
 
 # DEPRECATED
 #(move | next) focus:
@@ -72,4 +72,3 @@ message send: key(enter)
 #(previous | last) (element | bit):
 #    app.notify("please use the voice command 'element last' instead of 'last element'")
 #    key(shift-tab)
-#

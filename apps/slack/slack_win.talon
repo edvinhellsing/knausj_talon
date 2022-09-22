@@ -43,6 +43,7 @@ grab right: key(shift-down)
 [insert] (strike | strikethrough | strikify): key(ctrl-shift-x)
 [insert] snippet: key(ctrl-shift-enter)
 # Calls
+start huddle: key(ctrl-shift-h)
 (slack | lack | like) ([toggle] mute | unmute): key(m)
 (slack | lack | like) ([toggle] video): key(v)
 (slack | lack | like) invite: key(a)
