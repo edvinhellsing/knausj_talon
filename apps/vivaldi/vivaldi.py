@@ -1,19 +1,19 @@
 from talon import Context, Module, actions, app
 
-ctx = Context()
 mod = Module()
+ctx = Context()
 
-mod.apps.brave = "app.name: Brave Browser"
-mod.apps.brave = """
-os: mac
-and app.bundle: com.brave.Browser
-"""
-mod.apps.brave = """
+mod.apps.brave = "app.name: Vivaldi"
+#mod.apps.vivaldi = """
+#os: mac
+#and app.bundle: com.vivaldi.Browser
+#"""
+mod.apps.vivaldi = """
 os: windows
-and app.exe: brave.exe
+and app.exe: vivaldi.exe
 """
 ctx.matches = r"""
-app: brave
+app: vivaldi
 """
 
 

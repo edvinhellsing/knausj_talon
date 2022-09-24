@@ -12,4 +12,6 @@ thrice$: core.repeat_command(2)
 
 again: core.repeat_command(1)
 
-repeat it <number_small> [times]: core.repeat_command(number_small)
+^repeat it <number_small> [times]: core.repeat_command(number_small)
+
+^repeat phrase <number_small> [times]: core.repeat_phrase(number_small)

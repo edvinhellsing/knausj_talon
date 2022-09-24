@@ -3,7 +3,7 @@ from talon import Context, actions
 ctx = Context()
 ctx.matches = r"""
 os: windows
-app: opera_browser
+app: vivaldi
 """
 ctx.tags = ["browser", "user.tabs"]
 
