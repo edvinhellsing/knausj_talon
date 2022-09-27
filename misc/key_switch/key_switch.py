@@ -48,6 +48,9 @@ cron.interval("10ms", on_interval)
 
 @mod.action_class
 class Actions:
+    def set_flag(value: int):
+        """sdf"""
+
     def key_down(key: int):
         """Key down event"""
         current_state[key] = True
@@ -62,18 +65,28 @@ class Actions:
     def key_selected_up():
         """sdf"""
 
+
 # Default implementation
 ctx = Context()
-
 
 #test actions
 #actions.user.play_pause()
 #actions.user.stop_scroll()
 
+flag = 1
 @ctx.action_class("user")
 class UserActions:
+
+    def set_flag(value: int):
+        """sdf"""
+        global flag 
+        flag = value
+
     def key_selected_down():
-        actions.core.repeat_command(1)
+        if flag:
+            actions.core.repeat_command(1)
+        else:
+            actions.core.repeat_phrase(1)
 
     def key_selected_up():
         pass

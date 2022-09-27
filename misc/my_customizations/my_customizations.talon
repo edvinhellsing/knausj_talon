@@ -26,8 +26,16 @@ ha ha ha phrase: "Hahaha "
 
 key(scroll_lock): user.toggle_microphone()
 
-focus explorer: key(ctrl-super-2)
-focus chrome: key(ctrl-super-3)
-focus edge: key(ctrl-super-5)
-focus notes: key(ctrl-super-6)
-focus (slack | lack | like): key(ctrl-super-7)
+focus outlook: user.open_specific_tab("chrome", "outlook.live.com")
+focus google calendar: user.open_specific_tab("chrome", "calendar.google.com")
+#focus notes: user.open_specific_tab("chrome", "iCloud-anteckningar")
+
+focus gmail: user.open_specific_tab("edge", "mail.google.com joel@zutobi")
+focus gmail zero: user.open_specific_tab("edge", "mail.google.com joel@zutobi")
+focus gmail one: user.open_specific_tab("edge", "mail.google.com support@zutobi")
+focus gmail two: user.open_specific_tab("edge", "mail.google.com hello@zutobi")
+focus gmail three: user.open_specific_tab("edge", "mail.google.com lalurran@gmail")
+
+# Pick item from a dropdown
+pick [down] <number_small>: key("down:{number_small-1} enter")
+pick up <number_small>: key("up:{number_small} enter")

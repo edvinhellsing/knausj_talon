@@ -55,6 +55,33 @@ toggle right sidebar: key(ctrl-.)
 
 message send: key(enter)
 
+go channel <phrase>$: user.slack_browse_channels("{phrase}")
+# go channel analytics: user.slack_browse_channels("analytics")
+# go channel app: user.slack_browse_channels("app")
+# go channel backend: user.slack_browse_channels("backend")
+# go channel booking platform: user.slack_browse_channels("booking-platform")
+# go channel creative corner: user.slack_browse_channels("creative-corner")
+# go channel daily updates: user.slack_browse_channels("daily-updates")
+# go channel design: user.slack_browse_channels("design")
+# go channel design management: user.slack_browse_channels("design-management")
+# go channel economy: user.slack_browse_channels("ekonomi")
+# go channel general: user.slack_browse_channels("general")
+go channel hr: user.slack_browse_channels("hr")
+# go channel ideas: user.slack_browse_channels("ideas")
+# go channel jacqueline: user.slack_browse_channels("jacqueline")
+# go channel management: user.slack_browse_channels("management")
+# go channel management and leads: user.slack_browse_channels("management-and-leads")
+# go channel random: user.slack_browse_channels("random")
+# go channel release notes: user.slack_browse_channels("release-notes")
+go channel pr: user.slack_browse_channels("public-relations-pr")
+go channel qa: user.slack_browse_channels("qa")
+# go channel successes: user.slack_browse_channels("successes")
+# go channel team sweden: user.slack_browse_channels("team-sweden")
+# go channel web: user.slack_browse_channels("web")
+# go channel web management: user.slack_browse_channels("web-management")
+
+go (dm | messages) <phrase>$: user.slack_browse_dms("{phrase}")
+
 # DEPRECATED
 #(move | next) focus:
 #    app.notify("please use the voice command 'focus next' instead of 'next focus'")

@@ -10,6 +10,13 @@ def gui_select(gui: imgui.GUI):
     if gui.button("End selection [stop selection]"):
         actions.user.select_continous(0)
 
+@imgui.open(x=700, y=0)
+def gui_hold_modifier(gui: imgui.GUI, modifier: str):
+    gui.text(f"Modifier held:")
+    gui.line()
+    if gui.button("Lift " + modifier + " [end hold]"):
+        actions.key(modifier + ":up")
+
 
 mod = Module()
 
@@ -21,12 +28,17 @@ class Actions:
     def toggle_microphone():
         """Toggle the microphone on/off using talon_HUD actions (please note: talon_HUD must be installed in the talon user folder for this function to work)"""
 
+    def open_specific_tab(browser: str, search_str: str):
+        """This function requires that the searched for tab actually is open in the browser"""
+
+    def gui_hold_modifier_toggle(flag: int, modifier: str):
+        """sdf"""
+
     def select_continous(run: int):
         """sdf"""
 
     def select_continous_end():
         """sdf"""
-
 
 ctx=Context()
 
@@ -53,6 +65,24 @@ class UserActions:
             actions.user.mouse_wake()
 
         actions.user.hud_toggle_microphone()
+
+    def open_specific_tab(browser: str, search_str: str):
+        """This function requires that the searched for tab actually is open in the browser"""
+        actions.user.engine_mimic("focus " + browser)
+        actions.sleep("400ms")
+        actions.key("ctrl-shift-a")
+        actions.sleep("400ms")
+        actions.auto_insert(search_str)
+        actions.sleep("400ms")
+        actions.key("enter")
+
+    def gui_hold_modifier_toggle(flag: int, modifier: str):
+        """sdf"""
+        if flag:
+            gui_hold_modifier.show()
+        else:
+            gui_hold_modifier.hide()
+
 
     # Non working prototypes as of now
     def select_continous(run: int):
