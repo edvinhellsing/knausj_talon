@@ -182,7 +182,11 @@ cut word right:
     edit.extend_word_right()
     edit.cut()
 
-cut line:
+#cut line:
+#    edit.select_line()
+#    edit.cut()
+
+carve line:
     edit.select_line()
     edit.cut()
 

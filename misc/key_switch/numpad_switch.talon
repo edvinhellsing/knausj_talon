@@ -30,3 +30,15 @@ key(keypad_8:up): user.keypad_up(8)
 
 key(keypad_9:down): user.keypad_down(9)
 key(keypad_9:up): user.keypad_up(9)
+
+key(keypad_divide:down): user.keypad_down(10)
+key(keypad_divide:up): user.keypad_up(10)
+
+key(keypad_multiply:down): user.keypad_down(11)
+key(keypad_multiply:up): user.keypad_up(11)
+
+key(keypad_minus:down): user.keypad_down(12)
+key(keypad_minus:up): user.keypad_up(12)
+
+key(keypad_plus:down): user.keypad_down(13)
+key(keypad_plus:up): user.keypad_up(13)

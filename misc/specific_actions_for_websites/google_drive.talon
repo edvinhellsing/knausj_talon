@@ -16,6 +16,10 @@ form new: key(shift-o)
 
 rename: key(n)
 
-(play | pause): key(space)
+video (play | pause): key(k)
+video (mute | unmute): key(m)
+seek left: key(j)
+seek right: key(l)
+video fullscreen: key(f)
 
 keyboard shortcuts: key(shift-/)

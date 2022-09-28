@@ -10,11 +10,13 @@ def gui_select(gui: imgui.GUI):
     if gui.button("End selection [stop selection]"):
         actions.user.select_continous(0)
 
+modifier = ""
 @imgui.open(x=700, y=0)
-def gui_hold_modifier(gui: imgui.GUI, modifier: str):
+def gui_hold_modifier(gui: imgui.GUI):
     gui.text(f"Modifier held:")
     gui.line()
     if gui.button("Lift " + modifier + " [end hold]"):
+        #print(modifier + ":up")
         actions.key(modifier + ":up")
 
 
@@ -31,7 +33,7 @@ class Actions:
     def open_specific_tab(browser: str, search_str: str):
         """This function requires that the searched for tab actually is open in the browser"""
 
-    def gui_hold_modifier_toggle(flag: int, modifier: str):
+    def gui_hold_modifier_toggle(flag: int, key_str: str):
         """sdf"""
 
     def select_continous(run: int):
@@ -76,13 +78,14 @@ class UserActions:
         actions.sleep("400ms")
         actions.key("enter")
 
-    def gui_hold_modifier_toggle(flag: int, modifier: str):
+    def gui_hold_modifier_toggle(flag: int, key_str: str):
         """sdf"""
+        global modifier
+        modifier = key_str
         if flag:
             gui_hold_modifier.show()
         else:
             gui_hold_modifier.hide()
-
 
     # Non working prototypes as of now
     def select_continous(run: int):

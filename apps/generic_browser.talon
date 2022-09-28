@@ -16,6 +16,8 @@ bookmark it: browser.bookmark()
 #bookmark tabs: browser.bookmark_tabs()
 (refresh | reload) it: browser.reload()
 (refresh | reload) it hard: browser.reload_hard()
+tab (refresh | reload): browser.reload()
+tab (refresh | reload) hard: browser.reload_hard()
 
 bookmark show: browser.bookmarks()
 bookmark bar [show]: browser.bookmarks_bar()

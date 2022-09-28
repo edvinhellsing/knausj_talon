@@ -1,13 +1,15 @@
 from talon import Context, Module, actions, app
 
 #near
-#kid
+#kid could replace crunch
 #eel elk eagle
 #onyx adder oesten
-#spun urge red
+#spun 
+#urge is often misrecognized as args
+#red is a color so better to use ram
 #risk
-#pink
-#each
+#pink is a color so better to use perk
+#each is often misrecognized as ice...
 default_alphabet = "air bat cap drum each fine gust harp ice judge crunch look made net odd perk quench ram sun trap urn vest whale x yank zip onyx elk eagle".split(
     " "
 )
@@ -118,7 +120,8 @@ def letters(m) -> str:
 ctx = Context()
 modifier_keys = {
     # If you find 'alt' is often misrecognized, try using 'alter'.
-    "alt": "alt",  #'alter': 'alt',
+    #"alt": "alt",  
+    'alter': 'alt',
     "control": "ctrl",  #'troll':   'ctrl',
     "shift": "shift",  #'sky':     'shift',
     "super": "super",

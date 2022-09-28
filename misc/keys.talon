@@ -11,9 +11,9 @@ press <user.modifiers>: key(modifiers)
 # for consistency with dictation mode and explicit arrow keys if you need them.
 press <user.keys>: key(keys)
 # press and hold a modifier
-hold <user.modifiers>: 
+hold <user.modifiers>:
     key("{modifiers}:down")
-    #user.gui_hold_modifier_toggle(1, "{modifiers}")
+    user.gui_hold_modifier_toggle(1, "{modifiers}")
 (lift | unhold) <user.modifiers>:
     key("{modifiers}:up")
-    #user.gui_hold_modifier_toggle(0, "{modifiers}")
+    user.gui_hold_modifier_toggle(0, "{modifiers}")

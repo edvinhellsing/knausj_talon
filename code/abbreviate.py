@@ -81,7 +81,7 @@ abbreviations = {
     "environment": "env ",
     "escape": "esc ",
     "etcetera": "etc ",
-    "example": "ex ",
+    #"example": "ex ",
     #"exception": "exc ",
     #"execute": "exec ",
     #"expression": "exp ",
@@ -91,7 +91,6 @@ abbreviations = {
     #"framework": "fw ",
     "function": "func ",
     #"funny": "lol ",
-    "for example": "e.g. ",
     #"generic": "gen ",
     #"generate": "gen ",
     "hypertext": "http ",
@@ -200,7 +199,6 @@ abbreviations = {
     "temporary": "tmp ",
     #"temp": "tmp ",
     #"text": "txt ",
-    "that is": "i.e. ",
     #"time of check time of use": "toctou ",
     #"token": "tok ",
     #"ultimate": "ulti ",
@@ -215,8 +213,18 @@ abbreviations = {
     #"visual": "vis ",
     #"visual studio": "msvc ",
     #"web": "www ",
-    "what the fuck": "Wtf ",
+    "what the fuck": "wtf ",
     #"window": "win ",
+
+    # my own additions
+    "for example": "e.g. ",
+    "that is": "i.e. ",
+    "public relations": "pr ",
+    "human relations": "hr ",
+    "quality assurance": "qa ",
+    "questions and answers": "Q&A ",
+    "frequently asked questions": "FAQ ",
+    #"": " ",
 
     # work abbreviations
     "alabama car": "al-car",
@@ -225,6 +233,11 @@ abbreviations = {
     "california car": "ca-car",
     "california CDL": "ca-cdl",
     "california motorcycle": "ca-mc",
+    "core web vitals": "cwv ",
+    "largest contentful paint": "LCP ",
+    "cumulative layout shift": "CLS ",
+    "first input delay": "FID ",
+    #"": " ",
 }
 
 ctx = Context()

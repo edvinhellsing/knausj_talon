@@ -2,17 +2,18 @@ from talon import Module, Context, actions, cron, scope
 
 mod = Module()
 
-#10 numpad keys
+#14 numpad keys
 #refactor this later
-current_state = [False, False, False, False, False, False, False, False, False, False]
-last_state = [False, False, False, False, False, False, False, False, False, False]
-continuous_firing = [False, False, True, False, False, True, False, False, True, False]
-has_fired = [False, False, False, False, False, False, False, False, False, False]
+num_of_numpad_keys = 14
+current_state = [False, False, False, False, False, False, False, False, False, False, False, False, False, False]
+last_state = [False, False, False, False, False, False, False, False, False, False, False, False, False, False]
+continuous_firing = [False, False, True, False, False, True, False, False, True, False, False, False, False, False]
+has_fired = [False, False, False, False, False, False, False, False, False, False, False, False, False, False]
 
 
 #fires call down and call up only once
 # def on_interval():
-#     for key in range(4):
+#     for key in range(num_of_numpad_keys):
 #         if current_state[key] != last_state[key]:
 #             last_state[key] = current_state[key]
 #             # Key is pressed downi
@@ -26,7 +27,7 @@ has_fired = [False, False, False, False, False, False, False, False, False, Fals
 
 # #fires continuously and then calls call_up only once
 # def on_interval():
-#     for key in range(4):
+#     for key in range(num_of_numpad_keys):
 #         # Key is pressed down
 #         if current_state[key]:
 #             last_state[key] = True
@@ -39,7 +40,7 @@ has_fired = [False, False, False, False, False, False, False, False, False, Fals
 
 #fires continuously if continuous_firing is set to true and then calls call_up() once when the key is released
 def on_interval():
-    for key in range(10):
+    for key in range(num_of_numpad_keys):
         # Key is pressed down
         if (current_state[key]) and (continuous_firing[key] == False) and (has_fired[key] == False):
             last_state[key] = True
@@ -48,7 +49,7 @@ def on_interval():
         elif (current_state[key]) and (continuous_firing[key] == True):
             last_state[key] = True
             call_down(key)
-            actions.sleep("100ms")
+            actions.sleep("200ms")
         # Key is released
         elif (current_state[key] == False) and (last_state[key] == True):
             last_state[key] = False
@@ -62,7 +63,6 @@ def on_interval():
 #         if current_state[key]:
 #             # Key is pressed down
 #             call_down(key)
-
 
 cron.interval("10ms", on_interval)
 
@@ -137,9 +137,32 @@ class Actions:
     def keypad_9_up():
         """sdf"""
 
+    def keypad_divide_down():
+        """sdf"""
+
+    def keypad_divide_up():
+        """sdf"""
+
+    def keypad_multiply_down():
+        """sdf"""
+
+    def keypad_multiply_up():
+        """sdf"""
+
+    def keypad_minus_down():
+        """sdf"""
+
+    def keypad_minus_up():
+        """sdf"""
+
+    def keypad_plus_down():
+        """sdf"""
+
+    def keypad_plus_up():
+        """sdf"""
+
 # Default implementation
 ctx = Context()
-
 
 #test actions
 #actions.user.play_pause()
@@ -159,9 +182,9 @@ class UserActions:
             actions.speech.toggle()
             actions.user.start_stop_dictation()
         elif "user.power_mode" in scope.get("mode"):
-            #actions.mouse_sleep() doesn't work for power mode for some reason. The mouse won't wake when running mouse_wake()
-            #actions.user.mouse_sleep() 
+            actions.user.mouse_sleep() 
             actions.speech.toggle()
+            actions.mode.disable("user.power_mode")
             actions.user.start_stop_dictation()
         elif "sleep" in scope.get("mode"):
             actions.user.start_stop_dictation()
@@ -233,21 +256,80 @@ class UserActions:
     def keypad_9_up():
         pass
 
+    def keypad_divide_down():
+        pass
+
+    def keypad_divide_up():
+        pass
+
+    def keypad_multiply_down():
+        pass
+
+    def keypad_multiply_up():
+        pass
+
+    def keypad_minus_down():
+        pass
+
+    def keypad_minus_up():
+        pass
+
+    def keypad_plus_down():
+        pass
+
+    def keypad_plus_up():
+        pass
+
 
 # Audio / Video conferencing
-ctx_av = Context()
-ctx_av.matches = r"""
-tag: user.av
+ctx_avc = Context()
+ctx_avc.matches = r"""
+tag: user.avc
 """
 
+@ctx_avc.action_class("user")
+class AvcActions:
+    def keypad_0_down():
+        pass
 
-@ctx_av.action_class("user")
-class AvActions:
+    def keypad_1_down():
+        actions.user.avc_toggle_mute()
+
+    def keypad_2_down():
+        actions.user.avc_toggle_video()
+
     def keypad_3_down():
-        actions.user.mute_microphone()
+        actions.user.avc_raise_hand()
 
-    def keypad_3_up():
-        actions.user.mute_microphone()
+    def keypad_4_down():
+        pass
+
+    def keypad_5_down():
+        pass
+
+    def keypad_6_down():
+        pass
+
+    def keypad_7_down():
+        pass
+
+    def keypad_8_down():
+        pass
+
+    def keypad_9_down():
+        actions.user.avc_leave_call()
+
+    def keypad_divide_down():
+        pass
+
+    def keypad_multiply_down():
+        pass
+
+    def keypad_minus_down():
+        pass
+
+    def keypad_plus_down():
+        pass
 
 
 # Mouse zoom mode
@@ -261,26 +343,14 @@ class ZoomActions:
     def keypad_0_down():
         actions.user.zoom_mouse_click("triple")
 
-    def keypad_0_up():
-        pass
-
     def keypad_1_down():
         actions.user.zoom_mouse_click("middle")
-
-    def keypad_1_up():
-        pass
 
     def keypad_2_down():
         actions.user.zoom_mouse_click("double")
 
-    def keypad_2_up():
-        pass
-
     def keypad_3_down():
         actions.user.zoom_mouse_click("right")
-
-    def keypad_3_up():
-        pass
 
 
 def call_down(key: int):
@@ -304,6 +374,14 @@ def call_down(key: int):
         actions.user.keypad_8_down()
     elif key == 9:
         actions.user.keypad_9_down()
+    elif key == 10:
+        actions.user.keypad_divide_down()
+    elif key == 11:
+        actions.user.keypad_multiply_down()
+    elif key == 12:
+        actions.user.keypad_minus_down()
+    elif key == 13:
+        actions.user.keypad_plus_down()
 
 
 def call_up(key: int):
@@ -327,3 +405,11 @@ def call_up(key: int):
         actions.user.keypad_8_up()
     elif key == 9:
         actions.user.keypad_9_up()
+    elif key == 10:
+        actions.user.keypad_divide_up()
+    elif key == 11:
+        actions.user.keypad_multiply_up()
+    elif key == 12:
+        actions.user.keypad_minus_up()
+    elif key == 13:
+        actions.user.keypad_plus_up()

@@ -70,13 +70,13 @@ class UserActions:
     def start_stop_dictation_voice_command():
         """Start dictation on both Windows and macOS using a voice command"""
         if "command" in scope.get("mode"):
-            actions.speech.toggle()
             actions.user.mouse_sleep()
+            actions.speech.toggle()
             actions.user.start_stop_dictation()
         elif "user.power_mode" in scope.get("mode"):
+            actions.user.mouse_sleep()
             actions.speech.toggle()
-            #actions.mouse_sleep() doesn't work for power mode for some reason. The mouse won't wake when running mouse_wake()
-            #actions.user.mouse_sleep() 
+            actions.mode.disable("user.power_mode")
             actions.user.start_stop_dictation()
         elif "sleep" in scope.get("mode"):
             #add some sleep time to make sure talon doesn't pick up any speech
