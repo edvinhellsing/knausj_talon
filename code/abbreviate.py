@@ -59,7 +59,7 @@ abbreviations = {
     #"decrement": "dec ",
     #"debug": "dbg ",
     #"define": "def ",
-    #"definition": "def ",
+    "definition": "def ",
     "description": "desc ",
     "develop": "dev ",
     "development": "dev ",

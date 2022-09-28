@@ -17,7 +17,6 @@ ctx=Context()
 @ctx.action_class("user")
 class UserActions:
     def slack_browse_channels(search_str: str):
-        """sdf"""
         actions.key("ctrl-shift-l")
         actions.sleep("200ms")
         actions.key("escape")
@@ -28,7 +27,6 @@ class UserActions:
         #actions.key("down")
 
     def slack_browse_dms(search_str: str):
-        """sdf"""
         actions.key("ctrl-shift-k")
         actions.sleep("200ms")
         actions.auto_insert(search_str)

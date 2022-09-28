@@ -2,7 +2,6 @@ import time
 from talon import Module, Context, actions, cron
 
 mod = Module()
-mod.tag("av")
 
 current_state = False
 last_state = False

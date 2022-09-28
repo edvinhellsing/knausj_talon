@@ -7,7 +7,7 @@ from talon_plugins import eye_mouse
 def gui_select(gui: imgui.GUI):
     gui.text(f"Select mode:")
     gui.line()
-    if gui.button("End selection [stop selection]"):
+    if gui.button("End selection"):
         actions.user.select_continous(0)
 
 modifier = ""
@@ -15,9 +15,9 @@ modifier = ""
 def gui_hold_modifier(gui: imgui.GUI):
     gui.text(f"Modifier held:")
     gui.line()
-    if gui.button("Lift " + modifier + " [end hold]"):
-        #print(modifier + ":up")
+    if gui.button("Lift " + modifier):
         actions.key(modifier + ":up")
+        actions.user.gui_hold_modifier_toggle(0, modifier)
 
 
 mod = Module()
@@ -79,7 +79,6 @@ class UserActions:
         actions.key("enter")
 
     def gui_hold_modifier_toggle(flag: int, key_str: str):
-        """sdf"""
         global modifier
         modifier = key_str
         if flag:
@@ -89,7 +88,6 @@ class UserActions:
 
     # Non working prototypes as of now
     def select_continous(run: int):
-        """sdf"""
 
         gui_select.show()
         # Start selection

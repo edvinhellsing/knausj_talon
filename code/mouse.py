@@ -95,7 +95,8 @@ continuous_scoll_mode = ""
 def gui_wheel(gui: imgui.GUI):
     gui.text(f"Scroll mode: {continuous_scoll_mode}")
     gui.line()
-    if gui.button("Wheel Stop [stop scrolling]"):
+    #if gui.button("Wheel Stop [stop scrolling]"):
+    if gui.button("Wheel stop / Scroll stop"):
         actions.user.mouse_scroll_stop()
 
 
@@ -103,7 +104,7 @@ def gui_wheel(gui: imgui.GUI):
 def gui_drag(gui: imgui.GUI):
     gui.text(f"Drag mode:")
     gui.line()
-    if gui.button("End Drag [stop dragging]"):
+    if gui.button("End drag"):
         actions.user.mouse_drag_end()
 
 

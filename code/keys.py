@@ -125,7 +125,7 @@ modifier_keys = {
     "control": "ctrl",  #'troll':   'ctrl',
     "shift": "shift",  #'sky':     'shift',
     "super": "super",
-    "win": "super",
+    #"win": "super", #win is often misrepresented as wheel so I'm opting out of this one
 }
 if app.platform == "mac":
     modifier_keys["command"] = "cmd"

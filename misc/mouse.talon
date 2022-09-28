@@ -59,52 +59,52 @@ right drag | righty drag:
     # close the mouse grid
     user.grid_close()
 end drag | drag end: user.mouse_drag_end()
-wheel down: user.mouse_scroll_down()
-wheel down here:
+(wheel | scroll) down: user.mouse_scroll_down()
+(wheel | scroll) down here:
     user.mouse_move_center_active_window()
     user.mouse_scroll_down()
-wheel tiny [down]: user.mouse_scroll_down(0.2)
-wheel tiny [down] here:
+(wheel | scroll) tiny [down]: user.mouse_scroll_down(0.2)
+(wheel | scroll) tiny [down] here:
     user.mouse_move_center_active_window()
     user.mouse_scroll_down(0.2)
-wheel downer: user.mouse_scroll_down_continuous()
-wheel downer here:
+(wheel | scroll) (continuous | continue): user.mouse_scroll_down_continuous()
+(wheel | scroll) (continuous | continue) here:
     user.mouse_move_center_active_window()
     user.mouse_scroll_down_continuous()
-wheel up: user.mouse_scroll_up()
-wheel up here:
+(wheel | scroll) up: user.mouse_scroll_up()
+(wheel | scroll) up here:
     user.mouse_move_center_active_window()
     user.mouse_scroll_up()
-wheel tiny up: user.mouse_scroll_up(0.2)
-wheel tiny up here:
+(wheel | scroll) tiny up: user.mouse_scroll_up(0.2)
+(wheel | scroll) tiny up here:
     user.mouse_move_center_active_window()
     user.mouse_scroll_up(0.2)
-wheel upper: user.mouse_scroll_up_continuous()
-wheel upper here:
+(wheel | scroll) (continuous | continue) up: user.mouse_scroll_up_continuous()
+(wheel | scroll) (continuous | continue) up here:
     user.mouse_move_center_active_window()
     user.mouse_scroll_up_continuous()
-wheel gaze: user.mouse_gaze_scroll()
-wheel gaze here:
+(wheel | scroll) gaze: user.mouse_gaze_scroll()
+(wheel | scroll) gaze here:
     user.mouse_move_center_active_window()
     user.mouse_gaze_scroll()
-wheel stop: user.mouse_scroll_stop()
-wheel stop here:
+(wheel | scroll) stop: user.mouse_scroll_stop()
+(wheel | scroll) stop here:
     user.mouse_move_center_active_window()
     user.mouse_scroll_stop()
-wheel left: user.mouse_scroll_left()
-wheel left here:
+(wheel | scroll) left: user.mouse_scroll_left()
+(wheel | scroll) left here:
     user.mouse_move_center_active_window()
     user.mouse_scroll_left()
-wheel tiny left: user.mouse_scroll_left(0.5)
-wheel tiny left here:
+(wheel | scroll) tiny left: user.mouse_scroll_left(0.5)
+(wheel | scroll) tiny left here:
     user.mouse_move_center_active_window()
     user.mouse_scroll_left(0.5)
-wheel right: user.mouse_scroll_right()
-wheel right here:
+(wheel | scroll) right: user.mouse_scroll_right()
+(wheel | scroll) right here:
     user.mouse_move_center_active_window()
     user.mouse_scroll_right()
-wheel tiny right: user.mouse_scroll_right(0.5)
-wheel tiny right here:
+(wheel | scroll) tiny right: user.mouse_scroll_right(0.5)
+(wheel | scroll) tiny right here:
     user.mouse_move_center_active_window()
     user.mouse_scroll_right(0.5)
 #copy mouse position: user.copy_mouse_position()

@@ -182,7 +182,7 @@ class UserActions:
             actions.speech.toggle()
             actions.user.start_stop_dictation()
         elif "user.power_mode" in scope.get("mode"):
-            actions.user.mouse_sleep() 
+            actions.user.mouse_sleep()
             actions.speech.toggle()
             actions.mode.disable("user.power_mode")
             actions.user.start_stop_dictation()
