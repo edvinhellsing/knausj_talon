@@ -241,7 +241,7 @@ class UserActions:
         pass
 
     def keypad_7_down():
-        actions.user.toggle_microphone()
+        pass
 
     def keypad_7_up():
         pass
@@ -259,7 +259,7 @@ class UserActions:
         pass
 
     def keypad_divide_down():
-        pass
+        actions.user.toggle_microphone()
 
     def keypad_divide_up():
         pass
@@ -304,31 +304,31 @@ class AvcActions:
         actions.user.avc_raise_hand()
 
     def keypad_4_down():
-        actions.avc_decrease_participants_tiles()
+        actions.user.avc_decrease_participants_tiles()
 
     def keypad_5_down():
-        actions.avc_increase_participants_tiles()
+        actions.user.avc_toggle_participants()
 
     def keypad_6_down():
-        actions.avc_increase_participants_tiles()
+        actions.user.avc_increase_participants_tiles()
 
     def keypad_7_down():
-        pass
+        actions.key("f11")
 
     def keypad_8_down():
-        pass
+        actions.user.avc_toggle_chat_window()
 
     def keypad_9_down():
-        actions.user.avc_leave_call()
+        pass
 
     def keypad_divide_down():
-        pass
+        actions.user.toggle_microphone()
 
     def keypad_multiply_down():
         pass
 
     def keypad_minus_down():
-        pass
+        actions.user.avc_leave_call()
 
     def keypad_plus_down():
         pass
