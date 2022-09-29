@@ -73,12 +73,11 @@ ctx = Context()
 #actions.user.play_pause()
 #actions.user.stop_scroll()
 
-flag = 1
+flag = 0
 @ctx.action_class("user")
 class UserActions:
 
     def set_flag(value: int):
-        """sdf"""
         global flag 
         flag = value
 

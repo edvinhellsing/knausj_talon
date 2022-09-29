@@ -50,37 +50,37 @@ mid click:
 	mouse_click()
 	# close the mouse grid
 	user.grid_close()
-left drag | drag:
+(left drag | drag):
 	user.mouse_drag(0)
 	# close the mouse grid
 	user.grid_close()
-right drag | righty drag:
+(right drag | righty drag):
     user.mouse_drag(1)
     # close the mouse grid
     user.grid_close()
-end drag | drag end: user.mouse_drag_end()
-(wheel | scroll) down: user.mouse_scroll_down()
-(wheel | scroll) down here:
+(end drag | drag end): user.mouse_drag_end()
+downer: user.mouse_scroll_down()
+downer here:
     user.mouse_move_center_active_window()
     user.mouse_scroll_down()
-(wheel | scroll) tiny [down]: user.mouse_scroll_down(0.2)
-(wheel | scroll) tiny [down] here:
+tiny down: user.mouse_scroll_down(0.2)
+tiny down here:
     user.mouse_move_center_active_window()
     user.mouse_scroll_down(0.2)
-(wheel | scroll) (continuous | continue): user.mouse_scroll_down_continuous()
-(wheel | scroll) (continuous | continue) here:
+(continuous | continue) down: user.mouse_scroll_down_continuous()
+(continuous | continue) down here:
     user.mouse_move_center_active_window()
     user.mouse_scroll_down_continuous()
-(wheel | scroll) up: user.mouse_scroll_up()
-(wheel | scroll) up here:
+upper: user.mouse_scroll_up()
+upper here:
     user.mouse_move_center_active_window()
     user.mouse_scroll_up()
-(wheel | scroll) tiny up: user.mouse_scroll_up(0.2)
-(wheel | scroll) tiny up here:
+tiny up: user.mouse_scroll_up(0.2)
+tiny up here:
     user.mouse_move_center_active_window()
     user.mouse_scroll_up(0.2)
-(wheel | scroll) (continuous | continue) up: user.mouse_scroll_up_continuous()
-(wheel | scroll) (continuous | continue) up here:
+(continuous | continue) up: user.mouse_scroll_up_continuous()
+(continuous | continue) up here:
     user.mouse_move_center_active_window()
     user.mouse_scroll_up_continuous()
 (wheel | scroll) gaze: user.mouse_gaze_scroll()
@@ -111,3 +111,53 @@ end drag | drag end: user.mouse_drag_end()
 curse no:
     # Command added 2021-12-13, can remove after 2022-06-01
     app.notify("Please activate the user.mouse_cursor_commands_enable tag to enable this command")
+
+#Old commands, keeping them here before I see that the new commands work as expected
+# (wheel | scroll) down: user.mouse_scroll_down()
+# (wheel | scroll) down here:
+#     user.mouse_move_center_active_window()
+#     user.mouse_scroll_down()
+# (wheel | scroll) tiny [down]: user.mouse_scroll_down(0.2)
+# (wheel | scroll) tiny [down] here:
+#     user.mouse_move_center_active_window()
+#     user.mouse_scroll_down(0.2)
+# (wheel | scroll) (continuous | continue): user.mouse_scroll_down_continuous()
+# (wheel | scroll) (continuous | continue) here:
+#     user.mouse_move_center_active_window()
+#     user.mouse_scroll_down_continuous()
+# (wheel | scroll) up: user.mouse_scroll_up()
+# (wheel | scroll) up here:
+#     user.mouse_move_center_active_window()
+#     user.mouse_scroll_up()
+# (wheel | scroll) tiny up: user.mouse_scroll_up(0.2)
+# (wheel | scroll) tiny up here:
+#     user.mouse_move_center_active_window()
+#     user.mouse_scroll_up(0.2)
+# (wheel | scroll) (continuous | continue) up: user.mouse_scroll_up_continuous()
+# (wheel | scroll) (continuous | continue) up here:
+#     user.mouse_move_center_active_window()
+#     user.mouse_scroll_up_continuous()
+# (wheel | scroll) gaze: user.mouse_gaze_scroll()
+# (wheel | scroll) gaze here:
+#     user.mouse_move_center_active_window()
+#     user.mouse_gaze_scroll()
+# (wheel | scroll) stop: user.mouse_scroll_stop()
+# (wheel | scroll) stop here:
+#     user.mouse_move_center_active_window()
+#     user.mouse_scroll_stop()
+# (wheel | scroll) left: user.mouse_scroll_left()
+# (wheel | scroll) left here:
+#     user.mouse_move_center_active_window()
+#     user.mouse_scroll_left()
+# (wheel | scroll) tiny left: user.mouse_scroll_left(0.5)
+# (wheel | scroll) tiny left here:
+#     user.mouse_move_center_active_window()
+#     user.mouse_scroll_left(0.5)
+# (wheel | scroll) right: user.mouse_scroll_right()
+# (wheel | scroll) right here:
+#     user.mouse_move_center_active_window()
+#     user.mouse_scroll_right()
+# (wheel | scroll) tiny right: user.mouse_scroll_right(0.5)
+# (wheel | scroll) tiny right here:
+#     user.mouse_move_center_active_window()
+#     user.mouse_scroll_right(0.5)

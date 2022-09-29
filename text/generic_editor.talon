@@ -24,13 +24,13 @@ go way left: edit.line_start()
 
 go way right: edit.line_end()
 
-go way down: edit.file_end()
+(go | scroll) way down: edit.file_end()
 
-go way up: edit.file_start()
+(go | scroll) way up: edit.file_start()
 
-go bottom: edit.file_end()
+(go | scroll) bottom: edit.file_end()
 
-go top: edit.file_start()
+(go | scroll) top: edit.file_start()
 
 go page down: edit.page_down()
 
