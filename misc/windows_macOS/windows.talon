@@ -9,6 +9,7 @@ start listening:
     key(alt-shift-1)
     user.start_stop_dictation_voice_command()
 
+#börja lyssna
 (burial listener | burial alister): 
     #set keyboard to Swedish
     key(alt-shift-2)

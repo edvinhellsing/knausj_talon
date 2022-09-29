@@ -63,11 +63,6 @@ select way up: edit.extend_file_start()
 
 select way down: edit.extend_file_end()
 
-select around: 
-    edit.word_left()
-    edit.extend_word_right()
-    edit.extend_word_right()
-
 # editing
 indent: edit.indent_more()
 

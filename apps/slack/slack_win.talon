@@ -19,9 +19,9 @@ go (forward | next | forth): key("alt-right")
 go (backward | last | back | previous): key("alt-left")
 element next: key(tab)
 element (last | previous): key(shift-tab)
-(go | slack | lack | like) (mentions | reactions | activity): key(ctrl-shift-m)
-(go | slack | lack | like) directory: key(ctrl-shift-e)
-(go | slack | lack | like) (starred [items] | stars): key(ctrl-shift-s)
+(go | slack | lack | like) mentions [and reactions]: key(ctrl-shift-m)
+(go | slack | lack | like) people [and user groups]: key(ctrl-shift-e)
+(go | slack | lack | like) saved [items]: key(ctrl-shift-s)
 (go | slack | lack | like) unread [messages]: key(ctrl-shift-a)
 (go | slack | lack | like) channels: key(ctrl-shift-l)
 (go | slack | lack | like) search: key(ctrl-g)
@@ -55,6 +55,8 @@ toggle right sidebar: key(ctrl-.)
 
 message send: key(enter)
 
+go (dm | messages) <phrase>$: user.slack_browse_dms("{phrase}")
+
 go channel <phrase>$: user.slack_browse_channels("{phrase}")
 # go channel analytics: user.slack_browse_channels("analytics")
 # go channel app: user.slack_browse_channels("app")
@@ -76,11 +78,9 @@ go channel hr: user.slack_browse_channels("hr")
 go channel pr: user.slack_browse_channels("public-relations-pr")
 go channel qa: user.slack_browse_channels("qa")
 # go channel successes: user.slack_browse_channels("successes")
-# go channel team sweden: user.slack_browse_channels("team-sweden")
+go channel team sweden: user.slack_browse_channels("team-sweden")
 # go channel web: user.slack_browse_channels("web")
 # go channel web management: user.slack_browse_channels("web-management")
-
-go (dm | messages) <phrase>$: user.slack_browse_dms("{phrase}")
 
 # DEPRECATED
 #(move | next) focus:
