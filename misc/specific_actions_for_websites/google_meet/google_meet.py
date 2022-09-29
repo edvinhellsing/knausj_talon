@@ -1,43 +1,29 @@
 from talon import Module, actions, Context
 
-# ctx_avc=Context()
-# ctx_avc.matches = r"""
-# os: windows
-# os: linux
-# tag: browser
-# browser.host: meet.google.com
-# """
-
-# ctx_avc.tags = ["user.avc"]
-
-# #https://support.google.com/a/users/answer/9896256?hl=en
-# @ctx_avc.action_class("user")
-# class AvcActions:
-
-ctx=Context()
-ctx.matches = r"""
+ctx_avc=Context()
+ctx_avc.matches = r"""
 os: windows
 os: linux
 tag: browser
 browser.host: meet.google.com
 """
 
-ctx.tags = ["user.avc"]
+ctx_avc.tags = ["user.avc"]
 
 #https://support.google.com/a/users/answer/9896256?hl=en
-@ctx.action_class("user")
-class UserActions:
+@ctx_avc.action_class("user")
+class AvcActions:
     def avc_toggle_mute():
-        actions.key("ctrl-e")
+        actions.key("ctrl-d")
 
     def avc_toggle_video():
-        actions.key("ctrl-d")
+        actions.key("ctrl-e")
 
     def avc_toggle_screensharing():
         pass
 
     def avc_raise_hand():
-        actions.key("ctrl-alt-e")
+        actions.key("ctrl-alt-h")
 
     def avc_toggle_chat_window():
         actions.key("ctrl-alt-c")

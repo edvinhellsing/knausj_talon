@@ -1,6 +1,8 @@
 from talon import Module, Context, actions, cron, scope
 
 mod = Module()
+mod.tag("avc", desc="Tag for enabling specific commands for audio video calls")
+mod.tag("zoom_mouse", "Indicates that zoom mouse is zoomed in")
 
 #14 numpad keys
 #refactor this later
@@ -290,7 +292,7 @@ tag: user.avc
 @ctx_avc.action_class("user")
 class AvcActions:
     def keypad_0_down():
-        pass
+        actions.user.avc_toggle_video()
 
     def keypad_1_down():
         actions.user.avc_toggle_mute()
@@ -302,13 +304,13 @@ class AvcActions:
         actions.user.avc_raise_hand()
 
     def keypad_4_down():
-        pass
+        actions.avc_decrease_participants_tiles()
 
     def keypad_5_down():
-        pass
+        actions.avc_increase_participants_tiles()
 
     def keypad_6_down():
-        pass
+        actions.avc_increase_participants_tiles()
 
     def keypad_7_down():
         pass
