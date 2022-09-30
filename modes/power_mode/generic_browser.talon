@@ -10,7 +10,7 @@ address copy | url copy | copy address | copy url:
 go (forward | next | forth): browser.go_forward()
 go (backward | last | back | previous): browser.go_back()
 
-go to {user.website}: browser.go(website)
+go {user.website}: browser.go(website)
 private new: browser.open_private_window()
 
 bookmark it: browser.bookmark()
