@@ -4,47 +4,49 @@ ctx_avc=Context()
 ctx_avc.matches = r"""
 os: windows
 os: linux
-tag: browser
-browser.host: meet.google.com
+app: zoom meetings
 """
 
 ctx_avc.tags = ["user.avc"]
 
-#https://support.google.com/a/users/answer/9896256?hl=en
+#https://support.zoom.us/hc/en-us/articles/205683899-Hot-keys-and-keyboard-shortcuts
 @ctx_avc.action_class("user")
 class AvcActions:
     def avc_toggle_mute():
-        actions.key("ctrl-d")
+        actions.key("alt-a")
 
     def avc_toggle_video():
-        actions.key("ctrl-e")
+        actions.key("alt-v")
 
     def avc_toggle_screensharing():
-        pass
+        actions.key("alt-s")
 
     def avc_raise_hand():
-        actions.key("ctrl-alt-h")
+        actions.key("alt-y")
 
     def avc_toggle_chat_window():
-        actions.key("ctrl-alt-c")
+        actions.key("alt-h")
 
     def avc_push_to_talk():
         pass
 
     def avc_toggle_participants():
-        actions.key("ctrl-alt-p")
+        actions.key("alt-u")
 
+    #PageUp: View previous 25 participants videos in gallery view
     def avc_increase_participants_tiles():
-        actions.key("ctrl-alt-j")
+        actions.key("pageup")
 
+    #PageDown: View next 25 participants videos in gallery view
     def avc_decrease_participants_tiles():
-        actions.key("ctrl-alt-k")
+        actions.key("pagedown")
 
     def avc_invite_participants():
-        pass
+        actions.key("alt-i")
 
     def avc_leave_call():
-        actions.app.tab_close()
+        actions.key("alt-q")
+        #actions.app.window_close()
 
     def avc_keyboard_shortcuts():
-        actions.key("shift-?")
+        pass

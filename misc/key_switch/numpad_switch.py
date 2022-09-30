@@ -2,7 +2,7 @@ from talon import Module, Context, actions, cron, scope
 
 mod = Module()
 mod.tag("avc", desc="Tag for enabling specific commands for audio video calls")
-mod.tag("zoom_mouse", "Indicates that zoom mouse is zoomed in")
+mod.tag("zoom_mouse", desc="Indicates that zoom mouse is zoomed in")
 
 #14 numpad keys
 #refactor this later
@@ -11,7 +11,6 @@ current_state = [False, False, False, False, False, False, False, False, False, 
 last_state = [False, False, False, False, False, False, False, False, False, False, False, False, False, False]
 continuous_firing = [False, False, True, False, False, True, False, False, True, False, False, False, False, False]
 has_fired = [False, False, False, False, False, False, False, False, False, False, False, False, False, False]
-
 
 #fires call down and call up only once
 # def on_interval():
@@ -26,7 +25,6 @@ has_fired = [False, False, False, False, False, False, False, False, False, Fals
 #                 last_state[key] = current_state[key]
 #                 call_up(key)
 
-
 # #fires continuously and then calls call_up only once
 # def on_interval():
 #     for key in range(num_of_numpad_keys):
@@ -38,7 +36,6 @@ has_fired = [False, False, False, False, False, False, False, False, False, Fals
 #         elif (current_state[key] == False) and (last_state[key] == True):
 #             last_state[key] = False
 #             call_up(key)
-
 
 #fires continuously if continuous_firing is set to true and then calls call_up() once when the key is released
 def on_interval():
@@ -57,7 +54,6 @@ def on_interval():
             last_state[key] = False
             has_fired[key] = False
             call_up(key)
-
 
 #the on_interval() below implementation below doesn't support call_up(key)
 # def on_interval():
@@ -175,6 +171,18 @@ ctx = Context()
 @ctx.action_class("user")
 class UserActions:
     def keypad_0_down():
+        pass
+
+    def keypad_0_up():
+        pass
+
+    def keypad_1_down():
+        actions.user.start_stop_dictation()
+
+    def keypad_1_up():
+        pass
+
+    def keypad_2_down():
         if "command" in scope.get("mode"):
             actions.user.mouse_sleep()
             actions.speech.toggle()
@@ -192,22 +200,6 @@ class UserActions:
             actions.user.start_stop_dictation()
             actions.speech.toggle()
             actions.user.mouse_wake()
-
-    def keypad_0_up():
-        pass
-
-    def keypad_1_down():
-        actions.user.start_stop_dictation()
-
-    def keypad_1_up():
-        pass
-
-    def keypad_2_down():
-        #Different scrolling behavior depending on browser is in focus or not
-        if "browser" in scope.get("tag"):
-            actions.user.rango_command_without_target("scrollDownPage", 0.2)
-        else:
-            actions.user.mouse_scroll_down()
 
     def keypad_2_up():
         pass
@@ -227,9 +219,9 @@ class UserActions:
     def keypad_5_down():
         #Different scrolling behavior depending on browser is in focus or not
         if "browser" in scope.get("tag"):
-            actions.user.rango_command_without_target("scrollUpPage", 0.2)
+            actions.user.rango_command_without_target("scrollDownPage", 0.2)
         else:
-            actions.user.mouse_scroll_up()
+            actions.user.mouse_scroll_down()
 
     def keypad_5_up():
         pass
@@ -247,7 +239,11 @@ class UserActions:
         pass
 
     def keypad_8_down():
-        pass
+        #Different scrolling behavior depending on browser is in focus or not
+        if "browser" in scope.get("tag"):
+            actions.user.rango_command_without_target("scrollUpPage", 0.2)
+        else:
+            actions.user.mouse_scroll_up()
 
     def keypad_8_up():
         pass
@@ -287,12 +283,13 @@ class UserActions:
 ctx_avc = Context()
 ctx_avc.matches = r"""
 tag: user.avc
+not mode: user.power_mode
 """
 
 @ctx_avc.action_class("user")
 class AvcActions:
     def keypad_0_down():
-        actions.user.avc_toggle_video()
+        pass
 
     def keypad_1_down():
         actions.user.avc_toggle_mute()
@@ -321,8 +318,8 @@ class AvcActions:
     def keypad_9_down():
         pass
 
-    def keypad_divide_down():
-        actions.user.toggle_microphone()
+    #def keypad_divide_down():
+    #inherit the general numpad action
 
     def keypad_multiply_down():
         pass
@@ -338,6 +335,7 @@ class AvcActions:
 ctx_zoom = Context()
 ctx_zoom.matches = r"""
 tag: user.zoom_mouse
+not mode: user.power_mode
 """
 
 @ctx_zoom.action_class("user")

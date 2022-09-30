@@ -44,14 +44,15 @@ grab right: key(shift-down)
 [insert] snippet: key(ctrl-shift-enter)
 # Calls
 start huddle: key(ctrl-shift-h)
+#leave huddle: 
 toggle (mute | unmute): key(m)
 toggle video: key(v)
 invite people: key(a)
 # Miscellaneous
 keyboard shortcuts: key(ctrl-/)
 #emote <user.text>: "{text}"
-toggle left sidebar: key(ctrl-shift-d)
-toggle right sidebar: key(ctrl-.)
+[toggle] left sidebar: key(ctrl-shift-d)
+[toggle] right sidebar: key(ctrl-.)
 
 message send: key(enter)
 
