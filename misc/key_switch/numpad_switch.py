@@ -217,11 +217,7 @@ class UserActions:
         pass
 
     def keypad_5_down():
-        #Different scrolling behavior depending on browser is in focus or not
-        if "browser" in scope.get("tag"):
-            actions.user.rango_command_without_target("scrollDownPage", 0.2)
-        else:
-            actions.user.mouse_scroll_down()
+        actions.user.mouse_scroll_down()
 
     def keypad_5_up():
         pass
@@ -239,11 +235,7 @@ class UserActions:
         pass
 
     def keypad_8_down():
-        #Different scrolling behavior depending on browser is in focus or not
-        if "browser" in scope.get("tag"):
-            actions.user.rango_command_without_target("scrollUpPage", 0.2)
-        else:
-            actions.user.mouse_scroll_up()
+        actions.user.mouse_scroll_up()
 
     def keypad_8_up():
         pass
