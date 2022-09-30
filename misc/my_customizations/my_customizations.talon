@@ -41,3 +41,5 @@ pick [down] <number_small>: key("down:{number_small-1} enter")
 pick up <number_small>: key("up:{number_small} enter")
 #dropdown <number_small>: key("down:{number_small-1} enter") 
 #drop up <number_small>: key("up:{number_small} enter")
+
+(end ten | ten enter): key(enter)
