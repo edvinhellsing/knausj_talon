@@ -24,7 +24,7 @@ ah phrase: "Aa, "
 ha ha phrase: "Haha "
 ha ha ha phrase: "Hahaha "
 
-key(scroll_lock): user.toggle_microphone()
+key(scroll_lock): user.toggle_talon_microphone()
 
 focus outlook: user.open_specific_tab("chrome", "outlook.live.com")
 focus google calendar: user.open_specific_tab("chrome", "calendar.google.com")

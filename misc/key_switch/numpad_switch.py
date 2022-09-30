@@ -247,7 +247,7 @@ class UserActions:
         pass
 
     def keypad_divide_down():
-        actions.user.toggle_microphone()
+        actions.user.toggle_talon_microphone()
 
     def keypad_divide_up():
         pass

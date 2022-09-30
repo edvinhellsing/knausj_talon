@@ -27,8 +27,8 @@ class Actions:
     def repeat_slowly(rep: int):
         """Repeats the command rep times with wait times in between each repetition"""
 
-    def toggle_microphone():
-        """Toggle the microphone on/off using talon_HUD actions (please note: talon_HUD must be installed in the talon user folder for this function to work)"""
+    def toggle_talon_microphone():
+        """Toggle the Talon microphone on/off using talon_HUD actions (please note: talon_HUD must be installed in the talon user folder for this function to work)"""
 
     def open_specific_tab(browser: str, search_str: str):
         """This function requires that the searched for tab actually is open in the browser"""
@@ -52,8 +52,8 @@ class UserActions:
             actions.core.repeat_command(1)
             actions.sleep("200ms")
 
-    def toggle_microphone():
-        """Toggle the microphone on/off using talon_HUD actions (please note: talon_HUD must be installed in the talon user folder for this function to work)"""
+    def toggle_talon_microphone():
+        """Toggle the Talon microphone on/off using talon_HUD actions (please note: talon_HUD must be installed in the talon user folder for this function to work)"""
         current_microphone = actions.sound.active_microphone()
         if current_microphone == "None":
             #https://github.com/chaosparrot/talon_hud/blob/master/CUSTOMIZATION.md#log-messages
