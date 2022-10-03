@@ -1,4 +1,5 @@
 mode: user.power_mode
+# have made specific power mode changes in this file
 -
 zoom in: edit.zoom_in()
 zoom out: edit.zoom_out()
@@ -7,7 +8,7 @@ zoom reset: edit.zoom_reset()
 #zoom area: tracking.zoom()
 #scroll up: edit.page_up()
 #scroll down: edit.page_down()
-copy it now: edit.copy()
+(copy it now | cap bat now): edit.copy()
 #cut it: edit.cut()
 carve it now: edit.cut()
 (pace | paste) it now: edit.paste()

@@ -153,6 +153,8 @@ formatters_words = {
     "title": formatters_dict["CAPITALIZE_ALL_WORDS"],
     #Added to be used by "<user.formatters> word"
     "capitalize": formatters_dict["CAPITALIZE_ALL_WORDS"],
+    "cap": formatters_dict["CAPITALIZE_ALL_WORDS"],
+    "ship": formatters_dict["CAPITALIZE_ALL_WORDS"],
     "sink": formatters_dict["ALL_LOWERCASE"],
 }
 

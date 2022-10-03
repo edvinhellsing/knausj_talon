@@ -1,6 +1,7 @@
 mode: user.power_mode
 tag: browser
 browser.host: zutobiteam.atlassian.net
+browser.host: zutobi.atlassian.net
 -
 #https://confluence.atlassian.com/agile066/jira-agile-user-s-guide/using-keyboard-shortcuts
 

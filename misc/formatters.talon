@@ -5,7 +5,7 @@ phrase <user.text> over: user.insert_with_history(text)
 {user.prose_formatter} <user.prose> over: user.insert_formatted(prose, prose_formatter)
 <user.format_text>+$: user.insert_many(format_text_list)
 <user.format_text>+ over: user.insert_many(format_text_list)
-<user.formatters> (selection | it): user.formatters_reformat_selection(user.formatters)
+<user.formatters> selection: user.formatters_reformat_selection(user.formatters)
 word <user.word>: user.insert_with_history(user.word)
 recent list: user.toggle_phrase_history()
 recent close: user.phrase_history_hide()
@@ -32,13 +32,14 @@ select around [word]:
     edit.extend_word_right()
     edit.extend_word_right()
 
+#go word left: edit.word_left()
+#go word right: edit.word_right()
 contract (word | it):
     edit.word_left()
     edit.extend_word_right()
     edit.extend_word_right()
     user.formatters_reformat_selection("smash")
  
-#select right: edit.extend_right()
 <user.formatters> (word | it):
     edit.word_left()
     edit.extend_word_right()
@@ -64,5 +65,7 @@ contract (word | it):
 # 
 #     #Added to be used by "<user.formatters> word"
 #     "capitalize": formatters_dict["CAPITALIZE_ALL_WORDS"],
+#     "cap": formatters_dict["CAPITALIZE_ALL_WORDS"],
+#     "ship": formatters_dict["CAPITALIZE_ALL_WORDS"],
 #     "sink": formatters_dict["ALL_LOWERCASE"],
 # }

@@ -21,9 +21,10 @@ em phrase: "Mm, "
 hem phrase: "Hmm, "
 ah phrase: "Aa, "
 (I get it | I understand) phrase: "Aha, "
-ha ha phrase: "Haha "
-ha ha ha phrase: "Hahaha "
+ha ha phrase: "Haha"
+ha ha ha phrase: "Hahaha"
 
+(mic | Mike | microphone) off: user.toggle_talon_microphone()
 key(scroll_lock): user.toggle_talon_microphone()
 
 focus outlook: user.open_specific_tab("chrome", "outlook.live.com")
@@ -43,3 +44,5 @@ pick up <number_small>: key("up:{number_small} enter")
 #drop up <number_small>: key("up:{number_small} enter")
 
 (end ten | ten enter): key(enter)
+
+profile switcher open: user.open_browser_profile_switcher("chrome")

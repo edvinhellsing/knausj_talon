@@ -33,6 +33,12 @@ class Actions:
     def open_specific_tab(browser: str, search_str: str):
         """This function requires that the searched for tab actually is open in the browser"""
 
+    def open_browser_profile_switcher(browser: str):
+        """sdf"""
+
+    def open_specific_profile(browser: str):
+        """sdf"""
+
     def gui_hold_modifier_toggle(flag: int, key_str: str):
         """sdf"""
 
@@ -76,6 +82,15 @@ class UserActions:
         actions.sleep("400ms")
         actions.auto_insert(search_str)
         actions.sleep("400ms")
+        actions.key("enter")
+
+    def open_browser_profile_switcher(browser: str):
+        actions.user.engine_mimic("focus " + browser)
+        actions.sleep("200ms")
+        actions.key("ctrl-shift-m")
+        actions.sleep("200ms")
+        actions.key("shift-tab")
+        actions.sleep("200ms")
         actions.key("enter")
 
     def gui_hold_modifier_toggle(flag: int, key_str: str):
