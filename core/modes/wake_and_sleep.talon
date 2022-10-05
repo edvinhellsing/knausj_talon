@@ -1,6 +1,7 @@
 #defines the commands that sleep/wake Talon
 mode: all
 -
+#Note: The function user.hud_toggle_mode() uses the voice commands "talon sleep" and "talon wake"
 ^(talon sleep | tell and sleep)$:
     user.switcher_hide_running()
     user.history_disable()
