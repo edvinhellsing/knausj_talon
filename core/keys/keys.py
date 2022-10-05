@@ -1,5 +1,6 @@
 from talon import Context, Module, actions, app
 
+#http://www.yougowords.com/start-with-e/1-syllables
 #near
 #kid could replace crunch
 #eel elk eagle
@@ -10,7 +11,7 @@ from talon import Context, Module, actions, app
 #risk
 #pink is a color so better to use perk
 #each is often misrecognized as ice...
-default_alphabet = "air bat cap drum eel fine gust harp ice judge crunch look made net odd perk quench ram sun trap urn vest whale x yank zip onyx elk eagle".split(
+default_alphabet = "air bat cap drum east fine gust harp ice judge crunch look made net odd perk quench ram sun trap urn vest whale x yank zip onyx elk eagle".split(
     " "
 )
 letters_string = "abcdefghijklmnopqrstuvwxyzåäö"

@@ -3,7 +3,7 @@ from talon import Module, Context, actions, clip
 from talon.skia.image import Image
 from talon.clip import MimeData
 from dataclasses import dataclass
-from ...imgui import imgui
+from ....imgui import imgui
 
 
 @dataclass
@@ -161,7 +161,6 @@ class Actions:
             #actions.user.paste_plain()
         else:
             actions.edit.paste()
-
 
 def hide_if_not_sticky():
     if not sticky:

@@ -27,16 +27,6 @@ ha ha ha phrase: "Hahaha"
 (mic | Mike | microphone) off: user.toggle_talon_microphone()
 key(scroll_lock): user.toggle_talon_microphone()
 
-focus outlook: user.open_specific_tab("chrome", "outlook.live.com")
-focus google calendar: user.open_specific_tab("chrome", "calendar.google.com")
-#focus notes: user.open_specific_tab("chrome", "iCloud-anteckningar")
-
-focus gmail: user.open_specific_tab("edge", "mail.google.com joel@zutobi")
-focus gmail zero: user.open_specific_tab("edge", "mail.google.com joel@zutobi")
-focus gmail one: user.open_specific_tab("edge", "mail.google.com support@zutobi")
-focus gmail two: user.open_specific_tab("edge", "mail.google.com hello@zutobi")
-focus gmail three: user.open_specific_tab("edge", "mail.google.com lalurran@gmail")
-
 # Pick item from a dropdown
 pick [down] <number_small>: key("down:{number_small-1} enter")
 pick up <number_small>: key("up:{number_small} enter")
@@ -46,3 +36,14 @@ pick up <number_small>: key("up:{number_small} enter")
 (end ten | ten enter): key(enter)
 
 profile switcher open: user.open_browser_profile_switcher("chrome")
+
+talon hood configure:
+    user.engine_mimic("head up show")
+    sleep(300ms)
+    user.engine_mimic("event log show")
+    sleep(300ms)
+    user.engine_mimic("status bar show")
+    sleep(300ms)
+    user.engine_mimic("status bar add microphone")
+    sleep(300ms)
+    user.engine_mimic("status bar add mode indicator")

@@ -3,7 +3,7 @@ This module gives us the list {user.additional_words} to easily refer to system 
 """
 from talon import Context, Module
 
-from .user_settings import get_list_from_csv
+from ..user_settings import get_list_from_csv
 
 mod = Module()
 mod.list("additional_words", desc="List of additional words")
