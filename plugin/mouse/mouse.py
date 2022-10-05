@@ -294,6 +294,7 @@ def show_cursor_helper(show):
         ctrl.cursor_visible(show)
 
 
+#https://talonvoice.com/docs/index.html#talon-noise
 def on_pop(active):
     if setting_mouse_enable_pop_stops_scroll.get() >= 1 and (gaze_job or scroll_job):
         stop_scroll()
@@ -308,10 +309,13 @@ def on_pop(active):
         if setting_mouse_enable_pop_click.get() >= 1:
             ctrl.mouse_click(button=0, hold=16000)
 
-
-#"pop" or "hiss"
 noise.register("pop", on_pop)
-#noise.register("hiss", on_pop)
+
+
+# def on_hiss(active):
+#     print("hiss", active)
+
+# noise.register("hiss", on_hiss)
 
 
 def mouse_scroll(amount):
