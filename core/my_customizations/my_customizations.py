@@ -1,4 +1,4 @@
-from talon import Module, actions, Context, imgui
+from talon import Module, actions, Context, imgui, scope
 
 from talon_plugins import eye_mouse
 
@@ -64,15 +64,15 @@ class UserActions:
         if current_microphone == "None":
             #https://github.com/chaosparrot/talon_hud/blob/master/CUSTOMIZATION.md#log-messages
             actions.user.hud_add_log('success', 'Mic and eye tracking enabled')
+            actions.user.hud_toggle_microphone()
         else:
             actions.user.hud_add_log('error', 'Mic and eye tracking disabled')
+            actions.user.hud_toggle_microphone()
         
         if eye_mouse.tracker is not None and eye_mouse.config.control_mouse:
             actions.user.mouse_sleep()
-        elif eye_mouse.tracker is not None and not eye_mouse.config.control_mouse:
+        elif eye_mouse.tracker is not None and not eye_mouse.config.control_mouse and not "sleep" in scope.get("mode"):
             actions.user.mouse_wake()
-
-        actions.user.hud_toggle_microphone()
 
     def open_specific_tab(browser: str, search_str: str):
         """This function requires that the searched for tab actually is open in the browser"""

@@ -299,8 +299,9 @@ def on_pop(active):
         stop_scroll()
     if 0 in ctrl.mouse_buttons_down():
         actions.user.mouse_drag_end()
+    if 1 in ctrl.mouse_buttons_down():
+        actions.user.figma_pan_stop()
     elif (
-        
         not actions.tracking.control_zoom_enabled()
         and eye_mouse.mouse.attached_tracker is not None
     ):

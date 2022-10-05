@@ -3,6 +3,20 @@ from talon import Module
 mod = Module()
 apps = mod.apps
 apps.figma = "app.name: Figma"
+mod.apps.figma = """
+os: windows
+and app.name: Figma
+os: windows
+and app.exe: Figma.exe
+"""
+#apps.figma = """
+#os: mac
+#and app.bundle: 
+#"""
+apps.figma = """
+tag: browser
+browser.host: www.figma.com
+"""
 
 @mod.action_class
 class figma_actions:
