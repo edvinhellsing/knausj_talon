@@ -27,7 +27,7 @@ post {user.prose_formatter} <user.prose>$:
     user.insert_formatted(prose, prose_formatter)
     key(space)
 
-select around [word]: 
+select around: 
     edit.word_left()
     edit.extend_word_right()
     edit.extend_word_right()
@@ -41,8 +41,7 @@ contract (word | it):
     user.formatters_reformat_selection("smash")
  
 <user.formatters> (word | it):
-    edit.word_left()
-    edit.extend_word_right()
+    edit.select_word()
     user.formatters_reformat_selection(user.formatters)
 
 ##########

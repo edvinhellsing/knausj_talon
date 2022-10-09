@@ -1,5 +1,7 @@
 app: figma
 -
+tag(): user.tabs
+
 # toggle side: user.figma_toggle_ui()
 # search: user.figma_quick_actions()
 

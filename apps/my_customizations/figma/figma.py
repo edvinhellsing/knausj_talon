@@ -1,6 +1,7 @@
 from talon import Module
 
 mod = Module()
+
 apps = mod.apps
 apps.figma = "app.name: Figma"
 mod.apps.figma = """
@@ -17,6 +18,7 @@ apps.figma = """
 tag: browser
 browser.host: www.figma.com
 """
+
 
 @mod.action_class
 class figma_actions:
