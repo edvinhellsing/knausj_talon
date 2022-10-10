@@ -8,7 +8,10 @@ go word left: edit.word_left()
 pre$: edit.word_left()
 
 go word right: edit.word_right()
-post$: edit.word_right()
+
+post$: 
+    edit.word_right()
+    edit.left()
 
 go left: edit.left()
 
@@ -111,9 +114,10 @@ clear way down:
     edit.extend_file_end()
     edit.delete()
 
-clear all:
-    edit.select_all()
-    edit.delete()
+#Remove this functionality to prevent unwanted mistakes
+# clear all:
+#     edit.select_all()
+#     edit.delete()
 
 #copy commands
 copy all:

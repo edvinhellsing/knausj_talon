@@ -26,6 +26,10 @@ normal text: key(ctrl-alt-0)
 
 [insert] (link | linkify): key(ctrl-k)
 
+spelling [and grammar]: key(f7)
+#spelling next: key(ctrl-')
+#spelling last: key(ctrl-;)
+
 #clear formatting: key(ctrl-\)
 
 #keyboard shortcuts: key(ctrl-/)

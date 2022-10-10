@@ -171,7 +171,7 @@ symbol_key_words = {
     #"stack": ":",
     "drip": ",",
     
-    #"point": ".",
+    "point": ".",
     "quote": "'",
     "apostrophe": "'",
     "L square": "[",

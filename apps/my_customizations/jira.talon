@@ -10,8 +10,8 @@ browser.host: zutobi.atlassian.net
 (issue | ticket) assign: key(a)
 (issue | ticket) assign to me: key(i)
 (issue | ticket) watch: key(w)
-(issue | ticket) comment: key(m)
-comment send: key(ctrl-enter)
+(issue | ticket) (comment | message): key(m)
+(comment | message) send: key(ctrl-enter)
 
 search: key(/)
 
