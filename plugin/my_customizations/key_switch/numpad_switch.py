@@ -5,7 +5,7 @@ mod = Module()
 #"user.avc", "user.zoom_mouse", "user.docs"
 mod.tag("avc", desc="Tag for enabling specific commands for audio video calls")
 mod.tag("zoom_mouse", desc="Indicates that zoom mouse is zoomed in")
-mod.tag("docs", desc="Tag for enabling specific commands for docs software, like Google Docs")
+mod.tag("native_dictation", desc="Tag for enabling native dictation for specific apps, like Google Docs")
 
 #14 numpad keys
 #refactor this later
@@ -331,14 +331,14 @@ class AvcActions:
         pass
 
 
-# Docs mode
-ctx_docs = Context()
-ctx_docs.matches = r"""
-tag: user.docs
+# Native dictation mode
+ctx_native_dictation = Context()
+ctx_native_dictation.matches = r"""
+tag: user.native_dictation
 """
 
-@ctx_docs.action_class("user")
-class DocsActions:
+@ctx_native_dictation.action_class("user")
+class NativeDictationActions:
     def keypad_2_down():
         actions.user.toggle_dictation()
 

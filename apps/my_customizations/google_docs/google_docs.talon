@@ -7,7 +7,7 @@ browser.host: docs.google.com
 #https://support.google.com/docs/answer/4492226?hl=en
 #To stop voice typing, say "Stop listening."
 
-#tag(): user.docs
+#tag(): user.native_dictation
 
 normal text: key(ctrl-alt-0)
 
