@@ -1,8 +1,11 @@
 from talon import Module, Context, actions, cron, scope
 
 mod = Module()
+#Instantiation of the tags
+#"user.avc", "user.zoom_mouse", "user.docs"
 mod.tag("avc", desc="Tag for enabling specific commands for audio video calls")
 mod.tag("zoom_mouse", desc="Indicates that zoom mouse is zoomed in")
+mod.tag("docs", desc="Tag for enabling specific commands for docs software, like Google Docs")
 
 #14 numpad keys
 #refactor this later
@@ -159,6 +162,27 @@ class Actions:
     def keypad_plus_up():
         """sdf"""
 
+    def toggle_dictation():
+        """sdf"""
+        if "command" in scope.get("mode"):
+            actions.user.mouse_sleep()
+            actions.speech.toggle()
+            actions.user.start_stop_dictation()
+        elif "dictation" in scope.get("mode"):
+            actions.user.mouse_sleep()
+            actions.speech.toggle()
+            actions.user.start_stop_dictation()
+        elif "user.power_mode" in scope.get("mode"):
+            actions.user.mouse_sleep()
+            actions.speech.toggle()
+            actions.mode.disable("user.power_mode")
+            actions.user.start_stop_dictation()
+        elif "sleep" in scope.get("mode"):
+            actions.user.start_stop_dictation()
+            actions.speech.toggle()
+            actions.user.mouse_wake()
+
+
 # Default implementation
 ctx = Context()
 
@@ -183,23 +207,7 @@ class UserActions:
         pass
 
     def keypad_2_down():
-        if "command" in scope.get("mode"):
-            actions.user.mouse_sleep()
-            actions.speech.toggle()
-            actions.user.start_stop_dictation()
-        elif "dictation" in scope.get("mode"):
-            actions.user.mouse_sleep()
-            actions.speech.toggle()
-            actions.user.start_stop_dictation()
-        elif "user.power_mode" in scope.get("mode"):
-            actions.user.mouse_sleep()
-            actions.speech.toggle()
-            actions.mode.disable("user.power_mode")
-            actions.user.start_stop_dictation()
-        elif "sleep" in scope.get("mode"):
-            actions.user.start_stop_dictation()
-            actions.speech.toggle()
-            actions.user.mouse_wake()
+        actions.user.toggle_dictation()
 
     def keypad_2_up():
         pass
@@ -323,6 +331,18 @@ class AvcActions:
         pass
 
 
+# Docs mode
+ctx_docs = Context()
+ctx_docs.matches = r"""
+tag: user.docs
+"""
+
+@ctx_docs.action_class("user")
+class DocsActions:
+    def keypad_2_down():
+        actions.user.toggle_dictation()
+
+
 # Mouse zoom mode
 ctx_zoom = Context()
 ctx_zoom.matches = r"""
@@ -331,7 +351,7 @@ not mode: user.power_mode
 """
 
 @ctx_zoom.action_class("user")
-class ZoomActions:
+class ZoomActions: 
     def keypad_0_down():
         actions.user.zoom_mouse_click("triple")
 

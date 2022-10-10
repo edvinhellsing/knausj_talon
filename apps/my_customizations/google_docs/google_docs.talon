@@ -3,6 +3,12 @@ browser.host: docs.google.com
 -
 #https://support.google.com/docs/answer/179738?hl=en&co=GENIE.Platform%3DDesktop#zippy=%2Cpc-shortcuts
 
+#Voice typing:
+#https://support.google.com/docs/answer/4492226?hl=en
+#To stop voice typing, say "Stop listening."
+
+#tag(): user.docs
+
 normal text: key(ctrl-alt-0)
 
 [insert] heading one: key(ctrl-alt-1)
