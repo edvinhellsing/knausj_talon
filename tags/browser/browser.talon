@@ -9,7 +9,7 @@ address copy | url copy | copy address | copy url:
 go (forward | next | forth): browser.go_forward()
 go (backward | last | back | previous): browser.go_back()
 
-go {user.website}: browser.go(website)
+go [to] {user.website}: browser.go(website)
 private new: browser.open_private_window()
 
 bookmark it: browser.bookmark()
@@ -19,13 +19,13 @@ bookmark it: browser.bookmark()
 tab (refresh | reload): browser.reload()
 tab (refresh | reload) hard: browser.reload_hard()
 
-bookmark show: browser.bookmarks()
-bookmark bar [show]: browser.bookmarks_bar()
-downloads show: browser.show_downloads()
-extensions show: browser.show_extensions()
-history show: browser.show_history()
-cache show: browser.show_clear_cache()
-dev tools [show]: browser.toggle_dev_tools()
+bookmark (show | open): browser.bookmarks()
+bookmark bar (show | open): browser.bookmarks_bar()
+downloads (show | open): browser.show_downloads()
+extensions (show | open): browser.show_extensions()
+history (show | open): browser.show_history()
+cache (show | open): browser.show_clear_cache()
+dev tools (show | open): browser.toggle_dev_tools()
 
 incognito new: key(ctrl-shift-n)
 

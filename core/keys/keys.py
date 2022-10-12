@@ -11,7 +11,8 @@ from talon import Context, Module, actions, app
 #risk
 #pink is a color so better to use perk
 #each is often misrecognized as ice...
-default_alphabet = "air bat cap drum east fine gust harp ice judge crunch look made net odd perk quench ram sun trap urn vest whale x yank zip onyx elk eagle".split(
+#bat is often misrecognized as whale/dot/it/space and many more commands... Trying out `batch` and `bill` instead
+default_alphabet = "air batch cap drum east fine gust harp ice judge crunch look made net odd perk quench ram sun trap urn vest whale x yank zip onyx elk eagle".split(
     " "
 )
 letters_string = "abcdefghijklmnopqrstuvwxyzåäö"

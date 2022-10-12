@@ -7,16 +7,16 @@ browser.host: mail.google.com
 (email | message) last: key(p)
 (email | message) next: key(n)
 
-go inbox: 
+go [to] inbox: 
     key(g)
     key(i)
-go starred: 
+go [to] starred: 
     key(g)
     key(s)
-go drafts: 
+go [to] drafts: 
     key(g)
     key(d)
-go sent: 
+go [to] sent: 
     key(g)
     key(t)
 

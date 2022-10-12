@@ -5,10 +5,14 @@
 
 #Otherwise, you should check out events.tail() in the repl to see what's happening behind the scenes for specific commands
 
+#Question: Is there a way to execute a system command in a Talon script file or do I need to create a Python module?
+#Answer: user.system_command_nb() 
+#And obviously just put the command as a string in the function call
+
 #https://bitwarden.com/help/keyboard-shortcuts/
-#Bitwarden (launch | activate): key(ctrl-shift-Y)
-[Bitwarden] (pass | password) fill: key(ctrl-shift-L)
-[Bitwarden] (pass | password) generate: key(ctrl-shift-9)
+Bitwarden activate: key(ctrl-shift-Y)
+[Bitwarden] password fill: key(ctrl-shift-L)
+[Bitwarden] password generate: key(ctrl-shift-9)
 
 #test select start: user.select_continous(1)
 #test select end: user.select_continous(0)
@@ -23,6 +27,11 @@ ah phrase: "Aa, "
 (I get it | I understand) phrase: "Aha, "
 ha ha phrase: "Haha"
 ha ha ha phrase: "Hahaha"
+
+signature phrase: 
+    "Best regards"
+    edit.line_insert_down()
+    "Joel"
 
 (mic | Mike | microphone) off: user.toggle_talon_microphone()
 key(scroll_lock): user.toggle_talon_microphone()

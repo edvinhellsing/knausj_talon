@@ -7,13 +7,13 @@ browser.host: outlook.live.com
 #(email | message) last: key(p)
 #(email | message) next: key(n)
 
-go inbox:
+go [to] inbox:
     key(g)
     key(i)
-go drafts:
+go [to] drafts:
     key(g)
     key(d)
-go sent:
+go [to] sent:
     key(g)
     key(s)
 
