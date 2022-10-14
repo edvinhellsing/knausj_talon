@@ -22,7 +22,7 @@ redo it: edit.redo()
 (file | five) save: edit.save()
 (file | five) save all: edit.save_all()
 #padding: user.insert_between(" ", " ")
-#slap: edit.line_insert_down()
+slap: edit.line_insert_down()
 new (line | row): edit.line_insert_down()
 (line | row) new: edit.line_insert_down()
 (new paragraph | paragraph new): 
