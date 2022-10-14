@@ -1,4 +1,8 @@
-from talon import Module, actions, Context, imgui, scope
+from talon import Module, Context, actions, imgui, scope
+
+#Below is for the talon_relaunch()
+from talon import ui, app
+import os
 
 from talon_plugins import eye_mouse
 
@@ -42,6 +46,21 @@ class Actions:
     def gui_hold_modifier_toggle(flag: int, key_str: str):
         """sdf"""
 
+    def put_computer_to_sleep():
+        """Puts computer into sleep mode"""
+
+    def talon_relaunch():
+        """Quit and relaunch the Talon app"""
+
+    def start_stop_dictation():
+        """Start dictation on both Windows and macOS"""
+
+    def toggle_dictation_voice_command():
+        """Start dictation on both Windows and macOS using a voice command"""
+
+    def toggle_dictation_key_switch():
+        """Start dictation on both Windows and macOS using a physical key"""
+
     def select_continous(run: int):
         """sdf"""
 
@@ -57,9 +76,8 @@ class UserActions:
         for i in range(rep):
             actions.core.repeat_command(1)
             actions.sleep("200ms")
-
+  
     def toggle_talon_microphone():
-        """Toggle the Talon microphone on/off using talon_HUD actions (please note: talon_HUD must be installed in the talon user folder for this function to work)"""
         current_microphone = actions.sound.active_microphone()
         if current_microphone == "None":
             #https://github.com/chaosparrot/talon_hud/blob/master/CUSTOMIZATION.md#log-messages
@@ -100,6 +118,94 @@ class UserActions:
             gui_hold_modifier.show()
         else:
             gui_hold_modifier.hide()
+
+    def put_computer_to_sleep():
+        """Puts computer into sleep mode"""
+        if app.platform == "windows":
+            actions.key("super-x")
+            actions.sleep("200ms")
+            actions.key("u")
+            actions.sleep("200ms")
+            actions.key("s")
+
+    # From this repo:
+    # https://github.com/nriley/knausj_talon/blob/ed7b1c1e/code/talon_helpers.py#L161
+    def talon_relaunch():
+        """Quit and relaunch the Talon app"""
+        talon_app = ui.apps(pid=os.getpid())[0]
+        if app.platform == "windows":
+            os.startfile(talon_app.exe)
+            talon_app.quit()  
+        elif app.platform == "mac":
+            from shlex import quote
+            from subprocess import Popen
+
+            talon_app_path = quote(talon_app.path)
+            Popen(
+                [
+                    "/bin/sh",
+                    "-c",
+                    f"/usr/bin/open -W {talon_app_path} ; /usr/bin/open {talon_app_path}",
+                ],
+                start_new_session=True,
+            )
+            talon_app.quit()  
+
+    def start_stop_dictation():
+        """Start dictation on both Windows and macOS"""
+        if app.platform == "windows":
+            actions.key("super-h")
+        elif app.platform == "mac":
+            actions.key("ctrl")
+            actions.sleep("50ms")
+            actions.key("ctrl")
+
+    def toggle_dictation_voice_command():
+        """Start dictation on both Windows and macOS using a voice command"""
+        #if the microphone has been disabled through talon_hud then we just start the dictation without putting Talon to sleep
+        current_microphone = actions.sound.active_microphone()
+        if current_microphone == "None":
+            actions.user.start_stop_dictation()
+        #if not we must take other actions before we start the dictation
+        elif "command" in scope.get("mode"):
+            actions.user.mouse_sleep()
+            actions.speech.toggle()
+            actions.user.start_stop_dictation()
+        elif "user.power_mode" in scope.get("mode"):
+            actions.user.mouse_sleep()
+            actions.speech.toggle()
+            actions.mode.disable("user.power_mode")
+            actions.user.start_stop_dictation()
+        elif "sleep" in scope.get("mode"):
+            #add some sleep time to make sure talon doesn't pick up any speech
+            actions.sleep("500ms")
+            actions.speech.toggle()
+            actions.user.mouse_wake()
+
+    def toggle_dictation_key_switch():
+        """Start dictation on both Windows and macOS using a physical key"""
+        #if the microphone has been disabled through talon_hud then we just start the dictation without putting Talon to sleep
+        current_microphone = actions.sound.active_microphone()
+        if current_microphone == "None":
+            actions.user.start_stop_dictation()
+        #if not we must take other actions before we start the dictation
+        elif "command" in scope.get("mode"):
+            actions.user.mouse_sleep()
+            actions.speech.toggle()
+            actions.user.start_stop_dictation()
+        elif "dictation" in scope.get("mode"):
+            actions.user.mouse_sleep()
+            actions.speech.toggle()
+            actions.user.start_stop_dictation()
+        elif "user.power_mode" in scope.get("mode"):
+            actions.user.mouse_sleep()
+            actions.speech.toggle()
+            actions.mode.disable("user.power_mode")
+            actions.user.start_stop_dictation()
+        elif "sleep" in scope.get("mode"):
+            actions.user.start_stop_dictation()
+            actions.speech.toggle()
+            actions.user.mouse_wake()
 
     # Non working prototypes as of now
     def select_continous(run: int):

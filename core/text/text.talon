@@ -27,10 +27,12 @@ post {user.prose_formatter} <user.prose>$:
     user.insert_formatted(prose, prose_formatter)
     key(space)
 
+#In Google docs an additional edit.extend_left() seems to be needed but not in other applications/websites
 select around: 
     edit.word_left()
     edit.extend_word_right()
     edit.extend_word_right()
+    #edit.extend_left()
 
 #go word left: edit.word_left()
 #go word right: edit.word_right()
@@ -38,10 +40,12 @@ contract (word | it):
     edit.word_left()
     edit.extend_word_right()
     edit.extend_word_right()
+    #edit.extend_left()
     user.formatters_reformat_selection("smash")
  
 <user.formatters> (word | it):
     edit.select_word()
+    #edit.extend_left()
     user.formatters_reformat_selection(user.formatters)
 
 ##########

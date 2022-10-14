@@ -162,26 +162,6 @@ class Actions:
     def keypad_plus_up():
         """sdf"""
 
-    def toggle_dictation():
-        """sdf"""
-        if "command" in scope.get("mode"):
-            actions.user.mouse_sleep()
-            actions.speech.toggle()
-            actions.user.start_stop_dictation()
-        elif "dictation" in scope.get("mode"):
-            actions.user.mouse_sleep()
-            actions.speech.toggle()
-            actions.user.start_stop_dictation()
-        elif "user.power_mode" in scope.get("mode"):
-            actions.user.mouse_sleep()
-            actions.speech.toggle()
-            actions.mode.disable("user.power_mode")
-            actions.user.start_stop_dictation()
-        elif "sleep" in scope.get("mode"):
-            actions.user.start_stop_dictation()
-            actions.speech.toggle()
-            actions.user.mouse_wake()
-
 
 # Default implementation
 ctx = Context()
@@ -207,7 +187,7 @@ class UserActions:
         pass
 
     def keypad_2_down():
-        actions.user.toggle_dictation()
+        actions.user.toggle_dictation_key_switch()
 
     def keypad_2_up():
         pass
@@ -340,7 +320,7 @@ tag: user.native_dictation
 @ctx_native_dictation.action_class("user")
 class NativeDictationActions:
     def keypad_2_down():
-        actions.user.toggle_dictation()
+        actions.user.toggle_dictation_key_switch()
 
 
 # Mouse zoom mode

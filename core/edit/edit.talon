@@ -140,18 +140,22 @@ copy all:
 copy word:
     edit.select_word()
     edit.copy()
+    user.hud_add_log('success', 'Content copied')
 
 copy word left:
     edit.extend_word_left()
     edit.copy()
+    user.hud_add_log('success', 'Content copied')
 
 copy word right:
     edit.extend_word_right()
     edit.copy()
+    user.hud_add_log('success', 'Content copied')
 
 copy line:
     edit.select_line()
     edit.copy()
+    user.hud_add_log('success', 'Content copied')
 
 #cut commands
 cut all:

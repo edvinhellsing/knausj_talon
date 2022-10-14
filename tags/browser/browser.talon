@@ -5,6 +5,7 @@ address copy | url copy | copy address | copy url:
     browser.focus_address()
     sleep(50ms)
     edit.copy()
+    user.hud_add_log('success', 'Content copied')
 #go home: browser.go_home()
 go (forward | next | forth): browser.go_forward()
 go (backward | last | back | previous): browser.go_back()

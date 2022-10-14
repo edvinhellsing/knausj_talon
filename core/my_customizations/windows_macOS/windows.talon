@@ -36,4 +36,4 @@ virtual keyboard: key(super-ctrl-o)
 
 computer sleep: user.put_computer_to_sleep()
 
-talon relaunch: user.talon_relaunch()
+talon (relaunch | restart): user.talon_relaunch()
