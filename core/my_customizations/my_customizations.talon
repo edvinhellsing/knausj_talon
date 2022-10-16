@@ -33,8 +33,9 @@ signature phrase:
     edit.line_insert_down()
     "Joel"
 
+#f13 changed to scroll_lock
 (mic | Mike | microphone) off: user.toggle_talon_microphone()
-key(scroll_lock): user.toggle_talon_microphone()
+key(f13): user.toggle_talon_microphone()
 
 # Pick item from a dropdown
 pick [down] <number_small>: key("down:{number_small} enter")
