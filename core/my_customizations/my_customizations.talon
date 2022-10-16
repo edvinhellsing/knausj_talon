@@ -33,7 +33,7 @@ signature phrase:
     edit.line_insert_down()
     "Joel"
 
-#f13 changed to scroll_lock
+#f13 changed from scroll_lock
 (mic | Mike | microphone) off: user.toggle_talon_microphone()
 key(f13): user.toggle_talon_microphone()
 
