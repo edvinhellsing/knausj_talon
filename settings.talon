@@ -16,7 +16,8 @@ settings():
     user.help_max_contexts_per_page = 20
 
     # The default amount used when scrolling continuously
-    user.mouse_continuous_scroll_amount = 80
+    #user.mouse_continuous_scroll_amount = 80
+    user.mouse_continuous_scroll_amount = 240
 
     # Stop continuous scroll/gaze scroll with a pop
     user.mouse_enable_pop_stops_scroll = 1
@@ -31,7 +32,8 @@ settings():
     user.mouse_wake_hides_cursor = 0
 
     # The amount to scroll up/down (equivalent to mouse wheel on Windows by default)
-    user.mouse_wheel_down_amount = 240
+    #user.mouse_wheel_down_amount = 120
+    user.mouse_wheel_down_amount = 720
 
     # The amount to scroll left/right
     user.mouse_wheel_horizontal_amount = 40

@@ -1,0 +1,3 @@
+Does anyone else here have a problem where the mouse cursor is hidden after hibernation? The only way I can get it back is to use an actual mouse and move it. I have tried all manners of talon commands and eye tracker movements and the cursor won't reappear until I use an actual mouse which is unfortunate because I usually don't use one at all.
+
+Solution: run disableCursorSupression.reg

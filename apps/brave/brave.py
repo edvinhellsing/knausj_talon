@@ -4,10 +4,13 @@ ctx = Context()
 mod = Module()
 
 mod.apps.brave = "app.name: Brave Browser"
-# TODO: Add other OS application identifiers
 mod.apps.brave = """
 os: mac
 and app.bundle: com.brave.Browser
+"""
+mod.apps.brave = """
+os: windows
+and app.exe: brave.exe
 """
 ctx.matches = r"""
 app: brave
