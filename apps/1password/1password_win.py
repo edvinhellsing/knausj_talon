@@ -7,19 +7,29 @@ ctx = Context()
 # the below are for 1password, redefine as needed
 ctx.matches = r"""
 os: windows
+app: chrome
+app: microsoft_edge
+app: firefox
+app: opera_browser
+app: brave
+app: bitwarden
 """
 
 
+#https://bitwarden.com/help/keyboard-shortcuts/
 @ctx.action_class("user")
 class UserActions:
     def password_fill():
-        actions.key("ctrl-\\\\")
+        #Bitwarden
+        actions.key("ctrl-shift-L")
 
     def password_show():
         actions.key("alt-ctrl-\\\\")
 
     def password_new():
-        actions.key("ctrl-n")
+        #Bitwarden
+        actions.key("ctrl-shift-9")
+        actions.user.hud_add_log('success', 'Generated password copied to clipboard')
 
     def password_duplicate():
         actions.key("ctrl-d")

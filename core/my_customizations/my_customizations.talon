@@ -9,11 +9,6 @@
 #Answer: user.system_command_nb() 
 #And obviously just put the command as a string in the function call
 
-#https://bitwarden.com/help/keyboard-shortcuts/
-Bitwarden activate: key(ctrl-shift-Y)
-[Bitwarden] password fill: key(ctrl-shift-L)
-[Bitwarden] password generate: key(ctrl-shift-9)
-
 #test select start: user.select_continous(1)
 #test select end: user.select_continous(0)
 
