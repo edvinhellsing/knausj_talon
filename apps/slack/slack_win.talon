@@ -43,11 +43,14 @@ grab right: key(shift-down)
 [insert] (strike | strikethrough | strikify): key(ctrl-shift-x)
 [insert] snippet: key(ctrl-shift-enter)
 # Calls
-start huddle: key(ctrl-shift-h)
-#leave huddle: 
-toggle (mute | unmute): key(m)
-toggle video: key(v)
-invite people: key(a)
+huddle (start | join): 
+    key(ctrl-shift-h)
+    sleep(200ms)
+    key(scroll_lock)
+huddle (leave | close): key(ctrl-shift-h)
+#toggle (mute | unmute): key(m)
+#toggle video: key(v)
+#invite people: key(a)
 # Miscellaneous
 keyboard shortcuts: key(ctrl-/)
 #emote <user.text>: "{text}"

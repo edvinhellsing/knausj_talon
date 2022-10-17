@@ -53,3 +53,5 @@ talon hood (configure | reset):
     user.engine_mimic("status bar add mode indicator")
 
 program (close | quit): user.close_program()
+
+slack huddle (leave | close): user.slack_system_wide_leave_huddle()

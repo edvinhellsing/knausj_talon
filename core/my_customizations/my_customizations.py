@@ -63,6 +63,11 @@ class Actions:
 
     def close_program():
         """Uses the OS built-in keyboard shortcut to close the program"""
+        
+    def slack_system_wide_leave_huddle():
+        """sdf"""
+
+
 
     def select_continous(run: int):
         """sdf"""
@@ -216,6 +221,13 @@ class UserActions:
             actions.key("alt-f4")
         elif app.platform == "mac":
             actions.key("cmd-q")
+    
+    #System wide leave huddle voice command
+    def slack_system_wide_leave_huddle():
+        actions.user.engine_mimic("focus slack")
+        actions.sleep("300ms")
+        actions.key("ctrl-shift-h")
+
 
 
     # Non working prototypes as of now
