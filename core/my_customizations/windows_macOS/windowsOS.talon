@@ -1,4 +1,3 @@
-mode: user.power_mode
 os: windows
 -
 windows search: key(super-s)
@@ -8,13 +7,13 @@ windows search: key(super-s)
 start listening: 
     #set keyboard to English
     key(alt-shift-1)
-    user.start_stop_dictation_voice_command()
+    user.toggle_dictation_voice_command()
 
 #börja lyssna
 (burial listener | burial alister): 
     #set keyboard to Swedish
     key(alt-shift-2)
-    user.start_stop_dictation_voice_command()
+    user.toggle_dictation_voice_command()
     
 (lang | language) change: key(alt-shift)
 #https://www.digitalcitizen.life/keyboard-language-shortcut/
@@ -35,6 +34,6 @@ virtual keyboard: key(super-ctrl-o)
 #The line below doesn't work for some reason. Instead of locking the computer it opens Windows search and enter an L.
 #computer lock: key(super l)
 
-#computer sleep: user.put_computer_to_sleep()
+computer sleep: user.put_computer_to_sleep()
 
 talon (relaunch | restart): user.talon_relaunch()

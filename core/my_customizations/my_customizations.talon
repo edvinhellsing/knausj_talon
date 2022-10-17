@@ -51,3 +51,5 @@ talon hood (configure | reset):
     user.engine_mimic("status bar add microphone")
     sleep(300ms)
     user.engine_mimic("status bar add mode indicator")
+
+program (close | quit): user.close_program()
