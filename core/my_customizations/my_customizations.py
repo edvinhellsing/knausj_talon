@@ -61,6 +61,9 @@ class Actions:
     def toggle_dictation_key_switch():
         """Start dictation on both Windows and macOS using a physical key"""
 
+    def close_program():
+        """Uses the OS built-in keyboard shortcut to close the program"""
+
     def select_continous(run: int):
         """sdf"""
 
@@ -207,6 +210,13 @@ class UserActions:
             actions.speech.toggle()
             actions.user.mouse_wake()
 
+    def close_program():
+        """Uses the OS built-in keyboard shortcut to close the program"""
+        if app.platform == "windows":
+            actions.key("alt-f4")
+        elif app.platform == "mac":
+            actions.key("cmd-q")
+    
     # Non working prototypes as of now
     def select_continous(run: int):
 

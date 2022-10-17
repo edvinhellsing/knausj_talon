@@ -7,13 +7,13 @@ windows search: key(super-s)
 start listening: 
     #set keyboard to English
     key(alt-shift-2)
-    user.start_stop_dictation_voice_command()
+    user.toggle_dictation_voice_command()
 
 #börja lyssna
 (burial listener | burial alister): 
     #set keyboard to Swedish
     key(alt-shift-1)
-    user.start_stop_dictation_voice_command()
+    user.toggle_dictation_voice_command()
     
 (lang | language) change: key(alt-shift)
 #https://www.digitalcitizen.life/keyboard-language-shortcut/
