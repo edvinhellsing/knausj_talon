@@ -54,7 +54,13 @@ talon hood (configure | reset):
     sleep(300ms)
     user.engine_mimic("status bar show")
     sleep(300ms)
+    # not able to add microphone if not first removed
+    user.engine_mimic("status bar remove microphone")
+    sleep(300ms)
     user.engine_mimic("status bar add microphone")
+    sleep(300ms)
+    # not able to add mode indicator if not first removed
+    user.engine_mimic("status bar remove mode indicator")
     sleep(300ms)
     user.engine_mimic("status bar add mode indicator")
 
