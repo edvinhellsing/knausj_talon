@@ -32,5 +32,5 @@ stop listening:
     user.toggle_dictation_voice_command()
 
 # stoppa diktering
-(slut Alister | slut alisa | slut dart listener | stop public theory | stop public tearing ):
+(slut Alister | slut alisa | slut dart listener | stop public theory | stop public tearing):
     user.toggle_dictation_voice_command()
