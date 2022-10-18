@@ -21,6 +21,7 @@ mode: sleep
 stop listening: 
     user.toggle_dictation_voice_command()
 
-#sluta lyssna
+#sluta lyssna/sluta diktering
 (slut Alister | slut alisa | slut dart listener):
+#| stop public theory | stop public tearing ):
     user.toggle_dictation_voice_command()

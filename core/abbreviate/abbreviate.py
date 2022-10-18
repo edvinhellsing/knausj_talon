@@ -237,6 +237,7 @@ abbreviations = {
     "largest contentful paint": "LCP ",
     "cumulative layout shift": "CLS ",
     "first input delay": "FID ",
+    "Vladimir": "Vlad ",
     #"": " ",
 }
 

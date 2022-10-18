@@ -103,7 +103,8 @@ class AvcActions:
         actions.key("ctrl-shift-space")
 
     def avc_toggle_video():
-        pass
+        #Add this so I can use the foot pedal to start dictation in huddle threads
+        actions.user.toggle_dictation_key_switch()
 
     def avc_toggle_screensharing():
         pass
