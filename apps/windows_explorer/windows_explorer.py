@@ -29,6 +29,10 @@ app: windows_explorer
 app: windows_file_browser
 """
 
+#Added to make the tabs management work on the new windows 11 explorer (which now support tabs).
+ctx.tags = ["user.tabs"]
+
+
 user_path = os.path.expanduser("~")
 directories_to_remap = {}
 directories_to_exclude = {}

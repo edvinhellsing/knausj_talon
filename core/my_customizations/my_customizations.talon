@@ -48,6 +48,12 @@ talon hood (configure | reset):
     sleep(300ms)
     user.engine_mimic("status bar show")
     sleep(300ms)
+    #Reset the status bar icons by first removing them
+    user.engine_mimic("status bar remove microphone")
+    sleep(300ms)
+    user.engine_mimic("status bar remove mode indicator")
+    sleep(300ms)
+    #And then add them again
     user.engine_mimic("status bar add microphone")
     sleep(300ms)
     user.engine_mimic("status bar add mode indicator")
