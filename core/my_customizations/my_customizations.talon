@@ -9,10 +9,14 @@
 #Answer: user.system_command_nb() 
 #And obviously just put the command as a string in the function call
 
+# Bitwarden  
 #https://bitwarden.com/help/keyboard-shortcuts/
 Bitwarden activate: key(ctrl-shift-Y)
 [Bitwarden] password fill: key(ctrl-shift-L)
 [Bitwarden] password generate: key(ctrl-shift-9)
+
+# 1pass
+
 
 #test select start: user.select_continous(1)
 #test select end: user.select_continous(0)
@@ -22,7 +26,7 @@ website {user.website}: auto_insert(website)
 system path <user.system_path>: auto_insert(system_path)
 
 em phrase: "Mm, "
-hem phrase: "Hmm, "
+hem phrase: "Hm, "
 ah phrase: "Aa, "
 (I get it | I understand) phrase: "Aha, "
 ha ha phrase: "Haha"
@@ -31,11 +35,15 @@ ha ha ha phrase: "Hahaha"
 signature phrase: 
     "Best regards"
     edit.line_insert_down()
-    "Joel"
+    "Edvin"
 
-#f13 changed from scroll_lock
+# Control mouse and eyetracking - f13 to switch mic and eyetracking on and off, earlier scroll_lock
 (mic | Mike | microphone) off: user.toggle_talon_microphone()
 key(f13): user.toggle_talon_microphone()
+
+# Control mouse - f14 to switch control mouse on and off
+(mouse) off: user.toggle_control_mouse()
+key(f14): user.toggle_control_mouse()
 
 # Pick item from a dropdown
 pick [down] <number_small>: key("down:{number_small} enter")

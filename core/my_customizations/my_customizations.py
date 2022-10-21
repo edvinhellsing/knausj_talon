@@ -34,6 +34,10 @@ class Actions:
     def toggle_talon_microphone():
         """Toggle the Talon microphone on/off using talon_HUD actions (please note: talon_HUD must be installed in the talon user folder for this function to work)"""
 
+    def toggle_control_mouse():
+        """Toggle the mouse on/off, using talon_HUD actions to control eye tracking and mouse together (please note: talon_HUD must be installed in the talon user folder for this function to work)"""
+
+
     def open_specific_tab(browser: str, search_str: str):
         """This function requires that the searched for tab actually is open in the browser"""
 
@@ -82,18 +86,36 @@ class UserActions:
   
     def toggle_talon_microphone():
         current_microphone = actions.sound.active_microphone()
-        if current_microphone == "None":
+
+        if current_microphone == "None" and eye_mouse.tracker is not None and not eye_mouse.config.control_mouse and not "sleep" in scope.get("mode"):
             #https://github.com/chaosparrot/talon_hud/blob/master/CUSTOMIZATION.md#log-messages
             actions.user.hud_add_log('success', 'Mic and eye tracking enabled')
             actions.user.hud_toggle_microphone()
-        else:
+            actions.user.mouse_wake()
+        elif current_microphone == "None" and eye_mouse.tracker is not None and eye_mouse.config.control_mouse and not "sleep" in scope.get("mode"):
             actions.user.hud_add_log('error', 'Mic and eye tracking disabled')
-            actions.user.hud_toggle_microphone()
-        
-        if eye_mouse.tracker is not None and eye_mouse.config.control_mouse:
             actions.user.mouse_sleep()
         elif eye_mouse.tracker is not None and not eye_mouse.config.control_mouse and not "sleep" in scope.get("mode"):
+            actions.user.hud_add_log('success', 'Eye tracking enabled')
             actions.user.mouse_wake()
+        elif eye_mouse.tracker is not None and eye_mouse.config.control_mouse and not "sleep" in scope.get("mode"):
+            actions.user.hud_add_log('error', 'Mic and eye tracking disabled')
+            actions.user.hud_toggle_microphone()
+            actions.user.mouse_sleep()
+        
+    def toggle_control_mouse():
+        current_microphone = actions.sound.active_microphone()
+
+        if current_microphone == "None":
+            #https://github.com/chaosparrot/talon_hud/blob/master/CUSTOMIZATION.md#log-messages
+            actions.user.hud_add_log('success', 'Mic enabled')
+            actions.user.hud_toggle_microphone()
+        elif eye_mouse.tracker is not None and eye_mouse.config.control_mouse:
+            actions.user.hud_add_log('error', 'Eye tracking disabled')
+            actions.user.mouse_sleep()
+        else:
+            actions.user.hud_add_log('error', 'Mic disabled')
+            actions.user.hud_toggle_microphone()
 
     def open_specific_tab(browser: str, search_str: str):
         """This function requires that the searched for tab actually is open in the browser"""
@@ -171,11 +193,11 @@ class UserActions:
             actions.user.start_stop_dictation()
         #if not we must take other actions before we start the dictation
         elif "command" in scope.get("mode"):
-            actions.user.mouse_sleep()
+            #actions.user.mouse_sleep()
             actions.speech.toggle()
             actions.user.start_stop_dictation()
         elif "user.power_mode" in scope.get("mode"):
-            actions.user.mouse_sleep()
+            #actions.user.mouse_sleep()
             actions.speech.toggle()
             actions.mode.disable("user.power_mode")
             actions.user.start_stop_dictation()
@@ -183,7 +205,7 @@ class UserActions:
             #add some sleep time to make sure talon doesn't pick up any speech
             actions.sleep("500ms")
             actions.speech.toggle()
-            actions.user.mouse_wake()
+            #actions.user.mouse_wake()
 
     def toggle_dictation_key_switch():
         """Start dictation on both Windows and macOS using a physical key"""

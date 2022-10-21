@@ -8,7 +8,7 @@ touch:
     user.grid_close()
     # End any open drags
     # Touch automatically ends left drags so this is for right drags specifically
-    user.mouse_drag_end()
+    user.mouse_drag_end() 
 
 righty:
     mouse_click(1)
@@ -113,30 +113,30 @@ curse no:
     app.notify("Please activate the user.mouse_cursor_commands_enable tag to enable this command")
 
 #Old commands, keeping them here before I see that the new commands work as expected
-# (wheel | scroll) down: user.mouse_scroll_down()
-# (wheel | scroll) down here:
-#     user.mouse_move_center_active_window()
-#     user.mouse_scroll_down()
+(wheel | scroll) down: user.mouse_scroll_down()
+(wheel | scroll) down here:
+    user.mouse_move_center_active_window()
+    user.mouse_scroll_down()
 # (wheel | scroll) tiny [down]: user.mouse_scroll_down(0.2)
 # (wheel | scroll) tiny [down] here:
 #     user.mouse_move_center_active_window()
 #     user.mouse_scroll_down(0.2)
-# (wheel | scroll) (continuous | continue): user.mouse_scroll_down_continuous()
-# (wheel | scroll) (continuous | continue) here:
-#     user.mouse_move_center_active_window()
-#     user.mouse_scroll_down_continuous()
-# (wheel | scroll) up: user.mouse_scroll_up()
-# (wheel | scroll) up here:
-#     user.mouse_move_center_active_window()
-#     user.mouse_scroll_up()
+(wheel | scroll) (continuous | continue): user.mouse_scroll_down_continuous()
+(wheel | scroll) (continuous | continue) here:
+    user.mouse_move_center_active_window()
+    user.mouse_scroll_down_continuous()
+(wheel | scroll) up: user.mouse_scroll_up()
+(wheel | scroll) up here:
+    user.mouse_move_center_active_window()
+    user.mouse_scroll_up()
 # (wheel | scroll) tiny up: user.mouse_scroll_up(0.2)
 # (wheel | scroll) tiny up here:
 #     user.mouse_move_center_active_window()
 #     user.mouse_scroll_up(0.2)
-# (wheel | scroll) (continuous | continue) up: user.mouse_scroll_up_continuous()
-# (wheel | scroll) (continuous | continue) up here:
-#     user.mouse_move_center_active_window()
-#     user.mouse_scroll_up_continuous()
+(wheel | scroll) (continuous | continue) up: user.mouse_scroll_up_continuous()
+(wheel | scroll) (continuous | continue) up here:
+    user.mouse_move_center_active_window()
+    user.mouse_scroll_up_continuous()
 # (wheel | scroll) gaze: user.mouse_gaze_scroll()
 # (wheel | scroll) gaze here:
 #     user.mouse_move_center_active_window()

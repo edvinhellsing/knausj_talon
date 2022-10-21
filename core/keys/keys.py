@@ -12,7 +12,7 @@ from talon import Context, Module, actions, app
 #pink
 #e - each
 
-default_alphabet = "air bat cap drum eat fine gust harp ice judge crunch look made net odd perk quench ram sun trap urn vest whale x yank zip onyx elk eagle".split(
+default_alphabet = "air bat cap drum is fine gust harp ice judge crunch look made net odd perk quench ram sun trap urn vest whale x yank zip onyx elk eagle".split(
     " "
 )
 letters_string = "abcdefghijklmnopqrstuvwxyzåäö"
