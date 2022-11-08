@@ -16,7 +16,7 @@ workspace <number>: key("ctrl-{number}")
 (go [to] | slack | lack | like) [direct] messages: key(ctrl-shift-k)
 (go [to] | slack | lack | like) threads: key(ctrl-shift-t)
 go (forward | next | forth): key("alt-right")
-go (backward | last | back | previous): key("alt-left")
+go (backward | back | previous): key("alt-left")
 element next: key(tab)
 element (last | previous): key(shift-tab)
 (go [to] | slack | lack | like) mentions [and reactions]: key(ctrl-shift-m)
@@ -44,7 +44,7 @@ grab right: key(shift-down)
 [insert] snippet: key(ctrl-shift-enter)
 # Calls
 start huddle: key(ctrl-shift-h)
-#leave huddle: 
+leave huddle: key(ctrl-shift-h)
 toggle (mute | unmute): key(m)
 toggle video: key(v)
 invite people: key(a)
@@ -82,6 +82,7 @@ go [to] channel qa: user.slack_browse_channels("qa")
 go [to] channel team sweden: user.slack_browse_channels("team-sweden")
 # go [to] channel web: user.slack_browse_channels("web")
 # go [to] channel web management: user.slack_browse_channels("web-management")
+go [to] channel team: user.slack_browse_channels("kxs-team-mirage")
 
 # DEPRECATED
 #(move | next) focus:
@@ -90,12 +91,12 @@ go [to] channel team sweden: user.slack_browse_channels("team-sweden")
 #[next] (section | zone):
 #    app.notify("please use the voice command 'section next' instead of 'next section'")
 #    key(f6)
-#(previous | last) (section | zone):
+#(previous) (section | zone):
 #    app.notify("please use the voice command 'section last' instead of 'last section'")
 #    key(shift-f6)
 #[next] (element | bit):
 #    app.notify("please use the voice command 'element next' instead of 'next element'")
 #    key(tab)
-#(previous | last) (element | bit):
+#(previous) (element | bit):
 #    app.notify("please use the voice command 'element last' instead of 'last element'")
 #    key(shift-tab)

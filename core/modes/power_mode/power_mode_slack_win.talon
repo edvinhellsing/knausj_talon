@@ -13,13 +13,13 @@ workspace <number>: key("ctrl-{number}")
 # Navigation
 #focus (move | next): key(ctrl-`)
 (go [to] | section | zone) next: key(f6)
-(go [to] | section | zone) (previous | last): key(shift-f6)
+(go [to] | section | zone) (previous): key(shift-f6)
 (go [to] | slack | lack | like) [direct] messages: key(ctrl-shift-k)
 (go [to] | slack | lack | like) threads: key(ctrl-shift-t)
 go (forward | next | forth): key("alt-right")
-go (backward | last | back | previous): key("alt-left")
+go (backward | back | previous): key("alt-left")
 element next: key(tab)
-element (last | previous): key(shift-tab)
+element (previous): key(shift-tab)
 (go [to] | slack | lack | like) mentions [and reactions]: key(ctrl-shift-m)
 (go [to] | slack | lack | like) people [and user groups]: key(ctrl-shift-e)
 (go [to] | slack | lack | like) saved [items]: key(ctrl-shift-s)
@@ -91,12 +91,12 @@ go [to] channel team sweden: user.slack_browse_channels("team-sweden")
 #[next] (section | zone):
 #    app.notify("please use the voice command 'section next' instead of 'next section'")
 #    key(f6)
-#(previous | last) (section | zone):
+#(previous) (section | zone):
 #    app.notify("please use the voice command 'section last' instead of 'last section'")
 #    key(shift-f6)
 #[next] (element | bit):
 #    app.notify("please use the voice command 'element next' instead of 'next element'")
 #    key(tab)
-#(previous | last) (element | bit):
+#(previous) (element | bit):
 #    app.notify("please use the voice command 'element last' instead of 'last element'")
 #    key(shift-tab)

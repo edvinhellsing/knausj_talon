@@ -5,14 +5,14 @@ from talon import Context, Module, actions, app
 #kid could replace crunch
 #eel elk eagle
 #onyx adder oesten
-#spun 
+#spun
 #urge is often misrecognized as args
 #red is a color so better to use ram
 #risk
 #pink
 #e - each
 
-default_alphabet = "air bat cap drum is fine gust harp ice judge crunch look made net odd perk quench ram sun trap urn vest whale x yank zip onyx elk eagle".split(
+default_alphabet = "air bat cap drum is fork gust harp ice judge crunch look made net odd perk quench ram sun trap urn vest whale x yank zip onyx elk eagle".split(
     " "
 )
 letters_string = "abcdefghijklmnopqrstuvwxyzåäö"
@@ -32,7 +32,6 @@ mod.list("modifier_key", desc="All modifier keys")
 mod.list("function_key", desc="All function keys")
 mod.list("special_key", desc="All special keys")
 mod.list("punctuation", desc="words for inserting punctuation into text")
-
 
 @mod.capture(rule="{self.modifier_key}+")
 def modifiers(m) -> str:
@@ -184,6 +183,7 @@ symbol_key_words = {
     "backslash": "\\",
     "minus": "-",
     "dash": "-",
+    "emdash": "–",
     "equals": "=",
     "plus": "+",
     "tilde": "~",

@@ -147,6 +147,10 @@ class UserActions:
     def put_computer_to_sleep():
         """Puts computer into sleep mode"""
         if app.platform == "windows":
+            actions.user.mouse_sleep()
+            actions.user.hud_add_log('error', 'Eye tracking disabled')
+            actions.user.hud_toggle_microphone()
+            actions.user.hud_add_log('error', 'Mic disabled')
             actions.key("super-x")
             actions.sleep("200ms")
             actions.key("u")
