@@ -22,9 +22,16 @@ ah phrase: "Aa, "
 (I get it | I understand) phrase: "Aha, "
 ha ha phrase: "Haha"
 ha ha ha phrase: "Hahaha"
+oh phrase: "Oh, "
+no phrase: "Nä, "
 
 (signature phrase | insert signature): 
     "Best regards"
+    edit.line_insert_down()
+    "Joel"
+
+(signature phrase swedish | insert signature swedish): 
+    "Med vänlig hälsning"
     edit.line_insert_down()
     "Joel"
 

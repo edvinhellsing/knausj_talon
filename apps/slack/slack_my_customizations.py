@@ -25,10 +25,7 @@ class UserActions:
         actions.key("escape")
         actions.sleep("200ms")
         actions.auto_insert(search_str)
-        actions.sleep("500ms") 
-        actions.key("enter")
-        #actions.key("down")
-
+        
     def slack_browse_dms(search_str: str):
         actions.key("ctrl-shift-k")
         actions.sleep("200ms")

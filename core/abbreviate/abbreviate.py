@@ -238,6 +238,7 @@ abbreviations = {
     "cumulative layout shift": "CLS ",
     "first input delay": "FID ",
     "Vladimir": "Vlad ",
+    "call to action": "CTA ",
     #"": " ",
 }
 

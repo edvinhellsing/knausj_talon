@@ -85,6 +85,7 @@ class UserActions:
             actions.core.repeat_command(1)
             actions.sleep("200ms")
   
+    """
     def toggle_talon_microphone():
         current_microphone = actions.sound.active_microphone()
         if current_microphone == "None":
@@ -99,6 +100,19 @@ class UserActions:
             actions.user.mouse_sleep()
         elif eye_mouse.tracker is not None and not eye_mouse.config.control_mouse and not "sleep" in scope.get("mode"):
             actions.user.mouse_wake()
+    """
+
+    def toggle_talon_microphone():
+        current_microphone = actions.sound.active_microphone()
+        if current_microphone == "None":
+            #https://github.com/chaosparrot/talon_hud/blob/master/CUSTOMIZATION.md#log-messages
+            actions.user.hud_add_log('success', 'Mic and eye tracking enabled')
+            actions.user.hud_toggle_microphone()
+            actions.user.mouse_wake()
+        else:
+            actions.user.hud_add_log('error', 'Mic and eye tracking disabled')
+            actions.user.hud_toggle_microphone()
+            actions.user.mouse_sleep()
 
     def open_specific_tab(browser: str, search_str: str):
         """This function requires that the searched for tab actually is open in the browser"""
@@ -168,8 +182,8 @@ class UserActions:
             actions.sleep("50ms")
             actions.key("ctrl")
 
+    """
     def toggle_dictation_voice_command():
-        """Start dictation on both Windows and macOS using a voice command"""
         #if the microphone has been disabled through talon_hud then we just start the dictation without putting Talon to sleep
         current_microphone = actions.sound.active_microphone()
         if current_microphone == "None":
@@ -189,9 +203,10 @@ class UserActions:
             actions.sleep("500ms")
             actions.speech.toggle()
             actions.user.mouse_wake()
+    """
 
+    """
     def toggle_dictation_key_switch():
-        """Start dictation on both Windows and macOS using a physical key"""
         #if the microphone has been disabled through talon_hud then we just start the dictation without putting Talon to sleep
         current_microphone = actions.sound.active_microphone()
         if current_microphone == "None":
@@ -214,6 +229,30 @@ class UserActions:
             actions.user.start_stop_dictation()
             actions.speech.toggle()
             actions.user.mouse_wake()
+    """
+
+    def toggle_dictation_voice_command():
+        current_microphone = actions.sound.active_microphone()
+        if current_microphone == "None":
+            #add some sleep time to make sure talon doesn't pick up any speech
+            actions.sleep("500ms")
+            actions.user.mouse_wake()
+        else:
+            actions.user.mouse_sleep()
+            actions.user.toggle_talon_microphone()
+            actions.user.start_stop_dictation()
+
+    def toggle_dictation_key_switch():
+        current_microphone = actions.sound.active_microphone()
+        if current_microphone == "None":
+
+            actions.user.mouse_wake()
+            actions.user.toggle_talon_microphone()
+            actions.user.start_stop_dictation()
+        else:
+            actions.user.mouse_sleep()
+            actions.user.toggle_talon_microphone()
+            actions.user.start_stop_dictation()
 
     def close_program():
         """Uses the OS built-in keyboard shortcut to close the program"""
