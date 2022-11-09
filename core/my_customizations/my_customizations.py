@@ -245,7 +245,6 @@ class UserActions:
     def toggle_dictation_key_switch():
         current_microphone = actions.sound.active_microphone()
         if current_microphone == "None":
-
             actions.user.mouse_wake()
             actions.user.toggle_talon_microphone()
             actions.user.start_stop_dictation()
