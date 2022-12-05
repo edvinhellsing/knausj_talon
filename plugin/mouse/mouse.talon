@@ -60,53 +60,55 @@ mid click:
     user.grid_close()
 (end drag | drag end): user.mouse_drag_end()
 downer: user.mouse_scroll_down()
-downer here:
-    user.mouse_move_center_active_window()
-    user.mouse_scroll_down()
+downer here: user.mouse_scroll_down() #adaption for Rango
+# downer here:
+#     user.mouse_move_center_active_window()
+#     user.mouse_scroll_down()
 tiny down: user.mouse_scroll_down(0.2)
-tiny down here:
-    user.mouse_move_center_active_window()
-    user.mouse_scroll_down(0.2)
+# tiny down here:
+#     user.mouse_move_center_active_window()
+#     user.mouse_scroll_down(0.2)
 (continuous | continue) down: user.mouse_scroll_down_continuous()
-(continuous | continue) down here:
-    user.mouse_move_center_active_window()
-    user.mouse_scroll_down_continuous()
+# (continuous | continue) down here:
+#     user.mouse_move_center_active_window()
+#     user.mouse_scroll_down_continuous()
 upper: user.mouse_scroll_up()
-upper here:
-    user.mouse_move_center_active_window()
-    user.mouse_scroll_up()
+upper here: user.mouse_scroll_up() #adaption for Rango
+# upper here:
+#     user.mouse_move_center_active_window()
+#     user.mouse_scroll_up()
 tiny up: user.mouse_scroll_up(0.2)
-tiny up here:
-    user.mouse_move_center_active_window()
-    user.mouse_scroll_up(0.2)
+# tiny up here:
+#     user.mouse_move_center_active_window()
+#     user.mouse_scroll_up(0.2)
 (continuous | continue) up: user.mouse_scroll_up_continuous()
-(continuous | continue) up here:
-    user.mouse_move_center_active_window()
-    user.mouse_scroll_up_continuous()
+# (continuous | continue) up here:
+#     user.mouse_move_center_active_window()
+#     user.mouse_scroll_up_continuous()
 (wheel | scroll) gaze: user.mouse_gaze_scroll()
-(wheel | scroll) gaze here:
-    user.mouse_move_center_active_window()
-    user.mouse_gaze_scroll()
+# (wheel | scroll) gaze:
+#     user.mouse_move_center_active_window()
+#     user.mouse_gaze_scroll()
 (wheel | scroll) stop: user.mouse_scroll_stop()
-(wheel | scroll) stop here:
-    user.mouse_move_center_active_window()
-    user.mouse_scroll_stop()
+# (wheel | scroll) stop here:
+#     user.mouse_move_center_active_window()
+#     user.mouse_scroll_stop()
 (wheel | scroll) left: user.mouse_scroll_left()
-(wheel | scroll) left here:
-    user.mouse_move_center_active_window()
-    user.mouse_scroll_left()
+# (wheel | scroll) left here:
+#     user.mouse_move_center_active_window()
+#     user.mouse_scroll_left()
 (wheel | scroll) tiny left: user.mouse_scroll_left(0.5)
-(wheel | scroll) tiny left here:
-    user.mouse_move_center_active_window()
-    user.mouse_scroll_left(0.5)
+# (wheel | scroll) tiny left here:
+#     user.mouse_move_center_active_window()
+#     user.mouse_scroll_left(0.5)
 (wheel | scroll) right: user.mouse_scroll_right()
-(wheel | scroll) right here:
-    user.mouse_move_center_active_window()
-    user.mouse_scroll_right()
+# (wheel | scroll) right here:
+#     user.mouse_move_center_active_window()
+#     user.mouse_scroll_right()
 (wheel | scroll) tiny right: user.mouse_scroll_right(0.5)
-(wheel | scroll) tiny right here:
-    user.mouse_move_center_active_window()
-    user.mouse_scroll_right(0.5)
+# (wheel | scroll) tiny right here:
+#     user.mouse_move_center_active_window()
+#     user.mouse_scroll_right(0.5)
 #copy mouse position: user.copy_mouse_position()
 curse no:
     # Command added 2021-12-13, can remove after 2022-06-01
