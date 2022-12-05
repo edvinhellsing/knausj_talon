@@ -13,7 +13,10 @@ from talon import Context, Module, actions, app
 #each is often misrecognized as ice...
 #bat is often misrecognized as whale/dot/it/space and many more commands... Trying out `batch` and `bill` instead
 #east is a little cumbersome to say, tryin `eat` instead
-default_alphabet = "air batch cap drum eat fine gust harp ice judge crunch look made net odd perk quench ram sun trap urn vest whale ex yank zip onyx elk eagle".split(
+#batch -> bin
+#urn -> urge (will remove the voice command `args`)
+#eagle -> urn (as it resembles the sound of the letter better)
+default_alphabet = "air bin cap drum eat fine gust harp ice judge crunch look made net odd perk quench ram sun trap urge vest whale ex yank zip onyx elk urn".split(
     " "
 )
 letters_string = "abcdefghijklmnopqrstuvwxyzåäö"
@@ -171,7 +174,7 @@ symbol_key_words = {
     "dot": ".",
     #"semistack": ";",
     #"stack": ":",
-    "drip": ",",
+    #"drip": ",",
     
     "point": ".",
     "quote": "'",
@@ -189,6 +192,8 @@ symbol_key_words = {
     "plus": "+",
     "tilde": "~",
     "question": "?",
+    "vest ten": "?",
+    "vest one": "?",
     "bang": "!",
     "exclamation": "!",
     "down score": "_",

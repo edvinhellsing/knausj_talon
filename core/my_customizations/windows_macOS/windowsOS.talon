@@ -21,6 +21,10 @@ start listening:
 (lang | language) english: key(alt-shift-1)
 (lang | language) swedish: key(alt-shift-2)
 
+#The program SoundSwitch enables hotkeys for changing input and output devices: https://github.com/Belphemur/SoundSwitch
+input [device] change: key(alt-ctrl-f7)
+output [device] change: key(alt-ctrl-f11)
+
 virtual keyboard: key(super-ctrl-o)
 #Check if there are better options of virtual keyboards than the Microsoft built in
 #https://www.makeuseof.com/windows-best-virtual-keyboards/

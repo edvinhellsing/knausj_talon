@@ -224,6 +224,8 @@ abbreviations = {
     "quality assurance": "qa ",
     "questions and answers": "Q&A ",
     "frequently asked questions": "FAQ ",
+    "to be honest": "tbh ",
+    "for your information": "FYI ",
     #"": " ",
 
     # work abbreviations
@@ -239,6 +241,10 @@ abbreviations = {
     "first input delay": "FID ",
     "Vladimir": "Vlad ",
     "call to action": "CTA ",
+    "amazon web services": "AWS ",
+    "amazon cloud services": "AWS ",
+    "Google web services": "GCS ",
+    "Google cloud services": "GCS ",
     #"": " ",
 }
 
