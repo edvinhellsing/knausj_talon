@@ -11,3 +11,4 @@ __pycache__
 sdf.py
 sdf.txt
 rango_commands.txt
+.DS_Store

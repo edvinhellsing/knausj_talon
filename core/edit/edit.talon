@@ -143,13 +143,11 @@ copy word:
     user.hud_add_log('success', 'Content copied')
 
 copy word left:
-    edit.extend_word_left()
-    edit.copy()
+    user.copy_word_left()
     user.hud_add_log('success', 'Content copied')
 
 copy word right:
-    edit.extend_word_right()
-    edit.copy()
+    user.copy_word_right()
     user.hud_add_log('success', 'Content copied')
 
 copy line:
@@ -179,21 +177,15 @@ cut word:
     edit.select_word()
     edit.cut()
 
-cut word left:
-    edit.extend_word_left()
-    edit.cut()
+cut word left: user.cut_word_left()
 
-cut word right:
-    edit.extend_word_right()
-    edit.cut()
+cut word right: user.cut_word_right()
 
 #cut line:
-#    edit.select_line()
-#    edit.cut()
+#    user.cut_line()
 
 carve line:
-    edit.select_line()
-    edit.cut()
+    user.cut_line()
 
 (pace | paste) all:
     edit.select_all()
