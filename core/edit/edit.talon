@@ -191,6 +191,10 @@ carve line:
     edit.select_all()
     edit.paste()
 
+# duplication
+clone that: edit.selection_clone()
+clone line: edit.line_clone()
+
 #THE COMMANDS BELOW ARE FROM DICTATION_MODE.TALON
 # Navigation
 go up <number_small> (line|lines):
