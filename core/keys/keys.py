@@ -18,6 +18,8 @@ from ..user_settings import get_list_from_csv
 #batch -> bin
 #urn -> urge (will remove the voice command `args`)
 #eagle -> urn (as it resembles the sound of the letter better)
+#bin is often misrecognized as bang (!)
+#urn -> earn so one can say `ship earn` and get `U` and not `Earn`
 def setup_default_alphabet():
     """set up common default alphabet.
 

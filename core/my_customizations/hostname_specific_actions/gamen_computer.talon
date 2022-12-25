@@ -16,3 +16,8 @@ focus gmail zero: user.open_specific_tab("edge", "mail.google.com joel@zutobi")
 focus gmail one: user.open_specific_tab("edge", "mail.google.com support@zutobi")
 focus gmail two: user.open_specific_tab("edge", "mail.google.com hello@zutobi")
 focus gmail three: user.open_specific_tab("edge", "mail.google.com lalurran@gmail")
+
+^grab screen selection$:
+    key(super-alt-8)
+    sleep(300ms)
+    key(enter)

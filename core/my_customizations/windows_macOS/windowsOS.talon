@@ -40,3 +40,5 @@ virtual keyboard: key(super-ctrl-o)
 computer sleep: user.put_computer_to_sleep()
 
 talon (relaunch | restart): user.talon_relaunch()
+
+clipboard [open]: key(super-v)

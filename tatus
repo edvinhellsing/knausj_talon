@@ -1,0 +1,27 @@
+* [32mmain                                                             [m 617cab4 Merge remote-tracking branch 'upstream/main'
+  master                                                           [m 8a3d757 add javascript react commands to typescript react (#859)
+  [31mremotes/origin/HEAD                                              [m -> origin/main
+  [31mremotes/origin/main                                              [m 617cab4 Merge remote-tracking branch 'upstream/main'
+  [31mremotes/upstream/bi2                                             [m 3c089ed blame-ignore: add "Place Talon and Python files side-by-side (#897)"
+  [31mremotes/upstream/c-define                                        [m 8fa3b78 oops, add user.text to ifdef command
+  [31mremotes/upstream/clickless_mouse                                 [m fbdfee9 co-locate mouse things maybe
+  [31mremotes/upstream/csv-refactor                                    [m bb1c00e Fix bug preventing homophones reload
+  [31mremotes/upstream/dictation-peek-both                             [m 7cd6ecd [pre-commit.ci] auto fixes from pre-commit.com hooks
+  [31mremotes/upstream/draft-window-tweaks                             [m 2ee0113 maybe use default user.paste for draft submit
+  [31mremotes/upstream/duplicate-that-line                             [m f83efe6 implement "duplicate that", "duplicate line" in more places
+  [31mremotes/upstream/emacs                                           [m 30c3126 add rectangle commands
+  [31mremotes/upstream/empty-spoken-forms                              [m 76a3e58 more simplification
+  [31mremotes/upstream/feature/#940-deprecation-system                 [m 8032c93 [pre-commit.ci] auto fixes from pre-commit.com hooks
+  [31mremotes/upstream/git-bag-of-words                                [m cfd0402 more optimistic git commands
+  [31mremotes/upstream/knausj-personal-experiments                     [m 50afa50 Update desktops.py
+  [31mremotes/upstream/knausj-personal-experiments_fresh               [m 360f89d updates
+  [31mremotes/upstream/mac-close-window-via-accessbility               [m bb3e6b3 simplify
+  [31mremotes/upstream/mac-file-start-end-no-cmd-left                  [m 5d0a04f edit_mac.py: omit cmd-left for file_start/file_end
+  [31mremotes/upstream/main                                            [m 4601a8b Rework main README intro (#1066)
+  [31mremotes/upstream/master                                          [m 8a3d757 add javascript react commands to typescript react (#859)
+  [31mremotes/upstream/personal                                        [m b100022 Upstream changes
+  [31mremotes/upstream/pokey/rework-vscode-specific-command-client-code[m ed1f687 Rework vscode-specific command client code
+  [31mremotes/upstream/pre-commit-ci-update-config                     [m 8cc735d [pre-commit.ci] pre-commit autoupdate
+  [31mremotes/upstream/rntz-more-extensions                            [m 853ac4d add more extensions
+  [31mremotes/upstream/snap-screen-size-aware                          [m f5f8737 add to settings.talon
+  [31mremotes/upstream/talonfmt-100                                    [m 3c0d1ef talonfmt: set maximum line length of 100

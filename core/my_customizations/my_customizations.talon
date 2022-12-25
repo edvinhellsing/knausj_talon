@@ -20,9 +20,9 @@ em phrase: "Mm, "
 hem phrase: "Hmm, "
 ah phrase: "Aa, "
 (I get it | I understand) phrase: "Aha, "
-ha ha phrase: "Haha"
-ha ha ha phrase: "Hahaha"
-oh phrase: "Oh, "
+ha ha phrase: "Haha "
+ha ha ha phrase: "Hahaha "
+#oh phrase: "Oh, "
 no phrase: "Nä, "
 
 (signature phrase | insert signature): 

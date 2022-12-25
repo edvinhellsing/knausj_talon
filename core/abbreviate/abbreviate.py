@@ -245,6 +245,8 @@ abbreviations = {
     "amazon cloud services": "AWS ",
     "Google web services": "GCS ",
     "Google cloud services": "GCS ",
+    "search engine optimization": "SEO ",
+    "chat gust perk trap": "ChatGPT ",
     #"": " ",
 }
 
