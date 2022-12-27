@@ -158,16 +158,16 @@ formatters_words = {
     #"sink": formatters_dict["ALL_LOWERCASE"],
 }
 
-formatters_words2 = {
-    "capitalize": formatters_dict["CAPITALIZE_ALL_WORDS"],
-    "ship": formatters_dict["CAPITALIZE_ALL_WORDS"],
-    "sink": formatters_dict["ALL_LOWERCASE"],
-}
+# formatters_words2 = {
+#     "capitalize": formatters_dict["CAPITALIZE_ALL_WORDS"],
+#     "ship": formatters_dict["CAPITALIZE_ALL_WORDS"],
+#     "sink": formatters_dict["ALL_LOWERCASE"],
+# }
 
 all_formatters = {}
 all_formatters.update(formatters_dict)
 all_formatters.update(formatters_words)
-all_formatters.update(formatters_words2)
+#all_formatters.update(formatters_words2)
 
 mod = Module()
 mod.list("formatters", desc="list of formatters")

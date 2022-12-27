@@ -58,15 +58,15 @@ contract (word | it):
 
 sink (word | it):
     edit.select_word()
-    user.formatters_reformat_selection("sink")
+    user.formatters_reformat_selection("all down")
 
 ship (word | it):
     edit.select_word()
-    user.formatters_reformat_selection("ship")
+    user.formatters_reformat_selection("title")
 
 capitalize (word | it):
     edit.select_word()
-    user.formatters_reformat_selection("capitalize")
+    user.formatters_reformat_selection("title")
 
 ##########
 # formatters_words = {
