@@ -54,30 +54,28 @@ contract (word | it):
  
 <user.formatters> (word | it):
     edit.select_word()
-    #edit.extend_left()
     user.formatters_reformat_selection(user.formatters)
 
 ##########
 # formatters_words = {
-#     "all cap": formatters_dict["ALL_CAPS"],
-#     "all down": formatters_dict["ALL_LOWERCASE"],
-#     "camel": formatters_dict["PRIVATE_CAMEL_CASE"],
-#     "dotted": formatters_dict["DOT_SEPARATED"],
-#     "dub string": formatters_dict["DOUBLE_QUOTED_STRING"],
+#     "all cap": formatters_dict["ALL_CAPS"], #THIS IS A STRING
+#     "all down": formatters_dict["ALL_LOWERCASE"], #this is a string
+#     "camel": formatters_dict["PRIVATE_CAMEL_CASE"], #thisIsAString
+#     "dotted": formatters_dict["DOT_SEPARATED"], #this.is.a.string
+#     "dub string": formatters_dict["DOUBLE_QUOTED_STRING"], #"this is a string"
 #     #"dunder": formatters_dict["DOUBLE_UNDERSCORE"],
-#     "hammer": formatters_dict["PUBLIC_CAMEL_CASE"],
-#     "kebab": formatters_dict["DASH_SEPARATED"],
-#     "packed": formatters_dict["DOUBLE_COLON_SEPARATED"],
-#     "padded": formatters_dict["SPACE_SURROUNDED_STRING"],
-#     "slasher": formatters_dict["SLASH_SEPARATED"],
-#     "smash": formatters_dict["NO_SPACES"],
-#     "snake": formatters_dict["SNAKE_CASE"],
-#     "string": formatters_dict["SINGLE_QUOTED_STRING"],
-#     "title": formatters_dict["CAPITALIZE_ALL_WORDS"],
+#     "hammer": formatters_dict["PUBLIC_CAMEL_CASE"], #ThisIsAString
+#     "kebab": formatters_dict["DASH_SEPARATED"], #this-is-a-string
+#     "packed": formatters_dict["DOUBLE_COLON_SEPARATED"], #this::is::a::string
+#     "padded": formatters_dict["SPACE_SURROUNDED_STRING"], # this is a string 
+#     "slasher": formatters_dict["SLASH_SEPARATED"], #/this/is/a/string
+#     "smash": formatters_dict["NO_SPACES"], #thisisastring
+#     "snake": formatters_dict["SNAKE_CASE"], #this_is_a_string, underscore separated string
+#     "string": formatters_dict["SINGLE_QUOTED_STRING"], #'this is a string'
+#     "title": formatters_dict["CAPITALIZE_ALL_WORDS"], #This is a String
 # 
 #     #Added to be used by "<user.formatters> word"
 #     "capitalize": formatters_dict["CAPITALIZE_ALL_WORDS"],
-#     #"cap": formatters_dict["CAPITALIZE_ALL_WORDS"],
 #     "ship": formatters_dict["CAPITALIZE_ALL_WORDS"],
 #     "sink": formatters_dict["ALL_LOWERCASE"],
 # }
