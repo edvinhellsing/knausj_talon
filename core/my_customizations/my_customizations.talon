@@ -38,12 +38,6 @@ no phrase: "Nä, "
 (mic | Mike | microphone) off: user.toggle_talon_microphone()
 key(scroll_lock): user.toggle_talon_microphone()
 
-# Pick item from a dropdown
-pick [down] <number_small>: key("down:{number_small} enter")
-pick up <number_small>: key("up:{number_small} enter")
-#dropdown <number_small>: key("down:{number_small-1} enter") 
-#drop up <number_small>: key("up:{number_small} enter")
-
 (end ten | ten enter): key(enter)
 
 profile switcher open: user.open_browser_profile_switcher("chrome")
