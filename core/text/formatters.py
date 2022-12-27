@@ -153,26 +153,24 @@ formatters_words = {
     "title": formatters_dict["CAPITALIZE_ALL_WORDS"],
     
     #Added to be used by "<user.formatters> (word | it)"
+    #"capitalize": formatters_dict["CAPITALIZE_ALL_WORDS"],
+    #"ship": formatters_dict["CAPITALIZE_ALL_WORDS"],
+    #"sink": formatters_dict["ALL_LOWERCASE"],
+}
+
+formatters_words2 = {
     "capitalize": formatters_dict["CAPITALIZE_ALL_WORDS"],
     "ship": formatters_dict["CAPITALIZE_ALL_WORDS"],
     "sink": formatters_dict["ALL_LOWERCASE"],
 }
 
-# formatters_words2 = {
-#     #Added to be used by "<user.formatters> (word | it)"
-#     "capitalize": formatters_dict["CAPITALIZE_ALL_WORDS"],
-#     "ship": formatters_dict["CAPITALIZE_ALL_WORDS"],
-#     "sink": formatters_dict["ALL_LOWERCASE"],
-# }
-
 all_formatters = {}
 all_formatters.update(formatters_dict)
 all_formatters.update(formatters_words)
-#all_formatters.update(formatters_words2)
+all_formatters.update(formatters_words2)
 
 mod = Module()
 mod.list("formatters", desc="list of formatters")
-#mod.list("formatters2", desc="list of formatters2")
 mod.list(
     "prose_formatter",
     desc="words to start dictating prose, and the formatter they apply",
@@ -183,23 +181,12 @@ def formatters(m) -> str:
     "Returns a comma-separated string of formatters e.g. 'SNAKE,DUBSTRING'"
     return ",".join(m.formatters_list)
 
-# @mod.capture(rule="{self.formatters2}+")
-# def formatters2(m) -> str:
-#      return "capitalize,ship,sink"
-
 @mod.capture(
     # Note that if the user speaks something like "snake dot", it will
     # insert "dot" - otherwise, they wouldn't be able to insert punctuation
     # words directly.
     rule="<self.formatters> <user.text> (<user.text> | <user.formatter_immune>)*"
 )
-
-# @mod.capture(
-#     # Note that if the user speaks something like "snake dot", it will
-#     # insert "dot" - otherwise, they wouldn't be able to insert punctuation
-#     # words directly.
-#     rule="<self.formatters2> <user.text> (<user.text> | <user.formatter_immune>)*"
-# )
 
 def format_text(m) -> str:
     "Formats the text and returns a string"
@@ -317,15 +304,6 @@ def unformat_text(text: str) -> str:
 
 
 ctx.lists["self.formatters"] = formatters_words.keys()
-#ctx.lists["self.formatters2"] = formatters_words2.keys()
-
-# ctx.lists["self.formatters2"] = {
-#     #Added to be used by "<user.formatters> (word | it)"
-#     "capitalize": "CAPITALIZE_ALL_WORDS",
-#     "ship": "CAPITALIZE_ALL_WORDS",
-#     "sink": "ALL_LOWERCASE",
-# }
-
 ctx.lists["self.prose_formatter"] = {
     "say": "NOOP",
     "speak": "NOOP",

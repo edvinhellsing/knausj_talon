@@ -52,9 +52,21 @@ contract (word | it):
     #edit.extend_left()
     user.formatters_reformat_selection("smash")
  
-<user.formatters> (word | it):
+# <user.formatters> (word | it):
+#     edit.select_word()
+#     user.formatters_reformat_selection(user.formatters)
+
+sink (word | it):
     edit.select_word()
-    user.formatters_reformat_selection(user.formatters)
+    user.formatters_reformat_selection("sink")
+
+ship (word | it):
+    edit.select_word()
+    user.formatters_reformat_selection("ship")
+
+capitalize (word | it):
+    edit.select_word()
+    user.formatters_reformat_selection("capitalize")
 
 ##########
 # formatters_words = {
