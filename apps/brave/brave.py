@@ -15,6 +15,7 @@ and app.exe: brave.exe
 ctx.matches = r"""
 app: brave
 """
+ctx.tags = ["browser", "user.tabs"]
 
 
 @ctx.action_class("user")
