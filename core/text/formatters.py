@@ -291,7 +291,9 @@ class Actions:
 
 def unformat_text(text: str) -> str:
     """Remove format from text"""
-    unformatted = re.sub(r"[\W_]+", " ", text)
+    # MADE CHANGES
+    # unformatted = re.sub(r"[\W_]+", " ", text)
+    unformatted = text
     # Split on camelCase, including numbers
     # FIXME: handle non-ASCII letters!
     unformatted = re.sub(
