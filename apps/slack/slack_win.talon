@@ -7,6 +7,8 @@ tag(): user.messaging
 tag(): user.emoji
 # Workspaces
 workspace <number>: key("ctrl-{number}")
+workspace next: key(ctrl-tab)
+workspace (last | previous): key(ctrl-shift-tab)
 # Channel
 #(slack | lack | like) [channel] info: key(ctrl-shift-i)
 # Navigation

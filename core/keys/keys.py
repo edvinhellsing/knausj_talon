@@ -17,9 +17,11 @@ from ..user_settings import get_list_from_csv
 #east is a little cumbersome to say, tryin `eat` instead
 #batch -> bin
 #urn -> urge (will remove the voice command `args`)
-#eagle -> urn (as it resembles the sound of the letter better)
+#urge -> earn (so one can say `ship earn` and get `U` and not `Earn`)
+#eagle -> urge (as it resembles the sound of the letter better)
 #bin is often misrecognized as bang (!)
-#urn -> earn so one can say `ship earn` and get `U` and not `Earn`
+#sun -> sit (some is often misrecognized as one, home, end and words like it)
+#ice -> ivy (ice is misinterpreted as space)
 def setup_default_alphabet():
     """set up common default alphabet.
 
@@ -211,6 +213,7 @@ symbol_key_words = {
     "question": "?",
     "vest ten": "?",
     "vest one": "?",
+    "vest ram": "?",
     "bang": "!",
     "exclamation": "!",
     "down score": "_",
@@ -284,6 +287,7 @@ alternate_keys = {
     #'junk': 'backspace',
     #"forward delete": "delete",
     "delete": "delete",
+    "ten eat": "delete",
     "page up": "pageup",
     "page down": "pagedown",
     "tabber": "tab",
