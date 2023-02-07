@@ -20,6 +20,7 @@ start listening:
 #https://www.digitalcitizen.life/keyboard-language-shortcut/
 (lang | language) english: key(alt-shift-1)
 (lang | language) swedish: key(alt-shift-2)
+nine dash: key(alt-shift-2)
 
 #The program SoundSwitch enables hotkeys for changing input and output devices: https://github.com/Belphemur/SoundSwitch
 input [device] change: key(alt-ctrl-f7)

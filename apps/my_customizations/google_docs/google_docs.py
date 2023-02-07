@@ -10,6 +10,7 @@ browser.host: docs.google.com
 
 ctx_native_dictation.tags = ["user.docs"]
 
+"""
 #Commented out this part as it currently doesn't seem to work using Google's own dictation for some reason
 #Unfortunately Google voice typing doesn't work in the Brave browser (and probably won't start working anytime soon): https://github.com/brave/brave-browser/issues/3725
 @ctx_native_dictation.action_class("user")
@@ -23,7 +24,8 @@ class NativeDictationActions:
         #To make it work in Firefox small alterations need to be done in Firefox itself
         #Open about:config from your address bar
         #Set extensions.screenshots.disabled to true
-
+"""
+        
 """
 @ctx_native_dictation.action_class("user")
 class NativeDictationActions:
