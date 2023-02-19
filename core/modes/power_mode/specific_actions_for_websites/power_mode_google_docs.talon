@@ -6,20 +6,20 @@ browser.host: docs.google.com
 
 normal text: key(ctrl-alt-0)
 
-[insert] heading one: key(ctrl-alt-1)
-[insert] heading two: key(ctrl-alt-2)
-[insert] heading three: key(ctrl-alt-3)
-[insert] heading four: key(ctrl-alt-4)
-[insert] heading five: key(ctrl-alt-5)
+[format] heading one: key(ctrl-alt-1)
+[format] heading two: key(ctrl-alt-2)
+[format] heading three: key(ctrl-alt-3)
+[format] heading four: key(ctrl-alt-4)
+[format] heading five: key(ctrl-alt-5)
 
-[insert] (bullet | bulleted) list: key(ctrl-shift-8)
-[insert] (number | numbered) list: key(ctrl-shift-7)
-[insert] (insert bold | boldify): key(ctrl-b)
-[insert] (italic | italify): key(ctrl-i)
-[insert] (underline | underlinify): key(ctrl-u)
-[insert] (strike | strikethrough | strikify): key(alt-shift-5)
+[format] (bullet | bulleted) list: key(ctrl-shift-8)
+[format] (number | numbered) list: key(ctrl-shift-7)
+[format] (bold | boldify): key(ctrl-b)
+[format] (italic | italify): key(ctrl-i)
+[format] (underline | underlinify): key(ctrl-u)
+[format] (strike | strikethrough | strikify): key(alt-shift-5)
 
-[insert] (link | linkify): key(ctrl-k)
+[format] (link | linkify): key(ctrl-k)
 
 #clear formatting: key(ctrl-\)
 
