@@ -20,8 +20,9 @@ from ..user_settings import get_list_from_csv
 #urge -> earn (so one can say `ship earn` and get `U` and not `Earn`)
 #eagle -> urge (as it resembles the sound of the letter better)
 #bin is often misrecognized as bang (!)
-#sun -> sit (some is often misrecognized as one, home, end and words like it)
+#sun -> sit (sun is often misrecognized as one, home, end and words like it)
 #ice -> ivy (ice is misinterpreted as space)
+#eat -> each (now that we're using "ivy" instead of "ice" we can switch back to using "each" instead of eat. The problem with "eat" is that it's too close to "it")
 def setup_default_alphabet():
     """set up common default alphabet.
 

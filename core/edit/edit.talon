@@ -5,6 +5,7 @@ next one: edit.find_next()
 last one: edit.find_previous()
 
 go word left: edit.word_left()
+
 pre$: edit.word_left()
 
 go word right: edit.word_right()

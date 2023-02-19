@@ -45,26 +45,37 @@ select around:
 
 #go word left: edit.word_left()
 #go word right: edit.word_right()
-contract (word | it):
+contract (word | words):
     edit.word_left()
     edit.extend_word_right()
     edit.extend_word_right()
     #edit.extend_left()
     user.formatters_reformat_selection("smash")
- 
-# <user.formatters> (word | it):
-#     edit.select_word()
-#     user.formatters_reformat_selection(user.formatters)
 
-sink (word | it):
+(sink | sunk | lowercase) (word | it):
     edit.select_word()
     user.formatters_reformat_selection("all down")
     edit.left()
 
-(ship | capitalize) (word | it):
+(ship | uppercase) (word | it):
     edit.select_word()
     user.formatters_reformat_selection("title")
     edit.left()
+
+#(ship | uppercase) beginning:
+    #actions.user.engine_mimic("navigate left period")
+    #user.navigation('GO', 'left', 'DEFAULT', 'DEFAULT', re.compile('\\.', re.IGNORECASE), 1)
+    #user.history_transform_phrase_text(['navigate', 'left', 'period'])
+
+(ship | uppercase) beginning:
+    edit.line_start()
+    edit.select_word()
+    user.formatters_reformat_selection("title")
+    edit.left()
+
+# <user.formatters> (word | it):
+#     edit.select_word()
+#     user.formatters_reformat_selection(user.formatters)
 
 ##########
 # formatters_words = {

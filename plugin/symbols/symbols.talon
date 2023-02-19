@@ -21,30 +21,30 @@ inside angles: user.insert_between(">", ">")
 inside (squares | square brackets | list): user.insert_between("[", "]")
 inside (curly | curly brackets): user.insert_between("{", "}")
 inside percent: user.insert_between("%", "%")
-inside (quotes | string): user.insert_between("'", "'")
+inside (apostrophe | quotes | string): user.insert_between("'", "'")
 inside (double quotes | dub quotes): user.insert_between('"', '"')
 inside (graves | back ticks): user.insert_between("`", "`")
-angle it:
+angle (it | selection):
     text = edit.selected_text()
     user.paste("<{text}>")
-(square | square bracket) it:
+(square | square bracket) (it | selection):
     text = edit.selected_text()
     user.paste("[{text}]")
-(curly | curly bracket) it:
+(curly | curly bracket) (it | selection):
     text = edit.selected_text()
     user.paste("{{{text}}}")
-(parens | args) it:
+(parens | args) (it | selection):
     text = edit.selected_text()
     user.paste("({text})")
-percent it:
+percent (it | selection):
     text = edit.selected_text()
     user.paste("%{text}%")
-(quote | string) it:
+(apostrophe | quote | string) (it | selection):
     text = edit.selected_text()
     user.paste("'{text}'")
-(double quote | dub quote) it:
+(double quote | dub quote) (it | selection):
     text = edit.selected_text()
     user.paste('"{text}"')
-(grave | back tick) it:
+(grave | back tick) (it | selection):
     text = edit.selected_text()
     user.paste('`{text}`')

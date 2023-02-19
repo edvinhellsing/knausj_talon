@@ -22,6 +22,7 @@ focus gmail three: user.open_specific_tab("edge", "mail.google.com lalurran@gmai
 focus chat GPT: user.open_specific_tab("edge", "https://chat.openai.com/")
 
 ^grab screen selection$:
+    user.toggle_talon_microphone()
     user.engine_mimic("event log clear logs")
     key(super-alt-8)
     sleep(300ms)

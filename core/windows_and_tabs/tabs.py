@@ -32,3 +32,12 @@ class user_actions:
         actions.sleep("180ms")
         actions.key("alt-enter")
 
+    def tab_left_wrapper():
+        """Moves the current tab to the left."""
+        actions.sleep("180ms")
+        actions.key("ctrl-shift-pageup")
+
+    def tab_right_wrapper():
+        """Moves the current tab to the left."""
+        actions.sleep("180ms")
+        actions.key("ctrl-shift-pagedown")
