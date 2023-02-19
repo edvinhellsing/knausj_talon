@@ -113,6 +113,26 @@ class Actions:
             r,
             occurrence_number,
         )
+    
+    #this function searches literal text, so if one is searching for a period one should write `.` instead of `period`
+    #kudos to @aegis
+    def navigation_literal_text(
+        navigation_action: str,  # GO, EXTEND, SELECT, DELETE, CUT, COPY
+        direction: str,  # up, down, left, right
+        before_or_after: str,  # BEFORE, AFTER, DEFAULT
+        target: str,  # the literal string you're looking for
+        occurrence_number: int,
+    ):
+        """Navigate in `direction` to the occurrence_number-th time that `text` occurs, then execute `navigation_action` at the given `before_or_after` position."""
+        actions.user.navigation(
+            navigation_action,
+            direction,
+            "DEFAULT",
+            before_or_after,
+            re.compile(re.escape(target)),
+            occurrence_number,
+        )
+
 
 
 def get_text_left():

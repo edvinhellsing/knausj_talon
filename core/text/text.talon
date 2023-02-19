@@ -43,8 +43,6 @@ select around:
     edit.extend_word_right()
     #edit.extend_left()
 
-#go word left: edit.word_left()
-#go word right: edit.word_right()
 contract (word | words):
     edit.word_left()
     edit.extend_word_right()
@@ -62,12 +60,22 @@ contract (word | words):
     user.formatters_reformat_selection("title")
     edit.left()
 
-#(ship | uppercase) beginning:
-    #actions.user.engine_mimic("navigate left period")
-    #user.navigation('GO', 'left', 'DEFAULT', 'DEFAULT', re.compile('\\.', re.IGNORECASE), 1)
-    #user.history_transform_phrase_text(['navigate', 'left', 'period'])
+#def navigation_literal_text(
+#    navigation_action: str,  # GO, EXTEND, SELECT, DELETE, CUT, COPY
+#    direction: str,  # up, down, left, right
+#    before_or_after: str,  # BEFORE, AFTER, DEFAULT
+#    target: str,  # the literal string you're looking for
+#    occurrence_number: int,
+#):
 
-(ship | uppercase) beginning:
+(ship | uppercase) sentence:
+    user.navigation_literal_text("GO", "left", "AFTER", ".", 1)
+    edit.word_right()
+    edit.select_word()
+    user.formatters_reformat_selection("title")
+    edit.left()
+
+(ship | uppercase) line [start]:
     edit.line_start()
     edit.select_word()
     user.formatters_reformat_selection("title")

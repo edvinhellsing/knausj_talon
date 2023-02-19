@@ -1,5 +1,8 @@
 from talon import Module, Context, actions, imgui, scope
 
+#Below is for the navigation_text()
+import re
+
 #Below is for the talon_relaunch()
 from talon import ui, app
 import os
@@ -66,8 +69,6 @@ class Actions:
         
     def slack_system_wide_leave_huddle():
         """sdf"""
-
-
 
     def select_continous(run: int):
         """sdf"""
@@ -265,8 +266,6 @@ class UserActions:
         actions.user.engine_mimic("focus slack")
         actions.sleep("300ms")
         actions.key("ctrl-shift-h")
-
-
 
     # Non working prototypes as of now
     def select_continous(run: int):
