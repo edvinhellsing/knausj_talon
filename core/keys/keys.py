@@ -213,6 +213,8 @@ symbol_key_words = {
     "backslash": "\\",
     "minus": "-",
     "dash": "-",
+    "and dash": "–",
+    "em dash": "—",
     "equals": "=",
     "plus": "+",
     "tilde": "~",
