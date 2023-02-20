@@ -168,9 +168,7 @@ ctx = Context()
 
 #test actions
 #actions.user.play_pause()
-#actions.user.stop_scroll()
 #actions.app.notify("test notification")
-#actions.user.engine_mimic("talon sleep")
 
 @ctx.action_class("user")
 class UserActions:
