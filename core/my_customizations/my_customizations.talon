@@ -40,9 +40,9 @@ key(scroll_lock): user.toggle_talon_microphone()
 
 (end ten | ten enter): key(enter)
 
-profile switcher open: user.open_browser_profile_switcher("chrome")
+profile switcher open: user.open_browser_profile_switcher("Google Chrome")
 
-talon hood (configure | reset):
+talon hood (relaunch | restart):
     user.engine_mimic("head up show")
     sleep(300ms)
     user.engine_mimic("event log show")
@@ -59,9 +59,9 @@ talon hood (configure | reset):
     sleep(300ms)
     user.engine_mimic("status bar add mode indicator")
 
-program (close | quit): user.close_program()
+program close: user.close_program()
 
-#slack (huddle | call) (leave | close): user.slack_system_wide_leave_huddle()
+slack (huddle | call) close: user.slack_system_wide_leave_huddle()
 
 #This works when `control mouse (zoom)` is active
 #key(f13): tracking.zoom()

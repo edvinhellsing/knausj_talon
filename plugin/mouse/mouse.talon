@@ -60,7 +60,6 @@ mid click:
     user.grid_close()
 (end drag | drag end): user.mouse_drag_end()
 downer: user.mouse_scroll_down()
-downer here: user.mouse_scroll_down() #adaption for Rango
 # downer here:
 #     user.mouse_move_center_active_window()
 #     user.mouse_scroll_down()
@@ -73,7 +72,6 @@ tiny down: user.mouse_scroll_down(0.2)
 #     user.mouse_move_center_active_window()
 #     user.mouse_scroll_down_continuous()
 upper: user.mouse_scroll_up()
-upper here: user.mouse_scroll_up() #adaption for Rango
 # upper here:
 #     user.mouse_move_center_active_window()
 #     user.mouse_scroll_up()
@@ -114,7 +112,7 @@ curse no:
     # Command added 2021-12-13, can remove after 2022-06-01
     app.notify("Please activate the user.mouse_cursor_commands_enable tag to enable this command")
 
-#Old commands, keeping them here before I see that the new commands work as expected
+#Old commands
 # (wheel | scroll) down: user.mouse_scroll_down()
 # (wheel | scroll) down here:
 #     user.mouse_move_center_active_window()

@@ -4,22 +4,22 @@ hostname: Gamen
 focus [file] explorer: key(super-ctrl-2)
 focus chrome: key(super-ctrl-3)
 #focuses on the joel@zutobi.com chrome profile browser window
-focus work: key(super-ctrl-4) 
+focus work: key(super-ctrl-4)
 focus edge: key(super-ctrl-5)
 focus notes: key(super-ctrl-6)
 focus (slack | lack | like): key(super-ctrl-7)
 
-focus outlook: user.open_specific_tab("chrome", "outlook.live.com")
-focus google calendar: user.open_specific_tab("chrome", "calendar.google.com")
-#focus notes: user.open_specific_tab("chrome", "iCloud-anteckningar")
+focus outlook: user.open_specific_tab("Google Chrome", "outlook.live.com")
+focus google calendar: user.open_specific_tab("Google Chrome", "calendar.google.com")
+#focus notes: user.open_specific_tab("Google Chrome", "iCloud-anteckningar")
 
-focus gmail: user.open_specific_tab("edge", "mail.google.com joel@zutobi")
-focus gmail zero: user.open_specific_tab("edge", "mail.google.com joel@zutobi")
-focus gmail one: user.open_specific_tab("edge", "mail.google.com support@zutobi")
-focus gmail two: user.open_specific_tab("edge", "mail.google.com hello@zutobi")
-focus gmail three: user.open_specific_tab("edge", "mail.google.com lalurran@gmail")
+focus gmail [Joel]: user.open_specific_tab("Microsoft Edge", "joel@zutobi")
+focus gmail support: user.open_specific_tab("Microsoft Edge", "support@zutobi")
+focus gmail hello: user.open_specific_tab("Microsoft Edge", "hello@zutobi")
+focus gmail la Loran: user.open_specific_tab("Microsoft Edge", "lalurran@gmail")
+focus gmail partnerships: user.open_specific_tab("Microsoft Edge", "partnerships@zutobi")
 
-focus chat GPT: user.open_specific_tab("edge", "https://chat.openai.com/")
+focus chat GPT: user.open_specific_tab("Microsoft Edge", "https://chat.openai.com/")
 
 ^grab screen selection$:
     user.toggle_talon_microphone()

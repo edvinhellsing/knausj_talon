@@ -45,11 +45,11 @@ grab right: key(shift-down)
 [format] (strike | strikethrough | strikify): key(ctrl-shift-x)
 [format] snippet: key(ctrl-shift-enter)
 # Calls
-(huddle | call) (start | join): 
+(huddle | call) new: 
     key(ctrl-shift-h)
     sleep(200ms)
     key(scroll_lock)
-(huddle | call) (leave | close): key(ctrl-shift-h)
+(huddle | call) close: key(ctrl-shift-h)
 #toggle (mute | unmute): key(m)
 #toggle video: key(v)
 #invite people: key(a)

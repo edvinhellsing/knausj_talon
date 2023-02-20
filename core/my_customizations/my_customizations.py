@@ -66,7 +66,10 @@ class Actions:
 
     def close_program():
         """Uses the OS built-in keyboard shortcut to close the program"""
-        
+
+    def current_app(name: str):
+        """Confirms if an app with app.name == name is in focus"""
+
     def slack_system_wide_leave_huddle():
         """sdf"""
 
@@ -117,8 +120,13 @@ class UserActions:
 
     def open_specific_tab(browser: str, search_str: str):
         """This function requires that the searched for tab actually is open in the browser"""
-        actions.user.engine_mimic("focus " + browser)
-        actions.sleep("400ms")
+        if actions.user.current_app(browser) == False:
+            actions.user.engine_mimic("focus " + browser)
+            actions.sleep("400ms")
+            #Check that the browser was successfully opened
+            if actions.user.current_app(browser) == False:
+                #If not, return
+                return
         actions.key("ctrl-shift-a")
         actions.sleep("400ms")
         actions.auto_insert(search_str)
@@ -126,7 +134,13 @@ class UserActions:
         actions.key("enter")
 
     def open_browser_profile_switcher(browser: str):
-        actions.user.engine_mimic("focus " + browser)
+        if actions.user.current_app(browser) == False:
+            actions.user.engine_mimic("focus " + browser)
+            actions.sleep("400ms")
+            #Check that the browser was successfully opened
+            if actions.user.current_app(browser) == False:
+                #If not, return
+                return
         actions.sleep("200ms")
         actions.key("ctrl-shift-m")
         actions.sleep("200ms")
@@ -261,12 +275,25 @@ class UserActions:
         elif app.platform == "mac":
             actions.key("cmd-q")
     
-    #System wide leave huddle voice command
-    def slack_system_wide_leave_huddle():
-        actions.user.engine_mimic("focus slack")
-        actions.sleep("300ms")
-        actions.key("ctrl-shift-h")
+    def current_app(name: str):
+        """Confirms if an app with app.name == name is in focus"""
+        active_app = ui.active_app()
+        if active_app.name == name:
+            return True
+        else: 
+            return False
 
+    #System wide leave huddle function
+    def slack_system_wide_leave_huddle():
+        if actions.user.current_app("Slack"):
+            actions.key("ctrl-shift-h")
+        else:
+            actions.user.engine_mimic("focus slack")
+            actions.sleep("300ms")
+            if actions.user.current_app("Slack"):
+                actions.key("ctrl-shift-h")
+        
+        
     # Non working prototypes as of now
     def select_continous(run: int):
 

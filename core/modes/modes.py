@@ -21,9 +21,6 @@ class Actions:
         """For windows and Mac with Dragon, enables Talon commands and Dragon's command mode."""
         actions.speech.enable()
 
-        # if "user.power_mode" in scope.get("mode"):
-        #     actions.user.engine_mimic("power mode")
-
         engine = speech_system.engine.name
         # app.notify(engine)
         if "dragon" in engine:
