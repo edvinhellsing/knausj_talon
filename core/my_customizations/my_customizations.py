@@ -31,7 +31,7 @@ mod = Module()
 
 @mod.action_class
 class Actions:
-    def repeat_slowly(rep: int):
+    def repeat_command_wrapper(rep: int):
         """Repeats the command rep times with wait times in between each repetition"""
 
     def toggle_talon_microphone():
@@ -83,7 +83,7 @@ ctx=Context()
 
 @ctx.action_class("user")
 class UserActions:
-    def repeat_slowly(rep: int):
+    def repeat_command_wrapper(rep: int):
         """Repeats the command rep times with wait times in between each repetition"""
         for i in range(rep):
             actions.core.repeat_command(1)
@@ -121,7 +121,7 @@ class UserActions:
     def open_specific_tab(browser: str, search_str: str):
         """This function requires that the searched for tab actually is open in the browser"""
         if actions.user.current_app(browser) == False:
-            actions.user.engine_mimic("focus " + browser)
+            actions.user.switcher_focus(browser)
             actions.sleep("400ms")
             #Check that the browser was successfully opened
             if actions.user.current_app(browser) == False:
@@ -135,7 +135,7 @@ class UserActions:
 
     def open_browser_profile_switcher(browser: str):
         if actions.user.current_app(browser) == False:
-            actions.user.engine_mimic("focus " + browser)
+            actions.user.switcher_focus(browser)
             actions.sleep("400ms")
             #Check that the browser was successfully opened
             if actions.user.current_app(browser) == False:
@@ -288,7 +288,7 @@ class UserActions:
         if actions.user.current_app("Slack"):
             actions.key("ctrl-shift-h")
         else:
-            actions.user.engine_mimic("focus slack")
+            actions.user.switcher_focus("Slack")
             actions.sleep("300ms")
             if actions.user.current_app("Slack"):
                 actions.key("ctrl-shift-h")
