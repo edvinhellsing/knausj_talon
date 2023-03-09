@@ -164,7 +164,6 @@ ctx.lists["self.letter"] = alphabet_list
 # `symbol_key_words` is for key names that should be available in command mode, but NOT during dictation.
 punctuation_words = {
     "back tick": "`",
-    "grave": "`",
     "comma": ",",
     # Workaround for issue with conformer b-series; see #946
     "coma": ",",
@@ -217,6 +216,7 @@ symbol_key_words = {
     "em dash": "—",
     "equals": "=",
     "plus": "+",
+    "grave": "`",
     "tilde": "~",
     "question": "?",
     "vest ten": "?",

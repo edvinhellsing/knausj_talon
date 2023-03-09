@@ -2,7 +2,7 @@
 mode: all
 -
 #Note: The function user.hud_toggle_mode() uses the voice commands "talon sleep" and "talon wake"
-^(talon sleep | tell and sleep)$:
+^(talon sleep | tell and sleep) [<phrase>]$:
     user.switcher_hide_running()
     user.history_disable()
     user.homophones_hide()
@@ -11,8 +11,8 @@ mode: all
     speech.disable()
     mode.disable("user.power_mode")
     user.engine_sleep()
-^(talon wake | tell and wake)$:
+^(talon wake | tell and wake)+$:
     user.mouse_wake()
     user.talon_mode()
 #^drowse$: speech.disable()
-^only mouse mode$: speech.disable()
+^(only mouse mode)+$: speech.disable()
