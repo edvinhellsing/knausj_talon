@@ -80,8 +80,9 @@ def text(m) -> str:
     return format_phrase(m)
 
 
+#<user.prose_number> -> <user.number_string> so numbers are written with digits instead of letters when using NOOP formatters like `say` and `speak` too (so it works the same as in command mode)
 @mod.capture(
-    rule="({user.vocabulary} | {user.punctuation} | {user.prose_snippets} | <phrase> | <user.prose_number> | <user.prose_modifier>)+"
+    rule="({user.vocabulary} | {user.punctuation} | {user.prose_snippets} | <phrase> | <user.number_string> | <user.prose_modifier>)+"
 )
 def prose(m) -> str:
     """Mixed words and punctuation, auto-spaced & capitalized."""
