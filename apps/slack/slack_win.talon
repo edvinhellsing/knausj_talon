@@ -45,7 +45,7 @@ grab right: key(shift-down)
 (format strike | format strikethrough | [format] strikify): key(ctrl-shift-x)
 [format] snippet: key(ctrl-shift-enter)
 # Calls
-(huddle | call) new: 
+(huddle | call) (new | join): 
     key(ctrl-shift-h)
     sleep(200ms)
     key(scroll_lock)

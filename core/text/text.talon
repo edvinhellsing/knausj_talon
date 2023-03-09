@@ -74,12 +74,14 @@ contract (word | words):
     edit.select_word()
     user.formatters_reformat_selection("title")
     edit.left()
+    edit.line_end()
 
-(ship | uppercase) line [start]:
+(ship | uppercase) line:
     edit.line_start()
     edit.select_word()
     user.formatters_reformat_selection("title")
     edit.left()
+    edit.line_end()
 
 # <user.formatters> (word | it):
 #     edit.select_word()

@@ -226,6 +226,8 @@ abbreviations = {
     "frequently asked questions": "FAQ ",
     "to be honest": "tbh ",
     "for your information": "FYI ",
+    "by the way": "btw",
+    "as soon as possible": "asap ",
     #"": " ",
 
     # work abbreviations
@@ -246,7 +248,7 @@ abbreviations = {
     "Google web services": "GCS ",
     "Google cloud services": "GCS ",
     "search engine optimization": "SEO ",
-    "chat gust perk trap": "ChatGPT ",
+    "chat gust perk trap": "chatGPT ",
     #"": " ",
 }
 

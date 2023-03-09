@@ -61,7 +61,12 @@ talon hood (relaunch | restart):
 
 program close: user.close_program()
 
-slack (huddle | call) close: user.slack_system_wide_leave_huddle()
+slack (huddle | call) (new | join): 
+    user.slack_toggle_huddle()
+    sleep(200ms)
+    key(scroll_lock)
+
+slack (huddle | call) close: user.slack_toggle_huddle()
 
 #This works when `control mouse (zoom)` is active
 #key(f13): tracking.zoom()

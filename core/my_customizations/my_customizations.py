@@ -70,7 +70,7 @@ class Actions:
     def current_app(name: str):
         """Confirms if an app with app.name == name is in focus"""
 
-    def slack_system_wide_leave_huddle():
+    def slack_toggle_huddle():
         """sdf"""
 
     def select_continous(run: int):
@@ -283,8 +283,8 @@ class UserActions:
         else: 
             return False
 
-    #System wide leave huddle function
-    def slack_system_wide_leave_huddle():
+    #System wide toggle huddle function
+    def slack_toggle_huddle():
         if actions.user.current_app("Slack"):
             actions.key("ctrl-shift-h")
         else:

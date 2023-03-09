@@ -29,7 +29,8 @@ go [to] parent: user.file_manager_open_parent()
     user.file_manager_select_file(file_manager_files)
 
 #new folder
-folder new <user.text>: user.file_manager_new_folder(text)
+folder new: key(ctrl-shift-n)
+#folder new <user.text>: user.file_manager_new_folder(text)
 
 #show properties
 properties show: user.file_manager_show_properties()
@@ -42,3 +43,9 @@ folder last: user.file_manager_previous_folder_page()
 
 file next: user.file_manager_next_file_page()
 file last: user.file_manager_previous_file_page()
+
+view large icons: key(ctrl-shift-1)
+view medium icons: key(ctrl-shift-2)
+view small icons: key(ctrl-shift-4)
+view details: key(ctrl-shift-6)
+
