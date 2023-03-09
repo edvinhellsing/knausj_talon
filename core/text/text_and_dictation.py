@@ -89,8 +89,9 @@ def prose(m) -> str:
     return apply_formatting(m).replace("“", '"').replace("”", '"')
 
 
+#<user.prose_number> -> <user.number_string> so numbers are written with digits instead of letters in dictation mode too (so it works the same as in command mode)
 @mod.capture(
-    rule="({user.vocabulary} | {user.punctuation} | {user.prose_snippets} | <phrase> | <user.prose_number>)+"
+    rule="({user.vocabulary} | {user.punctuation} | {user.prose_snippets} | <phrase> | <user.number_string>)+"
 )
 def raw_prose(m) -> str:
     """Mixed words and punctuation, auto-spaced & capitalized, without quote straightening and commands (for use in dictation mode)."""
