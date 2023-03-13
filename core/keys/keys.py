@@ -288,10 +288,9 @@ simple_keys = [
 
 alternate_keys = {
     "slap": "enter",
-    "wipe": "backspace",
+    #"wipe": "backspace",
     "clear": "backspace",
     #"chuck": "backspace",
-    #"delete": "backspace",
     #'junk': 'backspace',
     #"forward delete": "delete",
     "delete": "delete",
