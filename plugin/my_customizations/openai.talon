@@ -4,14 +4,6 @@ fix text:
     new = user.open_ai_fixup_text_gpt(old)
     user.paste(new)
 
-# fix text <phrase>$:
-# fix text <user.prose>$:
-# fix text <user.text>$:
-#     edit.select_all()
-#     old = edit.selected_text()
-#     new = user.open_ai_fixup_text_gpt_additional_context(old, "{text}")
-#     user.paste(new)
-
 fix text davinci:
     edit.select_all()
     old = edit.selected_text()

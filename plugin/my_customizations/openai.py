@@ -71,18 +71,3 @@ class Actions:
         print(response)
         return response["choices"][0]["message"]["content"].strip('"\'')
         #https://blog.finxter.com/python-print-without-quotes/
-
-    def open_ai_fixup_text_gpt_additional_context(text: str, additional_context: str) -> str:
-        """Uses the OpenAI GPT API to correct misrecognitions in dictated text."""
-        prompt = settings.get("user.open_ai_fixup_prompt")+" "+additional_context
-        response = openai.ChatCompletion.create(
-        model="gpt-3.5-turbo",
-        messages=[
-        {"role": "system", "content": prompt},
-        {"role": "user", "content": text},
-        ],
-        temperature=0, 
-        max_tokens=3500, 
-        request_timeout=10)
-        print(response)
-        return response["choices"][0]["message"]["content"].strip('"\'')
