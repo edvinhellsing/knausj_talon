@@ -50,12 +50,12 @@ contract (word | words):
     #edit.extend_left()
     user.formatters_reformat_selection("smash")
 
-(sink | sunk | lowercase) (word | it):
+(sink | sunk | lowercase) word:
     edit.select_word()
     user.formatters_reformat_selection("all down")
     edit.left()
 
-(ship | uppercase) (word | it):
+(ship | uppercase) word:
     edit.select_word()
     user.formatters_reformat_selection("title")
     edit.left()
@@ -68,13 +68,29 @@ contract (word | words):
 #    occurrence_number: int,
 #):
 
-(ship | uppercase) sentence:
-    user.navigation_literal_text("GO", "left", "AFTER", ".", 1)
+(ship | uppercase) period:
+        user.navigation_literal_text("GO", "left", "AFTER", ".", 1)
+        edit.word_right()
+        edit.select_word()
+        user.formatters_reformat_selection("title")
+        edit.left()
+        edit.line_end()
+
+(ship | uppercase) (question | question mark):
+    user.navigation_literal_text("GO", "left", "AFTER", "?", 1)
     edit.word_right()
     edit.select_word()
     user.formatters_reformat_selection("title")
     edit.left()
     edit.line_end()
+
+(ship | uppercase) (bang | exclamation | exclamation mark):
+        user.navigation_literal_text("GO", "left", "AFTER", "!", 1)
+        edit.word_right()
+        edit.select_word()
+        user.formatters_reformat_selection("title")
+        edit.left()
+        edit.line_end()
 
 (ship | uppercase) line:
     edit.line_start()
@@ -83,7 +99,15 @@ contract (word | words):
     edit.left()
     edit.line_end()
 
-# <user.formatters> (word | it):
+(sink | sunk | lowercase) <user.keys>:
+    user.navigation_literal_text("GO", "left", "AFTER", keys, 1)
+    edit.word_right()
+    edit.select_word()
+    user.formatters_reformat_selection("all down")
+    edit.left()
+    edit.line_end()
+
+# <user.formatters> word:
 #     edit.select_word()
 #     user.formatters_reformat_selection(user.formatters)
 

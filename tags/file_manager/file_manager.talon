@@ -49,3 +49,4 @@ view medium icons: key(ctrl-shift-2)
 view small icons: key(ctrl-shift-4)
 view details: key(ctrl-shift-6)
 
+(refresh | reload) it: key(f5)
