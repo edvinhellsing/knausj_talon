@@ -34,6 +34,9 @@ class Actions:
     def repeat_command_wrapper(rep: int):
         """Repeats the command rep times with wait times in between each repetition"""
 
+    def repeat_phrase_wrapper(rep: int):
+        """Repeats the phrase rep times with wait times in between each repetition"""
+
     def toggle_talon_microphone():
         """Toggle the Talon microphone on/off using talon_HUD actions (please note: talon_HUD must be installed in the talon user folder for this function to work)"""
 
@@ -87,6 +90,12 @@ class UserActions:
         """Repeats the command rep times with wait times in between each repetition"""
         for i in range(rep):
             actions.core.repeat_command(1)
+            actions.sleep("200ms")
+
+    def repeat_phrase_wrapper(rep: int):
+        """Repeats the phrase rep times with wait times in between each repetition"""
+        for i in range(rep):
+            actions.core.repeat_phrase(1)
             actions.sleep("200ms")
   
     """
