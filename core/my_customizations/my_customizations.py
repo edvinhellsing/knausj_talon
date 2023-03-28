@@ -186,7 +186,7 @@ class UserActions:
             actions.key("super-h")
         elif app.platform == "mac":
             actions.key("ctrl")
-            actions.sleep("50ms")
+            actions.sleep("10ms")
             actions.key("ctrl")
 
     def toggle_dictation_voice_command():

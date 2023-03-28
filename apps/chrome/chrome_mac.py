@@ -56,11 +56,13 @@ class BrowserActions:
     def go_blank():
         actions.key("cmd-n")
 
+    # "left" instead of "["
     def go_back():
-        actions.key("cmd-[")
+        actions.key("cmd-left")
 
+    # "right" instead of "]"
     def go_forward():
-        actions.key("cmd-]")
+        actions.key("cmd-right")
 
     def go_home():
         actions.key("cmd-shift-h")
