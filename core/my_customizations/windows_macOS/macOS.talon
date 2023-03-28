@@ -1,7 +1,6 @@
 os: mac
 -
 
-(start | stop) dictation: user.start_stop_dictation()
 #(start | stop) dictation: user.start_stop_dictation()
 
 start listening: 
