@@ -12,7 +12,7 @@ workspace <number>: key("ctrl-{number}")
 # Navigation
 #focus (move | next): key(ctrl-`)
 (go [to] | section | zone) next: key(f6)
-(go [to] | section | zone) (previous | last): key(shift-f6)
+(go [to] | section | zone) (previous): key(shift-f6) #last
 (go [to] | slack | lack | like) [direct] messages: key(ctrl-shift-k)
 (go [to] | slack | lack | like) threads: key(ctrl-shift-t)
 go (forward | next | forth): key("alt-right")
