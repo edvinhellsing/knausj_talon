@@ -1,8 +1,7 @@
 import os
 
-from talon import Module, actions, app, clip, cron, ctrl, imgui, noise, ui
-from talon_plugins import eye_mouse, eye_zoom_mouse
-from talon_plugins.eye_mouse import config, toggle_camera_overlay, toggle_control
+from talon import Context, Module, actions, app, clip, cron, ctrl, imgui, ui
+from talon_plugins import eye_zoom_mouse
 
 key = actions.key
 self = actions.self
@@ -39,6 +38,8 @@ hidden_cursor = os.path.join(
 )
 
 mod = Module()
+ctx = Context()
+
 mod.list(
     "mouse_button", desc="List of mouse button words to mouse_click index parameter"
 )
@@ -49,7 +50,7 @@ setting_mouse_enable_pop_click = mod.setting(
     "mouse_enable_pop_click",
     type=int,
     default=0,
-    desc="Enable pop to click when control mouse is enabled.",
+    desc="Pop noise clicks left mouse button. 0 = off, 1 = on with eyetracker but not with zoom mouse mode, 2 = on but not with zoom mouse mode",
 )
 setting_mouse_enable_pop_stops_scroll = mod.setting(
     "mouse_enable_pop_stops_scroll",
@@ -120,51 +121,11 @@ class Actions:
 
     def mouse_wake():
         """Enable zoom mouse"""
-        #eye_zoom_mouse.toggle_zoom_mouse(True)
-        #actions.tracking.control_zoom_enabled()
+        #actions.tracking.control_zoom_toggle(True)
         """Enable control mouse"""
-        eye_mouse.control_mouse.enable()
-        #actions.tracking.control_enabled()
-        """Disables cursor"""
-        if setting_mouse_wake_hides_cursor.get() >= 1:
-            show_cursor_helper(False)
+        actions.tracking.control_toggle()
 
-    def mouse_calibrate():
-        """Start calibration"""
-        eye_mouse.calib_start()
-
-    def mouse_toggle_control_mouse(enabled: bool = None):
-        """Toggles control mouse. Pass in a bool to enable it, otherwise toggle the current state"""
-        if enabled is not None:
-            toggle_control(enabled)
-        else:
-            toggle_control(not config.control_mouse)
-
-    def mouse_toggle_camera_overlay():
-        """Toggles camera overlay"""
-        toggle_camera_overlay(not config.show_camera)
-
-    def mouse_toggle_zoom_mouse():
-        """Toggles zoom mouse"""
-        eye_zoom_mouse.toggle_zoom_mouse(not eye_zoom_mouse.zoom_mouse.enabled)
-        #noise.unregister("pop", eye_zoom_mouse.zoom_mouse.on_pop)
-
-    def mouse_cancel_zoom_mouse():
-        """Cancel zoom mouse if pending"""
-        if (
-            eye_zoom_mouse.zoom_mouse.enabled
-            and eye_zoom_mouse.zoom_mouse.state != eye_zoom_mouse.STATE_IDLE
-        ):
-            eye_zoom_mouse.zoom_mouse.cancel()
-
-    def mouse_trigger_zoom_mouse():
-        """Trigger zoom mouse if enabled"""
-        if eye_zoom_mouse.zoom_mouse.enabled:
-            eye_zoom_mouse.zoom_mouse.on_pop(eye_zoom_mouse.zoom_mouse.state)
-
-        """Enable control mouse, zoom mouse, and disables cursor"""
-        actions.tracking.control_zoom_toggle(True)
-
+        """Disable cursor"""
         if setting_mouse_wake_hides_cursor.get() >= 1:
             show_cursor_helper(False)
 
@@ -303,30 +264,29 @@ def show_cursor_helper(show):
 
 
 #https://talonvoice.com/docs/index.html#talon-noise
-def on_pop(active):
-    # Only want the pop noise to click when we're using an eye tracker
-    is_using_eye_tracker = (
-        actions.tracking.control_zoom_enabled()
-        or actions.tracking.control_enabled()
-        or actions.tracking.control1_enabled()
-    )
+@ctx.action("user.noise_trigger_pop")
+def on_pop():
     if setting_mouse_enable_pop_stops_scroll.get() >= 1 and (gaze_job or scroll_job):
+        # Allow pop to stop scroll
         stop_scroll()
-    if 0 in ctrl.mouse_buttons_down():
-        actions.user.mouse_drag_end()
-    if 1 in ctrl.mouse_buttons_down():
-        actions.user.figma_pan_stop()
-    elif is_using_eye_tracker and not actions.tracking.control_zoom_enabled():
-        if setting_mouse_enable_pop_click.get() >= 1:
+    else:
+        # Otherwise respect the mouse_enable_pop_click setting
+        setting_val = setting_mouse_enable_pop_click.get()
+
+        is_using_eye_tracker = (
+            actions.tracking.control_zoom_enabled()
+            or actions.tracking.control_enabled()
+            or actions.tracking.control1_enabled()
+        )
+        should_click = (
+            setting_val == 2 and not actions.tracking.control_zoom_enabled()
+        ) or (
+            setting_val == 1
+            and is_using_eye_tracker
+            and not actions.tracking.control_zoom_enabled()
+        )
+        if should_click:
             ctrl.mouse_click(button=0, hold=16000)
-
-noise.register("pop", on_pop)
-
-
-# def on_hiss(active):
-#     print("hiss", active)
-
-# noise.register("hiss", on_hiss)
 
 
 def mouse_scroll(amount):

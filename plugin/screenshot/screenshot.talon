@@ -5,6 +5,9 @@
 #^grab screen <number_small>$: user.screenshot(number_small)
 #^grab window$: user.screenshot_window()
 #^grab screen selection$: user.screenshot_selection() #commented out in favor for setup in gamen_computer.talon
+^grab selection clip$: #this one could be used instead of `grab a screen selection`
+    user.engine_mimic("event log clear logs")
+    user.screenshot_selection_clip()
 #^grab settings$: user.screenshot_settings()
 ^grab screen clip$: 
     user.engine_mimic("event log clear logs")

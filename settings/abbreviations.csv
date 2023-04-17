@@ -1,0 +1,112 @@
+Abbreviation,Spoken Form
+admin ,administrator
+admins ,administrators
+alt ,alternative
+app ,application
+apps ,applications
+arg ,argument
+args ,arguments
+afaict ,as far as i can tell
+afaik ,as far as i know
+atm ,at the moment
+auth ,authenticate
+auth ,authentication
+afk ,away from keyboard
+bool ,boolean
+cm ,centimeter
+char ,character
+cmd ,command
+conf ,conference
+ctrl ,control
+const ,constant
+coord ,coordinate
+coords ,coordinates
+db ,database
+def ,definition
+desc ,description
+dev ,develop
+dev ,development
+dict ,dictation
+dict ,dictionary
+doc ,document
+docs ,documents
+env ,environment
+esc ,escape
+etc ,etcetera
+func ,function
+http ,hypertext
+img ,image
+info ,information
+init ,initialize
+irl ,in real life
+int ,integer
+iter ,iterate
+js ,javascript
+json ,jason
+kg ,kilogram
+km ,kilometer
+len ,length
+lib ,library
+md ,markdown
+mic ,microphone
+mg ,milligram
+ms ,millisecond
+misc ,miscellaneous
+ns ,nano second
+num ,number
+ok ,okay
+os ,operating system
+pkg ,package
+param ,parameter
+params ,parameters
+px ,pixel
+pt ,point
+prev ,previous
+py ,python
+regex ,regular expression
+regex ,regular expressions
+repl ,repel
+stdin ,standard in
+stdout ,standard out
+str ,string
+struct ,structure
+sync ,synchronize
+sync ,synchronous
+ToC ,table of contents
+tech ,technology
+temp ,temperature
+tmp ,temporary
+utils ,utilities
+util ,utility
+var ,variable
+vs ,versus
+wtf ,what the fuck
+e.g. ,for example
+i.e. ,that is
+pr ,public relations
+hr ,human relations
+qa ,quality assurance
+Q&A ,questions and answers
+FAQ ,frequently asked questions
+tbh ,to be honest
+FYI ,for your information
+btw,by the way
+asap ,as soon as possible
+al-car,alabama car
+al-cdl,alabama CDL
+al-mc,alabama motorcycle
+ca-car,california car
+ca-cdl,california CDL
+ca-mc,california motorcycle
+cwv ,core web vitals
+LCP ,largest contentful paint
+CLS ,cumulative layout shift
+FID ,first input delay
+Vlad ,Vladimir
+CTA ,call to action
+AWS ,amazon web services
+AWS ,amazon cloud services
+GCS ,Google web services
+GCS ,Google cloud services
+SEO ,search engine optimization
+chatGPT ,chat gust perk trap
