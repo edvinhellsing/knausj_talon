@@ -3,16 +3,15 @@ from talon import Context, Module, actions, app
 from ..user_settings import get_list_from_csv
 
 #http://www.yougowords.com/start-with-e/1-syllables
-#near
-#kid could replace crunch
+#https://syllablewords.net/1-syllable-words-starting-with-o?page=1
+#near <- why didn't near work?
 #eel elk eagle
 #onyx adder oesten
-#spun 
+#spun
 #urge is often misrecognized as args
 #red is a color so better to use ram
-#risk
 #pink is a color so better to use perk
-#each is often misrecognized as ice...
+#each is often misrecognized as ice
 #bat is often misrecognized as whale/dot/it/space and many more commands... Trying out `batch` and `bill` instead
 #east is a little cumbersome to say, tryin `eat` instead
 #batch -> bin
@@ -22,7 +21,8 @@ from ..user_settings import get_list_from_csv
 #bin is often misrecognized as bang (!)
 #sun -> sit (sun is often misrecognized as one, home, end and words like it)
 #ice -> ivy (ice is misinterpreted as space)
-#eat -> each (now that we're using "ivy" instead of "ice" we can switch back to using "each" instead of eat. The problem with "eat" is that it's too close to "it")
+#eat -> each (now that we're using "ivy" instead of "ice" we can switch back to using "each" instead of "eat". The problem with "eat" is that it too closely resembles "it")
+#odd -> orange/oak because odd is often misrecognized as one/word the/...
 def setup_default_alphabet():
     """set up common default alphabet.
 
@@ -163,6 +163,10 @@ ctx.lists["self.letter"] = alphabet_list
 # `punctuation_words` is for words you want available BOTH in dictation and as key names in command mode.
 # `symbol_key_words` is for key names that should be available in command mode, but NOT during dictation.
 punctuation_words = {
+    # TODO: I'm not sure why we need these, I think it has something to do with
+    # Dragon. Possibly it has been fixed by later improvements to talon? -rntz
+    "`": "`",
+    ",": ",",  # <== these things
     "back tick": "`",
     "comma": ",",
     # Workaround for issue with conformer b-series; see #946
@@ -178,7 +182,7 @@ punctuation_words = {
     #"exclamation point": "!",
     "asterisk": "*",
     "hash sign": "#",
-    #"number sign": "#",
+    "number sign": "#",
     "percent sign": "%",
     "at sign": "@",
     "and sign": "&",
@@ -192,16 +196,25 @@ punctuation_words = {
     "left paren": "(",
     "R paren": ")",
     "right paren": ")",
+
+    #My additions
+    "dash sign": "-",
 }
 symbol_key_words = {
-    "void": " ",
-    "dot": ".",
+    #My additions
     #"semistack": ";",
     #"stack": ":",
     #"drip": ",",
+    "vest ten": "?",
+    #"vest one": "?",
+    "vest ram": "?",
+    "and dash": "–",
+    "em dash": "—",
     
+    "dot": ".",
     "point": ".",
     "quote": "'",
+    "question": "?",
     "apostrophe": "'",
     "L square": "[",
     "left square": "[",
@@ -211,17 +224,11 @@ symbol_key_words = {
     "slash": "/",
     "backslash": "\\",
     "minus": "-",
-    "dash": "-",
-    "and dash": "–",
-    "em dash": "—",
+    #"dash": "-",
     "equals": "=",
     "plus": "+",
     "grave": "`",
     "tilde": "~",
-    "question": "?",
-    "vest ten": "?",
-    "vest one": "?",
-    "vest ram": "?",
     "bang": "!",
     "exclamation": "!",
     "down score": "_",
@@ -249,7 +256,7 @@ symbol_key_words = {
     "right angle": ">",
     #"greater than": ">",
     #"star": "*",
-    "hash": "#",
+    #"hash": "#", #removed this one as it was often misinterpreted as `dash`
     "percent": "%",
     #"caret": "^",
     "caret sign": "^",
@@ -287,17 +294,21 @@ simple_keys = [
 ]
 
 alternate_keys = {
+    #My additions
+    "void": "space",
+    "blank": "space",
     "slap": "enter",
-    #"wipe": "backspace",
     "clear": "backspace",
     #"chuck": "backspace",
+    "delete": "delete",
+    "tabber": "tab",
+
+    #"wipe": "backspace",
+    #"delete": "backspace",
     #'junk': 'backspace',
     #"forward delete": "delete",
-    "delete": "delete",
-    "ten eat": "delete",
     "page up": "pageup",
     "page down": "pagedown",
-    "tabber": "tab",
 }
 # mac apparently doesn't have the menu key.
 if app.platform in ("windows", "linux"):

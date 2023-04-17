@@ -20,7 +20,7 @@ start listening:
 #https://www.digitalcitizen.life/keyboard-language-shortcut/
 (lang | language) english: key(alt-shift-1)
 (lang | language) swedish: key(alt-shift-2)
-nine dash: key(alt-shift-2)
+#nine dash: key(alt-shift-2)
 
 #The program SoundSwitch enables hotkeys for changing input and output devices: https://github.com/Belphemur/SoundSwitch
 input [device] change: key(alt-ctrl-f7)
@@ -42,4 +42,4 @@ computer sleep: user.put_computer_to_sleep()
 
 talon (relaunch | restart): user.talon_relaunch()
 
-clipboard [open]: key(super-v)
+clipboard [open | history]: key(super-v)
