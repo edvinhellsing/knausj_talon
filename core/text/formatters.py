@@ -142,7 +142,8 @@ formatters_words = {
     "dotted": formatters_dict["DOT_SEPARATED"],
     "dub string": formatters_dict["DOUBLE_QUOTED_STRING"],
     #"dunder": formatters_dict["DOUBLE_UNDERSCORE"],
-    "hammer": formatters_dict["PUBLIC_CAMEL_CASE"],
+    #"hammer": formatters_dict["PUBLIC_CAMEL_CASE"],
+    "pascal": formatters_dict["PUBLIC_CAMEL_CASE"],
     "kebab": formatters_dict["DASH_SEPARATED"],
     "packed": formatters_dict["DOUBLE_COLON_SEPARATED"],
     "padded": formatters_dict["SPACE_SURROUNDED_STRING"],
@@ -158,16 +159,9 @@ formatters_words = {
     #"sink": formatters_dict["ALL_LOWERCASE"],
 }
 
-# formatters_words2 = {
-#     "capitalize": formatters_dict["CAPITALIZE_ALL_WORDS"],
-#     "ship": formatters_dict["CAPITALIZE_ALL_WORDS"],
-#     "sink": formatters_dict["ALL_LOWERCASE"],
-# }
-
 all_formatters = {}
 all_formatters.update(formatters_dict)
 all_formatters.update(formatters_words)
-#all_formatters.update(formatters_words2)
 
 mod = Module()
 mod.list("formatters", desc="list of formatters")

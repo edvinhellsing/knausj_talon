@@ -120,7 +120,8 @@ contract (word | words):
 #     "dotted": formatters_dict["DOT_SEPARATED"], #this.is.a.string
 #     "dub string": formatters_dict["DOUBLE_QUOTED_STRING"], #"this is a string"
 #     #"dunder": formatters_dict["DOUBLE_UNDERSCORE"],
-#     "hammer": formatters_dict["PUBLIC_CAMEL_CASE"], #ThisIsAString
+#     #"hammer": formatters_dict["PUBLIC_CAMEL_CASE"], #ThisIsAString
+#     "pascal": formatters_dict["PUBLIC_CAMEL_CASE"], #ThisIsAString
 #     "kebab": formatters_dict["DASH_SEPARATED"], #this-is-a-string
 #     "packed": formatters_dict["DOUBLE_COLON_SEPARATED"], #this::is::a::string
 #     "padded": formatters_dict["SPACE_SURROUNDED_STRING"], # this is a string 
