@@ -123,7 +123,7 @@ class Actions:
         """Enable zoom mouse"""
         #actions.tracking.control_zoom_toggle(True)
         """Enable control mouse"""
-        actions.tracking.control_toggle()
+        actions.tracking.control_toggle(True)
 
         """Disable cursor"""
         if setting_mouse_wake_hides_cursor.get() >= 1:

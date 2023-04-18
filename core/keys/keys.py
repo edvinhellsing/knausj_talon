@@ -144,11 +144,14 @@ ctx = Context()
 modifier_keys = {
     # If you find 'alt' is often misrecognized, try using 'alter'.
     #"alt": "alt",  
-    'alter': 'alt',
     "control": "ctrl",  #'troll':   'ctrl',
     "shift": "shift",  #'sky':     'shift',
     "super": "super",
-    #"win": "super", #win is often misrepresented as wheel so I'm opting out of this one
+
+    #My additions
+    #'alter': 'alt',
+    'option': 'alt',
+    #"win": "super", #win is often misrecognized as wheel
 }
 if app.platform == "mac":
     modifier_keys["command"] = "cmd"
@@ -197,16 +200,6 @@ punctuation_words = {
     "dash sign": "-",
 }
 symbol_key_words = {
-    #My additions
-    #"semistack": ";",
-    #"stack": ":",
-    #"drip": ",",
-    "vest ten": "?",
-    #"vest one": "?",
-    "vest ram": "?",
-    "and dash": "–",
-    "em dash": "—",
-    
     "dot": ".",
     "point": ".",
     "quote": "'",
@@ -263,6 +256,16 @@ symbol_key_words = {
     # Currencies
     #"dollar": "$",
     #"pound": "£",
+
+    #My additions
+    #"semistack": ";",
+    #"stack": ":",
+    #"drip": ",",
+    "vest ten": "?",
+    #"vest one": "?",
+    "vest ram": "?",
+    "and dash": "–",
+    "em dash": "—",
 }
 
 # make punctuation words also included in {user.symbol_keys}
@@ -290,6 +293,13 @@ simple_keys = [
 ]
 
 alternate_keys = {
+    #"wipe": "backspace",
+    #"delete": "backspace",
+    #'junk': 'backspace',
+    #"forward delete": "delete",
+    "page up": "pageup",
+    "page down": "pagedown",
+
     #My additions
     "void": "space",
     "blank": "space",
@@ -298,13 +308,6 @@ alternate_keys = {
     #"chuck": "backspace",
     "delete": "delete",
     "tabber": "tab",
-
-    #"wipe": "backspace",
-    #"delete": "backspace",
-    #'junk': 'backspace',
-    #"forward delete": "delete",
-    "page up": "pageup",
-    "page down": "pagedown",
 }
 # mac apparently doesn't have the menu key.
 if app.platform in ("windows", "linux"):
