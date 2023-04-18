@@ -100,8 +100,8 @@ contract (word | words):
     edit.left()
     edit.line_end()
 
-(sink | sunk | lowercase) <user.keys>:
-    user.navigation_literal_text("GO", "left", "AFTER", keys, 1)
+(sink | sunk | lowercase) <user.symbol_key>:
+    user.navigation_literal_text("GO", "left", "AFTER", symbol_key, 1)
     edit.word_right()
     edit.select_word()
     user.formatters_reformat_selection("all down")
