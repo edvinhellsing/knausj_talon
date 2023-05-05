@@ -10,17 +10,6 @@ mod = Module()
 
 DEFAULT_PROMPT = """The following text was dictated without correcting misrecognitions stemming from impaired enunciation. Fix any typos and grammatical errors, leaving meaning and structure intact."""
 
-#DEFAULT_PROMPT = """The following text was dictated without correcting misrecognitions stemming from impaired enunciation. Fix any typos and grammatical errors, leaving meaning and structure intact. These technical terms are often misrecognized: Zutobi, Zutobi Instructor, Zutobi Drivers Ed. And these are the names of my colleagues: Joel, Pia, Sachino, Artem, Roman, Taras, Davor, Olha (often misrecognized as all her or all our), Dima. And these are common services that we are using: Figma, Adobe, Imgix, WebPageTest, Cloudflare, GCS, Bitwarden, Jira, Mautic, Cursorless, VS code, Talon, Tiktok, Linkedin, Grammarly, Calendly, Kochava, Trustpilot, Ahrefs, Github, Rango, Gopro."""
-
-#These technical terms are often misrecognized: Zutobi, Zutobi Instructor, Zutobi Drivers Ed.
-#And these are the names of my colleagues: Joel, Pia, Sachino, Artem, Roman, Taras, Davor, Olha, Dima.
-#And these are common services that we are using: Figma, Adobe, Imgix, WebPageTest, Cloudflare, GCS, Bitwarden, Jira, Mautic, Cursorless, VS code, Talon, Tiktok, Linkedin, Grammarly, Calendly, Kochava, Trustpilot, Ahrefs, Github, Rango, Gopro.
-
-#There are a few technical terms which are often misrecognized, I've listed them below in the format "Correct spelling of the term, Common misrecognition"
-#Zutobi,satobe
-#Zutobi Drivers Ed,satobe driver's ed
-#Zutobi Instructor,satobe instructor
-
 mod.setting(
     "open_ai_fixup_prompt",
     type=str,
