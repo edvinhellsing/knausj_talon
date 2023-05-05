@@ -64,12 +64,12 @@ downer here:
     user.mouse_move_center_active_window()
     user.mouse_scroll_down()
 downer all: user.mouse_scroll_down(99)
-tiny down: user.mouse_scroll_down(0.2)
-tiny down here:
+[scroll] tiny down: user.mouse_scroll_down(0.2)
+[scroll] tiny down here:
     user.mouse_move_center_active_window()
     user.mouse_scroll_down(0.2)
-(continuous | continue) down: user.mouse_scroll_down_continuous()
-(continuous | continue) down here:
+[scroll] (continuous | continue) down: user.mouse_scroll_down_continuous()
+[scroll] (continuous | continue) down here:
     user.mouse_move_center_active_window()
     user.mouse_scroll_down_continuous()
 upper: user.mouse_scroll_up()
@@ -77,12 +77,12 @@ upper here:
     user.mouse_move_center_active_window()
     user.mouse_scroll_up()
 upper all: user.mouse_scroll_up(99)
-tiny up: user.mouse_scroll_up(0.2)
-tiny up here:
+[scroll] tiny up: user.mouse_scroll_up(0.2)
+[scroll] tiny up here:
     user.mouse_move_center_active_window()
     user.mouse_scroll_up(0.2)
-(continuous | continue) up: user.mouse_scroll_up_continuous()
-(continuous | continue) up here:
+[scroll] (continuous | continue) up: user.mouse_scroll_up_continuous()
+[scroll] (continuous | continue) up here:
     user.mouse_move_center_active_window()
     user.mouse_scroll_up_continuous()
 (wheel | scroll) gaze: user.mouse_gaze_scroll()

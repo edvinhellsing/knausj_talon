@@ -16,14 +16,15 @@ insert {user.additional_words}: auto_insert(additional_words)
 website {user.website}: auto_insert(website)
 system path <user.system_path>: auto_insert(system_path)
 
-em phrase: "Mm, "
-hem phrase: "Hmm, "
-ah phrase: "Aa, "
+made phrase: "Mm, "
+harp phrase: "Hmm, "
+air phrase: "Aa, "
 (I get it | I understand) phrase: "Aha, "
+oak phrase: "Oh, "
+no phrase: "Nä, "
+okay phrase: "Ok, "
 ha ha phrase: "Haha "
 ha ha ha phrase: "Hahaha "
-#oh phrase: "Oh, "
-no phrase: "Nä, "
 
 (signature phrase | insert signature): 
     "Best regards"

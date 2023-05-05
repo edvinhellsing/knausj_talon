@@ -32,6 +32,7 @@ thinking, :thinking_face:
 raised eyebrow, :face_with_raised_eyebrow:
 monocle, :face_with_monocle:
 relaxed, :relaxed:
+flushed, :flushed:
 kissing, :kissing_smiling_eyes:
 kissing heart, :kissing_heart:
 expressionless, :expressionless:
@@ -42,6 +43,7 @@ drooling, :drooling_face:
 angry, :angry:
 cold sweat, :cold_sweat:
 innocent, :innocent:
+halo, :innocent:
 hugging, :hugging_face:
 partying, :partying_face:
 smiling three hearts, :smiling_face_with_3_hearts:
@@ -67,6 +69,8 @@ rocket, :rocket:
 airplane, :airplane:
 airplane departure, :airplane_departure:
 hammer, :hammer:
+pistol, :gun:
+gun, :gun:
 tada, :tada:
 balloon, :balloon:
 gift, :gift:
