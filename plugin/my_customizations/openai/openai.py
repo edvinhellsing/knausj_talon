@@ -19,6 +19,21 @@ mod.setting(
 
 @mod.action_class
 class Actions:
+    def open_ai_fixup_text_gpt(text: str) -> str:
+        """Uses the OpenAI GPT API to correct misrecognitions in dictated text."""
+        prompt = settings.get("user.open_ai_fixup_prompt")
+        response = openai.ChatCompletion.create(
+        model="gpt-3.5-turbo",
+        messages=[
+        {"role": "system", "content": prompt},
+        {"role": "user", "content": text},
+        ],
+        temperature=0, 
+        max_tokens=3500, 
+        request_timeout=10)
+        print(response)
+        return response["choices"][0]["message"]["content"].strip('"\'')
+    
     def open_ai_fixup_text_davinci(text: str) -> str:
         """Uses the OpenAI GPT API to correct misrecognitions in dictated text."""
         prompt = settings.get("user.open_ai_fixup_prompt")
@@ -44,19 +59,3 @@ class Actions:
         request_timeout=10)
         print(response)
         return response["choices"][0]["text"].strip()
-
-    def open_ai_fixup_text_gpt(text: str) -> str:
-        """Uses the OpenAI GPT API to correct misrecognitions in dictated text."""
-        prompt = settings.get("user.open_ai_fixup_prompt")
-        response = openai.ChatCompletion.create(
-        model="gpt-3.5-turbo",
-        messages=[
-        {"role": "system", "content": prompt},
-        {"role": "user", "content": text},
-        ],
-        temperature=0, 
-        max_tokens=3500, 
-        request_timeout=10)
-        print(response)
-        return response["choices"][0]["message"]["content"].strip('"\'')
-        #https://blog.finxter.com/python-print-without-quotes/
