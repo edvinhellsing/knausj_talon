@@ -22,7 +22,7 @@ air phrase: "Aa, "
 (I get it | I understand) phrase: "Aha, "
 oak phrase: "Oh, "
 no phrase: "Nä, "
-okay phrase: "Ok, "
+okay phrase: "OK "
 ha ha phrase: "Haha "
 ha ha ha phrase: "Hahaha "
 
