@@ -60,5 +60,4 @@ def on_ready():
 def system_path(m) -> str:
     return m.system_paths
 
-
 app.register("ready", on_ready)

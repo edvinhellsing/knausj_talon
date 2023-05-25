@@ -7,7 +7,6 @@ os: linux
 app: slack
 """
 
-
 @ctx.action_class("user")
 class UserActions:
     def messaging_workspace_previous():
