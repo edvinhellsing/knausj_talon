@@ -79,4 +79,3 @@ code (comment): user.comment()
 code (uncomment): user.uncomment()
 
 (chrome open bookmarks): user.open_chrome_bookmarks()
-    user.engine_mimic("open chrome bookmarks")
