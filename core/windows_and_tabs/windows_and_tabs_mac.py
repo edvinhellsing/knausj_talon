@@ -16,13 +16,23 @@ class AppActions:
         # action(app.tab_detach):
         #  Move the current tab to a new window
 
+    # own chrome navigation like used to in win
     def tab_next():
+        actions.key("cmd-alt-right")
+
+    # changed from "next"
+    def tab_forward():
         actions.key("cmd-shift-]")
 
     def tab_open():
         actions.key("cmd-t")
-
+    
+    # own chrome navigation like used to in win
     def tab_previous():
+        actions.key("cmd-alt-left")
+
+    # changed from "previous"
+    def tab_last():
         actions.key("cmd-shift-[")
 
     def tab_reopen():
