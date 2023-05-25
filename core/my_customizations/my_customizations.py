@@ -82,6 +82,9 @@ class Actions:
     
     def open_chrome_bookmarks():
         """Open bookmarks in Google Chrome on Windows"""
+    
+    def window():
+        """Windows key / start"""
 
 ctx=Context()
 
@@ -304,3 +307,7 @@ class UserActions:
             actions.key("tab")
             actions.sleep("100ms")
             actions.key("tab")
+    
+    def window():
+        if app.platform == "windows":
+            actions.key("ctrl-esc")

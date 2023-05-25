@@ -111,12 +111,10 @@ def keys(m) -> str:
     "A sequence of one or more keys with optional modifiers"
     return " ".join(m.key_list)
 
-
 @mod.capture(rule="{self.letter}+")
 def letters(m) -> str:
     "Multiple letter keys"
     return "".join(m.letter_list)
-
 
 ctx = Context()
 modifier_keys = {
@@ -126,6 +124,7 @@ modifier_keys = {
     "control": "ctrl",  #'troll':   'ctrl',
     "shift": "shift",  #'sky':     'shift',
     "super": "super",
+    "windows": "super",
     #"win": "super", #win is often misrepresented as wheel so I'm opting out of this one
 }
 if app.platform == "mac":
