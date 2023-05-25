@@ -1,14 +1,16 @@
 os: windows
 os: linux
 app: slack
-#todo: some sort of plugin, consolidate with teams or something?
--
+
 tag(): user.messaging
 tag(): user.emoji
+
 # Workspaces
 workspace <number>: key("ctrl-{number}")
+
 # Channel
 #(slack | lack | like) [channel] info: key(ctrl-shift-i)
+
 # Navigation
 #focus (move | next): key(ctrl-`)
 (go [to] | section | zone) next: key(f6)
@@ -25,6 +27,7 @@ element (last | previous): key(shift-tab)
 (go [to] | slack | lack | like) unread [messages]: key(ctrl-shift-a)
 (go [to] | slack | lack | like) channels: key(ctrl-shift-l)
 (go [to] | slack | lack | like) search: key(ctrl-g)
+
 # Messaging
 go up: key(up)
 go down: key(down)
@@ -42,12 +45,14 @@ grab right: key(shift-down)
 [insert] (italic | italify): key(ctrl-i)
 [insert] (strike | strikethrough | strikify): key(ctrl-shift-x)
 [insert] snippet: key(ctrl-shift-enter)
+
 # Calls
 start huddle: key(ctrl-shift-h)
 leave huddle: key(ctrl-shift-h)
 toggle (mute | unmute): key(m)
 toggle video: key(v)
 invite people: key(a)
+
 # Miscellaneous
 keyboard shortcuts: key(ctrl-/)
 #emote <user.text>: "{text}"
@@ -56,33 +61,39 @@ keyboard shortcuts: key(ctrl-/)
 
 message send: key(enter)
 
+# Channels
 go [to] (dm | messages) <phrase>$: user.slack_browse_dms("{phrase}")
 
 go [to] channel <phrase>$: user.slack_browse_channels("{phrase}")
+
+# Ideas to channels
 # go [to] channel analytics: user.slack_browse_channels("analytics")
-# go [to] channel app: user.slack_browse_channels("app")
 # go [to] channel backend: user.slack_browse_channels("backend")
-# go [to] channel booking platform: user.slack_browse_channels("booking-platform")
-go [to] channel creative corner: user.slack_browse_channels("creative-corner")
+# go [to] channel creative corner: user.slack_browse_channels("creative-corner")
 # go [to] channel daily updates: user.slack_browse_channels("daily-updates")
 # go [to] channel design: user.slack_browse_channels("design")
-# go [to] channel design management: user.slack_browse_channels("design-management")
-go [to] channel economy: user.slack_browse_channels("ekonomi")
-# go [to] channel general: user.slack_browse_channels("general")
-go [to] channel hr: user.slack_browse_channels("hr")
-# go [to] channel ideas: user.slack_browse_channels("ideas")
-# go [to] channel jacqueline: user.slack_browse_channels("jacqueline")
 # go [to] channel management: user.slack_browse_channels("management")
-# go [to] channel management and leads: user.slack_browse_channels("management-and-leads")
-# go [to] channel random: user.slack_browse_channels("random")
-# go [to] channel release notes: user.slack_browse_channels("release-notes")
-go [to] channel pr: user.slack_browse_channels("public-relations-pr")
-go [to] channel qa: user.slack_browse_channels("qa")
-# go [to] channel successes: user.slack_browse_channels("successes")
-go [to] channel team sweden: user.slack_browse_channels("team-sweden")
-# go [to] channel web: user.slack_browse_channels("web")
-# go [to] channel web management: user.slack_browse_channels("web-management")
+# go [to] channel pr: user.slack_browse_channels("public-relations")
+# go [to] channel test: user.slack_browse_channels("test")
+
+# Generic
+go [to] channel general: user.slack_browse_channels("general")
+go [to] channel random: user.slack_browse_channels("random")
+
+# RID
+go [to] channel resellers: user.slack_browse_channels("resellers")
+go [to] channel sales: user.slack_browse_channels("sales")
+go [to] channel web: user.slack_browse_channels("web")
+
+# HG
+
+
+# KXS
 go [to] channel team: user.slack_browse_channels("kxs-team-mirage")
+go [to] channel team tech: user.slack_browse_channels("kxs-team-mirage-tech")
+
+# Talon
+go [to] channel talon: user.slack_browse_channels("talon")
 
 # DEPRECATED
 #(move | next) focus:

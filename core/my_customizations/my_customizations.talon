@@ -73,3 +73,10 @@ talon hood (configure | reset):
     user.engine_mimic("status bar add mode indicator")
 
 program (close | quit): user.close_program()
+
+code (comment): user.comment()
+
+code (uncomment): user.uncomment()
+
+(chrome open bookmarks): user.open_chrome_bookmarks()
+    user.engine_mimic("open chrome bookmarks")

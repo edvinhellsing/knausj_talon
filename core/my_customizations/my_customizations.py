@@ -73,6 +73,15 @@ class Actions:
 
     def select_continous_end():
         """sdf"""
+    
+    def comment():
+        """Comment out code in Visual Studio"""
+    
+    def uncomment():
+        """Comment in code in Visual Studio"""
+    
+    def open_chrome_bookmarks():
+        """Open bookmarks in Google Chrome on Windows"""
 
 ctx=Context()
 
@@ -267,3 +276,31 @@ class UserActions:
     def select_continous_end():
         """sdf"""
         gui_select.hide()
+    
+    def comment():
+        """Comment out code in Visual Studio both Windows and macOS"""
+        if app.platform == "windows":
+            actions.key("ctrl-k-c")
+        elif app.platform == "mac":
+            actions.key("cmd-k-c")
+    
+    def uncomment():
+        """Comment in code in Visual Studio both Windows and macOS"""
+        if app.platform == "windows":
+            actions.key("ctrl-k-u")
+        elif app.platform == "mac":
+            actions.key("cmd-k-u")
+    
+    def open_chrome_bookmarks():
+        """Open bookmarks in Google Chrome Windows"""
+        if app.platform == "windows":
+            #actions.user.browser.bookmarks()
+            actions.key("ctrl-shift-o")
+            actions.sleep("1000ms")
+            actions.key("tab")
+            actions.sleep("100ms")
+            actions.key("tab")
+            actions.sleep("100ms")
+            actions.key("tab")
+            actions.sleep("100ms")
+            actions.key("tab")
