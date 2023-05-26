@@ -1,13 +1,15 @@
 new line: "\n"
-double dash: "--"
-triple quote: "'''"
-(triple grave | triple back tick | gravy): insert("```")
+#double dash: "--"
+#triple quote: "'''"
+#(triple grave | triple back tick | gravy): insert("```")
 (dot dot | dotdot): ".."
 ellipses: "..."
-(com space | spamma | comgap): ", "
-dot space: ". "
-(bang space | bang gap): "! "
-#(col space | col gap): ": "
+(com space | com blank | com gap): ", "
+(dot space | dot blank): ". "
+(period space | period blank): ". "
+(bang space | bang blank): "! "
+(exclamation space | exclamation blank): "! "
+#(col space | col blank): ": "
 arrow: "->"
 dub arrow: "=>"
 empty dub string: user.insert_between('"', '"')
