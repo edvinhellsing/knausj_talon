@@ -199,6 +199,7 @@ punctuation_words = {
 
     #My additions
     "dash sign": "-",
+    "euro sign": "€",
 }
 symbol_key_words = {
     "dot": ".",

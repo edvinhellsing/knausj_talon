@@ -542,6 +542,9 @@ abbreviations = {
     "for your information": "FYI ",
     "by the way": "btw",
     "as soon as possible": "asap ",
+    "work in progress": "WIP ",
+    "good day": "G'day ",
+    "Post Affiliate Pro": "PAP ",
     #"": " ",
 
     # work abbreviations
