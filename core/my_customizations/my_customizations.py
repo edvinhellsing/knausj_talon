@@ -297,11 +297,18 @@ class UserActions:
     def open_chrome_bookmarks():
         """Open bookmarks in Google Chrome Windows"""
         if app.platform == "windows":
-            #actions.user.browser.bookmarks()
             actions.key("ctrl-shift-o")
             actions.sleep("1000ms")
             actions.key("tab")
             actions.sleep("100ms")
+            actions.key("tab")
+            actions.sleep("100ms")
+            actions.key("tab")
+            actions.sleep("100ms")
+            actions.key("tab")
+        if app.platform == "mac":
+            actions.key("cmd-alt-b")
+            actions.sleep("1000ms")
             actions.key("tab")
             actions.sleep("100ms")
             actions.key("tab")
