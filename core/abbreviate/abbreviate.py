@@ -545,6 +545,10 @@ abbreviations = {
     "work in progress": "WIP ",
     "good day": "G'day ",
     "Post Affiliate Pro": "PAP ",
+    "to factor authentication": "2FA ",
+    "laugh out loud": "Lol ",
+    "Stockholm": "Sthlm ",
+    "Gothenburg": "Gbg ",
     #"": " ",
 
     # work abbreviations
