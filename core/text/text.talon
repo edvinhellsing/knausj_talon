@@ -10,6 +10,7 @@ phrase <user.text> over:
 <user.format_text>+$: user.insert_many(format_text_list)
 <user.format_text>+ over: user.insert_many(format_text_list)
 <user.formatters> selection: user.formatters_reformat_selection(user.formatters)
+(sink | sunk | lowercase) selection: user.formatters_reformat_selection("ALL_LOWERCASE")
 word <user.word>:
     user.add_phrase_to_history(word)
     insert(word)
@@ -61,43 +62,39 @@ contract (word | words):
     user.formatters_reformat_selection("title")
     edit.left()
 
-#def navigation_literal_text(
-#    navigation_action: str,  # GO, EXTEND, SELECT, DELETE, CUT, COPY
-#    direction: str,  # up, down, left, right
-#    before_or_after: str,  # BEFORE, AFTER, DEFAULT
-#    target: str,  # the literal string you're looking for
-#    occurrence_number: int,
-#):
+# <user.formatters> word:
+#     edit.select_word()
+#     user.formatters_reformat_selection(user.formatters)
 
 (ship | uppercase) period:
-        user.navigation_literal_text("GO", "left", "AFTER", ".", 1)
-        edit.word_right()
-        edit.select_word()
-        user.formatters_reformat_selection("title")
-        edit.left()
-        edit.line_end()
+    user.navigation_literal_text("GO", "left", "AFTER", ".", 1)
+    edit.word_right()
+    edit.select_word()
+    user.formatters_reformat_selection("title")
+    #edit.left()
+    edit.line_end()
 
 (ship | uppercase) (question | question mark):
     user.navigation_literal_text("GO", "left", "AFTER", "?", 1)
     edit.word_right()
     edit.select_word()
     user.formatters_reformat_selection("title")
-    edit.left()
+    #edit.left()
     edit.line_end()
 
 (ship | uppercase) (bang | exclamation | exclamation mark):
-        user.navigation_literal_text("GO", "left", "AFTER", "!", 1)
-        edit.word_right()
-        edit.select_word()
-        user.formatters_reformat_selection("title")
-        edit.left()
-        edit.line_end()
+    user.navigation_literal_text("GO", "left", "AFTER", "!", 1)
+    edit.word_right()
+    edit.select_word()
+    user.formatters_reformat_selection("title")
+    #edit.left()
+    edit.line_end()
 
 (ship | uppercase) line:
     edit.line_start()
     edit.select_word()
     user.formatters_reformat_selection("title")
-    edit.left()
+    #edit.left()
     edit.line_end()
 
 (sink | sunk | lowercase) <user.symbol_key>:
@@ -105,12 +102,37 @@ contract (word | words):
     edit.word_right()
     edit.select_word()
     user.formatters_reformat_selection("all down")
-    edit.left()
+    #edit.left()
     edit.line_end()
 
-# <user.formatters> word:
-#     edit.select_word()
-#     user.formatters_reformat_selection(user.formatters)
+replace coma:
+    user.navigation_literal_text("GO", "left", "AFTER", "coma", 1)
+    edit.select_word()
+    ","
+    key(space)
+    edit.left()
+    edit.left()
+    key(backspace)
+    #edit.left()
+    edit.line_end()
+
+replace two:
+    user.navigation_literal_text("GO", "left", "AFTER", "2", 1)
+    edit.select_word()
+    "to"
+    key(space)
+    #edit.left()
+    #edit.line_end()
+
+replace 4:
+    user.navigation_literal_text("GO", "left", "AFTER", "4", 1)
+    edit.select_word()
+    "for"
+    key(space)
+    #edit.left()
+    #edit.line_end()
+
+
 
 ##########
 # formatters_words = {
@@ -136,3 +158,11 @@ contract (word | words):
 #     "ship": formatters_dict["CAPITALIZE_ALL_WORDS"],
 #     "sink": formatters_dict["ALL_LOWERCASE"],
 # }
+
+#def navigation_literal_text(
+#    navigation_action: str,  # GO, EXTEND, SELECT, DELETE, CUT, COPY
+#    direction: str,  # up, down, left, right
+#    before_or_after: str,  # BEFORE, AFTER, DEFAULT
+#    target: str,  # the literal string you're looking for
+#    occurrence_number: int,
+#):

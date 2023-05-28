@@ -152,11 +152,13 @@ formatters_words = {
     "snake": formatters_dict["SNAKE_CASE"],
     "string": formatters_dict["SINGLE_QUOTED_STRING"],
     "title": formatters_dict["CAPITALIZE_ALL_WORDS"],
-    
-    #Added to be used by "<user.formatters> (word | it)"
+
+    #My additions
     #"capitalize": formatters_dict["CAPITALIZE_ALL_WORDS"],
     #"ship": formatters_dict["CAPITALIZE_ALL_WORDS"],
     #"sink": formatters_dict["ALL_LOWERCASE"],
+    #"sunk": formatters_dict["ALL_LOWERCASE"],
+    #"lowercase": formatters_dict["ALL_LOWERCASE"],
 }
 
 all_formatters = {}

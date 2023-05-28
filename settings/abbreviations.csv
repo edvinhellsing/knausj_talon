@@ -54,7 +54,7 @@ ms ,millisecond
 misc ,miscellaneous
 ns ,nano second
 num ,number
-ok ,okay
+OK ,okay
 os ,operating system
 pkg ,package
 param ,parameter
@@ -92,6 +92,13 @@ tbh ,to be honest
 FYI ,for your information
 btw,by the way
 asap ,as soon as possible
+WIP ,work in progress
+G'day ,good day
+PAP ,Post Affiliate Pro
+2FA ,to factor authentication
+Lol ,laugh out loud
+Sthlm ,Stockholm
+Gbg ,Gothenburg
 al-car,alabama car
 al-cdl,alabama CDL
 al-mc,alabama motorcycle
@@ -110,8 +117,3 @@ GCS ,Google web services
 GCS ,Google cloud services
 SEO ,search engine optimization
 chatGPT ,chat gust perk trap
-WIP,work in progress
-G'day ,good day
-PAP,Post Affiliate Pro
-2FA ,to factor authentication
-Lol ,laugh out loud
