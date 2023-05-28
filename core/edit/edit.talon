@@ -1,7 +1,18 @@
+# Zoom
+zoom in: edit.zoom_in()
+zoom out: edit.zoom_out()
+zoom reset: edit.zoom_reset()
+
 # Searching
 find it: edit.find()
 next one: edit.find_next()
 last one: edit.find_previous()
+
+# Navigation
+
+# The reason for these spoken forms is that "page up" and "page down" are globally defined as keys.
+#scroll up: edit.page_up()
+#scroll down: edit.page_down()
 
 go word left: edit.word_left()
 pre$: edit.word_left()
@@ -98,6 +109,9 @@ clear way down:
     edit.delete()
 
 # Copy
+(copy it | copy selection): 
+    edit.copy()
+    user.hud_add_log('success', 'Content copied')  
 copy all: 
     user.copy_all()
     user.hud_add_log('success', 'Content copied')
@@ -134,7 +148,8 @@ copy word right:
 #     edit.extend_down()
 #     edit.copy()
 
-# Cut/carve
+# Cut
+(cut | carve) (it | selection): edit.cut()
 (cut | carve) all: user.cut_all()
 (cut | carve) line: user.cut_line()
 (cut | carve) line start: user.cut_line_start()
@@ -158,6 +173,11 @@ copy word right:
 #     edit.cut()
 
 # Paste
+(pace | paste) it: edit.paste()
+#(pace | paste) enter:
+#    edit.paste()
+#    key(enter)
+(pace | paste) (plain | match style): edit.paste_match_style()
 (pace | paste) all: user.paste_all()
 (pace | paste) line: user.paste_line()
 (pace | paste) line start: user.paste_line_start()
@@ -171,6 +191,25 @@ clone line: edit.line_clone()
 # Insert new line
 new line above: edit.line_insert_up()
 new line below: edit.line_insert_down()
+(new line | line new): edit.line_insert_down()
+(new paragraph | paragraph new): 
+  edit.line_insert_down() 
+  edit.line_insert_down()
+
+# Insert padding with optional symbols
+(pad | padding): user.insert_between(" ", " ")
+(pad | padding) <user.symbol_key>+:
+    insert(" ")
+    user.insert_many(symbol_key_list)
+    insert(" ")
+
+# Undo/redo
+undo it: edit.undo()
+redo it: edit.redo()
+
+# Save
+(file | five) save: edit.save()
+(file | five) save all: edit.save_all()
 
 
 
@@ -218,3 +257,4 @@ clear right <number_small> (character|characters):
     edit.extend_right()
     repeat(number_small - 1)
     edit.delete()
+new line below | slap: edit.line_insert_down()
