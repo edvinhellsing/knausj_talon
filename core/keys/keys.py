@@ -150,9 +150,13 @@ modifier_keys = {
     "super": "super",
 
     #My additions
-    #'alter': 'alt',
+    'alt key': 'alt',
     'option': 'alt',
+    'option key': 'alt',
+    "control key": "ctrl",
+    "shift key": "shift",
     #"win": "super", #win is often misrecognized as wheel
+    'win key': 'super',
 }
 if app.platform == "mac":
     modifier_keys["command"] = "cmd"
@@ -283,7 +287,7 @@ ctx.lists["self.arrow_key"] = {
 }
 
 simple_keys = [
-    "end",
+    #"end",
     "enter",
     "escape",
     "home",
@@ -309,7 +313,9 @@ alternate_keys = {
     "clear": "backspace",
     #"chuck": "backspace",
     "delete": "delete",
-    "tabber": "tab",
+    "end key": "end",
+    "home key": "home",
+    "tab key": "tab",
 }
 # mac apparently doesn't have the menu key.
 if app.platform in ("windows", "linux"):
