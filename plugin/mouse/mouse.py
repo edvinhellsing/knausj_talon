@@ -163,6 +163,17 @@ class Actions:
         """Scrolls down"""
         mouse_scroll(amount * setting_mouse_wheel_down_amount.get())()
 
+
+    #Since I have tweaked the Rango scroll to intercept `mouse_scroll_down()`, thus making it possible to just have one set of scroll actions, there is a need for a second scroll function (when browsing) that will not be intercepted by Rango.
+    def mouse_scroll_down_no_rango(amount: float = 1):
+        """Scrolls down"""
+        mouse_scroll(amount * setting_mouse_wheel_down_amount.get())()
+
+    def mouse_scroll_up_no_rango(amount: float = 1):
+        """Scrolls up"""
+        mouse_scroll(-amount * setting_mouse_wheel_down_amount.get())()
+
+
     def mouse_scroll_down_continuous():
         """Scrolls down continuously"""
         global continuous_scoll_mode

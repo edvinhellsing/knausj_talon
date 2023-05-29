@@ -60,6 +60,7 @@ mid click:
     user.grid_close()
 (end drag | drag end): user.mouse_drag_end()
 downer: user.mouse_scroll_down()
+downer mouse: user.mouse_scroll_down_no_rango()
 downer here:
     user.mouse_move_center_active_window()
     user.mouse_scroll_down()
@@ -73,6 +74,7 @@ downer all: user.mouse_scroll_down(99)
     user.mouse_move_center_active_window()
     user.mouse_scroll_down_continuous()
 upper: user.mouse_scroll_up()
+upper mouse: user.mouse_scroll_up_no_rango()
 upper here:
     user.mouse_move_center_active_window()
     user.mouse_scroll_up()
