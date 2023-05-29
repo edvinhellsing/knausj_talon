@@ -106,32 +106,40 @@ contract (word | words):
     edit.line_end()
 
 replace coma:
-    user.navigation_literal_text("GO", "left", "AFTER", "coma", 1)
-    edit.select_word()
-    ","
-    key(space)
+    user.replace_text("coma", ",")
     edit.left()
     edit.left()
     key(backspace)
-    #edit.left()
+    edit.line_end()
+
+replace bang: 
+    user.replace_text("bang", "!")
+    edit.left()
+    edit.left()
+    key(backspace)
+    edit.line_end()
+
+replace exclamation: 
+    user.replace_text("exclamation", "!")
+    edit.left()
+    edit.left()
+    key(backspace)
+    edit.line_end()
+
+replace question: 
+    user.replace_text("question", "?")
+    edit.left()
+    edit.left()
+    key(backspace)
     edit.line_end()
 
 replace two:
-    user.navigation_literal_text("GO", "left", "AFTER", "2", 1)
-    edit.select_word()
-    "to"
-    key(space)
-    #edit.left()
-    #edit.line_end()
+    user.replace_text("2", "to")
+    edit.line_end()
 
-replace 4:
-    user.navigation_literal_text("GO", "left", "AFTER", "4", 1)
-    edit.select_word()
-    "for"
-    key(space)
-    #edit.left()
-    #edit.line_end()
-
+replace four:
+    user.replace_text("4", "for")
+    edit.line_end()
 
 
 ##########

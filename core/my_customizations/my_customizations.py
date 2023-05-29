@@ -37,9 +37,6 @@ class Actions:
     def repeat_phrase_wrapper(rep: int):
         """Repeats the phrase rep times with wait times in between each repetition"""
 
-    def toggle_talon_microphone():
-        """Toggle the Talon microphone on/off using talon_HUD actions (please note: talon_HUD must be installed in the talon user folder for this function to work)"""
-
     def open_specific_tab(browser: str, search_str: str):
         """This function requires that the searched for tab actually is open in the browser"""
 
@@ -58,6 +55,9 @@ class Actions:
     def talon_relaunch():
         """Quit and relaunch the Talon app"""
 
+    def toggle_talon_microphone():
+        """Toggle the Talon microphone on/off using talon_HUD actions (please note: talon_HUD must be installed in the talon user folder for this function to work)"""
+
     def start_stop_dictation():
         """Start dictation on both Windows and macOS"""
 
@@ -72,6 +72,9 @@ class Actions:
 
     def current_app(name: str):
         """Confirms if an app with app.name == name is in focus"""
+
+    def replace_text(to_replace: str, replacer: str):
+        """Replaces `to_replace` with `replacer`"""
 
     def slack_toggle_huddle():
         """sdf"""
@@ -97,35 +100,6 @@ class UserActions:
         for i in range(rep):
             actions.core.repeat_phrase(1)
             actions.sleep("200ms")
-  
-    """
-    def toggle_talon_microphone():
-        current_microphone = actions.sound.active_microphone()
-        if current_microphone == "None":
-            #https://github.com/chaosparrot/talon_hud/blob/master/CUSTOMIZATION.md#log-messages
-            actions.user.hud_add_log('success', 'Mic and eye tracking enabled')
-            actions.user.hud_toggle_microphone()
-        else:
-            actions.user.hud_add_log('error', 'Mic and eye tracking disabled')
-            actions.user.hud_toggle_microphone()
-        
-        if eye_mouse.tracker is not None and eye_mouse.config.control_mouse:
-            actions.user.mouse_sleep()
-        elif eye_mouse.tracker is not None and not eye_mouse.config.control_mouse and not "sleep" in scope.get("mode"):
-            actions.user.mouse_wake()
-    """
-
-    def toggle_talon_microphone():
-        current_microphone = actions.sound.active_microphone()
-        if current_microphone == "None":
-            #https://github.com/chaosparrot/talon_hud/blob/master/CUSTOMIZATION.md#log-messages
-            actions.user.hud_add_log('success', 'Mic and eye tracking enabled')
-            actions.user.hud_toggle_microphone()
-            actions.user.mouse_wake()
-        else:
-            actions.user.hud_add_log('error', 'Mic and eye tracking disabled')
-            actions.user.hud_toggle_microphone()
-            actions.user.mouse_sleep()
 
     def open_specific_tab(browser: str, search_str: str):
         """This function requires that the searched for tab actually is open in the browser"""
@@ -197,6 +171,38 @@ class UserActions:
             )
             talon_app.quit()  
 
+    """
+    def toggle_talon_microphone():
+        current_microphone = actions.sound.active_microphone()
+        if current_microphone == "None":
+            #https://github.com/chaosparrot/talon_hud/blob/master/CUSTOMIZATION.md#log-messages
+            actions.user.hud_add_log('success', 'Mic and eye tracking enabled')
+            actions.user.hud_toggle_microphone()
+        else:
+            actions.user.hud_add_log('error', 'Mic and eye tracking disabled')
+            actions.user.hud_toggle_microphone()
+        
+        if eye_mouse.tracker is not None and eye_mouse.config.control_mouse:
+            actions.user.mouse_sleep()
+        elif eye_mouse.tracker is not None and not eye_mouse.config.control_mouse and not "sleep" in scope.get("mode"):
+            actions.user.mouse_wake()
+    """
+
+    def toggle_talon_microphone():
+        current_microphone = actions.sound.active_microphone()
+        if current_microphone == "None":
+            #https://github.com/chaosparrot/talon_hud/blob/master/CUSTOMIZATION.md#log-messages
+            actions.user.hud_add_log('success', 'Mic and eye tracking enabled')
+            actions.user.hud_toggle_microphone()
+            actions.user.mouse_wake()
+        elif actions.tracking.control_enabled() == False:
+            actions.user.hud_add_log('success', 'Eye tracking enabled')
+            actions.user.mouse_wake()
+        else:
+            actions.user.hud_add_log('error', 'Mic and eye tracking disabled')
+            actions.user.hud_toggle_microphone()
+            actions.user.mouse_sleep()
+
     def start_stop_dictation():
         """Start dictation on both Windows and macOS"""
         if app.platform == "windows":
@@ -229,6 +235,17 @@ class UserActions:
             actions.user.mouse_wake()
     """
 
+    def toggle_dictation_voice_command():
+        if "sleep" in scope.get("mode"):
+            #add some sleep time to make sure Talon doesn't pick up any speech
+            actions.sleep("500ms")
+            actions.user.mouse_wake()
+            actions.speech.toggle()
+        else:
+            actions.user.mouse_sleep()
+            actions.speech.toggle()
+            actions.user.start_stop_dictation()
+
     """
     def toggle_dictation_key_switch():
         #if the microphone has been disabled through talon_hud then we just start the dictation without putting Talon to sleep
@@ -255,25 +272,12 @@ class UserActions:
             actions.user.mouse_wake()
     """
 
-    def toggle_dictation_voice_command():
-        current_microphone = actions.sound.active_microphone()
-        if current_microphone == "None":
-            #add some sleep time to make sure talon doesn't pick up any speech
-            actions.sleep("500ms")
-            actions.user.mouse_wake()
-        else:
-            actions.user.mouse_sleep()
-            actions.user.toggle_talon_microphone()
-            actions.user.start_stop_dictation()
-
     def toggle_dictation_key_switch():
         current_microphone = actions.sound.active_microphone()
         if current_microphone == "None":
-            actions.user.mouse_wake()
             actions.user.toggle_talon_microphone()
             actions.user.start_stop_dictation()
         else:
-            actions.user.mouse_sleep()
             actions.user.toggle_talon_microphone()
             actions.user.start_stop_dictation()
 
@@ -301,7 +305,14 @@ class UserActions:
             actions.sleep("300ms")
             if actions.user.current_app("Slack"):
                 actions.key("ctrl-shift-h")
-        
+
+    def replace_text(to_replace: str, replacer: str):
+        """Replaces `to_replace` with `replacer`"""
+        actions.user.navigation_literal_text("GO", "left", "AFTER", to_replace, 1)
+        actions.edit.select_word()
+        actions.insert(replacer)
+        actions.key("space")
+
         
     # Non working prototypes as of now
     def select_continous(run: int):
