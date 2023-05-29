@@ -43,3 +43,5 @@ computer sleep: user.put_computer_to_sleep()
 talon (relaunch | restart): user.talon_relaunch()
 
 clipboard [open | history]: key(super-v)
+
+show desktop: key(super-d)
