@@ -49,9 +49,6 @@ class Actions:
     def gui_hold_modifier_toggle(flag: int, key_str: str):
         """sdf"""
 
-    def put_computer_to_sleep():
-        """Puts computer into sleep mode"""
-
     def talon_relaunch():
         """Quit and relaunch the Talon app"""
 
@@ -138,15 +135,6 @@ class UserActions:
             gui_hold_modifier.show()
         else:
             gui_hold_modifier.hide()
-
-    def put_computer_to_sleep():
-        """Puts computer into sleep mode"""
-        if app.platform == "windows":
-            actions.key("super-x")
-            actions.sleep("200ms")
-            actions.key("u")
-            actions.sleep("200ms")
-            actions.key("s")
 
     # From this repo:
     # https://github.com/nriley/knausj_talon/blob/ed7b1c1e/code/talon_helpers.py#L161

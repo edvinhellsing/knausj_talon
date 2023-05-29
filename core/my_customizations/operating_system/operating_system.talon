@@ -1,6 +1,6 @@
 ^system shutdown$:
     user.system_shutdown()
-^system restart$:
+^system (relaunch | restart)$:
     user.system_restart()
 ^system hibernate$:
     user.toggle_talon_microphone()
