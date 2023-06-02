@@ -105,8 +105,16 @@ contract (word | words):
     #edit.left()
     edit.line_end()
 
+#Replace with punctuation symbols
 replace coma:
     user.replace_text("coma", ",")
+    edit.left()
+    edit.left()
+    key(backspace)
+    edit.line_end()
+
+replace call my:
+    user.replace_text("call my", ",")
     edit.left()
     edit.left()
     key(backspace)
@@ -131,6 +139,34 @@ replace question:
     edit.left()
     edit.left()
     key(backspace)
+    edit.line_end()
+
+replace eriod: 
+    user.replace_text("eriod", ".")
+    edit.left()
+    edit.left()
+    key(backspace)
+    edit.line_end()
+
+#Replace words with words
+replace ok: 
+    user.replace_text("OKAY", "Ok")
+    edit.line_end()
+
+#replace will: 
+#    user.replace_text("we\'ll", "will")
+#    edit.line_end()
+
+replace high: 
+    user.replace_text("High", "Hi")
+    edit.line_end()
+
+replace one:
+    user.replace_text("1", "one")
+    edit.line_end()
+
+replace two:
+    user.replace_text("2", "to")
     edit.line_end()
 
 replace two:

@@ -44,6 +44,7 @@ grab right: key(shift-down)
 (format italic | [format] italify): key(ctrl-i)
 (format strike | format strikethrough | [format] strikify): key(ctrl-shift-x)
 [format] snippet: key(ctrl-shift-enter)
+apply formating: key(ctrl-shift-f)
 # Calls
 (huddle | call) (new | join): 
     key(ctrl-shift-h)

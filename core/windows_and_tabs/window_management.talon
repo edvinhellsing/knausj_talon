@@ -14,6 +14,7 @@ running list: user.switcher_toggle_running()
 running [list] close: user.switcher_hide_running()
 launch <user.launch_applications>: user.switcher_launch(launch_applications)
 
+#`window` could potentially also work as a command for the snap feature. Although it could clash with window close, window hide and so on...
 (snap | move) <user.window_snap_position>: user.snap_window(window_snap_position)
 (snap | move) next [screen]: user.move_window_next_screen()
 (snap | move) (last | previous) [screen]: user.move_window_previous_screen()
