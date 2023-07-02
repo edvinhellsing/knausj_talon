@@ -20,7 +20,7 @@ app.name: /Microsoft Word/
 #spelling next: key(ctrl-')
 #spelling last: key(ctrl-;)
 
-#clear formatting: key(ctrl-shift-n)
-clear formatting: key(ctrl-space)
+#formatting (clear | remove): key(ctrl-shift-n)
+formatting (clear | remove): key(ctrl-space)
 
 #keyboard shortcuts: key(ctrl-/)

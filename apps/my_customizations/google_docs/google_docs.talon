@@ -28,6 +28,6 @@ spelling [and grammar]: key(f7)
 #spelling next: key(ctrl-')
 #spelling last: key(ctrl-;)
 
-#clear formatting: key(ctrl-\)
+#formatting (clear | remove): key(ctrl-\)
 
 #keyboard shortcuts: key(ctrl-/)
