@@ -23,6 +23,6 @@ focus gmail partnership [at so tobe dot com]: user.open_specific_tab("Microsoft 
     user.engine_mimic("event log clear logs")
     key(super-alt-7)
     sleep(300ms)
-    key(down:3)
+    key(down:2)
     sleep(300ms)
     key(enter)
