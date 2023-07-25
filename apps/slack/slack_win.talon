@@ -45,6 +45,7 @@ edit (message | last): key(ctrl-up)
 (format bold | [format] boldify): key(ctrl-b)
 (format italic | [format] italify): key(ctrl-i)
 (format strike | format strikethrough | [format] strikify): key(ctrl-shift-x)
+(format link | [format] linkify): key(ctrl-shift-u)
 [format] snippet: key(ctrl-shift-enter)
 formatting apply: key(ctrl-shift-f)
 #formatting (clear | remove): key(ctrl-z)
@@ -65,6 +66,10 @@ keyboard shortcuts: key(ctrl-/)
 [toggle] right sidebar: key(ctrl-.)
 
 message send: key(enter)
+
+mark messages as read: key(esc)
+mark all messages as read: key(shift-esc)
+#mark message as unread: key(alt:down)
 
 go [to] (dm | messages) <phrase>$: user.slack_browse_dms("{phrase}")
 

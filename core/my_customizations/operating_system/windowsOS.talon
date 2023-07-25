@@ -18,8 +18,8 @@ start listening:
     
 (lang | language) change: key(alt-shift)
 #https://www.digitalcitizen.life/keyboard-language-shortcut/
-(lang | language) english: key(alt-shift-1)
-(lang | language) swedish: key(alt-shift-2)
+[lang | language] english: key(alt-shift-1)
+[lang | language] swedish: key(alt-shift-2)
 #nine dash: key(alt-shift-2)
 
 #The program SoundSwitch enables hotkeys for changing input and output devices: https://github.com/Belphemur/SoundSwitch
@@ -35,6 +35,6 @@ virtual keyboard: key(super-ctrl-o)
 
 talon (relaunch | restart): user.talon_relaunch()
 
-clipboard [open | history]: key(super-v)
+clipboard [open | history | windows]: key(super-v)
 
 show desktop: key(super-d)

@@ -139,20 +139,20 @@ formatters_words = {
     "all cap": formatters_dict["ALL_CAPS"],
     "all down": formatters_dict["ALL_LOWERCASE"],
     "camel": formatters_dict["PRIVATE_CAMEL_CASE"],
-    "dotted": formatters_dict["DOT_SEPARATED"],
+    #"dotted": formatters_dict["DOT_SEPARATED"],
     "dub string": formatters_dict["DOUBLE_QUOTED_STRING"],
     #"dunder": formatters_dict["DOUBLE_UNDERSCORE"],
     #"hammer": formatters_dict["PUBLIC_CAMEL_CASE"],
     "pascal": formatters_dict["PUBLIC_CAMEL_CASE"],
     "kebab": formatters_dict["DASH_SEPARATED"],
-    "packed": formatters_dict["DOUBLE_COLON_SEPARATED"],
-    "padded": formatters_dict["SPACE_SURROUNDED_STRING"],
+    #"packed": formatters_dict["DOUBLE_COLON_SEPARATED"],
+    #"padded": formatters_dict["SPACE_SURROUNDED_STRING"],
     "slasher": formatters_dict["SLASH_SEPARATED"],
     "smash": formatters_dict["NO_SPACES"],
     "snake": formatters_dict["SNAKE_CASE"],
     "string": formatters_dict["SINGLE_QUOTED_STRING"],
     "title": formatters_dict["CAPITALIZE_ALL_WORDS"],
-
+ 
     #My additions
     #"capitalize": formatters_dict["CAPITALIZE_ALL_WORDS"],
     #"ship": formatters_dict["CAPITALIZE_ALL_WORDS"],
@@ -303,7 +303,7 @@ def unformat_text(text: str) -> str:
 
 ctx.lists["self.formatters"] = formatters_words.keys()
 ctx.lists["self.prose_formatter"] = {
-    "say": "NOOP",
+    #"say": "NOOP",
     "speak": "NOOP",
     "sentence": "CAPITALIZE_FIRST_WORD",
 }
