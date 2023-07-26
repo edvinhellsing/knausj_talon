@@ -5,10 +5,11 @@ phrase <user.text>$:
 phrase <user.text> over:
     user.add_phrase_to_history(text)
     insert(text)
+#The difference between `speak` and `phrase` is that `phrase` just emits a sequence of words, while `speak` attempts to handle punctuation & capitalization
 {user.prose_formatter} <user.prose>$: user.insert_formatted(prose, prose_formatter)
 {user.prose_formatter} <user.prose> over: user.insert_formatted(prose, prose_formatter)
-<user.format_text>+$: user.insert_many(format_text_list)
-<user.format_text>+ over: user.insert_many(format_text_list)
+<user.format_code>+$: user.insert_many(format_code_list)
+<user.format_code>+ over: user.insert_many(format_code_list)
 <user.formatters> selection: user.formatters_reformat_selection(user.formatters)
 (sink | sunk | lowercase) selection: user.formatters_reformat_selection("ALL_LOWERCASE")
 word <user.word>:
