@@ -30,35 +30,35 @@ before that: user.before_last_phrase()
 nope it was <user.formatters>: user.formatters_reformat_last(formatters)
 
 #pre (say | speak | sentence)
-pre {user.prose_formatter} <user.prose>$: 
+^pre {user.prose_formatter} <user.prose>$: 
     key(space)
     user.insert_formatted(prose, prose_formatter)
 
 #post (say | speak | sentence)
-post {user.prose_formatter} <user.prose>$: 
+^post {user.prose_formatter} <user.prose>$: 
     user.insert_formatted(prose, prose_formatter)
     key(space)
 
 #In Google docs an additional edit.extend_left() seems to be needed but not in other applications/websites
-select around: 
+^select around$: 
     edit.word_left()
     edit.extend_word_right()
     edit.extend_word_right()
     #edit.extend_left()
 
-contract (word | words):
+^contract (word | words)$:
     edit.word_left()
     edit.extend_word_right()
     edit.extend_word_right()
     #edit.extend_left()
     user.formatters_reformat_selection("smash")
 
-(sink | sunk | lowercase) word:
+^(sink | sunk | lowercase) word$:
     edit.select_word()
     user.formatters_reformat_selection("all down")
     edit.left()
 
-(ship | uppercase) word:
+^(ship | uppercase) word$:
     edit.select_word()
     user.formatters_reformat_selection("title")
     edit.left()
@@ -67,7 +67,7 @@ contract (word | words):
 #     edit.select_word()
 #     user.formatters_reformat_selection(user.formatters)
 
-(ship | uppercase) period:
+^(ship | uppercase) period$:
     user.navigation_literal_text("GO", "left", "AFTER", ".", 1)
     edit.word_right()
     edit.select_word()
@@ -75,7 +75,7 @@ contract (word | words):
     #edit.left()
     edit.line_end()
 
-(ship | uppercase) (question | question mark):
+^(ship | uppercase) (question | question mark)$:
     user.navigation_literal_text("GO", "left", "AFTER", "?", 1)
     edit.word_right()
     edit.select_word()
@@ -83,7 +83,7 @@ contract (word | words):
     #edit.left()
     edit.line_end()
 
-(ship | uppercase) (bang | exclamation | exclamation mark):
+^(ship | uppercase) (bang | exclamation | exclamation mark)$:
     user.navigation_literal_text("GO", "left", "AFTER", "!", 1)
     edit.word_right()
     edit.select_word()
@@ -91,14 +91,27 @@ contract (word | words):
     #edit.left()
     edit.line_end()
 
-(ship | uppercase) line:
+^(ship | uppercase) start$:
     edit.line_start()
     edit.select_word()
     user.formatters_reformat_selection("title")
     #edit.left()
     edit.line_end()
 
-(sink | sunk | lowercase) <user.symbol_key>:
+^(ship | uppercase) line$:
+    edit.select_line()
+    user.formatters_reformat_selection("sentence")
+    #edit.left()
+    edit.line_end()
+
+^(sink | sunk | lowercase) start$:
+    edit.line_start()
+    edit.select_word()
+    user.formatters_reformat_selection("all down")
+    #edit.left()
+    edit.line_end()
+    
+^(sink | sunk | lowercase) <user.symbol_key>$:
     user.navigation_literal_text("GO", "left", "AFTER", symbol_key, 1)
     edit.word_right()
     edit.select_word()
@@ -107,42 +120,42 @@ contract (word | words):
     edit.line_end()
 
 #Replace with punctuation symbols
-replace coma:
+^replace coma$:
     user.replace_text("coma", ",")
-    edit.left()
+s    edit.left()
     edit.left()
     key(backspace)
     edit.line_end()
 
-replace call my:
+^replace call my$:
     user.replace_text("call my", ",")
     edit.left()
     edit.left()
     key(backspace)
     edit.line_end()
 
-replace bang: 
+^replace bang$: 
     user.replace_text("bang", "!")
     edit.left()
     edit.left()
     key(backspace)
     edit.line_end()
 
-replace exclamation: 
+^replace exclamation$: 
     user.replace_text("exclamation", "!")
     edit.left()
     edit.left()
     key(backspace)
     edit.line_end()
 
-replace question: 
+^replace question$: 
     user.replace_text("question", "?")
     edit.left()
     edit.left()
     key(backspace)
     edit.line_end()
 
-replace eriod: 
+^replace eriod$: 
     user.replace_text("eriod", ".")
     edit.left()
     edit.left()
@@ -150,7 +163,7 @@ replace eriod:
     edit.line_end()
 
 #Replace words with words
-replace ok: 
+^replace ok$: 
     user.replace_text("OKAY", "Ok")
     edit.line_end()
 
@@ -158,23 +171,19 @@ replace ok:
 #    user.replace_text("we\'ll", "will")
 #    edit.line_end()
 
-replace high: 
+^replace high$: 
     user.replace_text("High", "Hi")
     edit.line_end()
 
-replace one:
+^replace one$:
     user.replace_text("1", "one")
     edit.line_end()
 
-replace two:
+^replace two$:
     user.replace_text("2", "to")
     edit.line_end()
 
-replace two:
-    user.replace_text("2", "to")
-    edit.line_end()
-
-replace four:
+^replace four$:
     user.replace_text("4", "for")
     edit.line_end()
 
@@ -197,11 +206,6 @@ replace four:
 #     "snake": formatters_dict["SNAKE_CASE"], #this_is_a_string, underscore separated string
 #     "string": formatters_dict["SINGLE_QUOTED_STRING"], #'this is a string'
 #     "title": formatters_dict["CAPITALIZE_ALL_WORDS"], #This is a String
-# 
-#     #Added to be used by "<user.formatters> word"
-#     "capitalize": formatters_dict["CAPITALIZE_ALL_WORDS"],
-#     "ship": formatters_dict["CAPITALIZE_ALL_WORDS"],
-#     "sink": formatters_dict["ALL_LOWERCASE"],
 # }
 
 #def navigation_literal_text(

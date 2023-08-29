@@ -16,8 +16,10 @@ settings():
     user.help_max_contexts_per_page = 20
 
     # The default amount used when scrolling continuously
-    #user.mouse_continuous_scroll_amount = 80
-    user.mouse_continuous_scroll_amount = 240
+    #user.mouse_continuous_scroll_amount = 80 #default in talonhub/community
+    #user.mouse_continuous_scroll_amount = 240
+    #user.mouse_continuous_scroll_amount = 320
+    user.mouse_continuous_scroll_amount = 400
 
     # Stop continuous scroll/gaze scroll with a pop
     user.mouse_enable_pop_stops_scroll = 1
@@ -28,8 +30,8 @@ settings():
     # 2 = on but not with zoom mouse mode
     user.mouse_enable_pop_click = 1
 
-    # Uncomment the below to enable mouse scroll down using hiss noise
-    # user.mouse_enable_hiss_scroll = 1
+    # Enable mouse scroll down using hiss noise
+    user.mouse_enable_hiss_scroll = 0
 
     # When enabled, the 'Scroll Mouse' GUI will not be shown.
     user.mouse_hide_mouse_gui = 0

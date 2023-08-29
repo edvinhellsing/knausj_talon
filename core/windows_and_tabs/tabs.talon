@@ -1,7 +1,8 @@
 tag: user.tabs
 -
 #tab (new | open): app.tab_open()
-tab (last | previous): app.tab_previous() #`tab back` is used by Rango
+#tabs back is used by Rango
+tab (last | previous): app.tab_previous()
 tab next: app.tab_next()
 tab (close | plus): user.tab_close_wrapper()
 ten (close | plus): user.tab_close_wrapper()
