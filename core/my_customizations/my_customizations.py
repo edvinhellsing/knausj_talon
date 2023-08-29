@@ -164,10 +164,10 @@ class UserActions:
         current_microphone = actions.sound.active_microphone()
         if current_microphone == "None":
             #https://github.com/chaosparrot/talon_hud/blob/master/CUSTOMIZATION.md#log-messages
-            actions.user.hud_add_log('success', 'Mic and eye tracking enabled')
+            actions.user.hud_add_log('success', 'ON') #Mic and eye tracking enabled
             actions.user.hud_toggle_microphone()
         else:
-            actions.user.hud_add_log('error', 'Mic and eye tracking disabled')
+            actions.user.hud_add_log('error', 'OFF') #Mic and eye tracking disabled
             actions.user.hud_toggle_microphone()
         
         if eye_mouse.tracker is not None and eye_mouse.config.control_mouse:
@@ -180,14 +180,14 @@ class UserActions:
         current_microphone = actions.sound.active_microphone()
         if current_microphone == "None":
             #https://github.com/chaosparrot/talon_hud/blob/master/CUSTOMIZATION.md#log-messages
-            actions.user.hud_add_log('success', 'Mic and eye tracking enabled')
+            actions.user.hud_add_log('success', 'ON') #Mic and eye tracking enabled
             actions.user.hud_toggle_microphone()
             actions.user.mouse_wake()
         elif actions.tracking.control_enabled() == False:
-            actions.user.hud_add_log('success', 'Eye tracking enabled')
+            actions.user.hud_add_log('success', 'ON') #Eye tracking enabled
             actions.user.mouse_wake()
         else:
-            actions.user.hud_add_log('error', 'Mic and eye tracking disabled')
+            actions.user.hud_add_log('error', 'OFF') #Mic and eye tracking disabled
             actions.user.hud_toggle_microphone()
             actions.user.mouse_sleep()
 
