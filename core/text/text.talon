@@ -29,12 +29,11 @@ before that: user.before_last_phrase()
 (nope | scratch) it: user.clear_last_phrase()
 nope it was <user.formatters>: user.formatters_reformat_last(formatters)
 
-#pre (say | speak | sentence)
-^pre {user.prose_formatter} <user.prose>$: 
-    key(space)
-    user.insert_formatted(prose, prose_formatter)
+#This one isn't needed as one can say `blank {user.prose_formatter} <user.prose>` just as well
+#^pre {user.prose_formatter} <user.prose>$: 
+#    key(space)
+#    user.insert_formatted(prose, prose_formatter)
 
-#post (say | speak | sentence)
 ^post {user.prose_formatter} <user.prose>$: 
     user.insert_formatted(prose, prose_formatter)
     key(space)
@@ -187,6 +186,18 @@ s    edit.left()
     user.replace_text("4", "for")
     edit.line_end()
 
+^truecase selection$:
+    text = edit.selected_text()
+    text = reformat_text({text}, "all down")
+    text = reformat_text({text}, "sentence")
+    user.paste("{text}")
+    #text = user.formatters_reformat_selection("all down")
+    #user.formatters_reformat_selection("sentence")
+    #text = edit.selected_text()
+    #user.engine_mimic("sentence " + {text})
+    #text = user.truecase(edit.selected_text())
+    #actions.insert(text)
+    #user.paste("{text}")
 
 ##########
 # formatters_words = {

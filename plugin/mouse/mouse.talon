@@ -1,6 +1,10 @@
-control mouse: tracking.control_toggle()
+control (on | mouse): tracking.control_toggle()
 control off: user.mouse_sleep()
-zoom mouse: tracking.control_zoom_toggle()
+gaze on: tracking.control_gaze_toggle(true)
+gaze off: tracking.control_gaze_toggle(false)
+head on: tracking.control_head_toggle(true)
+head off: tracking.control_head_toggle(false)
+zoom (on | mouse): tracking.control_zoom_toggle()
 camera overlay: tracking.control_debug_toggle()
 run calibration: tracking.calibrate()
 touch:

@@ -7,6 +7,10 @@ import re
 from talon import ui, app
 import os
 
+#
+#import truecase
+#CONTINUE HERE
+
 from talon_plugins import eye_mouse
 
 
@@ -160,22 +164,7 @@ class UserActions:
             talon_app.quit()  
 
     """
-    def toggle_talon_microphone():
-        current_microphone = actions.sound.active_microphone()
-        if current_microphone == "None":
-            #https://github.com/chaosparrot/talon_hud/blob/master/CUSTOMIZATION.md#log-messages
-            actions.user.hud_add_log('success', 'ON') #Mic and eye tracking enabled
-            actions.user.hud_toggle_microphone()
-        else:
-            actions.user.hud_add_log('error', 'OFF') #Mic and eye tracking disabled
-            actions.user.hud_toggle_microphone()
-        
-        if eye_mouse.tracker is not None and eye_mouse.config.control_mouse:
-            actions.user.mouse_sleep()
-        elif eye_mouse.tracker is not None and not eye_mouse.config.control_mouse and not "sleep" in scope.get("mode"):
-            actions.user.mouse_wake()
-    """
-
+    #If gaze control should be enabled when using the eye tracker
     def toggle_talon_microphone():
         current_microphone = actions.sound.active_microphone()
         if current_microphone == "None":
@@ -190,6 +179,25 @@ class UserActions:
             actions.user.hud_add_log('error', 'OFF') #Mic and eye tracking disabled
             actions.user.hud_toggle_microphone()
             actions.user.mouse_sleep()
+    """
+
+    #If gaze control should be disabled when using the eye tracker, i.e. using hissing to activate gaze control
+    def toggle_talon_microphone():
+        current_microphone = actions.sound.active_microphone()
+        if current_microphone == "None":
+            #https://github.com/chaosparrot/talon_hud/blob/master/CUSTOMIZATION.md#log-messages
+            actions.user.hud_add_log('success', 'ON') #Mic and eye tracking enabled
+            actions.user.hud_toggle_microphone()
+            actions.tracking.control_toggle(True)
+            actions.tracking.control_gaze_toggle(False)
+        elif actions.tracking.control_enabled() == False:
+            actions.user.hud_add_log('success', 'ON') #Eye tracking enabled
+            actions.tracking.control_toggle(True)
+            actions.tracking.control_gaze_toggle(False)
+        else:
+            actions.user.hud_add_log('error', 'OFF') #Mic and eye tracking disabled
+            actions.user.hud_toggle_microphone()
+            actions.user.mouse_sleep()    
 
     def start_stop_dictation():
         """Start dictation on both Windows and macOS"""
@@ -261,13 +269,8 @@ class UserActions:
     """
 
     def toggle_dictation_key_switch():
-        current_microphone = actions.sound.active_microphone()
-        if current_microphone == "None":
-            actions.user.toggle_talon_microphone()
-            actions.user.start_stop_dictation()
-        else:
-            actions.user.toggle_talon_microphone()
-            actions.user.start_stop_dictation()
+        actions.user.toggle_talon_microphone()
+        actions.user.start_stop_dictation()
 
     def close_program():
         """Uses the OS built-in keyboard shortcut to close the program"""

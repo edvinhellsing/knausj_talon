@@ -6,8 +6,10 @@ hostname: Gamen
 #^focus <number_small>: key("super-ctrl-{number_small}")
 ^focus [file] explorer: key(super-ctrl-2)
 ^focus chrome: key(super-ctrl-3)
+^focus edge: key(super-ctrl-4)
 ^focus notes: user.switcher_focus("Opera Internet Browser")
-^focus (slack | lack | like): user.switcher_focus("Slack")
+#^focus (slack | lack | like): user.switcher_focus("Slack")
+^focus (slack | lack | like): key(super-ctrl-7)
 
 ^focus outlook: user.open_specific_tab("Google Chrome", "outlook.live.com")
 ^focus google calendar: user.open_specific_tab("Google Chrome", "calendar.google.com")
@@ -20,7 +22,7 @@ hostname: Gamen
 ^grab screen selection$:
     user.toggle_talon_microphone()
     user.engine_mimic("event log clear logs")
-    key(super-alt-7)
+    key(super-alt-6)
     sleep(300ms)
     key(down:2)
     sleep(300ms)

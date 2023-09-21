@@ -129,6 +129,62 @@ def every_word(word_func):
     return lambda i, word, _: word_func(word)
 
 
+"""
+#My addition
+def truecase_simple():
+    last_word = None
+
+    def truecase_simple_word(i, word, is_end):
+        nonlocal last_word
+
+        # List of common names and weekdays
+        special_words = ["john", "mary", "monday", "tuesday", "wednesday", "thursday", "friday", "saturday", "sunday"]
+        
+        # Check if the last word ends with '.', '?' or '!', and capitalize the current word
+        if last_word and any(last_word.endswith(punct) for punct in ['.', '!', '?']):
+            word = word.capitalize()
+
+        # Check if the word is not a special word and not at the start or end of the sentence, and make it lowercase
+        elif word.lower() not in special_words and i != 0 and not is_end:
+            word = word.lower()
+
+        last_word = word
+
+        return word
+
+    return truecase_simple_word
+"""
+"""
+import string
+def truecase_simple():
+    last_word = None
+    capitalize_next_word = True
+
+    # List of common names and weekdays
+    special_words = ["john", "mary", "monday", "tuesday", "wednesday", "thursday", "friday", "saturday", "sunday"]
+
+    def truecase_simple_word(i, word, is_end):
+        nonlocal last_word, capitalize_next_word
+
+        # Check if the word is a special word or at the start or end of a sentence
+        if word.lower() in special_words or capitalize_next_word:
+            capitalized_word = word.capitalize()
+            capitalize_next_word = False
+        else:
+            capitalized_word = word.lower()
+
+        # Check if the word ends with a punctuation mark
+        if capitalized_word[-1] in string.punctuation:
+            capitalize_next_word = True
+
+        last_word = capitalized_word
+
+        return capitalized_word
+
+    return truecase_simple_word
+"""
+
+
 # All formatters (code and prose)
 formatters_dict = {
     "NOOP": (SEP, lambda i, word, _: word),
@@ -166,6 +222,8 @@ formatters_dict = {
         first_vs_rest(lambda w: title_case()(0, w, True)),
     ),
     "CAPITALIZE_ALL_WORDS": (SEP, title_case()),
+    #"TRUECASE_SIMPLE": (SEP, every_word(truecase_simple())),
+    #"TRUECASE_SIMPLE": (SEP, truecase_simple()),
 }
 
 # Mapping from spoken phrases to formatter names
@@ -196,6 +254,7 @@ prose_formatter_names = {
     #"sink": formatters_dict["ALL_LOWERCASE"],
     #"sunk": formatters_dict["ALL_LOWERCASE"],
     #"lowercase": formatters_dict["ALL_LOWERCASE"],
+    #"truecase": "TRUECASE_SIMPLE"
 }
 # Mapping from spoken phrases to formatters
 formatter_words = {
