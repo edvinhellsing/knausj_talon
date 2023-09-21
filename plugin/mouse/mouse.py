@@ -12,11 +12,6 @@ gaze_job = None
 cancel_scroll_on_pop = True
 control_mouse_forced = False
 
-#For customized version of noise_trigger_pop()
-first_pop_done = False
-gaze_window = "50ms"
-head_lag = "50ms"
-
 
 default_cursor = {
     "AppStarting": r"%SystemRoot%\Cursors\aero_working.ani",
@@ -313,45 +308,20 @@ class UserActions:
             )
             if should_click:
                 ctrl.mouse_click(button=0, hold=16000)
+   
 
-
-    """
-    def noise_trigger_pop():
-        global first_pop_done
-        global gaze_window
-        global head_lag
-
-        if setting_mouse_enable_pop_stops_scroll.get() >= 1 and (
-            gaze_job or scroll_job
-        ):
-            # Allow pop to stop scroll
-            stop_scroll()
-        elif first_pop_done == False:
-            first_pop_done = True
-            actions.tracking.control_head_toggle(False)
-            actions.tracking.control_gaze_toggle(True)
-            actions.sleep(gaze_window)
-            actions.tracking.control_gaze_toggle(False)
-            actions.sleep(head_lag)
-            actions.tracking.control_head_toggle(True)
-            #ctrl.mouse_click(button=0, hold=16000)
-        else:
-            first_pop_done = False
-            actions.tracking.control_gaze_toggle(False)
-            actions.tracking.control_head_toggle(False)
-            ctrl.mouse_click(button=0, hold=16000)
-    """
-            
-
-    #Hissing now temporarily activates gaze control 
+    #Gaze control is now activated while hissing
     def noise_trigger_hiss(active: bool):
         if setting_mouse_enable_hiss_scroll.get():
             if active:
                 #actions.user.mouse_scroll_down_continuous()
                 actions.tracking.control_gaze_toggle(True)
+                actions.tracking.control_head_toggle(True)
             else:
                 #actions.user.mouse_scroll_stop()
                 actions.tracking.control_gaze_toggle(False)
+                actions.sleep("5000 ms")
+                actions.tracking.control_head_toggle(False)
 
 
 def mouse_scroll(amount):
