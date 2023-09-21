@@ -19,11 +19,10 @@ hostname: Gamen
 ^focus gmail hello [at so tobe dot com]: user.open_specific_tab("Microsoft Edge", "hello@zutobi")
 ^focus gmail partnership [at so tobe dot com]: user.open_specific_tab("Microsoft Edge", "partnership@zutobi")
 
+#Can improve this voice command by first checking if the snipping tool is in focus, and if it is just run key(ctrl-n) 
 ^grab screen selection$:
     user.toggle_talon_microphone()
     user.engine_mimic("event log clear logs")
-    key(super-alt-6)
+    key(super-ctrl-6)
     sleep(300ms)
-    key(down:2)
-    sleep(300ms)
-    key(enter)
+    key(ctrl-n)
