@@ -21,7 +21,7 @@ app: bitwarden
 class UserActions:
     def password_fill():
         #Bitwarden
-        actions.key("ctrl-shift-L")
+        actions.key("ctrl-shift-Y")
 
     def password_show():
         actions.key("alt-ctrl-\\\\")

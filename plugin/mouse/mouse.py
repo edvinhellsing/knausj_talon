@@ -311,6 +311,7 @@ class UserActions:
    
 
     #Gaze control is now activated while hissing
+    #Should be used with the setting "Only Left Eye" or "Only Right Eye" because it doesn't work remotely as reliably when having the setting "Use Both Eyes" enabled in Talon 0.4
     def noise_trigger_hiss(active: bool):
         if setting_mouse_enable_hiss_scroll.get():
             if active:
@@ -320,7 +321,6 @@ class UserActions:
             else:
                 #actions.user.mouse_scroll_stop()
                 actions.tracking.control_gaze_toggle(False)
-                actions.sleep("5000 ms")
                 actions.tracking.control_head_toggle(False)
 
 

@@ -1,7 +1,7 @@
 os: windows
 os: linux
 app: slack
-#todo: some sort of plugin, consolidate with teams or something?
+not tag: browser
 -
 tag(): user.messaging
 tag(): user.emoji
@@ -31,12 +31,10 @@ go [to] unread next: key(alt-shift-down)
 # Messaging
 go up: key(up)
 go down: key(down)
-grab left: key(shift-up)
-grab right: key(shift-down)
+#grab left: key(shift-up)
+#grab right: key(shift-down)
 edit (message | last): key(ctrl-up)
 #add line: key(shift-enter)
-#"(slack | lack | like) (slap | slaw | slapper): [key(cmd-right) key(shift-enter")],
-#go [to] (react | reaction): key(ctrl-shift-\)
 (format command | [format] commandify): key(ctrl-shift-c)
 (format code | [format] codify): key(ctrl-alt-shift-c)
 [format] (bullet | bulleted) list: key(ctrl-shift-8)
@@ -101,20 +99,3 @@ go [to] channel sails: user.slack_browse_channels("sales")
 go [to] channel team sweden: user.slack_browse_channels("team-sweden")
 # go [to] channel web: user.slack_browse_channels("web")
 # go [to] channel web management: user.slack_browse_channels("web-management")
-
-# DEPRECATED
-#(move | next) focus:
-#    app.notify("please use the voice command 'focus next' instead of 'next focus'")
-#    key(ctrl-`)
-#[next] (section | zone):
-#    app.notify("please use the voice command 'section next' instead of 'next section'")
-#    key(f6)
-#(previous | last) (section | zone):
-#    app.notify("please use the voice command 'section last' instead of 'last section'")
-#    key(shift-f6)
-#[next] (element | bit):
-#    app.notify("please use the voice command 'element next' instead of 'next element'")
-#    key(tab)
-#(previous | last) (element | bit):
-#    app.notify("please use the voice command 'element last' instead of 'last element'")
-#    key(shift-tab)
