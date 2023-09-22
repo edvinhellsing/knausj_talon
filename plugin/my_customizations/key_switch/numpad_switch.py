@@ -10,9 +10,10 @@ mod.tag("native_dictation", desc="Tag for enabling native dictation for specific
 #14 numpad keys
 #refactor this later
 num_of_numpad_keys = 14
+#reference = [keypad0, keypad1, keypad2, keypad3, keypad4, keypad5, keypad6, keypad7, keypad8, keypad9, divide, multiply, minus, plus]
 current_state = [False, False, False, False, False, False, False, False, False, False, False, False, False, False]
 last_state = [False, False, False, False, False, False, False, False, False, False, False, False, False, False]
-continuous_firing = [False, False, True, False, False, True, False, False, True, False, False, False, False, False]
+continuous_firing = [False, False, True, False, True, False, True, False, True, False, False, False, False, False]
 has_fired = [False, False, False, False, False, False, False, False, False, False, False, False, False, False]
 
 #fires call down and call up only once
@@ -51,7 +52,7 @@ def on_interval():
         elif (current_state[key]) and (continuous_firing[key] == True):
             last_state[key] = True
             call_down(key)
-            actions.sleep("200ms")
+            actions.sleep("30ms")
         # Key is released
         elif (current_state[key] == False) and (last_state[key] == True):
             last_state[key] = False
@@ -179,37 +180,38 @@ class UserActions:
         pass
 
     def keypad_1_down():
-        actions.user.start_stop_dictation()
+        actions.user.toggle_dictation_key_switch()
 
     def keypad_1_up():
         pass
 
     def keypad_2_down():
-        actions.user.toggle_dictation_key_switch()
+        actions.key("down")
+        #actions.user.mouse_scroll_down()
 
     def keypad_2_up():
         pass
 
     def keypad_3_down():
-        actions.core.repeat_command(1)
+        pass
 
     def keypad_3_up():
         pass
 
     def keypad_4_down():
-        pass
+        actions.key("left")
 
     def keypad_4_up():
         pass
 
     def keypad_5_down():
-        actions.user.mouse_scroll_down()
+        pass
 
     def keypad_5_up():
         pass
 
     def keypad_6_down():
-        pass
+        actions.key("right")
 
     def keypad_6_up():
         pass
@@ -221,7 +223,8 @@ class UserActions:
         pass
 
     def keypad_8_down():
-        actions.user.mouse_scroll_up()
+        actions.key("up")
+        #actions.user.mouse_scroll_up()
 
     def keypad_8_up():
         pass
@@ -251,7 +254,7 @@ class UserActions:
         pass
 
     def keypad_plus_down():
-        pass
+        actions.core.repeat_phrase(1)
 
     def keypad_plus_up():
         pass
