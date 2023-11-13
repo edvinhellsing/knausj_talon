@@ -1,6 +1,6 @@
 hostname: Gamen
 -
-#the carrot "^" indicates there is nothing before and the dollar "$" that nothing comes after it, so if you say "copy copy" it won't trigger "^copy$"
+#the carrot "^" indicates there is nothing before and the dollar "$" that nothing comes after it, so if you say "copy copy" it won't trigger the voice command "^copy$: edit.copy()"
 
 #Windows key + Ctrl + (number). Switch to the last active window of the app pinned to the taskbar in the position indicated by the number.
 #^focus <number_small>: key("super-ctrl-{number_small}")
@@ -26,3 +26,21 @@ hostname: Gamen
     key(super-ctrl-6)
     sleep(300ms)
     key(ctrl-n)
+
+^use both eyes$:
+    key(super-b)
+    key(right)
+    key(enter)
+    key(up:6)
+    key(enter)
+    key(up:3)
+    key(enter)
+
+^use only left eye$:
+    key(super-b)
+    key(right)
+    key(enter)
+    key(up:6)
+    key(enter)
+    key(up:2)
+    key(enter)
