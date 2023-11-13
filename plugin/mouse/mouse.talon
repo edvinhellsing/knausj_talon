@@ -121,6 +121,9 @@ curse no:
     # Command added 2021-12-13, can remove after 2022-06-01
     app.notify("Please activate the user.mouse_cursor_commands_enable tag to enable this command")
 
+mouse hiss up: user.hiss_scroll_up()
+mouse hiss down: user.hiss_scroll_down()
+
 #Old commands
 # (wheel | scroll) down: user.mouse_scroll_down()
 # (wheel | scroll) down here:
