@@ -112,8 +112,9 @@ class UserActions:
 
     def file_manager_terminal_here():
         actions.key("ctrl-l")
+        actions.sleep("100ms") #Added sleep time because it inserted "wershell" instead of "powershell"
         #actions.insert("cmd.exe")
-        actions.insert("powershell")
+        actions.insert("powershell") #Change to using Powershell instead of the regular Windows terminal
         actions.key("enter")
 
     def file_manager_show_properties():
@@ -123,6 +124,7 @@ class UserActions:
     def file_manager_open_directory(path: str):
         """opens the directory that's already visible in the view"""
         actions.key("ctrl-l")
+        actions.sleep("100ms") #Added sleep time because the beginning parts of the path was cut off
         actions.insert(path)
         actions.key("enter")
 

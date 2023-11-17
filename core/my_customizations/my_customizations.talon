@@ -72,5 +72,6 @@ slack (huddle | call) close: user.slack_toggle_huddle()
 #This works when `control mouse (zoom)` is active
 #key(f13): tracking.zoom()
 
-move mouse: 
-    ctrl.mouse_move(100,100)
+#Testing testing...
+#move mouse: 
+#    ctrl.mouse_move(100,100)
