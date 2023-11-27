@@ -70,6 +70,7 @@ downer center:
     user.mouse_move_center_active_window()
     user.mouse_scroll_down()
 downer all: user.mouse_scroll_down(99)
+downer here all: user.mouse_scroll_down_no_rango(99)
 downer tiny: user.mouse_scroll_down(0.2)
 downer tiny center:
     user.mouse_move_center_active_window()
@@ -84,6 +85,7 @@ upper center:
     user.mouse_move_center_active_window()
     user.mouse_scroll_up()
 upper all: user.mouse_scroll_up(99)
+upper here all: user.mouse_scroll_up_no_rango(99)
 upper tiny: user.mouse_scroll_up(0.2)
 upper tiny center:
     user.mouse_move_center_active_window()

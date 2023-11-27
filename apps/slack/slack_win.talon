@@ -8,7 +8,7 @@ tag(): user.emoji
 # Workspaces
 workspace <number>: key("ctrl-{number}")
 workspace next: key(ctrl-tab)
-workspace (last | previous): key(ctrl-shift-tab)
+workspace (last | back | previous): key(ctrl-shift-tab)
 # Channel
 #(slack | lack | like) [channel] info: key(ctrl-shift-i)
 # Navigation
@@ -20,7 +20,7 @@ go [to] threads: key(ctrl-shift-t)
 go (next | forth): key("alt-right")
 go (last | back | previous): key("alt-left")
 element next: key(tab)
-element (last | previous): key(shift-tab)
+element (last | back | previous): key(shift-tab)
 go [to] mentions [and reactions]: key(ctrl-shift-m)
 go [to] people [and user groups]: key(ctrl-shift-e)
 go [to] (saved | later): key(ctrl-shift-s)

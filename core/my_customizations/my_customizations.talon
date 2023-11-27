@@ -25,6 +25,7 @@ no phrase: "Nä, "
 okay phrase: "OK "
 ha ha phrase: "Haha "
 ha ha ha phrase: "Hahaha "
+good day phrase: "G'day "
 
 (signature phrase | insert signature): 
     "Best regards"

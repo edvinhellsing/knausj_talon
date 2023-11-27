@@ -8,7 +8,7 @@ tag(): user.emoji
 # Workspaces
 workspace <number>: key("ctrl-{number}")
 workspace next: app.notify("Command not available")
-workspace (last | previous): app.notify("Command not available")
+workspace (last | back | previous): app.notify("Command not available")
 # Channel
 #(slack | lack | like) [channel] info: key(ctrl-shift-i)
 # Navigation
@@ -20,7 +20,7 @@ go [to] threads: app.notify("Command not available")
 go (next | forth): key("alt-right")
 go (last | back | previous): key("alt-left")
 element next: key(tab)
-element (last | previous): key(shift-tab)
+element (last | back | previous): key(shift-tab)
 go [to] mentions [and reactions]: app.notify("Command not available")
 go [to] people [and user groups]: key(ctrl-shift-e)
 go [to] (saved | later): app.notify("Command not available")
