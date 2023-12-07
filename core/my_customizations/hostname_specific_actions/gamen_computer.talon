@@ -14,10 +14,6 @@ hostname: Gamen
 ^focus outlook: user.open_specific_tab("Google Chrome", "outlook.live.com")
 ^focus google calendar: user.open_specific_tab("Google Chrome", "calendar.google.com")
 #focus notes: user.open_specific_tab("Google Chrome", "iCloud-anteckningar")
-^focus gmail [joel] [at so tobe dot com]: user.open_specific_tab("Microsoft Edge", "joel@zutobi")
-^focus gmail support [at so tobe dot com]: user.open_specific_tab("Microsoft Edge", "support@zutobi")
-^focus gmail hello [at so tobe dot com]: user.open_specific_tab("Microsoft Edge", "hello@zutobi")
-^focus gmail partnership [at so tobe dot com]: user.open_specific_tab("Microsoft Edge", "partnership@zutobi")
 
 #Can improve this voice command by first checking if the snipping tool is in focus, and if it is just run key(ctrl-n) 
 ^grab screen selection$:
@@ -26,6 +22,28 @@ hostname: Gamen
     key(super-ctrl-1)
     sleep(300ms)
     key(ctrl-n)
+
+enable gaze control: 
+    user.enable_gaze_control()
+    #Enable "use both eyes" setting
+    key(super-b)
+    key(right)
+    key(enter)
+    key(up:6)
+    key(enter)
+    key(up:3)
+    key(enter)
+
+enable hiss control:
+    user.enable_hiss_control()
+    #Enable "use only left eye" setting
+    key(super-b)
+    key(right)
+    key(enter)
+    key(up:6)
+    key(enter)
+    key(up:2)
+    key(enter)
 
 ^use both eyes$:
     key(super-b)

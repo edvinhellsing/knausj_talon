@@ -5,4 +5,4 @@ key(insert:down): user.key_down(0)
 key(insert:up): user.key_up(0)
 
 set insert to repeat phrase: user.set_flag(0)
-set insert to repeat [latest] command: user.set_flag(1)
+set insert to repeat command: user.set_flag(1)
