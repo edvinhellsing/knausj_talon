@@ -27,6 +27,28 @@ hostname: Gamen
     sleep(300ms)
     key(ctrl-n)
 
+enable gaze control: 
+    user.enable_gaze_control()
+    #Enable "use both eyes" setting
+    key(super-b)
+    key(right)
+    key(enter)
+    key(up:6)
+    key(enter)
+    key(up:3)
+    key(enter)
+
+enable hiss control:
+    user.enable_hiss_control()
+    #Enable "use only left eye" setting
+    key(super-b)
+    key(right)
+    key(enter)
+    key(up:6)
+    key(enter)
+    key(up:2)
+    key(enter)
+
 ^use both eyes$:
     key(super-b)
     key(right)

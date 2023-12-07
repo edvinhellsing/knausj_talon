@@ -71,7 +71,6 @@ ctx = Context()
 
 #test actions
 #actions.user.play_pause()
-#actions.user.stop_scroll()
 
 flag = 0
 @ctx.action_class("user")

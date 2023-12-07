@@ -9,10 +9,7 @@
 #Answer: user.system_command_nb() 
 #And obviously just put the command as a string in the function call
 
-#test select start: user.select_continous(1)
-#test select end: user.select_continous(0)
-
-insert {user.additional_words}: auto_insert(additional_words) 
+[insert] {user.additional_words}: auto_insert(additional_words)
 website {user.website}: auto_insert(website)
 system path <user.system_path>: auto_insert(system_path)
 
@@ -37,7 +34,7 @@ good day phrase: "G'day "
     edit.line_insert_down()
     "Joel"
 
-(mic | Mike | microphone) off: user.toggle_talon_microphone()
+(mic | Mike | microphone) toggle: user.toggle_talon_microphone()
 key(scroll_lock): user.toggle_talon_microphone()
 
 (end ten | ten enter): key(enter)
@@ -63,16 +60,19 @@ talon hood (relaunch | restart):
 
 program close: user.close_program()
 
-slack (huddle | call) (new | join): 
-    user.slack_toggle_huddle()
-    sleep(200ms)
-    key(scroll_lock)
+#System wide toggle huddle function. Works only if one uses the Slack desktop app, not the Slack web app
+#slack (huddle | call) (new | join): 
+#    user.slack_toggle_huddle()
+#    sleep(300ms)
+#    key(scroll_lock)
 
-slack (huddle | call) close: user.slack_toggle_huddle()
+#System wide toggle huddle function. Works only if one uses the Slack desktop app, not the Slack web app
+#slack (huddle | call) close: user.slack_toggle_huddle()
 
 #This works when `control mouse (zoom)` is active
 #key(f13): tracking.zoom()
 
-#Testing testing...
-#move mouse: 
-#    ctrl.mouse_move(100,100)
+do not disturb toggle:
+    key(super-n)
+    sleep(1000ms)
+    key(enter)

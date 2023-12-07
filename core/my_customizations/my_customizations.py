@@ -1,4 +1,5 @@
 from talon import Module, Context, actions, imgui, scope
+from talon_plugins import eye_mouse
 
 #Below is for the navigation_text()
 import re
@@ -7,11 +8,8 @@ import re
 from talon import ui, app
 import os
 
-#
 #import truecase
 #CONTINUE HERE
-
-from talon_plugins import eye_mouse
 
 
 @imgui.open(x=700, y=0)
@@ -36,10 +34,10 @@ mod = Module()
 @mod.action_class
 class Actions:
     def repeat_command_wrapper(rep: int):
-        """Repeats the command rep times with wait times in between each repetition"""
+        """Repeats the command `rep` times with wait times in between each repetition"""
 
     def repeat_phrase_wrapper(rep: int):
-        """Repeats the phrase rep times with wait times in between each repetition"""
+        """Repeats the phrase `rep` times with wait times in between each repetition"""
 
     def open_specific_tab(browser: str, search_str: str):
         """This function requires that the searched for tab actually is open in the browser"""
@@ -111,11 +109,14 @@ class UserActions:
             if actions.user.current_app(browser) == False:
                 #If not, return
                 return
-        actions.key("ctrl-shift-a")
-        actions.sleep("400ms")
-        actions.auto_insert(search_str)
-        actions.sleep("400ms")
-        actions.key("enter")
+        #Using the browser's built-in keyboard shortcuts
+        #actions.key("ctrl-shift-a")
+        #actions.sleep("400ms")
+        #actions.auto_insert(search_str)
+        #actions.sleep("400ms")
+        #actions.key("enter")
+        #Using Rango commands
+        actions.user.rango_command_without_target("focusTabByText", search_str)
 
     def open_browser_profile_switcher(browser: str):
         if actions.user.current_app(browser) == False:
@@ -287,7 +288,7 @@ class UserActions:
         else: 
             return False
 
-    #System wide toggle huddle function
+    #System wide toggle huddle function. Works only if one uses the Slack desktop app, not the Slack web app
     def slack_toggle_huddle():
         if actions.user.current_app("Slack"):
             actions.key("ctrl-shift-h")
@@ -304,8 +305,7 @@ class UserActions:
         actions.insert(replacer)
         actions.key("space")
 
-        
-    # Non working prototypes as of now
+    # Non working prototype as of now
     def select_continous(run: int):
 
         gui_select.show()
@@ -326,6 +326,7 @@ class UserActions:
             #     actions.edit.extend_word_right()
             #     actions.sleep("75ms")
 
+    # Non working prototype as of now
     def select_continous_end():
         """sdf"""
         gui_select.hide()

@@ -12,6 +12,7 @@ gaze_job = None
 cancel_scroll_on_pop = True
 control_mouse_forced = False
 hiss_scroll_up = False
+eye_tracking = "hiss control"
 
 
 default_cursor = {
@@ -255,6 +256,20 @@ class Actions:
         """Change mouse hiss scroll direction to down"""
         global hiss_scroll_up
         hiss_scroll_up = False
+    
+    def enable_gaze_control():
+        """sdf"""
+        global eye_tracking 
+        eye_tracking = "gaze control"
+        actions.tracking.control_gaze_toggle(True)
+        actions.tracking.control_head_toggle(True)
+
+    def enable_hiss_control():
+        """sdf"""
+        global eye_tracking 
+        eye_tracking = "hiss control"
+        actions.tracking.control_gaze_toggle(False)
+        actions.tracking.control_head_toggle(False)
 
 
 def show_cursor_helper(show):
@@ -326,13 +341,17 @@ class UserActions:
     def noise_trigger_hiss(active: bool):
         if setting_mouse_enable_hiss_scroll.get():
             if active:
-                #actions.user.mouse_scroll_down_continuous()
-                actions.tracking.control_gaze_toggle(True)
-                actions.tracking.control_head_toggle(True)
+                if eye_tracking == "gaze control":
+                    actions.user.mouse_scroll_down_continuous()
+                else:
+                    actions.tracking.control_gaze_toggle(True)
+                    actions.tracking.control_head_toggle(True)
             else:
-                #actions.user.mouse_scroll_stop()
-                actions.tracking.control_gaze_toggle(False)
-                actions.tracking.control_head_toggle(False)
+                if eye_tracking == "gaze control":
+                    actions.user.mouse_scroll_stop()
+                else:
+                    actions.tracking.control_gaze_toggle(False)
+                    actions.tracking.control_head_toggle(False)
 
     """
     def noise_trigger_hiss(active: bool):

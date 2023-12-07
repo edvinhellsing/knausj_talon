@@ -4,9 +4,10 @@ gaze on: tracking.control_gaze_toggle(true)
 gaze off: tracking.control_gaze_toggle(false)
 head on: tracking.control_head_toggle(true)
 head off: tracking.control_head_toggle(false)
-zoom (on | mouse): tracking.control_zoom_toggle()
+zoom (on | mouse | off): tracking.control_zoom_toggle()
 camera overlay: tracking.control_debug_toggle()
 run calibration: tracking.calibrate()
+
 touch:
     mouse_click(0)
     # close the mouse grid if open
