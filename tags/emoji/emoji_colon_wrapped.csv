@@ -76,6 +76,7 @@ coffee, :coffee:
 rocket, :rocket:
 airplane, :airplane:
 airplane departure, :airplane_departure:
+hat, :tophat:
 hammer, :hammer:
 pistol, :gun:
 gun, :gun:

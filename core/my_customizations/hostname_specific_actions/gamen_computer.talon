@@ -9,7 +9,6 @@ hostname: Gamen
 ^focus edge: key(super-ctrl-4)
 ^focus notes: user.switcher_focus("Opera Internet Browser")
 #^focus (slack | lack | like): user.switcher_focus("Slack")
-^focus (slack | lack | like): key(super-ctrl-6)
 
 ^focus outlook: user.open_specific_tab("Google Chrome", "outlook.live.com")
 ^focus google calendar: user.open_specific_tab("Google Chrome", "calendar.google.com")
