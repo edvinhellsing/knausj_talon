@@ -8,6 +8,13 @@ import re
 from talon import ui, app
 import os
 
+#import mouse.py file so I can reach the variable `eye_tracking`
+from ...plugin.mouse.mouse import get_eye_tracking_variable
+#from ...plugin.mouse.mouse import eye_tracking
+#from plugin.mouse.mouse import eye_tracking
+#from plugin.mouse.mouse import *
+#from plugin.mouse import mouse
+
 #import truecase
 #CONTINUE HERE
 
@@ -181,10 +188,12 @@ class UserActions:
             actions.user.hud_toggle_microphone()
             actions.user.mouse_sleep()
     """
-
+    """
     #If gaze control should be disabled when using the eye tracker, i.e. using hissing to activate gaze control
     def toggle_talon_microphone():
         current_microphone = actions.sound.active_microphone()
+        eye_tracking = get_eye_tracking_variable()
+        actions.print(eye_tracking)
         if current_microphone == "None":
             #https://github.com/chaosparrot/talon_hud/blob/master/CUSTOMIZATION.md#log-messages
             actions.user.hud_add_log('success', 'ON') #Mic and eye tracking enabled
@@ -199,6 +208,33 @@ class UserActions:
             actions.user.hud_add_log('error', 'OFF') #Mic and eye tracking disabled
             actions.user.hud_toggle_microphone()
             actions.user.mouse_sleep()    
+    """
+
+    def toggle_talon_microphone():
+        current_microphone = actions.sound.active_microphone()
+        eye_tracking = get_eye_tracking_variable()
+        actions.print(eye_tracking)
+        if current_microphone == "None":
+            #https://github.com/chaosparrot/talon_hud/blob/master/CUSTOMIZATION.md#log-messages
+            actions.user.hud_add_log('success', 'ON') #Mic and eye tracking enabled
+            actions.user.hud_toggle_microphone()
+            if eye_tracking == "gaze control":
+                actions.user.mouse_wake()
+            elif eye_tracking == "hiss control":
+                actions.tracking.control_toggle(True)
+                actions.tracking.control_gaze_toggle(False)
+        elif actions.tracking.control_enabled() == False:
+            actions.user.hud_add_log('success', 'ON') #Eye tracking enabled
+            if eye_tracking == "gaze control":
+                actions.user.mouse_wake()
+            elif eye_tracking == "hiss control":
+                actions.tracking.control_toggle(True)
+                actions.tracking.control_gaze_toggle(False)
+        else:
+            actions.user.hud_add_log('error', 'OFF') #Mic and eye tracking disabled
+            actions.user.hud_toggle_microphone()
+            actions.user.mouse_sleep()    
+
 
     def start_stop_dictation():
         """Start dictation on both Windows and macOS"""

@@ -13,7 +13,10 @@ cancel_scroll_on_pop = True
 control_mouse_forced = False
 hiss_scroll_up = False
 eye_tracking = "hiss control"
+#eye_tracking = None
 
+def get_eye_tracking_variable():
+    return eye_tracking
 
 default_cursor = {
     "AppStarting": r"%SystemRoot%\Cursors\aero_working.ani",
