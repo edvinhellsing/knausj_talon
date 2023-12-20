@@ -4,8 +4,8 @@ browser.host: outlook.live.com
 -
 #(conversation | convo | thread) last: key(k)
 #(conversation | convo | thread) next: key(j)
-#(email | message) last: key(p)
-#(email | message) next: key(n)
+#(comment | message | email) last: key(p)
+#(comment | message | email) next: key(n)
 
 go [to] inbox:
     key(g)
@@ -17,14 +17,14 @@ go [to] sent:
     key(g)
     key(s)
 
-(email | message) new: key(n)
-(email | message) flag: key(insert)
+(comment | message | email) new: key(n)
+(comment | message | email) flag: key(insert)
 report spam: key(j)
-(email | message) (delete | remove): key(delete)
-(email | message) reply: key(r)
-(email | message) reply all: key(ctrl-shift-r)
-(email | message) forward: key(ctrl-shift-f)
-(email | message) send: key(ctrl-enter)
+(comment | message | email) (delete | remove): key(delete)
+(comment | message | email) reply: key(r)
+(comment | message | email) reply all: key(ctrl-shift-r)
+(comment | message | email) forward: key(ctrl-shift-f)
+(comment | message | email) send: key(ctrl-enter)
 (undo | undo it | undo send): key(ctrl-z)
 mark as read: key(q)
 mark as unread: key(u)

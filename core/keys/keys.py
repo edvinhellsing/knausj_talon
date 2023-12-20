@@ -209,6 +209,7 @@ symbol_key_words = {
     "dot": ".",
     "point": ".",
     "quote": "'",
+    "quest": "?",    
     "question": "?",
     "apostrophe": "'",
     "L square": "[",

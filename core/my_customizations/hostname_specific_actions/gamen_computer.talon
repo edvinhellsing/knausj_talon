@@ -12,6 +12,7 @@ hostname: Gamen
 
 ^focus outlook: user.open_specific_tab("Google Chrome", "outlook.live.com")
 ^focus google calendar: user.open_specific_tab("Google Chrome", "calendar.google.com")
+^focus google calendar work: user.open_specific_tab("Microsoft Edge", "calendar.google.com")
 #focus notes: user.open_specific_tab("Google Chrome", "iCloud-anteckningar")
 ^focus chat: user.open_specific_tab("Microsoft Edge", "chatGPT")
 

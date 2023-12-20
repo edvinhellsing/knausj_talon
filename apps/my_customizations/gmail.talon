@@ -4,8 +4,8 @@ browser.host: mail.google.com
 -
 (conversation | convo | thread) last: key(k)
 (conversation | convo | thread) next: key(j)
-(email | message) last: key(p)
-(email | message) next: key(n)
+(comment | message | email) last: key(p)
+(comment | message | email) next: key(n)
 
 go [to] inbox: 
     key(g)
@@ -20,14 +20,14 @@ go [to] sent:
     key(g)
     key(t)
 
-#(email | message) new: key(n)
-(email | message) flag: key(s)
+#(comment | message | email) new: key(n)
+(comment | message | email) flag: key(s)
 report spam: key(!)
-(email | message) (delete | remove): key(#)
-(email | message) reply: key(r)
-(email | message) reply all: key(a)
-(email | message) forward: key(f)
-(email | message) send: key(ctrl-enter)
+(comment | message | email) (delete | remove): key(#)
+(comment | message | email) reply: key(r)
+(comment | message | email) reply all: key(a)
+(comment | message | email) forward: key(f)
+(comment | message | email) send: key(ctrl-enter)
 (undo | undo it | undo send): key(z)
 #mark as read: key(q)
 #mark as unread: key(u)
