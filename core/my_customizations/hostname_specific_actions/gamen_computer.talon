@@ -7,14 +7,19 @@ hostname: Gamen
 ^focus [file] explorer: key(super-ctrl-2)
 ^focus chrome: key(super-ctrl-3)
 ^focus edge: key(super-ctrl-4)
-^focus notes: user.switcher_focus("Opera Internet Browser")
-#^focus (slack | lack | like): user.switcher_focus("Slack")
+#focus notes: user.open_specific_tab("Google Chrome", "iCloud")
+#^focus notes: user.switcher_focus("Opera Internet Browser")
+^focus notes: key(super-ctrl-5)
+#^focus chat: user.open_specific_tab("Microsoft Edge", "chatGPT")
+^focus chat: key(super-ctrl-6)
+^focus whatsapp: key(super-ctrl-7)
+^focus messenger: key(super-ctrl-8)
+#^focus (slack | lack | like): user.open_specific_tab("Microsoft Edge", "Slack")
+^focus (slack | lack | like): key(super-ctrl-9)
 
 ^focus outlook: user.open_specific_tab("Google Chrome", "outlook.live.com")
 ^focus google calendar: user.open_specific_tab("Google Chrome", "calendar.google.com")
 ^focus google calendar work: user.open_specific_tab("Microsoft Edge", "calendar.google.com")
-#focus notes: user.open_specific_tab("Google Chrome", "iCloud-anteckningar")
-^focus chat: user.open_specific_tab("Microsoft Edge", "chatGPT")
 
 #Can improve this voice command by first checking if the snipping tool is in focus, and if it is just run key(ctrl-n) 
 ^grab screen selection$:
