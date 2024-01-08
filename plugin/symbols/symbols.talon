@@ -3,7 +3,7 @@ new line: "\n"
 #triple quote: "'''"
 #(triple grave | triple back tick | gravy): insert("```")
 (dot dot | dotdot): ".."
-ellipses: "..."
+ellipsis: "..."
 (com space | com blank | com gap): ", "
 (dot space | dot blank): ". "
 (period space | period blank): ". "
