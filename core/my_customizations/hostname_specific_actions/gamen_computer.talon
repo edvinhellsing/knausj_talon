@@ -34,10 +34,15 @@ gaze control on:
     #Enable "use both eyes" setting
     key(super-b)
     key(right)
+    sleep(300ms)
     key(enter)
+    sleep(300ms)
     key(up:6)
+    sleep(300ms)
     key(enter)
+    sleep(300ms)
     key(up:3)
+    sleep(300ms)
     key(enter)
 
 hiss control on:
@@ -45,10 +50,15 @@ hiss control on:
     #Enable "use only left eye" setting
     key(super-b)
     key(right)
+    sleep(300ms)
     key(enter)
+    sleep(300ms)
     key(up:6)
+    sleep(300ms)
     key(enter)
+    sleep(300ms)
     key(up:2)
+    sleep(300ms)
     key(enter)
 
 ^use both eyes$:
