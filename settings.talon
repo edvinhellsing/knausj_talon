@@ -31,7 +31,7 @@ settings():
     user.mouse_enable_pop_click = 1
 
     # Enable if you like to use the hissing noise to do mouse scroll
-    user.mouse_enable_hiss_scroll = false
+    user.mouse_enable_hiss_scroll = true
 
     # When enabled, the 'Scroll Mouse' GUI will not be shown.
     user.mouse_hide_mouse_gui = false

@@ -121,7 +121,7 @@ nope it was <user.formatters>: user.formatters_reformat_last(formatters)
 #Replace with punctuation symbols
 ^replace coma$:
     user.replace_text("coma", ",")
-s    edit.left()
+    edit.left()
     edit.left()
     key(backspace)
     edit.line_end()
@@ -188,16 +188,16 @@ s    edit.left()
 
 ^truecase selection$:
     text = edit.selected_text()
-    text = reformat_text({text}, "all down")
-    text = reformat_text({text}, "sentence")
-    user.paste("{text}")
+    text = reformat_text(text, "all down")
+    text = reformat_text(text, "sentence")
+    user.paste(text)
     #text = user.formatters_reformat_selection("all down")
     #user.formatters_reformat_selection("sentence")
     #text = edit.selected_text()
     #user.engine_mimic("sentence " + {text})
     #text = user.truecase(edit.selected_text())
     #actions.insert(text)
-    #user.paste("{text}")
+    #user.paste(text)
 
 ##########
 # formatters_words = {

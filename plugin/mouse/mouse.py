@@ -12,11 +12,13 @@ gaze_job = None
 cancel_scroll_on_pop = True
 control_mouse_forced = False
 hiss_scroll_up = False
+
+##### My customizations #####
 eye_tracking = "hiss control"
-#eye_tracking = None
 
 def get_eye_tracking_variable():
     return eye_tracking
+##### End #####
 
 default_cursor = {
     "AppStarting": r"%SystemRoot%\Cursors\aero_working.ani",
@@ -350,19 +352,20 @@ class UserActions:
     #Gaze control is now activated while hissing
     #Should be used with the setting "Only Left Eye" or "Only Right Eye" because it doesn't work remotely as reliably when having the setting "Use Both Eyes" enabled in Talon 0.4
     def noise_trigger_hiss(active: bool):
-        if settings.get("user.mouse_enable_hiss_scroll"):
-            if active:
-                if eye_tracking == "gaze control":
+        if active:
+            if eye_tracking == "gaze control":
+                if settings.get("user.mouse_enable_hiss_scroll"):
                     actions.user.mouse_scroll_down_continuous()
-                else:
-                    actions.tracking.control_gaze_toggle(True)
-                    actions.tracking.control_head_toggle(True)
             else:
-                if eye_tracking == "gaze control":
+                actions.tracking.control_gaze_toggle(True)
+                actions.tracking.control_head_toggle(True)
+        else:
+            if eye_tracking == "gaze control":
+                if settings.get("user.mouse_enable_hiss_scroll"):
                     actions.user.mouse_scroll_stop()
-                else:
-                    actions.tracking.control_gaze_toggle(False)
-                    actions.tracking.control_head_toggle(False)
+            else:
+                actions.tracking.control_gaze_toggle(False)
+                actions.tracking.control_head_toggle(False)
 
     """
     def noise_trigger_hiss(active: bool):
