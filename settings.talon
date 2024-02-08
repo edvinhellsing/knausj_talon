@@ -1,13 +1,9 @@
 -
 settings():
-<<<<<<< HEAD
     # Minimum silence time (in seconds) before speech is cut off, default is 0.3
     speech.timeout = 0.4
 
-    # Adjust the scale of the imgui to my liking
-=======
     # Adjust the scale of the imgui
->>>>>>> upstream/main
     imgui.scale = 1.3
 
     # If `true`, automatically show the picker GUI when the file manager has focus
@@ -19,16 +15,11 @@ settings():
     # Set the number of contexts to display per help page
     user.help_max_contexts_per_page = 20
 
-<<<<<<< HEAD
-    # The default amount used when scrolling continuously
+    # Set the scroll amount for continuous scroll/gaze scroll
     #user.mouse_continuous_scroll_amount = 80 #default in talonhub/community
     #user.mouse_continuous_scroll_amount = 240
     #user.mouse_continuous_scroll_amount = 320
     user.mouse_continuous_scroll_amount = 400
-=======
-    # Set the scroll amount for continuous scroll/gaze scroll
-    user.mouse_continuous_scroll_amount = 80
->>>>>>> upstream/main
 
     # If `true`, stop continuous scroll/gaze scroll with a pop
     user.mouse_enable_pop_stops_scroll = true
@@ -39,13 +30,8 @@ settings():
     # 2 = on but not with zoom mouse mode
     user.mouse_enable_pop_click = 1
 
-<<<<<<< HEAD
-    # Enable if you like to use the hissing noise to do mouse scroll
-    user.mouse_enable_hiss_scroll = true
-=======
     # If `true`, use a hissing noise to scroll continuously
-    user.mouse_enable_hiss_scroll = false
->>>>>>> upstream/main
+    user.mouse_enable_hiss_scroll = true
 
     # If `true`, hide the continuous scroll/gaze scroll GUI
     user.mouse_hide_mouse_gui = false
@@ -53,14 +39,9 @@ settings():
     # If `true`, hide the cursor when enabling zoom mouse
     user.mouse_wake_hides_cursor = false
 
-<<<<<<< HEAD
-    # The amount to scroll up/down (equivalent to mouse wheel on Windows by default)
+    # Set the amount to scroll up/down
     #user.mouse_wheel_down_amount = 120
     user.mouse_wheel_down_amount = 720
-=======
-    # Set the amount to scroll up/down
-    user.mouse_wheel_down_amount = 120
->>>>>>> upstream/main
 
     # Set the amount to scroll left/right
     user.mouse_wheel_horizontal_amount = 40
@@ -74,18 +55,6 @@ settings():
     # Set the total number of command history lines to display
     user.command_history_size = 50
 
-<<<<<<< HEAD
-    # Uncomment the below to insert text longer than 10 characters (customizable) by
-    # pasting from the clipboard. This is often faster than typing.
-    #user.paste_to_insert_threshold = 10
-
-    # Uncomment the below to enable context-sensitive dictation. This determines
-    # how to format (capitalize, space) dictation-mode speech by selecting &
-    # copying surrounding text before inserting. This can be slow and may not
-    # work in some applications. You may wish to enable this on a
-    # per-application basis.
-    user.context_sensitive_dictation = true
-=======
     # Uncomment to add a directory (relative to the Talon user dir) with additional
     # .snippet files. Changing this setting requires a restart of Talon.
     # user.snippets_dir = "snippets"
@@ -99,7 +68,6 @@ settings():
     # before inserting. This can be slow and may not work in some applications. You may
     # wish to enable this on a per-application basis.
     # user.context_sensitive_dictation = true
->>>>>>> upstream/main
 
     # Choose how to resize windows moved across physical screens (eg. via `snap next`).
     # Default is 'proportional', which preserves window size : screen size ratio.
