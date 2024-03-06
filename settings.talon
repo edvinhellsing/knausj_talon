@@ -31,7 +31,7 @@ settings():
     user.mouse_enable_pop_click = 1
 
     # If `true`, use a hissing noise to scroll continuously
-    user.mouse_enable_hiss_scroll = true
+    user.mouse_enable_hiss_scroll = false
 
     # If `true`, hide the continuous scroll/gaze scroll GUI
     user.mouse_hide_mouse_gui = false
