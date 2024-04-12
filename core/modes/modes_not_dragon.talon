@@ -21,21 +21,23 @@ not speech.engine: dragon
 #
 # It's a useful and well known command, though, so if you're using any other speech
 # engine, this controls Talon.
-^(wake up)+$: speech.enable()
+#^(wake up)+$: speech.enable()
 
 # We define this *only* if the speech engine isn't Dragon, because if you're using Dragon,
 # "go to sleep" is used to specifically control Dragon, and not affect Talon.
 #
 # It's a useful and well known command, though, so if you're using any other speech
 # engine, this controls Talon.
-^go to sleep [<phrase>]$: speech.disable()
-^talon sleep [<phrase>]$: speech.disable()
+#^go to sleep [<phrase>]$: speech.disable()
+#^talon sleep [<phrase>]$: speech.disable()
 
-^sleep all [<phrase>]$:
+#Note: The function user.hud_toggle_mode() uses the voice commands "talon sleep" and "talon wake"
+^(talon sleep | tell and sleep) [<phrase>]$:
     user.switcher_hide_running()
     user.history_disable()
     user.homophones_hide()
     user.help_hide()
     user.mouse_sleep()
     speech.disable()
+    mode.disable("user.power_mode")
     user.engine_sleep()
