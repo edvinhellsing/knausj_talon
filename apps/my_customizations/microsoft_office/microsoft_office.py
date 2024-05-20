@@ -26,15 +26,6 @@ app: office_win
 """
 
 
-@ctx.action_class("edit")
-class EditActions:
-    def paste_match_style():
-        actions.key("ctrl-v")
-        actions.sleep("200ms")
-        actions.key("ctrl")
-        actions.sleep("200ms")
-        actions.key("t")
-
 # @ctx.action_class("user")
 # class UserActions:
     # def office_tell_me():

@@ -9,7 +9,7 @@ app.name: /Microsoft Word/
 #[format] heading five: key(ctrl-alt-5)
 
 [format] (bullet | bulleted) list: key(ctrl-shift-l)
-#fs[format] (number | numbered) list: key(ctrl-shift-7)
+#[format] (number | numbered) list: key(ctrl-shift-7)
 (format bold | [format] boldify): key(ctrl-b)
 (format italic | [format] italify): key(ctrl-i)
 (format underline | [format] underlinify): key(ctrl-u)
