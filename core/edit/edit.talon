@@ -211,6 +211,8 @@ redo it: edit.redo()
 (file | five) save: edit.save()
 (file | five) save all: edit.save_all()
 
+[go] line mid: user.line_middle()
+
 
 
 #THE COMMANDS BELOW ARE FROM DICTATION_MODE.TALON
