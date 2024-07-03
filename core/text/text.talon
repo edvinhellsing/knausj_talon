@@ -12,6 +12,7 @@ phrase <user.text> over:
 <user.format_code>+ over: user.insert_many(format_code_list)
 <user.formatters> selection: user.formatters_reformat_selection(user.formatters)
 (sink | sunk | lowercase) selection: user.formatters_reformat_selection("ALL_LOWERCASE")
+<user.formatters> (pace | paste): user.insert_formatted(clip.text(), formatters)
 word <user.word>:
     user.add_phrase_to_history(word)
     insert(word)

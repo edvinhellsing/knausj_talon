@@ -9,7 +9,7 @@ ten (close | plus): user.tab_close_wrapper()
 tab (reopen | restore): app.tab_reopen()
 tab <number>: user.tab_jump(number)
 tab final: user.tab_final()
-tab duplicate: user.tab_duplicate()
+tab (duplicate | clone): user.tab_duplicate()
 
 tab move left: user.tab_left_wrapper()
 tab move right: user.tab_right_wrapper()
@@ -20,4 +20,4 @@ tab (new | open):
     user.tab_final()
     sleep(50ms)
     app.tab_open()
-tab (new | open) here: app.tab_open()
+
