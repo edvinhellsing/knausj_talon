@@ -180,7 +180,7 @@ class UserActions:
             actions.user.hud_add_log('success', 'ON') #Mic and eye tracking enabled
             actions.user.hud_toggle_microphone()
             actions.user.mouse_wake()
-        elif actions.tracking.control_enabled() == False:
+        elif not actions.tracking.control_enabled():
             actions.user.hud_add_log('success', 'ON') #Eye tracking enabled
             actions.user.mouse_wake()
         else:
@@ -200,7 +200,7 @@ class UserActions:
             actions.user.hud_toggle_microphone()
             actions.tracking.control_toggle(True)
             actions.tracking.control_gaze_toggle(False)
-        elif actions.tracking.control_enabled() == False:
+        elif not actions.tracking.control_enabled():
             actions.user.hud_add_log('success', 'ON') #Eye tracking enabled
             actions.tracking.control_toggle(True)
             actions.tracking.control_gaze_toggle(False)
@@ -213,7 +213,9 @@ class UserActions:
     def toggle_talon_microphone():
         current_microphone = actions.sound.active_microphone()
         eye_tracking = get_eye_tracking_variable()
+        actions.print(current_microphone)
         actions.print(eye_tracking)
+        actions.print(actions.tracking.control_enabled())
         if current_microphone == "None":
             #https://github.com/chaosparrot/talon_hud/blob/master/CUSTOMIZATION.md#log-messages
             actions.user.hud_add_log('success', 'ON') #Mic and eye tracking enabled
@@ -223,7 +225,7 @@ class UserActions:
             elif eye_tracking == "hiss control":
                 actions.tracking.control_toggle(True)
                 actions.tracking.control_gaze_toggle(False)
-        elif actions.tracking.control_enabled() == False:
+        elif not actions.tracking.control_enabled(): #Eye tracking is currently disabled. Please note: one could end up here because the eye tracker is not connected.
             actions.user.hud_add_log('success', 'ON') #Eye tracking enabled
             if eye_tracking == "gaze control":
                 actions.user.mouse_wake()
