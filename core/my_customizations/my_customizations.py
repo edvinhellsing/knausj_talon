@@ -15,9 +15,6 @@ from ...plugin.mouse.mouse import get_eye_tracking_variable
 #from plugin.mouse.mouse import *
 #from plugin.mouse import mouse
 
-#import truecase
-#CONTINUE HERE
-
 
 @imgui.open(x=700, y=0)
 def gui_select(gui: imgui.GUI):

@@ -155,62 +155,6 @@ class CapitalizeFormatter(Formatter):
         return unformat_upper(text)
 
 
-"""
-#My addition
-def truecase_simple():
-    last_word = None
-
-    def truecase_simple_word(i, word, is_end):
-        nonlocal last_word
-
-        # List of common names and weekdays
-        special_words = ["john", "mary", "monday", "tuesday", "wednesday", "thursday", "friday", "saturday", "sunday"]
-        
-        # Check if the last word ends with '.', '?' or '!', and capitalize the current word
-        if last_word and any(last_word.endswith(punct) for punct in ['.', '!', '?']):
-            word = word.capitalize()
-
-        # Check if the word is not a special word and not at the start or end of the sentence, and make it lowercase
-        elif word.lower() not in special_words and i != 0 and not is_end:
-            word = word.lower()
-
-        last_word = word
-
-        return word
-
-    return truecase_simple_word
-"""
-"""
-import string
-def truecase_simple():
-    last_word = None
-    capitalize_next_word = True
-
-    # List of common names and weekdays
-    special_words = ["john", "mary", "monday", "tuesday", "wednesday", "thursday", "friday", "saturday", "sunday"]
-
-    def truecase_simple_word(i, word, is_end):
-        nonlocal last_word, capitalize_next_word
-
-        # Check if the word is a special word or at the start or end of a sentence
-        if word.lower() in special_words or capitalize_next_word:
-            capitalized_word = word.capitalize()
-            capitalize_next_word = False
-        else:
-            capitalized_word = word.lower()
-
-        # Check if the word ends with a punctuation mark
-        if capitalized_word[-1] in string.punctuation:
-            capitalize_next_word = True
-
-        last_word = capitalized_word
-
-        return capitalized_word
-
-    return truecase_simple_word
-"""
-
-
 class SentenceFormatter(Formatter):
     def format(self, text: str) -> str:
         """Capitalize first word if it's already all lower case"""
