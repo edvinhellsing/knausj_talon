@@ -11,7 +11,6 @@ mode: sleep
 ^dictate <phrase>: 
     mode.disable('sleep')
     mode.disable('command')
-    mode.disable('user.power_mode')
     mode.enable('dictation')
     sleep(500ms)
     user.try_to_mimic("{phrase}")

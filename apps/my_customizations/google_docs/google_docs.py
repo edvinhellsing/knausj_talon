@@ -36,11 +36,6 @@ class NativeDictationActions:
                 actions.user.toggle_talon_microphone()
             actions.user.mouse_sleep()
             actions.user.engine_mimic("dictation mode")
-        elif "user.power_mode" in scope.get("mode"):
-            if current_microphone == "None":
-                actions.user.toggle_talon_microphone()
-            actions.user.mouse_sleep()
-            actions.user.engine_mimic("dictation mode")
         elif "dictation" in scope.get("mode"):
             #Currently power mode is not supported, need to utilize a stack to know which mode to go back to
             actions.user.engine_mimic("command mode")
@@ -49,11 +44,6 @@ class NativeDictationActions:
     def toggle_dictation_key_switch():
         current_microphone = actions.sound.active_microphone()
         if "command" in scope.get("mode"):
-            if current_microphone == "None":
-                actions.user.toggle_talon_microphone()
-            actions.user.mouse_sleep()
-            actions.user.engine_mimic("dictation mode")
-        elif "user.power_mode" in scope.get("mode"):
             if current_microphone == "None":
                 actions.user.toggle_talon_microphone()
             actions.user.mouse_sleep()

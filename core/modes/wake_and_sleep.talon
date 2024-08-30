@@ -9,7 +9,6 @@ mode: all
     user.help_hide()
     user.mouse_sleep()
     speech.disable()
-    mode.disable("user.power_mode")
     user.engine_sleep()
 ^(talon wake | tell and wake)+$:
     user.mouse_wake()

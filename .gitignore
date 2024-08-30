@@ -12,5 +12,4 @@ sdf.py
 sdf.txt
 /core/my_customizations/hostname_specific_actions/gamen_computer_git_ignored.talon
 /apps/my_customizations/jira.talon
-/core/modes/power_mode/specific_actions_for_websites/power_mode_jira.talon
 .DS_Store

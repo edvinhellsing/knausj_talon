@@ -40,5 +40,4 @@ not speech.engine: dragon
     user.help_hide()
     user.mouse_sleep()
     speech.disable()
-    mode.disable("user.power_mode")
     user.engine_sleep()

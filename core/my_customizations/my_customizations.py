@@ -255,11 +255,6 @@ class UserActions:
             actions.user.mouse_sleep()
             actions.speech.toggle()
             actions.user.start_stop_dictation()
-        elif "user.power_mode" in scope.get("mode"):
-            actions.user.mouse_sleep()
-            actions.speech.toggle()
-            actions.mode.disable("user.power_mode")
-            actions.user.start_stop_dictation()
         elif "sleep" in scope.get("mode"):
             #add some sleep time to make sure talon doesn't pick up any speech
             actions.sleep("500ms")
@@ -292,11 +287,6 @@ class UserActions:
         elif "dictation" in scope.get("mode"):
             actions.user.mouse_sleep()
             actions.speech.toggle()
-            actions.user.start_stop_dictation()
-        elif "user.power_mode" in scope.get("mode"):
-            actions.user.mouse_sleep()
-            actions.speech.toggle()
-            actions.mode.disable("user.power_mode")
             actions.user.start_stop_dictation()
         elif "sleep" in scope.get("mode"):
             actions.user.start_stop_dictation()

@@ -264,7 +264,6 @@ class UserActions:
 ctx_avc = Context()
 ctx_avc.matches = r"""
 tag: user.avc
-not mode: user.power_mode
 """
 
 @ctx_avc.action_class("user")
@@ -328,7 +327,6 @@ class NativeDictationActions:
 ctx_zoom = Context()
 ctx_zoom.matches = r"""
 tag: user.zoom_mouse
-not mode: user.power_mode
 """
 
 @ctx_zoom.action_class("user")

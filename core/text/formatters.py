@@ -271,7 +271,6 @@ prose_formatter_names = {
     #"sink": formatters_dict["ALL_LOWERCASE"],
     #"sunk": formatters_dict["ALL_LOWERCASE"],
     #"lowercase": formatters_dict["ALL_LOWERCASE"],
-    #"truecase": "TRUECASE_SIMPLE"
 }
 reformatter_names = {
     "cap": "CAPITALIZE",
