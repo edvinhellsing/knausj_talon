@@ -1,13 +1,20 @@
 tag: user.file_manager
 -
+tag(): user.navigation
+
 title force: user.file_manager_refresh_title()
 manager show: user.file_manager_toggle_pickers()
 manager close: user.file_managjer_hide_pickers()
 manager refresh: user.file_manager_update_lists()
+<<<<<<< HEAD
 go [to] <user.system_path>: user.file_manager_open_directory(system_path)
 go (last | back | previous): user.file_manager_go_back()
 go (next | forth): user.file_manager_go_forward()
 go [to] parent: user.file_manager_open_parent()
+=======
+go <user.system_path>: user.file_manager_open_directory(system_path)
+(go parent | daddy): user.file_manager_open_parent()
+>>>>>>> upstream/main
 ^follow numb <number_small>$:
     directory = user.file_manager_get_directory_by_index(number_small - 1)
     user.file_manager_open_directory(directory)

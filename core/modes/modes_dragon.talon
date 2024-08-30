@@ -1,5 +1,4 @@
-mode: sleep
-not mode: sleep
+mode: all
 speech.engine: dragon
 -
 # The optional <phrase> afterwards allows these to match even if you say arbitrary text
@@ -25,4 +24,4 @@ speech.engine: dragon
     user.mouse_sleep()
     speech.disable()
     mode.disable("user.power_mode")
-    user.engine_sleep()
+    user.dragon_engine_sleep()

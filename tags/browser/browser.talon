@@ -1,6 +1,8 @@
 tag: browser
 -
-go address | go url: browser.focus_address()
+tag(): user.navigation
+
+address bar | go address | go url: browser.focus_address()
 go page | page focus: browser.focus_page()
 address copy | url copy | copy address | copy url:
     browser.focus_address()
@@ -8,11 +10,11 @@ address copy | url copy | copy address | copy url:
     edit.copy()
     user.hud_add_log('success', 'Content copied')
 #go home: browser.go_home()
-go (next | forth): browser.go_forward()
-go (last | back | previous): browser.go_back()
-
 go [to] {user.website}: browser.go(website)
 (incognito | private) (new | open): browser.open_private_window()
+
+go (next | forth): browser.go_forward()
+go (last | back | previous): browser.go_back()
 
 bookmark it: browser.bookmark()
 #bookmark tabs: browser.bookmark_tabs()
