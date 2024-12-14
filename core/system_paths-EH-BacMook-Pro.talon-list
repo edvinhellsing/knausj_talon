@@ -1,0 +1,15 @@
+list: user.system_paths
+hostname: EH-BacMook-Pro
+-
+user: /Users/edvinhellsing
+profile: /Users/edvinhellsing
+desktop: /Users/edvinhellsing/Desktop
+desk: /Users/edvinhellsing/Desktop
+documents: /Users/edvinhellsing/Documents
+docks: /Users/edvinhellsing/Documents
+downloads: /Users/edvinhellsing/Downloads
+music: /Users/edvinhellsing/Music
+pictures: /Users/edvinhellsing/Pictures
+videos: /Users/edvinhellsing/Videos
+talon home: /Users/edvinhellsing/.talon
+talon user: /Users/edvinhellsing/.talon/user
