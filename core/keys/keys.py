@@ -25,37 +25,38 @@ from ..user_settings import get_list_from_csv
 #odd -> orange/oak because odd is often misrecognized as one/word the/...
 #urge -> urging -> eagle for the letter `ö`
 
-# def setup_default_alphabet():
-#     """set up common default alphabet.
+# TODO: Perhaps modif alphabet in csv file
+def setup_default_alphabet():
+    """set up common default alphabet.
 
-#     no need to modify this here, change your alphabet using alphabet.csv"""
-#     initial_default_alphabet = "air bat cap drum each fine gust harp sit jury crunch look made near odd pit quench red sun trap urge vest whale plex yank zip onyx elk eagle".split()
-#     initial_letters_string = "abcdefghijklmnopqrstuvwxyzåäö"
-#     initial_default_alphabet_dict = dict(
-#         zip(initial_default_alphabet, initial_letters_string)
-#     )
+    no need to modify this here, change your alphabet using alphabet.csv"""
+    initial_default_alphabet = "air batch cap drum east fine gust harp ice judge crunch look made net odd perk quench ram sun trap urn vest whale x yank zip onyx elk eagle".split() #JW: air bat cap drum each fine gust harp sit jury crunch look made near odd pit quench red sun trap urge vest whale plex yank zip onyx elk eagle
+    initial_letters_string = "abcdefghijklmnopqrstuvwxyzåäö"
+    initial_default_alphabet_dict = dict(
+        zip(initial_default_alphabet, initial_letters_string)
+    )
 
-#     return initial_default_alphabet_dict
+    return initial_default_alphabet_dict
 
 
-# alphabet_list = get_list_from_csv(
-#     "alphabet.csv", ("Letter", "Spoken Form"), setup_default_alphabet()
-# )
+alphabet_list = get_list_from_csv(
+    "alphabet.csv", ("Letter", "Spoken Form"), setup_default_alphabet()
+)
 
 # used for number keys & function keys respectively
-# digits = "zero one two three four five six seven eight nine".split()
-# f_digits = "one two three four five six seven eight nine ten eleven twelve thirteen fourteen fifteen sixteen seventeen eighteen nineteen twenty".split()
+digits = "zero one two three four five six seven eight nine".split()
+f_digits = "one two three four five six seven eight nine ten eleven twelve thirteen fourteen fifteen sixteen seventeen eighteen nineteen twenty".split()
 
-default_alphabet = "air batch cap drum east fine gust harp ice judge crunch look made net odd perk quench ram sun trap urn vest whale x yank zip onyx elk eagle".split(
-    " "
-)
-letters_string = "abcdefghijklmnopqrstuvwxyzåäö"
+# default_alphabet = "air batch cap drum east fine gust harp ice judge crunch look made net odd perk quench ram sun trap urn vest whale x yank zip onyx elk eagle".split(
+#     " "
+# )
+# letters_string = "abcdefghijklmnopqrstuvwxyzåäö"
 
-default_digits = "zero one two three four five six seven eight nine".split(" ")
-numbers = [str(i) for i in range(10)]
-default_f_digits = (
-    "one two three four five six seven eight nine ten eleven twelve".split(" ")
-)
+# default_digits = "zero one two three four five six seven eight nine".split(" ")
+# numbers = [str(i) for i in range(10)]
+# default_f_digits = (
+#     "one two three four five six seven eight nine ten eleven twelve".split(" ")
+# )
 
 mod = Module()
 mod.list("letter", desc="The spoken phonetic alphabet")
