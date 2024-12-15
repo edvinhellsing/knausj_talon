@@ -16,3 +16,17 @@ hold <user.modifiers>:
 (lift | unhold) <user.modifiers>:
     key("{modifiers}:up")
     user.gui_hold_modifier_toggle(0, "{modifiers}")
+
+#f-keys
+#f5
+(fork five | four five):
+    key(f5)
+#f10
+(fork ten | four ten):
+    key(f10)
+#f11
+(fork eleven | four eleven):
+    key(f11)
+#f12
+(fork twelve | four twelve):
+    key(f12)

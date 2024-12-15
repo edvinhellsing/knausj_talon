@@ -77,7 +77,7 @@ go usage: key(shift-f12)
 go marks: key(ctrl-k ctrl-w)
 toggle mark: key(ctrl-k ctrl-k)
 go next mark: key(ctrl-k ctrl-n)
-go last mark: key(ctrl-k ctrl-p)
+#go last mark: key(ctrl-k ctrl-p)
 
 # Folding
 fold toggle: key(ctrl-m ctrl-m)

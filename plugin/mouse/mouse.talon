@@ -16,7 +16,7 @@ touch:
     user.grid_close()
     # End any open drags
     # Touch automatically ends left drags so this is for right drags specifically
-    user.mouse_drag_end()
+    user.mouse_drag_end() 
 
 righty:
     # close zoom if open
@@ -39,6 +39,7 @@ mid click:
 #option = alt
 #shift
 #super = windows key
+
 <user.modifiers> touch:
     # close zoom if open
     user.zoom_close()
@@ -113,6 +114,30 @@ upper (continuous | continue) center:
     user.mouse_scroll_up_continuous()
 (wheel | scroll) gaze: user.mouse_gaze_scroll()
 # (wheel | scroll) gaze:
+# (wheel | scroll) gaze here:
+#     user.mouse_move_center_active_window()
+#     user.mouse_gaze_scroll()
+# (wheel | scroll) stop: user.mouse_scroll_stop()
+# (wheel | scroll) stop here:
+#     user.mouse_move_center_active_window()
+#     user.mouse_scroll_stop()
+# (wheel | scroll) left: user.mouse_scroll_left()
+# (wheel | scroll) left here:
+#     user.mouse_move_center_active_window()
+#     user.mouse_scroll_left()
+# (wheel | scroll) tiny left: user.mouse_scroll_left(0.5)
+# (wheel | scroll) tiny left here:
+#     user.mouse_move_center_active_window()
+#     user.mouse_scroll_left(0.5)
+# (wheel | scroll) right: user.mouse_scroll_right()
+# (wheel | scroll) right here:
+#     user.mouse_move_center_active_window()
+#     user.mouse_scroll_right()
+# (wheel | scroll) tiny right: user.mouse_scroll_right(0.5)
+# (wheel | scroll) tiny right here:
+#     user.mouse_move_center_active_window()
+#     user.mouse_scroll_right(0.5)
+
 #     user.mouse_move_center_active_window()
 #     user.mouse_gaze_scroll()
 (wheel | scroll) stop: user.mouse_scroll_stop()

@@ -5,12 +5,14 @@ not tag: browser
 -
 tag(): user.messaging
 tag(): user.emoji
+
 # Workspaces
 workspace <number>: key("ctrl-{number}")
 workspace next: key(ctrl-tab)
 workspace (last | back | previous): key(ctrl-shift-tab)
 # Channel
 #(slack | lack | like) [channel] info: key(ctrl-shift-i)
+
 # Navigation
 #focus (move | next): key(ctrl-`)
 (go [to] | section | zone) next: key(f6)
@@ -70,8 +72,9 @@ keyboard shortcuts: key(ctrl-/)
 go [to] messages <phrase>$: user.slack_browse_dms("{phrase}")
 
 go [to] channel <phrase>$: user.slack_browse_channels("{phrase}")
+
+# Ideas to channels
 # go [to] channel analytics: user.slack_browse_channels("analytics")
-# go [to] channel app: user.slack_browse_channels("app")
 # go [to] channel backend: user.slack_browse_channels("backend")
 # go [to] channel booking platform: user.slack_browse_channels("booking-platform")
 go [to] channel business development: user.slack_browse_channels("business-development")

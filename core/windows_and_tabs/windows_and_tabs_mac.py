@@ -14,14 +14,18 @@ class AppActions:
     def tab_close():
         actions.key("cmd-w")
 
+    # own chrome navigation like used to in win
     def tab_next():
         actions.key("ctrl-tab")
+        #actions.key("cmd-alt-right") mac
 
     def tab_open():
         actions.key("cmd-t")
-
+    
+    # own chrome navigation like used to in win
     def tab_previous():
         actions.key("ctrl-shift-tab")
+        #actions.key("cmd-alt-left") mac
 
     def tab_reopen():
         actions.key("cmd-shift-t")

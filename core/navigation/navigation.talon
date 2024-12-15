@@ -1,5 +1,5 @@
 tag: user.navigation
 -
 
-go (last | back | previous): user.go_back()
-go (next | forth): user.go_forward()
+go (last | back | backward | previous): user.go_back()
+go (next | forth | forward): user.go_forward()

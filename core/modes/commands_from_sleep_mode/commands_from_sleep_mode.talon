@@ -17,10 +17,20 @@ mode: sleep
     mode.disable('dictation')
     mode.enable('sleep')  
     
+#start listening: 
+    #set keyboard to English
+    #key(alt-shift-2)
+    #user.toggle_dictation_voice_command()
+
+#(burial listener | burial alister): 
+    #set keyboard to Swedish
+    #key(alt-shift-1)
+    #user.toggle_dictation_voice_command()
+    
 stop listening: 
     user.toggle_dictation_voice_command()
 
 #sluta lyssna/sluta diktering
-(slut Alister | slut alisa | slut dart listener):
+(slut Alister | slut alisa | slut dart listener | stop public theory | stop public tearing):
 #| stop public theory | stop public tearing ):
-    user.toggle_dictation_voice_command()
+    user.start_stop_dictation_voice_command()

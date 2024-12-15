@@ -40,8 +40,12 @@ class Actions:
     def repeat_command_wrapper(rep: int):
         """Repeats the command `rep` times with wait times in between each repetition"""
 
-    def repeat_phrase_wrapper(rep: int):
-        """Repeats the phrase `rep` times with wait times in between each repetition"""
+    def toggle_talon_microphone():
+        """Toggle the Talon microphone on/off using talon_HUD actions (please note: talon_HUD must be installed in the talon user folder for this function to work)"""
+
+    def toggle_control_mouse():
+        """Toggle the mouse on/off, using talon_HUD actions to control eye tracking and mouse together (please note: talon_HUD must be installed in the talon user folder for this function to work)"""
+
 
     def open_specific_tab(browser: str, search_str: str):
         """This function requires that the searched for tab actually is open in the browser"""
@@ -73,20 +77,23 @@ class Actions:
     def close_program():
         """Uses the OS built-in keyboard shortcut to close the program"""
 
-    def current_app(name: str):
-        """Confirms if an app with app.name == name is in focus"""
-
-    def replace_text(to_replace: str, replacer: str):
-        """Replaces `to_replace` with `replacer`"""
-
-    def slack_toggle_huddle():
-        """sdf"""
-
     def select_continous(run: int):
         """sdf"""
 
     def select_continous_end():
         """sdf"""
+    
+    def comment():
+        """Comment out code in Visual Studio"""
+    
+    def uncomment():
+        """Comment in code in Visual Studio"""
+    
+    def open_chrome_bookmarks():
+        """Open bookmarks in Google Chrome on Windows"""
+    
+    def window():
+        """Windows key / start"""
 
 ctx=Context()
 
@@ -97,12 +104,39 @@ class UserActions:
         for i in range(rep):
             actions.core.repeat_command(1)
             actions.sleep("200ms")
+  
+    def toggle_talon_microphone():
+        current_microphone = actions.sound.active_microphone()
 
-    def repeat_phrase_wrapper(rep: int):
-        """Repeats the phrase rep times with wait times in between each repetition"""
-        for i in range(rep):
-            actions.core.repeat_phrase(1)
-            actions.sleep("200ms")
+        if current_microphone == "None" and eye_mouse.tracker is not None and not eye_mouse.config.control_mouse and not "sleep" in scope.get("mode"):
+            #https://github.com/chaosparrot/talon_hud/blob/master/CUSTOMIZATION.md#log-messages
+            actions.user.hud_add_log('success', 'Mic and eye tracking enabled')
+            actions.user.hud_toggle_microphone()
+            actions.user.mouse_wake()
+        elif current_microphone == "None" and eye_mouse.tracker is not None and eye_mouse.config.control_mouse and not "sleep" in scope.get("mode"):
+            actions.user.hud_add_log('error', 'Mic and eye tracking disabled')
+            actions.user.mouse_sleep()
+        elif eye_mouse.tracker is not None and not eye_mouse.config.control_mouse and not "sleep" in scope.get("mode"):
+            actions.user.hud_add_log('success', 'Eye tracking enabled')
+            actions.user.mouse_wake()
+        elif eye_mouse.tracker is not None and eye_mouse.config.control_mouse and not "sleep" in scope.get("mode"):
+            actions.user.hud_add_log('error', 'Mic and eye tracking disabled')
+            actions.user.hud_toggle_microphone()
+            actions.user.mouse_sleep()
+        
+    def toggle_control_mouse():
+        current_microphone = actions.sound.active_microphone()
+
+        if current_microphone == "None":
+            #https://github.com/chaosparrot/talon_hud/blob/master/CUSTOMIZATION.md#log-messages
+            actions.user.hud_add_log('success', 'Mic enabled')
+            actions.user.hud_toggle_microphone()
+        elif eye_mouse.tracker is not None and eye_mouse.config.control_mouse:
+            actions.user.hud_add_log('error', 'Eye tracking disabled')
+            actions.user.mouse_sleep()
+        else:
+            actions.user.hud_add_log('error', 'Mic disabled')
+            actions.user.hud_toggle_microphone()
 
     def open_specific_tab(browser: str, search_str: str):
         """This function requires that the searched for tab actually is open in the browser"""
@@ -144,6 +178,19 @@ class UserActions:
             gui_hold_modifier.show()
         else:
             gui_hold_modifier.hide()
+
+    def put_computer_to_sleep():
+        """Puts computer into sleep mode"""
+        if app.platform == "windows":
+            actions.user.mouse_sleep()
+            actions.user.hud_add_log('error', 'Eye tracking disabled')
+            actions.user.hud_toggle_microphone()
+            actions.user.hud_add_log('error', 'Mic disabled')
+            actions.key("super-x")
+            actions.sleep("200ms")
+            actions.key("u")
+            actions.sleep("200ms")
+            actions.key("s")
 
     # From this repo:
     # https://github.com/nriley/knausj_talon/blob/ed7b1c1e/code/talon_helpers.py#L161
@@ -241,7 +288,7 @@ class UserActions:
             actions.key("super-h")
         elif app.platform == "mac":
             actions.key("ctrl")
-            actions.sleep("50ms")
+            actions.sleep("10ms")
             actions.key("ctrl")
 
     """
@@ -252,28 +299,20 @@ class UserActions:
             actions.user.start_stop_dictation()
         #if not we must take other actions before we start the dictation
         elif "command" in scope.get("mode"):
-            actions.user.mouse_sleep()
+            #actions.user.mouse_sleep()
             actions.speech.toggle()
+            actions.user.start_stop_dictation()
+        elif "user.power_mode" in scope.get("mode"):
+            #actions.user.mouse_sleep()
+            actions.speech.toggle()
+            actions.mode.disable("user.power_mode")
             actions.user.start_stop_dictation()
         elif "sleep" in scope.get("mode"):
             #add some sleep time to make sure talon doesn't pick up any speech
             actions.sleep("500ms")
             actions.speech.toggle()
-            actions.user.mouse_wake()
-    """
+            #actions.user.mouse_wake()
 
-    def toggle_dictation_voice_command():
-        if "sleep" in scope.get("mode"):
-            #add some sleep time to make sure Talon doesn't pick up any speech
-            actions.sleep("500ms")
-            actions.user.mouse_wake()
-            actions.speech.toggle()
-        else:
-            actions.user.mouse_sleep()
-            actions.speech.toggle()
-            actions.user.start_stop_dictation()
-
-    """
     def toggle_dictation_key_switch():
         #if the microphone has been disabled through talon_hud then we just start the dictation without putting Talon to sleep
         current_microphone = actions.sound.active_microphone()
@@ -292,11 +331,6 @@ class UserActions:
             actions.user.start_stop_dictation()
             actions.speech.toggle()
             actions.user.mouse_wake()
-    """
-
-    def toggle_dictation_key_switch():
-        actions.user.toggle_talon_microphone()
-        actions.user.start_stop_dictation()
 
     def close_program():
         """Uses the OS built-in keyboard shortcut to close the program"""
@@ -305,32 +339,7 @@ class UserActions:
         elif app.platform == "mac":
             actions.key("cmd-q")
     
-    def current_app(name: str):
-        """Confirms if an app with app.name == name is in focus"""
-        active_app = ui.active_app()
-        if active_app.name == name:
-            return True
-        else: 
-            return False
-
-    #System wide toggle huddle function. Works only if one uses the Slack desktop app, not the Slack web app
-    def slack_toggle_huddle():
-        if actions.user.current_app("Slack"):
-            actions.key("ctrl-shift-h")
-        else:
-            actions.user.switcher_focus("Slack")
-            actions.sleep("300ms")
-            if actions.user.current_app("Slack"):
-                actions.key("ctrl-shift-h")
-
-    def replace_text(to_replace: str, replacer: str):
-        """Replaces `to_replace` with `replacer`"""
-        actions.user.navigation_literal_text("GO", "left", "AFTER", to_replace, 1)
-        actions.edit.select_word()
-        actions.insert(replacer)
-        actions.key("space")
-
-    # Non working prototype as of now
+    # Non working prototypes as of now
     def select_continous(run: int):
 
         gui_select.show()
@@ -355,3 +364,42 @@ class UserActions:
     def select_continous_end():
         """sdf"""
         gui_select.hide()
+    
+    def comment():
+        """Comment out code in Visual Studio both Windows and macOS"""
+        if app.platform == "windows":
+            actions.key("ctrl-k-c")
+        elif app.platform == "mac":
+            actions.key("cmd-k-c")
+    
+    def uncomment():
+        """Comment in code in Visual Studio both Windows and macOS"""
+        if app.platform == "windows":
+            actions.key("ctrl-k-u")
+        elif app.platform == "mac":
+            actions.key("cmd-k-u")
+    
+    def open_chrome_bookmarks():
+        """Open bookmarks in Google Chrome Windows"""
+        if app.platform == "windows":
+            actions.key("ctrl-shift-o")
+            actions.sleep("1000ms")
+            actions.key("tab")
+            actions.sleep("100ms")
+            actions.key("tab")
+            actions.sleep("100ms")
+            actions.key("tab")
+            actions.sleep("100ms")
+            actions.key("tab")
+        if app.platform == "mac":
+            actions.key("cmd-alt-b")
+            actions.sleep("1000ms")
+            actions.key("tab")
+            actions.sleep("100ms")
+            actions.key("tab")
+            actions.sleep("100ms")
+            actions.key("tab")
+    
+    def window():
+        if app.platform == "windows":
+            actions.key("ctrl-esc")

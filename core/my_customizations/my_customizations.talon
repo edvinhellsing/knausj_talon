@@ -9,7 +9,16 @@
 #Answer: user.system_command_nb() 
 #And obviously just put the command as a string in the function call
 
-[insert] {user.additional_words}: auto_insert(additional_words)
+#https://bitwarden.com/help/keyboard-shortcuts/
+Bitwarden activate: key(ctrl-shift-Y)
+[Bitwarden] password fill: key(ctrl-shift-L)
+[Bitwarden] password generate: key(ctrl-shift-9)
+
+#test select start: user.select_continous(1)
+#test select end: user.select_continous(0)
+
+#[insert]
+insert {user.additional_words}: auto_insert(additional_words) 
 website {user.website}: auto_insert(website)
 system path <user.system_path>: auto_insert(system_path)
 
@@ -27,15 +36,27 @@ good day phrase: "G'day "
 (signature phrase | insert signature): 
     "Best regards"
     edit.line_insert_down()
-    "Joel"
+    "Edvin"
 
 (signature phrase swedish | insert signature swedish): 
     "Med vänlig hälsning"
     edit.line_insert_down()
-    "Joel"
+    "Edvin"
 
-(mic | Mike | microphone) toggle: user.toggle_talon_microphone()
-key(scroll_lock): user.toggle_talon_microphone()
+(mic | Mike | microphone) off: user.toggle_talon_microphone()
+#(mic | Mike | microphone) toggle: user.toggle_talon_microphone()
+#key(scroll_lock): user.toggle_talon_microphone()
+key(f13): user.toggle_talon_microphone()
+
+# Control mouse - f14 to switch control mouse on and off
+(mouse) off: user.toggle_control_mouse()
+key(f14): user.toggle_control_mouse()
+
+# Pick item from a dropdown
+pick [down] <number_small>: key("down:{number_small} enter")
+pick up <number_small>: key("up:{number_small} enter")
+#dropdown <number_small>: key("down:{number_small-1} enter") 
+#drop up <number_small>: key("up:{number_small} enter")
 
 (end ten | ten enter): key(enter)
 
@@ -48,17 +69,22 @@ talon hood (relaunch | restart):
     sleep(300ms)
     user.engine_mimic("status bar show")
     sleep(300ms)
-    #Reset the status bar icons by first removing them
-    user.engine_mimic("status bar remove microphone")
-    sleep(300ms)
-    user.engine_mimic("status bar remove mode indicator")
-    sleep(300ms)
-    #And then add them again
     user.engine_mimic("status bar add microphone")
+    sleep(300ms)
+    # not able to add mode indicator if not first removed
+    user.engine_mimic("status bar remove mode indicator")
     sleep(300ms)
     user.engine_mimic("status bar add mode indicator")
 
-program close: user.close_program()
+program (close | quit): user.close_program()
+
+code (comment): user.comment()
+
+code (uncomment): user.uncomment()
+
+(chrome open bookmarks): user.open_chrome_bookmarks()
+
+(window | window key): user.window()
 
 #System wide toggle huddle function. Works only if one uses the Slack desktop app, not the Slack web app
 #slack (huddle | call) (new | join): 
@@ -72,7 +98,7 @@ program close: user.close_program()
 #This works when `control mouse (zoom)` is active
 #key(f13): tracking.zoom()
 
-do not disturb toggle:
-    key(super-n)
-    sleep(1000ms)
-    key(enter)
+# do not disturb toggle:
+#     key(super-n)
+#     sleep(1000ms)
+#     key(enter)
