@@ -312,7 +312,22 @@ class UserActions:
             actions.sleep("500ms")
             actions.speech.toggle()
             #actions.user.mouse_wake()
+    """
 
+    """
+    def toggle_dictation_voice_command():
+        if "sleep" in scope.get("mode"):
+            #add some sleep time to make sure Talon doesn't pick up any speech
+            actions.sleep("500ms")
+            actions.user.mouse_wake()
+            actions.speech.toggle()
+        else:
+            actions.user.mouse_sleep()
+            actions.speech.toggle()
+            actions.user.start_stop_dictation()
+    """
+
+    """
     def toggle_dictation_key_switch():
         #if the microphone has been disabled through talon_hud then we just start the dictation without putting Talon to sleep
         current_microphone = actions.sound.active_microphone()
@@ -331,6 +346,7 @@ class UserActions:
             actions.user.start_stop_dictation()
             actions.speech.toggle()
             actions.user.mouse_wake()
+    """
 
     def close_program():
         """Uses the OS built-in keyboard shortcut to close the program"""
@@ -338,6 +354,33 @@ class UserActions:
             actions.key("alt-f4")
         elif app.platform == "mac":
             actions.key("cmd-q")
+    
+    # TODO: Test
+    # def current_app(name: str):
+    #     """Confirms if an app with app.name == name is in focus"""
+    #     active_app = ui.active_app()
+    #     if active_app.name == name:
+    #         return True
+    #     else: 
+    #         return False
+    
+    # TODO: Test
+    #System wide toggle huddle function. Works only if one uses the Slack desktop app, not the Slack web app
+    # def slack_toggle_huddle():
+    #     if actions.user.current_app("Slack"):
+    #         actions.key("ctrl-shift-h")
+    #     else:
+    #         actions.user.switcher_focus("Slack")
+    #         actions.sleep("300ms")
+    #         if actions.user.current_app("Slack"):
+    #             actions.key("ctrl-shift-h")
+
+    # def replace_text(to_replace: str, replacer: str):
+    #     """Replaces `to_replace` with `replacer`"""
+    #     actions.user.navigation_literal_text("GO", "left", "AFTER", to_replace, 1)
+    #     actions.edit.select_word()
+    #     actions.insert(replacer)
+    #     actions.key("space")
     
     # Non working prototypes as of now
     def select_continous(run: int):
@@ -380,7 +423,7 @@ class UserActions:
             actions.key("cmd-k-u")
     
     def open_chrome_bookmarks():
-        """Open bookmarks in Google Chrome Windows"""
+        #Open bookmarks in Google Chrome Windows
         if app.platform == "windows":
             actions.key("ctrl-shift-o")
             actions.sleep("1000ms")
